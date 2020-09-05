@@ -1,0 +1,16 @@
+systemd          0.1
+kswapd0          0.2
+kworker/0:1H-kb  0.1
+packagekitd      0.1
+gnome-shell     15.1
+Xwayland         0.2
+gnome-software   0.1
+atom             1.2
+atom             2.4
+chrome           0.3
+chrome           0.1
+chrome           0.2
+nautilus         2.2
+snapd            0.1
+gnome-terminal-  0.1
+...

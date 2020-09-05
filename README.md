@@ -1,6 +1,6 @@
 # Tilux
 
-A handful of scripts meant for Linux.
+A handful of scripts for Linux.
 
 **More to come.**
 

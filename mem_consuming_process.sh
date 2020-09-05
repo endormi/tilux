@@ -24,7 +24,7 @@ sleep 1
 
 trap 'mem' INT
 
-echo Watching Memory usage... ;
+echo Watching Memory usage...
 
 for((i=0; i<$mproc; i++)); do
     ps -eocomm,pmem | egrep -v '(0.0)|(%MEM)' >> /tmp/memory_usage.$$

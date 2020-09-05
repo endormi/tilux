@@ -11,7 +11,6 @@ if [[ $input == "Y" || $input == "y" ]]; then
   clear
   ./run.sh
 else
-  clear
   echo Exiting...
   sleep 1
   clear

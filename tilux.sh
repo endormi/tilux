@@ -2,7 +2,7 @@
 
 <<comment
 
- Tilux by endormi (v.0.0.1)
+ Tilux by endormi (v.0.1.0)
 
  You can run the script interactively or by using arguments
 

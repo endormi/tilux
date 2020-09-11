@@ -18,8 +18,8 @@ function cpu {
   exit 0
 }
 
-echo Running cpu_consuming_process
-echo =============================
+echo Running cpu_monitoring
+echo ======================
 echo
 sleep 1
 

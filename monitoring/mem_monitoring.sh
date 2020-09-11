@@ -17,8 +17,8 @@ function mem {
   exit 0
 }
 
-echo Running mem_consuming_process
-echo =============================
+echo Running mem_monitoring
+echo ======================
 echo
 sleep 1
 

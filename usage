@@ -1,0 +1,27 @@
+#!/bin/bash
+
+g="\033[0;32m" # Green
+y="\033[1;33m" # Yellow
+w="\033[1;37m" # White
+
+sudo chmod +x tilux.sh
+sudo chmod +x ./info/hostname.sh
+sudo chmod +x ./info/ip_addr.sh
+sudo chmod +x ./monitoring/cpu_monitoring.sh
+sudo chmod +x ./monitoring/mem_monitoring.sh
+
+clear
+
+echo -e "${g}Thanks for using Tilux!${w}"
+echo
+
+read -p "Do you want to run the script right now? (Y/n): " input
+if [[ $input == "Y" || $input == "y" ]]; then
+  clear
+  ./tilux.sh
+else
+  echo Exiting...
+  sleep 1
+  clear
+  exit
+fi

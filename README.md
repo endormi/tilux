@@ -1,7 +1,5 @@
 # Tilux
 
-A handful of scripts for Linux.
-
 **More to come.**
 
 Usage:
@@ -10,16 +8,16 @@ Usage:
 git clone https://github.com/endormi/tilux.git
 ```
 
-Run `use.sh`:
+Run `usage`:
 
 ```bash
-bash use.sh
+bash usage
 ```
 
-> After running `use.sh` for the first time, you can use `run.sh` instead of `use.sh`.
+> After running `usage` for the first time, you can use `tilux.sh` instead of `usage`.
 
-Run `run.sh`:
+Run `tilux.sh`:
 
 ```bash
-./run.sh
+./tilux.sh
 ```

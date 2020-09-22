@@ -14,10 +14,10 @@ Run `usage`:
 bash usage
 ```
 
-> After running `usage` for the first time, you can use `tilux.sh` instead of `usage`.
+> After running `usage` for the first time, you can use `tilux` instead of `usage`.
 
-Run `tilux.sh`:
+Run `tilux`:
 
 ```bash
-./tilux.sh
+./tilux
 ```

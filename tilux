@@ -6,8 +6,8 @@
 
  You can run the script interactively or by using arguments
 
- For interactive: run ./tilux.sh and follow the choices.
- For args: for example ./tilux.sh monitoring 1
+ For interactive: run ./tilux and follow the choices.
+ For args: for example ./tilux monitoring 1
 
 comment
 
@@ -119,7 +119,7 @@ if [[ -z "$1" ]]; then
 
 else
 
-  command="for example ./tilux.sh monitoring 1
+  command="for example ./tilux monitoring 1
   (same choices when used interactively)"
 
   case "$1" in

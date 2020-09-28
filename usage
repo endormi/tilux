@@ -16,7 +16,8 @@ echo -e "${g}Thanks for using Tilux!${w}"
 echo
 
 read -p "Do you want to run the script right now? (Y/n): " input
-if [[ $input == "Y" || $input == "y" ]]; then
+input="$(echo ${input} | tr 'A-Z' 'a-z')"
+if [[ $input == "y" ]]; then
   clear
   ./tilux
 else

@@ -36,6 +36,22 @@ echo
 
 
  # I used a function since i'm using the same text multiple times
+help () {
+  help_cmd="info 1, info 2, monitoring 1, monitoring 2"
+  echo -e "\\e[0;47m${bl}Help\\e[0m${w}"
+  echo Current choices are:
+  echo $help_cmd
+  echo
+  echo Interactive:
+  echo Running the files interactively ./tilux and then follow the choices
+  echo
+  echo Args:
+  echo "Running the files with args ./tilux ($help_cmd)"
+  echo "Note: The uppercase doesn't work currently with args"
+  echo
+  echo -n "Press [ENTER] to continue..."
+  read
+}
 info () {
   echo -e "\\e[0;47m${bl}Info\\e[0m${w}"
   echo 1: Hostname
@@ -54,11 +70,13 @@ if [[ -z "$1" ]]; then
   echo
   echo What script do you want to run?
   echo
-  # paste <() <()
   info
   monitoring
+  echo -e "\\e[0;47m${bl}--help\\e[0m${w}"
+  echo How to use Tilux?
+  echo
 
-  list_of_commands="Info && Monitoring"
+  list_of_commands="Info, Monitoring && --help"
 
   sleep .7
   echo Choices: $list_of_commands
@@ -111,6 +129,10 @@ if [[ -z "$1" ]]; then
       ;;
     esac
 
+  elif [[ $choice == "help" || $choice == "--help" || $choice == "--h" ]]; then
+    clear
+    help
+
   else
     echo
     echo Not a valid choice!
@@ -157,6 +179,11 @@ else
         exit
           ;;
       esac
+      ;;
+
+    "help" | "--help" | "--h")
+      clear
+      help
       ;;
     *)
     echo Not a valid choice!

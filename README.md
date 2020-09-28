@@ -21,3 +21,14 @@ Run `tilux`:
 ```bash
 ./tilux
 ```
+
+`--help`:
+
+```bash
+./tilux --help
+```
+
+Type | About | Choices
+:------:|-----------|:------:
+Info | Gain info about the host (hostname, public IP etc.) | 1 and 2
+Monitoring | Monitor different processes (cpu monitoring and memory monitoring) | 1 and 2

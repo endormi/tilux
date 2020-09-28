@@ -37,7 +37,7 @@ echo
 
  # I used a function since i'm using the same text multiple times
 help () {
-  help_cmd="info 1, info 2, monitoring 1, monitoring 2"
+  help_cmd="info 1, info 2, monitoring 1 & monitoring 2"
   echo -e "\\e[0;47m${bl}Help\\e[0m${w}"
   echo Current choices are:
   echo $help_cmd

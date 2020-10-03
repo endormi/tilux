@@ -2,7 +2,7 @@
 
 <<comment
 
- Tilux by endormi (v.0.1.0)
+ Tilux by endormi (v.0.1.1)
 
  You can run the script interactively or by using arguments
 
@@ -19,7 +19,7 @@ y="\033[1;33m" # Yellow
 bl="\033[1;30m" # Black
 w="\033[1;37m" # White
 
-version="v.0.1.0"
+version="v.0.1.1"
 clear
 echo -e "${g}
 ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo

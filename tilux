@@ -58,6 +58,12 @@ info () {
   echo 2: IP address
   echo
 }
+misc () {
+  echo -e "\\e[0;47m${bl}Misc.\\e[0m${w}"
+  echo "1: exists (file or directory)"
+  echo 2: server_pinging
+  echo
+}
 monitoring () {
   echo -e "\\e[0;47m${bl}Monitoring\\e[0m${w}"
   echo 1: cpu_monitoring
@@ -72,11 +78,12 @@ if [[ -z "$1" ]]; then
   echo
   info
   monitoring
+  misc
   echo -e "\\e[0;47m${bl}--help\\e[0m${w}"
   echo How to use Tilux?
   echo
 
-  list_of_commands="Info, Monitoring && --help"
+  list_of_commands="Info, Monitoring, Misc && --help"
 
   sleep .7
   echo Choices: $list_of_commands
@@ -129,6 +136,29 @@ if [[ -z "$1" ]]; then
       ;;
     esac
 
+  elif [[ $choice == "misc" || $choice == "miscellaneous" || $choice == "misc." ]]; then
+    cmd="1 or 2"
+    clear
+    misc
+    read -p "Type in the number of the script you want to use: " input_process
+    echo
+
+    case "$input_process" in
+      "1")
+        clear
+        ./misc/exists.sh
+        ;;
+      "2")
+        clear
+        python ./misc/server_pinging.py
+        ;;
+      *)
+      echo Not a valid choice!
+      echo Use $cmd
+      exit
+      ;;
+    esac
+
   elif [[ $choice == "help" || $choice == "--help" || $choice == "--h" ]]; then
     clear
     help
@@ -172,6 +202,24 @@ else
         "2")
           clear
           ./info/ip_addr.sh
+          ;;
+        *)
+        echo Not a valid choice!
+        echo Use $command
+        exit
+          ;;
+      esac
+      ;;
+
+    "misc")
+      case "$2" in
+        "1")
+          clear
+          ./misc/exists.sh
+          ;;
+        "2")
+          clear
+          python ./misc/server_pinging.py
           ;;
         *)
         echo Not a valid choice!

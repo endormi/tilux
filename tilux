@@ -37,7 +37,7 @@ echo
 
  # I used a function since i'm using the same text multiple times
 help () {
-  help_cmd="info 1, info 2, monitoring 1 & monitoring 2"
+  help_cmd="info 1, info 2, monitoring 1, monitoring 2, misc 1 && misc 2"
   echo -e "\\e[0;47m${bl}Help\\e[0m${w}"
   echo Current choices are:
   echo $help_cmd
@@ -48,6 +48,13 @@ help () {
   echo Args:
   echo "Running the files with args ./tilux ($help_cmd)"
   echo "Note: The uppercase doesn't work currently with args"
+  echo
+  echo "info 1: hostname (name, dns domain and local ip address)"
+  echo "info 2: public ip address"
+  echo "montoring 1: monitoring cpu processes"
+  echo "montoring 2: monitoring memory consumption"
+  echo "misc 1: Check if file or dir exists"
+  echo "misc 2: Pinging a server"
   echo
   echo -n "Press [ENTER] to continue..."
   read

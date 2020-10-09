@@ -5,7 +5,8 @@ echo ==============
 echo
 sleep 1
 
-echo "choices: file or directory"
+choices="file or directory"
+echo "choices: $choices"
 read -p "Choice: " choice
 choice="$(echo ${choice} | tr 'A-Z' 'a-z')"
 
@@ -24,4 +25,7 @@ elif [[ $choice == "dir" || $choice == "directory" || $choice == "d" ]]; then
   else
     echo "$d doesn't exist..."
   fi
+else
+  echo "Invalid choice ($choice)"
+  echo Use $choices
 fi

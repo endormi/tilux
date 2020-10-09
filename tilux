@@ -49,7 +49,7 @@ help () {
   echo "Running the files with args ./tilux ($help_cmd)"
   echo "Note: The uppercase doesn't work currently with args"
   echo
-  echo "info 1: hostname (name, dns domain and local ip address)"
+  echo "info 1: hostname (name, OS, kernel version, DNS domain and local IP address)"
   echo "info 2: public ip address"
   echo "info 3: Check virtualbox OS version"
   echo "montoring 1: monitoring cpu processes"

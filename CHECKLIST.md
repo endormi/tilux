@@ -11,8 +11,8 @@
 - [x] - Monitoring (memory)
 
 ## In progress
-- [x] - Misc. (IP Pinging)
-- [x] - Monitoring (server monitoring)
+- [ ] - Misc. (IP Pinging)
+- [ ] - Monitoring (server monitoring)
 
 ## TBD
-- [x] - Convert args to lowercase
+- [ ] - Convert args to lowercase

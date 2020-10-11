@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo Running hostname
-echo ================
+echo Running host
+echo ============
 echo
 sleep 1
 

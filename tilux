@@ -54,7 +54,7 @@ help () {
   echo "montoring 1: monitoring cpu processes"
   echo "montoring 2: monitoring memory consumption"
   echo "misc 1: Check if file or dir exists"
-  echo "misc 2: Pinging a server"
+  echo "misc 2: Server pinging"
   echo
   echo -n "Press [ENTER] to continue..."
   read
@@ -78,6 +78,82 @@ monitoring () {
   echo
 }
 
+
+# Why?
+# I wanted to have the option to run using args for example ./tilux misc
+# and still have the chance to run the script instead of being an error.
+info_run() {
+  cmd="1 or 2"
+  clear
+  info
+  read -p "Type in the number of the script you want to use: " input_process
+  echo
+
+  case "$input_process" in
+    "1")
+      clear
+      ./info/host.sh
+      ;;
+    "2")
+      clear
+      ./info/ip_addr.sh
+      ;;
+    *)
+    echo Not a valid choice!
+    echo Use $cmd
+    exit
+    ;;
+  esac
+}
+
+misc_run() {
+  cmd="1 or 2"
+  clear
+  misc
+  read -p "Type in the number of the script you want to use: " input_process
+  echo
+
+  case "$input_process" in
+    "1")
+      clear
+      ./misc/exists.sh
+      ;;
+    "2")
+      clear
+      python ./misc/server_pinging.py
+      ;;
+    *)
+    echo Not a valid choice!
+    echo Use $cmd
+    exit
+    ;;
+  esac
+}
+
+monitoring_run() {
+  cmd="1 or 2"
+  clear
+  monitoring
+  read -p "Type in the number of the script you want to use: " input_process
+  echo
+
+  case "$input_process" in
+    "1")
+      clear
+      ./monitoring/cpu_monitoring.sh
+      ;;
+    "2")
+      clear
+      ./monitoring/mem_monitoring.sh
+      ;;
+    *)
+    echo Not a valid choice!
+    echo Use $cmd
+    exit
+    ;;
+  esac
+}
+
 if [[ -z "$1" ]]; then
 
   echo
@@ -98,73 +174,13 @@ if [[ -z "$1" ]]; then
   choice="$(echo ${choice} | tr 'A-Z' 'a-z')"
 
   if [[ $choice == "monitoring" ]]; then
-    cmd="1 or 2"
-    clear
-    monitoring
-    read -p "Type in the number of the script you want to use: " input_process
-    echo
-
-    case "$input_process" in
-      "1")
-        clear
-        ./monitoring/cpu_monitoring.sh
-        ;;
-      "2")
-        clear
-        ./monitoring/mem_monitoring.sh
-        ;;
-      *)
-      echo Not a valid choice!
-      echo Use $cmd
-      exit
-      ;;
-    esac
+    monitoring_run
 
   elif [[ $choice == "info" ]]; then
-    cmd="1 or 2"
-    clear
-    info
-    read -p "Type in the number of the script you want to use: " input_process
-    echo
-
-    case "$input_process" in
-      "1")
-        clear
-        ./info/host.sh
-        ;;
-      "2")
-        clear
-        ./info/ip_addr.sh
-        ;;
-      *)
-      echo Not a valid choice!
-      echo Use $cmd
-      exit
-      ;;
-    esac
+    info_run
 
   elif [[ $choice == "misc" || $choice == "miscellaneous" || $choice == "misc." ]]; then
-    cmd="1 or 2"
-    clear
-    misc
-    read -p "Type in the number of the script you want to use: " input_process
-    echo
-
-    case "$input_process" in
-      "1")
-        clear
-        ./misc/exists.sh
-        ;;
-      "2")
-        clear
-        python ./misc/server_pinging.py
-        ;;
-      *)
-      echo Not a valid choice!
-      echo Use $cmd
-      exit
-      ;;
-    esac
+    misc_run
 
   elif [[ $choice == "help" || $choice == "--help" || $choice == "--h" ]]; then
     clear
@@ -193,9 +209,7 @@ else
           ./monitoring/mem_monitoring.sh
           ;;
         *)
-        echo Not a valid choice!
-        echo Use $command
-        exit
+        monitoring_run
           ;;
       esac
       ;;
@@ -211,10 +225,7 @@ else
           ./info/ip_addr.sh
           ;;
         *)
-        echo Not a valid choice!
-        echo Use $command
-        exit
-          ;;
+        info_run
       esac
       ;;
 
@@ -229,9 +240,7 @@ else
           python ./misc/server_pinging.py
           ;;
         *)
-        echo Not a valid choice!
-        echo Use $command
-        exit
+        misc_run
           ;;
       esac
       ;;

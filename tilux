@@ -51,7 +51,6 @@ help () {
   echo
   echo "info 1: hostname (name, OS, kernel version, DNS domain and local IP address)"
   echo "info 2: public ip address"
-  echo "info 3: Check virtualbox OS version"
   echo "montoring 1: monitoring cpu processes"
   echo "montoring 2: monitoring memory consumption"
   echo "misc 1: Check if file or dir exists"
@@ -64,7 +63,6 @@ info () {
   echo -e "\\e[0;47m${bl}Info\\e[0m${w}"
   echo 1: Hostname
   echo 2: IP address
-  echo "3: vb_version (check virtualbox OS version)"
   echo
 }
 misc () {
@@ -123,7 +121,7 @@ if [[ -z "$1" ]]; then
     esac
 
   elif [[ $choice == "info" ]]; then
-    cmd="1, 2 or 3"
+    cmd="1 or 2"
     clear
     info
     read -p "Type in the number of the script you want to use: " input_process
@@ -137,10 +135,6 @@ if [[ -z "$1" ]]; then
       "2")
         clear
         ./info/ip_addr.sh
-        ;;
-      "3")
-        clear
-        ./info/vb_version.sh
         ;;
       *)
       echo Not a valid choice!
@@ -215,10 +209,6 @@ else
         "2")
           clear
           ./info/ip_addr.sh
-          ;;
-        "3")
-          clear
-          ./info/vb_version.sh
           ;;
         *)
         echo Not a valid choice!

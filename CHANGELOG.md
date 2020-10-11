@@ -1,4 +1,4 @@
-# Releases
+# Changelog
 
 ## 0.1.1
 - Add help, server pinging and exists

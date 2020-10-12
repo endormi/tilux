@@ -1,8 +1,6 @@
 #!/bin/bash
 
-g="\033[0;32m" # Green
-y="\033[1;33m" # Yellow
-w="\033[1;37m" # White
+source ansi-colors
 
 sudo chmod +x tilux
 sudo chmod +x ./info/host.sh

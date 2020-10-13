@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo Running host
-echo ============
-echo
+python -c "from logos import Logo; Logo('Host');"
 sleep 1
 
 echo Hostname: $(hostname -s)

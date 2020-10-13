@@ -17,9 +17,7 @@ function mem {
   exit 0
 }
 
-echo Running mem_monitoring
-echo ======================
-echo
+python -c "from logos import Logo; Logo('Mem Monitoring');"
 sleep 1
 
 trap 'mem' INT

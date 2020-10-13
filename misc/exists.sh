@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo Running exists
-echo ==============
-echo
+python -c "from logos import Logo; Logo('Exists');"
 sleep 1
 
 choices="file or directory"

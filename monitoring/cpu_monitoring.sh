@@ -18,9 +18,7 @@ function cpu {
   exit 0
 }
 
-echo Running cpu_monitoring
-echo ======================
-echo
+python -c "from logos import Logo; Logo('CPU Monitoring');"
 sleep 1
 
 trap 'cpu' INT

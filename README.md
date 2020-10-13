@@ -8,6 +8,12 @@ Usage:
 git clone https://github.com/endormi/tilux.git
 ```
 
+Install requirements:
+
+```
+pip install -r requirements.txt
+```
+
 Run `usage`:
 
 ```bash

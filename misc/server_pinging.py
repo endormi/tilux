@@ -2,8 +2,7 @@ import os
 import time
 
 
-print("Running server_pinging")
-print("======================" + "\n")
+os.system("python ./logos.py")
 time.sleep(1)
 hostname = raw_input("Domain: ")
 response = os.system("ping -c 1 " + hostname)

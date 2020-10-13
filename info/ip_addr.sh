@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo Running ip_addr
-echo ===============
-echo
+python -c "from logos import Logo; Logo('IP Address');"
 sleep 1
 
 addr=$(dig +short myip.opendns.com @resolver1.opendns.com)

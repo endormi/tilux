@@ -11,11 +11,11 @@
 - [x] - Monitoring (CPU)
 - [x] - Monitoring (memory)
 - [x] - Use better logos for scripts
+- [x] - Misc. (IP Pinging)
 
 ## In progress
 - [ ] - Add the ability to run the script instantly when running interactively e.g. misc 1
-- [ ] - Misc. (IP Pinging)
 - [ ] - Monitoring (server monitoring)
+- [ ] - Convert args to lowercase
 
 ## TBD
-- [ ] - Convert args to lowercase

@@ -3,7 +3,7 @@
 import subprocess
 import os
 
-file = open('/tmp/results.txt', 'w')
+file = open('/tmp/ip_ping_results.txt', 'w')
 
 net = input('Enter network e.g. [192.168.1.1]: ')[0:-1]
 start = input('Starting IP: ')

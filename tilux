@@ -102,7 +102,7 @@ info_run() {
 }
 
 misc_run() {
-  cmd="1 or 2"
+  cmd="1, 2 or 3"
   clear
   misc
   read -p "Type in the number of the script you want to use: " input_process
@@ -115,7 +115,7 @@ misc_run() {
       ;;
     "2")
       clear
-      python ./misc/ip_pinging.py
+      python3 ./misc/ip_pinging.py
       ;;
     "3")
       clear

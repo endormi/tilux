@@ -30,7 +30,7 @@ sleep 3
 
  # I used a function since i'm using the same text multiple times
 help () {
-  help_cmd="info 1, info 2, monitoring 1, monitoring 2, misc 1 && misc 2"
+  help_cmd="info 1, info 2, monitoring 1, monitoring 2, misc 1, misc 2 && misc 3"
   echo -e "\\e[0;47m${bl}Help\\e[0m${w}"
   echo Current choices are:
   echo $help_cmd
@@ -47,7 +47,8 @@ help () {
   echo "montoring 1: monitoring cpu processes"
   echo "montoring 2: monitoring memory consumption"
   echo "misc 1: Check if file or dir exists"
-  echo "misc 2: Server pinging"
+  echo "misc 2: IP pinging"
+  echo "misc 3: Server pinging"
   echo
   echo -n "Press [ENTER] to continue..."
   read
@@ -61,7 +62,8 @@ info () {
 misc () {
   echo -e "\\e[0;47m${bl}Misc.\\e[0m${w}"
   echo "1: exists (file or directory)"
-  echo 2: server_pinging
+  echo 2: ip_pinging
+  echo 3: server_pinging
   echo
 }
 monitoring () {
@@ -112,6 +114,10 @@ misc_run() {
       ./misc/exists.sh
       ;;
     "2")
+      clear
+      python ./misc/ip_pinging.py
+      ;;
+    "3")
       clear
       python ./misc/server_pinging.py
       ;;
@@ -229,6 +235,10 @@ else
           ./misc/exists.sh
           ;;
         "2")
+          clear
+          python3 ./misc/ip_pinging.py
+          ;;
+        "3")
           clear
           python ./misc/server_pinging.py
           ;;

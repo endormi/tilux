@@ -2,7 +2,7 @@
 
 <<comment
 
- Tilux by endormi (v.0.1.1)
+ Tilux by endormi (v.0.1.5)
 
  You can run the script interactively or by using arguments
 
@@ -14,7 +14,7 @@ comment
 # ANSI-colors
 source ansi-colors
 
-version="v.0.1.1"
+version="v.0.1.5"
 clear
 echo -e "${g}
 ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo

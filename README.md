@@ -40,4 +40,4 @@ Info | Gain info about the host (host [name, OS, kernel version & more] and publ
 Monitoring | Monitor different processes (cpu monitoring and memory monitoring) | 1 or 2
 Misc | Miscellaneous scripts (check if file or dir exists, IP pinging and server pinging) | 1, 2 or 3
 
-[Tested](TESTED_ON.md) on these operating systems.
+[Tested](TESTED_ON.md) on (these are manually tested).

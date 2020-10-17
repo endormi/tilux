@@ -119,7 +119,7 @@ misc_run() {
       ;;
     "3")
       clear
-      python ./misc/server_pinging.py
+      python3 ./misc/server_pinging.py
       ;;
     *)
     echo Not a valid choice!
@@ -240,7 +240,7 @@ else
           ;;
         "3")
           clear
-          python ./misc/server_pinging.py
+          python3 ./misc/server_pinging.py
           ;;
         *)
         misc_run

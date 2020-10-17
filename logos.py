@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 from pyfiglet import figlet_format
 from termcolor import cprint

@@ -4,7 +4,7 @@ This will be used for the python scripts
 
 """
 
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 class text_color:
     black = "\033[30m"

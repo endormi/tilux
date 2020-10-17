@@ -12,10 +12,12 @@
 - [x] - Monitoring (memory)
 - [x] - Use better logos for scripts
 - [x] - Misc. (IP Pinging)
+- [x] - Add cryptography
 
 ## In progress
 - [ ] - Add the ability to run the script instantly when running interactively e.g. misc 1
 - [ ] - Monitoring (server monitoring)
 - [ ] - Convert args to lowercase
+- [ ] - Bettering and adding cryptography scripts
 
 ## TBD

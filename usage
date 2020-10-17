@@ -5,6 +5,12 @@ source ansi-colors
 chmod +x tilux
 chmod +x ./info/host.sh
 chmod +x ./info/ip_addr.sh
+chmod +x ./cryptography-WIP/ccrypt_encryption.sh
+chmod +x ./cryptography-WIP/ccrypt_decryption.sh
+chmod +x ./cryptography-WIP/gpg_encryption.sh
+chmod +x ./cryptography-WIP/gpg_decryption.sh
+chmod +x ./cryptography-WIP/openssl_encryption.sh
+chmod +x ./cryptography-WIP/openssl_decryption.sh
 chmod +x ./misc/exists.sh
 chmod +x ./monitoring/cpu_monitoring.sh
 chmod +x ./monitoring/mem_monitoring.sh

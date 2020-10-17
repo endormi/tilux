@@ -2,12 +2,15 @@
 
 source ansi-colors
 
-sudo chmod +x tilux
-sudo chmod +x ./info/host.sh
-sudo chmod +x ./info/ip_addr.sh
-sudo chmod +x ./misc/exists.sh
-sudo chmod +x ./monitoring/cpu_monitoring.sh
-sudo chmod +x ./monitoring/mem_monitoring.sh
+chmod +x tilux
+chmod +x ./info/host.sh
+chmod +x ./info/ip_addr.sh
+chmod +x ./misc/exists.sh
+chmod +x ./monitoring/cpu_monitoring.sh
+chmod +x ./monitoring/mem_monitoring.sh
+
+chmod +x ./misc/ip_pinging.py
+chmod +x ./misc/server_pinging.py
 
 clear
 

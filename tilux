@@ -25,7 +25,7 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
      888       888   888       o   88.    .8     d8    888b
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 
-${y}$version ${w}by Endormi"
+${y}$version ${w}by Endormi \e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a"
 sleep 3
 
  # I used a function since i'm using the same text multiple times
@@ -115,11 +115,11 @@ misc_run() {
       ;;
     "2")
       clear
-      python3 ./misc/ip_pinging.py
+      ./misc/ip_pinging.py
       ;;
     "3")
       clear
-      python3 ./misc/server_pinging.py
+      ./misc/server_pinging.py
       ;;
     *)
     echo Not a valid choice!
@@ -236,11 +236,11 @@ else
           ;;
         "2")
           clear
-          python3 ./misc/ip_pinging.py
+          ./misc/ip_pinging.py
           ;;
         "3")
           clear
-          python3 ./misc/server_pinging.py
+          ./misc/server_pinging.py
           ;;
         *)
         misc_run

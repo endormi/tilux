@@ -5,18 +5,18 @@ source ansi-colors
 chmod +x tilux
 chmod +x ./info/host.sh
 chmod +x ./info/ip_addr.sh
-chmod +x ./cryptography-WIP/ccrypt_encryption.sh
-chmod +x ./cryptography-WIP/ccrypt_decryption.sh
-chmod +x ./cryptography-WIP/gpg_encryption.sh
-chmod +x ./cryptography-WIP/gpg_decryption.sh
-chmod +x ./cryptography-WIP/openssl_encryption.sh
-chmod +x ./cryptography-WIP/openssl_decryption.sh
+chmod +x ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
+chmod +x ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
+chmod +x ./cryptography-WIP/gpg/gpg_encryption.sh
+chmod +x ./cryptography-WIP/gpg/gpg_decryption.sh
+chmod +x ./cryptography-WIP/openssl/openssl_encryption.sh
+chmod +x ./cryptography-WIP/openssl/openssl_decryption.sh
 chmod +x ./misc/exists.sh
 chmod +x ./monitoring/cpu_monitoring.sh
 chmod +x ./monitoring/mem_monitoring.sh
 
-chmod +x ./misc/ip_pinging.py
-chmod +x ./misc/server_pinging.py
+chmod +x ./networking/ip_pinging.py
+chmod +x ./networking/server_pinging.py
 
 clear
 

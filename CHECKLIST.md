@@ -7,11 +7,11 @@
 - [x] - Info (host)
 - [x] - Info (IP address)
 - [x] - Misc. (exists)
-- [x] - Misc. (server pinging)
+- [x] - Networking (server pinging)
 - [x] - Monitoring (CPU)
 - [x] - Monitoring (memory)
 - [x] - Use better logos for scripts
-- [x] - Misc. (IP Pinging)
+- [x] - Networking (IP Pinging)
 - [x] - Add cryptography
 
 ## In progress

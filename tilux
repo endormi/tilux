@@ -32,7 +32,7 @@ sleep 3
 
  # I used a function since i'm using the same text multiple times
 help () {
-  help_cmd="info 1, info 2, cryptography 1, cryptography 2, cryptography 3, cryptography 4, cryptography 5, cryptography 6, cryptography 7, cryptography 8, monitoring 1, monitoring 2, networking 1, networking 2 && misc 1"
+  help_cmd="info 1, info 2, cryptography 1 1 or 2, cryptography 2 1 or 2, cryptography 3 1 or 2, cryptography 4 1 or 2, monitoring 1, monitoring 2, networking 1, networking 2 && misc 1"
   echo -e "\\e[0;47m${bl}Help\\e[0m${w}"
   echo Current choices are:
   echo $help_cmd
@@ -46,14 +46,10 @@ help () {
   echo
   echo "info 1: host (name, OS, kernel version, DNS domain and local IP address)"
   echo "info 2: public ip address"
-  echo "cryptography 1: ccrypt encryption"
-  echo "cryptography 2: ccrypt decryption"
-  echo "cryptography 3: GPG encryption"
-  echo "cryptography 4: GPG decryption"
-  echo "cryptography 5: Openssl encryption"
-  echo "cryptography 6: Openssl decryption"
-  echo "cryptography 7: Pyca encryption"
-  echo "cryptography 8: Pyca decryption"
+  echo "cryptography 1: ccrypt 1 (encryption) or 2 (decryption)"
+  echo "cryptography 2: GPG 1 (encryption) or 2 (decryption)"
+  echo "cryptography 3: Openssl 1 (encryption) or 2 (decryption)"
+  echo "cryptography 4: Pyca 1 (encryption) or 2 (decryption)"
   echo "montoring 1: monitoring cpu processes"
   echo "montoring 2: monitoring memory consumption"
   echo "networking 1: IP pinging"
@@ -71,14 +67,10 @@ info () {
 }
 cryptography () {
   echo -e "\\e[0;47m${bl}Cryptography\\e[0m${w}"
-  echo 1: ccrypt encryption
-  echo 2: ccrypt decryption
-  echo 3: GPG encryption
-  echo 4: GPG decryption
-  echo 5: Openssl encryption
-  echo 6: Openssl decryption
-  echo 7: Pyca encryption
-  echo 8: Pyca decryption
+  echo "cryptography 1: ccrypt"
+  echo "cryptography 2: GPG"
+  echo "cryptography 3: Openssl"
+  echo "cryptography 4: Pyca"
   echo
 }
 monitoring () {
@@ -128,7 +120,7 @@ info_run() {
 }
 
 cryptography_run() {
-  cmd="1, 2, 3, 4, 5, 6, 7 or 8"
+  cmd="1, 2, 3 or 4"
   clear
   cryptography
   read -p "Type in the number of the script you want to use: " input_process
@@ -136,37 +128,105 @@ cryptography_run() {
 
   case "$input_process" in
     "1")
+      cmd="1 or 2"
       clear
-      ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
-      ;;
+      echo -e "\\e[0;47m${bl}ccrypt\\e[0m${w}"
+      echo 1: Encryption
+      echo -e "2: Decryption\n"
+      read -p "Type in the number of the script you want to use: " process
+      echo
+
+      case "$process" in
+        "1")
+          clear
+          ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
+          ;;
+        "2")
+          clear
+          ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
+          ;;
+        *)
+        echo Not a valid choice!
+        echo Use $cmd
+        exit
+        ;;
+      esac
+        ;;
     "2")
+      cmd="1 or 2"
       clear
-      ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
-      ;;
+      echo -e "\\e[0;47m${bl}GPG\\e[0m${w}"
+      echo 1: Encryption
+      echo -e "2: Decryption\n"
+      read -p "Type in the number of the script you want to use: " process
+      echo
+
+      case "$process" in
+        "1")
+          clear
+          ./cryptography-WIP/gpg/gpg_encryption.sh
+          ;;
+        "2")
+          clear
+          ./cryptography-WIP/gpg/gpg_decryption.sh
+          ;;
+        *)
+        echo Not a valid choice!
+        echo Use $cmd
+        exit
+        ;;
+      esac
+        ;;
     "3")
+      cmd="1 or 2"
       clear
-      ./cryptography-WIP/gpg/gpg_encryption.sh
-      ;;
+      echo -e "\\e[0;47m${bl}Openssl\\e[0m${w}"
+      echo 1: Encryption
+      echo -e "2: Decryption\n"
+      read -p "Type in the number of the script you want to use: " process
+      echo
+
+      case "$process" in
+        "1")
+          clear
+          ./cryptography-WIP/openssl/openssl_encryption.sh
+          ;;
+        "2")
+          clear
+          ./cryptography-WIP/openssl/openssl_decryption.sh
+          ;;
+        *)
+        echo Not a valid choice!
+        echo Use $cmd
+        exit
+        ;;
+      esac
+        ;;
     "4")
+      cmd="1 or 2"
       clear
-      ./cryptography-WIP/gpg/gpg_decryption.sh
-      ;;
-    "5")
-      clear
-      ./cryptography-WIP/openssl/openssl_encryption.sh
-      ;;
-    "6")
-      clear
-      ./cryptography-WIP/openssl/openssl_decryption.sh
-      ;;
-    "7")
-      clear
-      ./cryptography-WIP/pyca/encrypt.py
-      ;;
-    "8")
-      clear
-      ./cryptography-WIP/pyca/decrypt.py
-      ;;
+      echo -e "\\e[0;47m${bl}Pyca\\e[0m${w}"
+      echo 1: Encryption
+      echo -e "2: Decryption\n"
+      read -p "Type in the number of the script you want to use: " process
+      echo
+
+      case "$process" in
+        "1")
+          clear
+          ./cryptography-WIP/pyca/encrypt.py
+          ;;
+        "2")
+          clear
+          ./cryptography-WIP/pyca/decrypt.py
+          ;;
+        *)
+        echo Not a valid choice!
+        echo Use $cmd
+        exit
+        ;;
+      esac
+        ;;
     *)
     echo Not a valid choice!
     echo Use $cmd
@@ -330,37 +390,73 @@ else
     "cryptography" | "crypto")
       case "$2" in
         "1")
-          clear
-          ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
-          ;;
+          case "$3" in
+            "1")
+              clear
+              ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
+              ;;
+            "2")
+              clear
+              ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
+              ;;
+            *)
+            echo Not a valid choice!
+            echo Use $cmd
+            exit
+            ;;
+          esac
+            ;;
         "2")
-          clear
-          ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
-          ;;
+          case "$3" in
+            "1")
+              clear
+              ./cryptography-WIP/gpg/gpg_encryption.sh
+              ;;
+            "2")
+              clear
+              ./cryptography-WIP/gpg/gpg_decryption.sh
+              ;;
+            *)
+            echo Not a valid choice!
+            echo Use $cmd
+            exit
+            ;;
+          esac
+            ;;
         "3")
-          clear
-          ./cryptography-WIP/gpg/gpg_encryption.sh
-          ;;
+          case "$3" in
+            "1")
+              clear
+              ./cryptography-WIP/openssl/openssl_encryption.sh
+              ;;
+            "2")
+              clear
+              ./cryptography-WIP/openssl/openssl_decryption.sh
+              ;;
+            *)
+            echo Not a valid choice!
+            echo Use $cmd
+            exit
+            ;;
+          esac
+            ;;
         "4")
-          clear
-          ./cryptography-WIP/gpg/gpg_decryption.sh
-          ;;
-        "5")
-          clear
-          ./cryptography-WIP/openssl/openssl_encryption.sh
-          ;;
-        "6")
-          clear
-          ./cryptography-WIP/openssl/openssl_decryption.sh
-          ;;
-        "7")
-          clear
-          ./cryptography-WIP/pyca/encrypt.py
-          ;;
-        "8")
-          clear
-          ./cryptography-WIP/pyca/decrypt.py
-          ;;
+          case "$3" in
+            "1")
+              clear
+              ./cryptography-WIP/pyca/encrypt.py
+              ;;
+            "2")
+              clear
+              ./cryptography-WIP/pyca/decrypt.py
+              ;;
+            *)
+            echo Not a valid choice!
+            echo Use $cmd
+            exit
+            ;;
+          esac
+            ;;
         *)
         cryptography_run
       esac

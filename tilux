@@ -32,7 +32,7 @@ sleep 3
 
  # I used a function since i'm using the same text multiple times
 help () {
-  help_cmd="info 1, info 2, cryptography 1, cryptography 2, cryptography 3, cryptography 4, cryptography 5, cryptography 6, monitoring 1, monitoring 2, networking 1, networking 2 && misc 1"
+  help_cmd="info 1, info 2, cryptography 1, cryptography 2, cryptography 3, cryptography 4, cryptography 5, cryptography 6, cryptography 7, cryptography 8, monitoring 1, monitoring 2, networking 1, networking 2 && misc 1"
   echo -e "\\e[0;47m${bl}Help\\e[0m${w}"
   echo Current choices are:
   echo $help_cmd
@@ -52,6 +52,8 @@ help () {
   echo "cryptography 4: GPG decryption"
   echo "cryptography 5: Openssl encryption"
   echo "cryptography 6: Openssl decryption"
+  echo "cryptography 7: Pyca encryption"
+  echo "cryptography 8: Pyca decryption"
   echo "montoring 1: monitoring cpu processes"
   echo "montoring 2: monitoring memory consumption"
   echo "networking 1: IP pinging"
@@ -75,6 +77,8 @@ cryptography () {
   echo 4: GPG decryption
   echo 5: Openssl encryption
   echo 6: Openssl decryption
+  echo 7: Pyca encryption
+  echo 8: Pyca decryption
   echo
 }
 monitoring () {
@@ -124,7 +128,7 @@ info_run() {
 }
 
 cryptography_run() {
-  cmd="1, 2, 3, 4, 5 or 6"
+  cmd="1, 2, 3, 4, 5, 6, 7 or 8"
   clear
   cryptography
   read -p "Type in the number of the script you want to use: " input_process
@@ -154,6 +158,14 @@ cryptography_run() {
     "6")
       clear
       ./cryptography-WIP/openssl/openssl_decryption.sh
+      ;;
+    "7")
+      clear
+      ./cryptography-WIP/pyca/encrypt.py
+      ;;
+    "8")
+      clear
+      ./cryptography-WIP/pyca/decrypt.py
       ;;
     *)
     echo Not a valid choice!
@@ -340,6 +352,14 @@ else
         "6")
           clear
           ./cryptography-WIP/openssl/openssl_decryption.sh
+          ;;
+        "7")
+          clear
+          ./cryptography-WIP/pyca/encrypt.py
+          ;;
+        "8")
+          clear
+          ./cryptography-WIP/pyca/decrypt.py
           ;;
         *)
         cryptography_run

@@ -15,6 +15,8 @@ chmod +x ./misc/exists.sh
 chmod +x ./monitoring/cpu_monitoring.sh
 chmod +x ./monitoring/mem_monitoring.sh
 
+chmod +x ./cryptography-WIP/pyca/encrypt.py
+chmod +x ./cryptography-WIP/pyca/decrypt.py
 chmod +x ./networking/ip_pinging.py
 chmod +x ./networking/server_pinging.py
 

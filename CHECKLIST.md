@@ -4,14 +4,11 @@
 - [x] - Add logo
 - [x] - Add the ability to able to run interactively and with args
 - [x] - Add the ability to run the script even if given 1 argument
-- [x] - Info (host)
-- [x] - Info (IP address)
+- [x] - Info
 - [x] - Misc. (exists)
-- [x] - Networking (server pinging)
-- [x] - Monitoring (CPU)
-- [x] - Monitoring (memory)
+- [x] - Networking (server pinging and IP pinging)
+- [x] - Monitoring (CPU and memory)
 - [x] - Use better logos for scripts
-- [x] - Networking (IP Pinging)
 - [x] - Add cryptography
 
 ## In progress
@@ -21,3 +18,4 @@
 - [ ] - Bettering and adding cryptography scripts
 
 ## TBD
+- [ ] - Add the ability to run the script if given 2 arguments in cryptography

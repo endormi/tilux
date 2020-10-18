@@ -32,7 +32,7 @@ sleep 3
 
  # I used a function since i'm using the same text multiple times
 help () {
-  help_cmd="info 1, info 2, cryptography 1 1 or 2, cryptography 2 1 or 2, cryptography 3 1 or 2, cryptography 4 1 or 2, monitoring 1, monitoring 2, networking 1, networking 2 && misc 1"
+  help_cmd="info, cryptography 1 1 or 2, cryptography 2 1 or 2, cryptography 3 1 or 2, cryptography 4 1 or 2, monitoring 1, monitoring 2, networking 1, networking 2 && misc 1"
   echo -e "\\e[0;47m${bl}Help\\e[0m${w}"
   echo Current choices are:
   echo $help_cmd
@@ -44,8 +44,7 @@ help () {
   echo "Running the files with args ./tilux ($help_cmd)"
   echo "Note: The uppercase doesn't work currently with args"
   echo
-  echo "info 1: host (name, OS, kernel version, DNS domain and local IP address)"
-  echo "info 2: public ip address"
+  echo "info: host (name, OS, kernel version, DNS domain and local IP address)"
   echo "cryptography 1: ccrypt 1 (encryption) or 2 (decryption)"
   echo "cryptography 2: GPG 1 (encryption) or 2 (decryption)"
   echo "cryptography 3: Openssl 1 (encryption) or 2 (decryption)"
@@ -61,8 +60,7 @@ help () {
 }
 info () {
   echo -e "\\e[0;47m${bl}Info\\e[0m${w}"
-  echo "1: Host (name, OS, kernel version & more)"
-  echo 2: IP address
+  echo "Host (name, OS, kernel version & more)"
   echo
 }
 cryptography () {
@@ -96,27 +94,8 @@ misc () {
 # I wanted to have the option to run using args e.g ./tilux misc
 # and still have the chance to run the script instead of being an error.
 info_run() {
-  cmd="1 or 2"
   clear
-  info
-  read -p "Type in the number of the script you want to use: " input_process
-  echo
-
-  case "$input_process" in
-    "1")
-      clear
-      ./info/host.sh
-      ;;
-    "2")
-      clear
-      ./info/ip_addr.sh
-      ;;
-    *)
-    echo Not a valid choice!
-    echo Use $cmd
-    exit
-    ;;
-  esac
+  ./info/host.sh
 }
 
 cryptography_run() {
@@ -373,18 +352,8 @@ else
       ;;
 
     "info")
-      case "$2" in
-        "1")
-          clear
-          ./info/host.sh
-          ;;
-        "2")
-          clear
-          ./info/ip_addr.sh
-          ;;
-        *)
-        info_run
-      esac
+      clear
+      ./info/host.sh
       ;;
 
     "cryptography" | "crypto")

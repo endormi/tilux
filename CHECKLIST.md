@@ -10,6 +10,9 @@
 - [x] - Monitoring (CPU and memory)
 - [x] - Use better logos for scripts
 - [x] - Add cryptography
+- [x] - Update number arguments to - letter
+- [x] - Add the ability to run the script if given 2 arguments in cryptography
+
 
 ## In progress
 - [ ] - Add the ability to run the script instantly when running interactively e.g. misc 1
@@ -18,4 +21,3 @@
 - [ ] - Bettering and adding cryptography scripts
 
 ## TBD
-- [ ] - Add the ability to run the script if given 2 arguments in cryptography

@@ -32,28 +32,25 @@ sleep 3
 
  # I used a function since i'm using the same text multiple times
 help () {
-  help_cmd="info, cryptography 1 1 or 2, cryptography 2 1 or 2, cryptography 3 1 or 2, cryptography 4 1 or 2, monitoring 1, monitoring 2, networking 1, networking 2 && misc 1"
   echo -e "\\e[0;47m${bl}Help\\e[0m${w}"
-  echo Current choices are:
-  echo $help_cmd
   echo
   echo Interactive:
   echo Running the files interactively ./tilux and then follow the choices
   echo
   echo Args:
-  echo "Running the files with args ./tilux ($help_cmd)"
+  echo "Running the files with args ./tilux (and then the argument e.g. cryptography -c -e)"
   echo "Note: The uppercase doesn't work currently with args"
   echo
   echo "info: host (name, OS, kernel version, DNS domain and local IP address)"
-  echo "cryptography 1: ccrypt 1 (encryption) or 2 (decryption)"
-  echo "cryptography 2: GPG 1 (encryption) or 2 (decryption)"
-  echo "cryptography 3: Openssl 1 (encryption) or 2 (decryption)"
-  echo "cryptography 4: Pyca 1 (encryption) or 2 (decryption)"
-  echo "montoring 1: monitoring cpu processes"
-  echo "montoring 2: monitoring memory consumption"
-  echo "networking 1: IP pinging"
-  echo "networking 2: Server pinging"
-  echo "misc 1: Check if file or dir exists"
+  echo "cryptography -c: ccrypt -e (for encryption) or -d (for decryption)"
+  echo "cryptography -g: GPG -e (for encryption) or -d (for decryption)"
+  echo "cryptography -o: Openssl -e (for encryption) or -d (for decryption)"
+  echo "cryptography -p: Pyca -e (for encryption) or -d (for decryption)"
+  echo "montoring -c: monitoring cpu processes"
+  echo "montoring -m: monitoring memory consumption"
+  echo "networking -i: IP pinging"
+  echo "networking -s: Server pinging"
+  echo "misc: Check if file or dir exists"
   echo
   echo -n "Press [ENTER] to continue..."
   read
@@ -65,27 +62,27 @@ info () {
 }
 cryptography () {
   echo -e "\\e[0;47m${bl}Cryptography\\e[0m${w}"
-  echo "cryptography 1: ccrypt"
-  echo "cryptography 2: GPG"
-  echo "cryptography 3: Openssl"
-  echo "cryptography 4: Pyca"
+  echo "cryptography -c: ccrypt"
+  echo "cryptography -g: GPG"
+  echo "cryptography -o: Openssl"
+  echo "cryptography -p: Pyca"
   echo
 }
 monitoring () {
   echo -e "\\e[0;47m${bl}Monitoring\\e[0m${w}"
-  echo 1: cpu_monitoring
-  echo 2: mem_monitoring
+  echo "-c: cpu_monitoring"
+  echo "-m: mem_monitoring"
   echo
 }
 networking () {
   echo -e "\\e[0;47m${bl}Networking\\e[0m${w}"
-  echo 1: ip_pinging
-  echo 2: server_pinging
+  echo "-i: ip_pinging"
+  echo "-s: server_pinging"
   echo
 }
 misc () {
   echo -e "\\e[0;47m${bl}Misc.\\e[0m${w}"
-  echo "1: exists (file or directory)"
+  echo "exists (file or directory)"
   echo
 }
 
@@ -95,117 +92,156 @@ misc () {
 # and still have the chance to run the script instead of being an error.
 info_run() {
   clear
-  ./info/host.sh
+  python -c "from logos import Logo; Logo('Host');"
+  sleep 1
+
+  if [[ "$(which lsb_release)" == "" ]]; then
+    sudo apt-get upgrade
+    sudo apt-get install lsb_release
+  fi
+
+  echo Hostname: $(hostname -s)
+  sleep .5
+  echo $(lsb_release -d)
+  sleep .5
+  echo Kernel version: $(uname -srm)
+  sleep .5
+  echo DNS domain: $(hostname -d)
+  sleep .5
+  addr=$(dig +short myip.opendns.com @resolver1.opendns.com)
+  echo Your IP: ${addr}
+}
+
+ccrypt_func () {
+  cmd="-e or -d"
+  clear
+  echo -e "\\e[0;47m${bl}ccrypt\\e[0m${w}"
+  echo "-e: Encryption"
+  echo -e "-d: Decryption\n"
+  read -p "Type in your choice: " process
+  echo
+
+  case "$process" in
+    "1" | "-e" | "--e" | "-E" | "--E")
+      clear
+      ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
+      ;;
+    "2" | "-d" | "--d" | "-D" | "--D")
+      clear
+      ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
+      ;;
+    *)
+    echo Not a valid choice!
+    echo Use $cmd
+    exit
+    ;;
+  esac
+}
+
+gpg_func () {
+  cmd="-e or -d"
+  clear
+  echo -e "\\e[0;47m${bl}GPG\\e[0m${w}"
+  echo "-e: Encryption"
+  echo -e "-d: Decryption\n"
+  read -p "Type in your choice: " process
+  echo
+
+  case "$process" in
+    "1" | "-e" | "--e" | "-E" | "--E")
+      clear
+      ./cryptography-WIP/gpg/gpg_encryption.sh
+      ;;
+    "2" | "-d" | "--d" | "-D" | "--D")
+      clear
+      ./cryptography-WIP/gpg/gpg_decryption.sh
+      ;;
+    *)
+    echo Not a valid choice!
+    echo Use $cmd
+    exit
+    ;;
+  esac
+}
+
+openssl_func () {
+  cmd="-e or -d"
+  clear
+  echo -e "\\e[0;47m${bl}Openssl\\e[0m${w}"
+  echo "-e: Encryption"
+  echo -e "-d: Decryption\n"
+  read -p "Type in your choice: " process
+  echo
+
+  case "$process" in
+    "1" | "-e" | "--e" | "-E" | "--E")
+      clear
+      ./cryptography-WIP/openssl/openssl_encryption.sh
+      ;;
+    "2" | "-d" | "--d" | "-D" | "--D")
+      clear
+      ./cryptography-WIP/openssl/openssl_decryption.sh
+      ;;
+    *)
+    echo Not a valid choice!
+    echo Use $cmd
+    exit
+    ;;
+  esac
+}
+
+pyca_func () {
+  cmd="-e or -d"
+  clear
+  echo -e "\\e[0;47m${bl}Pyca\\e[0m${w}"
+  echo "-e: Encryption"
+  echo -e "-d: Decryption\n"
+  read -p "Type in your choice: " process
+  echo
+
+  case "$process" in
+    "1" | "-e" | "--e" | "-E" | "--E")
+      clear
+      ./cryptography-WIP/pyca/encrypt.py
+      ;;
+    "2" | "-d" | "--d" | "-D" | "--D")
+      clear
+      ./cryptography-WIP/pyca/decrypt.py
+      ;;
+    *)
+    echo Not a valid choice!
+    echo Use $cmd
+    exit
+    ;;
+  esac
 }
 
 cryptography_run() {
-  cmd="1, 2, 3 or 4"
+  cmd="-c, -g, -o or -p"
   clear
   cryptography
-  read -p "Type in the number of the script you want to use: " input_process
+  read -p "Type in your choice: " input_process
   echo
 
   case "$input_process" in
-    "1")
-      cmd="1 or 2"
-      clear
-      echo -e "\\e[0;47m${bl}ccrypt\\e[0m${w}"
-      echo 1: Encryption
-      echo -e "2: Decryption\n"
-      read -p "Type in the number of the script you want to use: " process
-      echo
+    "1" | "-c" | "--c" | "-C" | "--C")
 
-      case "$process" in
-        "1")
-          clear
-          ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
-          ;;
-        "2")
-          clear
-          ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
-          ;;
-        *)
-        echo Not a valid choice!
-        echo Use $cmd
-        exit
+      ccrypt_func
         ;;
-      esac
-        ;;
-    "2")
-      cmd="1 or 2"
-      clear
-      echo -e "\\e[0;47m${bl}GPG\\e[0m${w}"
-      echo 1: Encryption
-      echo -e "2: Decryption\n"
-      read -p "Type in the number of the script you want to use: " process
-      echo
+    "2" | "-g" | "--g" | "-G" | "--G")
 
-      case "$process" in
-        "1")
-          clear
-          ./cryptography-WIP/gpg/gpg_encryption.sh
-          ;;
-        "2")
-          clear
-          ./cryptography-WIP/gpg/gpg_decryption.sh
-          ;;
-        *)
-        echo Not a valid choice!
-        echo Use $cmd
-        exit
-        ;;
-      esac
-        ;;
-    "3")
-      cmd="1 or 2"
-      clear
-      echo -e "\\e[0;47m${bl}Openssl\\e[0m${w}"
-      echo 1: Encryption
-      echo -e "2: Decryption\n"
-      read -p "Type in the number of the script you want to use: " process
-      echo
+      gpg_func
 
-      case "$process" in
-        "1")
-          clear
-          ./cryptography-WIP/openssl/openssl_encryption.sh
-          ;;
-        "2")
-          clear
-          ./cryptography-WIP/openssl/openssl_decryption.sh
-          ;;
-        *)
-        echo Not a valid choice!
-        echo Use $cmd
-        exit
         ;;
-      esac
-        ;;
-    "4")
-      cmd="1 or 2"
-      clear
-      echo -e "\\e[0;47m${bl}Pyca\\e[0m${w}"
-      echo 1: Encryption
-      echo -e "2: Decryption\n"
-      read -p "Type in the number of the script you want to use: " process
-      echo
+    "3" | "-o" | "--o" | "-O" | "--O")
 
-      case "$process" in
-        "1")
-          clear
-          ./cryptography-WIP/pyca/encrypt.py
-          ;;
-        "2")
-          clear
-          ./cryptography-WIP/pyca/decrypt.py
-          ;;
-        *)
-        echo Not a valid choice!
-        echo Use $cmd
-        exit
+      openssl_func
+
         ;;
-      esac
-        ;;
+    "4" | "-p" | "--p" | "-P" | "--P")
+
+      pyca_func
+      ;;
     *)
     echo Not a valid choice!
     echo Use $cmd
@@ -215,18 +251,18 @@ cryptography_run() {
 }
 
 monitoring_run() {
-  cmd="1 or 2"
+  cmd="-c or -m"
   clear
   monitoring
-  read -p "Type in the number of the script you want to use: " input_process
+  read -p "Type in your choice: " input_process
   echo
 
   case "$input_process" in
-    "1")
+    "1" | "-c" | "--c" | "-C" | "--C")
       clear
       ./monitoring/cpu_monitoring.sh
       ;;
-    "2")
+    "2" | "-m" | "--m" | "-M" | "--M")
       clear
       ./monitoring/mem_monitoring.sh
       ;;
@@ -239,18 +275,18 @@ monitoring_run() {
 }
 
 networking_run() {
-  cmd="1 or 2"
+  cmd="-i or -s"
   clear
   networking
-  read -p "Type in the number of the script you want to use: " input_process
+  read -p "Type in your choice: " input_process
   echo
 
   case "$input_process" in
-    "1")
+    "1" | "-i" | "--i" | "-I" | "--I")
       clear
       ./networking/ip_pinging.py
       ;;
-    "2")
+    "2" | "-s" | "--s" | "-S" | "--S")
       clear
       ./networking/server_pinging.py
       ;;
@@ -263,23 +299,8 @@ networking_run() {
 }
 
 misc_run() {
-  cmd="1, 2 or 3"
   clear
-  misc
-  read -p "Type in the number of the script you want to use: " input_process
-  echo
-
-  case "$input_process" in
-    "1")
-      clear
-      ./misc/exists.sh
-      ;;
-    *)
-    echo Not a valid choice!
-    echo Use $cmd
-    exit
-    ;;
-  esac
+  ./misc/exists.sh
 }
 
 
@@ -301,7 +322,7 @@ if [[ -z "$1" ]]; then
 
   sleep .7
   echo Choices: $list_of_commands
-  read -p "Type in the choice in which you want to run the script in: " choice
+  read -p "Type in your choice: " choice
   choice="$(echo ${choice} | tr 'A-Z' 'a-z')"
 
   if [[ $choice == "monitoring" ]]; then
@@ -337,11 +358,11 @@ else
   case "$1" in
     "monitoring")
       case "$2" in
-        "1")
+        "1" | "-c" | "--c" | "-C" | "--C")
           clear
           ./monitoring/cpu_monitoring.sh
           ;;
-        "2")
+        "2" | "-m" | "--m" | "-M" | "--M")
           clear
           ./monitoring/mem_monitoring.sh
           ;;
@@ -352,77 +373,68 @@ else
       ;;
 
     "info")
-      clear
-      ./info/host.sh
+      info_run
       ;;
 
     "cryptography" | "crypto")
       case "$2" in
-        "1")
+        "1" | "-c" | "--c" | "-C" | "--C")
           case "$3" in
-            "1")
+            "1" | "-e" | "--e" | "-E" | "--E")
               clear
               ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
               ;;
-            "2")
+            "2" | "-d" | "--d" | "-D" | "--D")
               clear
               ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
               ;;
             *)
-            echo Not a valid choice!
-            echo Use $cmd
-            exit
+            ccrypt_func
             ;;
           esac
             ;;
-        "2")
+        "2" | "-g" | "--g" | "-G" | "--G")
           case "$3" in
-            "1")
+            "1" | "-e" | "--e" | "-E" | "--E")
               clear
               ./cryptography-WIP/gpg/gpg_encryption.sh
               ;;
-            "2")
+            "2" | "-d" | "--d" | "-D" | "--D")
               clear
               ./cryptography-WIP/gpg/gpg_decryption.sh
               ;;
             *)
-            echo Not a valid choice!
-            echo Use $cmd
-            exit
+            gpg_func
             ;;
           esac
             ;;
-        "3")
+        "3" | "-o" | "--o" | "-O" | "--O")
           case "$3" in
-            "1")
+            "1" | "-e" | "--e" | "-E" | "--E")
               clear
               ./cryptography-WIP/openssl/openssl_encryption.sh
               ;;
-            "2")
+            "2" | "-d" | "--d" | "-D" | "--D")
               clear
               ./cryptography-WIP/openssl/openssl_decryption.sh
               ;;
             *)
-            echo Not a valid choice!
-            echo Use $cmd
-            exit
+            openssl_func
             ;;
           esac
             ;;
-        "4")
+        "4" | "-p" | "--p" | "-P" | "--P")
           case "$3" in
-            "1")
+            "1" | "-e" | "--e" | "-E" | "--E")
               clear
               ./cryptography-WIP/pyca/encrypt.py
               ;;
-            "2")
+            "2" | "-d" | "--d" | "-D" | "--D")
               clear
               ./cryptography-WIP/pyca/decrypt.py
               ;;
             *)
-            echo Not a valid choice!
-            echo Use $cmd
-            exit
+            pyca_func
             ;;
           esac
             ;;
@@ -433,11 +445,11 @@ else
 
     "networking" | "net")
       case "$2" in
-        "1")
+        "1" | "-i" | "--i" | "-I" | "--I")
           clear
           ./networking/ip_pinging.py
           ;;
-        "2")
+        "2" | "-s" | "--s" | "-S" | "--S")
           clear
           ./networking/server_pinging.py
           ;;
@@ -448,18 +460,11 @@ else
       ;;
 
     "misc")
-      case "$2" in
-        "1")
-          clear
-          ./misc/exists.sh
-          ;;
-        *)
-        misc_run
-          ;;
-      esac
+      clear
+      ./misc/exists.sh
       ;;
 
-    "help" | "--help" | "--h")
+    "help" | "--help" | "--h" | "Help" | "--Help" | "--H")
       clear
       help
       ;;

@@ -3,7 +3,6 @@
 source ansi-colors
 
 chmod +x tilux
-chmod +x ./info/host.sh
 chmod +x ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
 chmod +x ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
 chmod +x ./cryptography-WIP/gpg/gpg_encryption.sh

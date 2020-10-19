@@ -9,12 +9,15 @@ chmod +x ./cryptography-WIP/gpg/gpg_encryption.sh
 chmod +x ./cryptography-WIP/gpg/gpg_decryption.sh
 chmod +x ./cryptography-WIP/openssl/openssl_encryption.sh
 chmod +x ./cryptography-WIP/openssl/openssl_decryption.sh
+chmod +x ./cryptography-WIP/zip/zip_encryption.sh
+chmod +x ./cryptography-WIP/zip/zip_decryption.sh
 chmod +x ./misc/exists.sh
 chmod +x ./monitoring/cpu_monitoring.sh
 chmod +x ./monitoring/mem_monitoring.sh
 
 chmod +x ./cryptography-WIP/pyca/encrypt.py
 chmod +x ./cryptography-WIP/pyca/decrypt.py
+chmod +x ./monitoring/website_monitoring.py
 chmod +x ./networking/ip_pinging.py
 chmod +x ./networking/server_pinging.py
 

@@ -7,7 +7,7 @@
 - [x] - Info
 - [x] - Misc. (exists)
 - [x] - Networking (server pinging and IP pinging)
-- [x] - Monitoring (CPU and memory)
+- [x] - Monitoring (CPU, memory and website)
 - [x] - Use better logos for scripts
 - [x] - Add cryptography
 - [x] - Update number arguments to - letter

@@ -7,7 +7,7 @@
  You can run the script interactively or by using arguments
 
  For interactive: run ./tilux and follow the choices.
- For args: e.g. ./tilux monitoring 1
+ For args: e.g. ./tilux monitoring -c
 
 comment
 
@@ -46,8 +46,10 @@ help () {
   echo "cryptography -g: GPG -e (for encryption) or -d (for decryption)"
   echo "cryptography -o: Openssl -e (for encryption) or -d (for decryption)"
   echo "cryptography -p: Pyca -e (for encryption) or -d (for decryption)"
-  echo "montoring -c: monitoring cpu processes"
-  echo "montoring -m: monitoring memory consumption"
+  echo "cryptography -z: Zip -e (for encryption) or -d (for decryption)"
+  echo "monitoring -c: monitoring cpu processes"
+  echo "monitoring -m: monitoring memory consumption"
+  echo "monitoring -w: monitoring website (if it's up and if not it sends an email)"
   echo "networking -i: IP pinging"
   echo "networking -s: Server pinging"
   echo "misc: Check if file or dir exists"
@@ -66,12 +68,14 @@ cryptography () {
   echo "cryptography -g: GPG"
   echo "cryptography -o: Openssl"
   echo "cryptography -p: Pyca"
+  echo "cryptography -z: Zip"
   echo
 }
 monitoring () {
   echo -e "\\e[0;47m${bl}Monitoring\\e[0m${w}"
   echo "-c: cpu_monitoring"
   echo "-m: mem_monitoring"
+  echo "-w: website_monitoring"
   echo
 }
 networking () {
@@ -216,6 +220,32 @@ pyca_func () {
   esac
 }
 
+zip_func () {
+  cmd="-e or -d"
+  clear
+  echo -e "\\e[0;47m${bl}Zip\\e[0m${w}"
+  echo "-e: Encryption"
+  echo -e "-d: Decryption\n"
+  read -p "Type in your choice: " process
+  echo
+
+  case "$process" in
+    "1" | "-e" | "--e" | "-E" | "--E")
+      clear
+      ./cryptography-WIP/zip/zip_encryption.sh
+      ;;
+    "2" | "-d" | "--d" | "-D" | "--D")
+      clear
+      ./cryptography-WIP/zip/zip_decryption.sh
+      ;;
+    *)
+    echo Not a valid choice!
+    echo Use $cmd
+    exit
+    ;;
+  esac
+}
+
 cryptography_run() {
   cmd="-c, -g, -o or -p"
   clear
@@ -225,22 +255,19 @@ cryptography_run() {
 
   case "$input_process" in
     "1" | "-c" | "--c" | "-C" | "--C")
-
       ccrypt_func
         ;;
     "2" | "-g" | "--g" | "-G" | "--G")
-
       gpg_func
-
         ;;
     "3" | "-o" | "--o" | "-O" | "--O")
-
       openssl_func
-
         ;;
     "4" | "-p" | "--p" | "-P" | "--P")
-
       pyca_func
+      ;;
+    "5" | "-z" | "--z" | "-Z" | "--Z")
+      zip_func
       ;;
     *)
     echo Not a valid choice!
@@ -251,7 +278,7 @@ cryptography_run() {
 }
 
 monitoring_run() {
-  cmd="-c or -m"
+  cmd="-c, -m or -w"
   clear
   monitoring
   read -p "Type in your choice: " input_process
@@ -265,6 +292,10 @@ monitoring_run() {
     "2" | "-m" | "--m" | "-M" | "--M")
       clear
       ./monitoring/mem_monitoring.sh
+      ;;
+    "3" | "-w" | "--w" | "-W" | "--W")
+      clear
+      ./monitoring/website_monitoring.py
       ;;
     *)
     echo Not a valid choice!
@@ -352,7 +383,7 @@ if [[ -z "$1" ]]; then
 
 else
 
-  command="e.g. ./tilux monitoring 1
+  command="e.g. ./tilux monitoring -c
   (same choices when used interactively)"
 
   case "$1" in
@@ -365,6 +396,10 @@ else
         "2" | "-m" | "--m" | "-M" | "--M")
           clear
           ./monitoring/mem_monitoring.sh
+          ;;
+        "3" | "-w" | "--w" | "-W" | "--W")
+          clear
+          ./monitoring/website_monitoring.py
           ;;
         *)
         monitoring_run
@@ -435,6 +470,21 @@ else
               ;;
             *)
             pyca_func
+            ;;
+          esac
+            ;;
+        "5" | "-z" | "--z" | "-Z" | "--Z")
+          case "$3" in
+            "1" | "-e" | "--e" | "-E" | "--E")
+              clear
+              ./cryptography-WIP/zip/zip_encryption.sh
+              ;;
+            "2" | "-d" | "--d" | "-D" | "--D")
+              clear
+              ./cryptography-WIP/zip/zip_decryption.sh
+              ;;
+            *)
+            zip_func
             ;;
           esac
             ;;

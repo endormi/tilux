@@ -37,7 +37,7 @@ Run `tilux`:
 Type | About | Choices
 :------:|-----------|:------:
 Info | Gain info about the host (name, OS, kernel version etc. and public IP) | info
-Cryptography (WIP) | Encryption (-e) and decryption (-d) (ccrypt, gpg, openssl, pyca and zip) | -c, -g, -o, -p or -z
+Cryptography | Encryption (-e) and decryption (-d) (ccrypt, gpg, openssl, pyca and zip) | -c, -g, -o, -p or -z
 Monitoring | Monitor different processes (cpu monitoring, memory monitoring and website monitoring) | -c, -m or -w
 Networking | IP pinging and server pinging | -i or -s
 Misc | Miscellaneous scripts (check if file or dir exists) | misc

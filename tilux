@@ -128,11 +128,11 @@ ccrypt_func () {
   case "$process" in
     "1" | "-e" | "--e" | "-E" | "--E")
       clear
-      ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
+      ./cryptography/ccrypt/ccrypt_encryption.sh
       ;;
     "2" | "-d" | "--d" | "-D" | "--D")
       clear
-      ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
+      ./cryptography/ccrypt/ccrypt_decryption.sh
       ;;
     *)
     echo Not a valid choice!
@@ -154,11 +154,11 @@ gpg_func () {
   case "$process" in
     "1" | "-e" | "--e" | "-E" | "--E")
       clear
-      ./cryptography-WIP/gpg/gpg_encryption.sh
+      ./cryptography/gpg/gpg_encryption.sh
       ;;
     "2" | "-d" | "--d" | "-D" | "--D")
       clear
-      ./cryptography-WIP/gpg/gpg_decryption.sh
+      ./cryptography/gpg/gpg_decryption.sh
       ;;
     *)
     echo Not a valid choice!
@@ -180,11 +180,11 @@ openssl_func () {
   case "$process" in
     "1" | "-e" | "--e" | "-E" | "--E")
       clear
-      ./cryptography-WIP/openssl/openssl_encryption.sh
+      ./cryptography/openssl/openssl_encryption.sh
       ;;
     "2" | "-d" | "--d" | "-D" | "--D")
       clear
-      ./cryptography-WIP/openssl/openssl_decryption.sh
+      ./cryptography/openssl/openssl_decryption.sh
       ;;
     *)
     echo Not a valid choice!
@@ -206,11 +206,11 @@ pyca_func () {
   case "$process" in
     "1" | "-e" | "--e" | "-E" | "--E")
       clear
-      ./cryptography-WIP/pyca/encrypt.py
+      ./cryptography/pyca/encrypt.py
       ;;
     "2" | "-d" | "--d" | "-D" | "--D")
       clear
-      ./cryptography-WIP/pyca/decrypt.py
+      ./cryptography/pyca/decrypt.py
       ;;
     *)
     echo Not a valid choice!
@@ -232,11 +232,11 @@ zip_func () {
   case "$process" in
     "1" | "-e" | "--e" | "-E" | "--E")
       clear
-      ./cryptography-WIP/zip/zip_encryption.sh
+      ./cryptography/zip/zip_encryption.sh
       ;;
     "2" | "-d" | "--d" | "-D" | "--D")
       clear
-      ./cryptography-WIP/zip/zip_decryption.sh
+      ./cryptography/zip/zip_decryption.sh
       ;;
     *)
     echo Not a valid choice!
@@ -417,11 +417,11 @@ else
           case "$3" in
             "1" | "-e" | "--e" | "-E" | "--E")
               clear
-              ./cryptography-WIP/ccrypt/ccrypt_encryption.sh
+              ./cryptography/ccrypt/ccrypt_encryption.sh
               ;;
             "2" | "-d" | "--d" | "-D" | "--D")
               clear
-              ./cryptography-WIP/ccrypt/ccrypt_decryption.sh
+              ./cryptography/ccrypt/ccrypt_decryption.sh
               ;;
             *)
             ccrypt_func
@@ -432,11 +432,11 @@ else
           case "$3" in
             "1" | "-e" | "--e" | "-E" | "--E")
               clear
-              ./cryptography-WIP/gpg/gpg_encryption.sh
+              ./cryptography/gpg/gpg_encryption.sh
               ;;
             "2" | "-d" | "--d" | "-D" | "--D")
               clear
-              ./cryptography-WIP/gpg/gpg_decryption.sh
+              ./cryptography/gpg/gpg_decryption.sh
               ;;
             *)
             gpg_func
@@ -447,11 +447,11 @@ else
           case "$3" in
             "1" | "-e" | "--e" | "-E" | "--E")
               clear
-              ./cryptography-WIP/openssl/openssl_encryption.sh
+              ./cryptography/openssl/openssl_encryption.sh
               ;;
             "2" | "-d" | "--d" | "-D" | "--D")
               clear
-              ./cryptography-WIP/openssl/openssl_decryption.sh
+              ./cryptography/openssl/openssl_decryption.sh
               ;;
             *)
             openssl_func
@@ -462,11 +462,11 @@ else
           case "$3" in
             "1" | "-e" | "--e" | "-E" | "--E")
               clear
-              ./cryptography-WIP/pyca/encrypt.py
+              ./cryptography/pyca/encrypt.py
               ;;
             "2" | "-d" | "--d" | "-D" | "--D")
               clear
-              ./cryptography-WIP/pyca/decrypt.py
+              ./cryptography/pyca/decrypt.py
               ;;
             *)
             pyca_func
@@ -477,11 +477,11 @@ else
           case "$3" in
             "1" | "-e" | "--e" | "-E" | "--E")
               clear
-              ./cryptography-WIP/zip/zip_encryption.sh
+              ./cryptography/zip/zip_encryption.sh
               ;;
             "2" | "-d" | "--d" | "-D" | "--D")
               clear
-              ./cryptography-WIP/zip/zip_decryption.sh
+              ./cryptography/zip/zip_decryption.sh
               ;;
             *)
             zip_func

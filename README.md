@@ -55,7 +55,7 @@ Running with Docker:
 > It's still a bit buggy.
 
 You need:
-[Docker](docker.com) && [Docker-compose](docs.docker.com/compose/)
+[Docker](https://docker.com) && [Docker-compose](https://docs.docker.com/compose/)
 
 > If you have a permission issue when running `docker-compose`, you can use `sudo docker-compose`.
 

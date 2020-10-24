@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python -c "from logos import Logo; Logo('Exists');"
+python3 -c "from logos import Logo; Logo('Exists');"
 sleep 1
 
 choices="file or directory"

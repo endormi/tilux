@@ -17,7 +17,7 @@ function mem {
   exit 0
 }
 
-python -c "from logos import Logo; Logo('Mem Monitoring');"
+python3 -c "from logos import Logo; Logo('Mem Monitoring');"
 sleep 1
 
 trap 'mem' INT

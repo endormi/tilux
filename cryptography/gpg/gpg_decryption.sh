@@ -4,7 +4,7 @@
 # Still a WIP code
 #
 
-python -c "from logos import Logo; Logo('GPG Decryption');"
+python3 -c "from logos import Logo; Logo('GPG Decryption');"
 sleep 1
 
 read -p "What is the filename you want to decrypt? " filename

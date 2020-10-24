@@ -96,7 +96,7 @@ misc () {
 # and still have the chance to run the script instead of being an error.
 info_run() {
   clear
-  python -c "from logos import Logo; Logo('Host');"
+  python3 -c "from logos import Logo; Logo('Host');"
   sleep 1
 
   if [[ "$(which lsb_release)" == "" ]]; then

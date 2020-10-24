@@ -23,17 +23,4 @@ chmod +x ./networking/server_pinging.py
 
 clear
 
-echo -e "${g}Thanks for using Tilux!${w}"
-echo
-
-read -p "Do you want to run the script right now? (Y/n): " input
-input="$(echo ${input} | tr 'A-Z' 'a-z')"
-if [[ $input == "y" ]]; then
-  clear
-  ./tilux
-else
-  echo Exiting...
-  sleep 1
-  clear
-  exit
-fi
+echo -e "${g}Thanks for using Tilux!${w}\n"

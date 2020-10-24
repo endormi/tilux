@@ -50,4 +50,37 @@ Monitoring | Monitor different processes (cpu monitoring, memory monitoring and 
 Networking | IP pinging and server pinging | -i or -s
 Misc | Miscellaneous scripts (check if file or dir exists) | misc
 
+Running with Docker:
+
+> It's still a bit buggy.
+
+You need:
+[Docker](docker.com) && [Docker-compose](docs.docker.com/compose/)
+
+> If you have a permission issue when running `docker-compose`, you can use `sudo docker-compose`.
+
+Build:
+
+```
+docker-compose build
+```
+
+Up:
+
+```
+docker-compose up -d
+```
+
+Execute:
+
+```
+docker-compose exec tilux tilux
+```
+
+Down:
+
+```
+docker-compose down
+```
+
 [Tested](TESTED_ON.md) on (these are manually tested).

@@ -12,13 +12,12 @@
 - [x] - Add cryptography
 - [x] - Update number arguments to - letter
 - [x] - Add the ability to run the script if given 2 arguments in cryptography
-
+- [x] - Dockerize the script
 
 ## In progress
 - [ ] - Add the ability to run the script instantly when running interactively e.g. misc 1
 - [ ] - Monitoring (server monitoring)
 - [ ] - Convert args to lowercase
 - [ ] - Bettering and adding cryptography scripts
-- [ ] - Dockerize the script
 
 ## TBD

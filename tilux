@@ -334,6 +334,10 @@ misc_run() {
   ./misc/exists.sh
 }
 
+if [[ "$(which python3)" == "" ]]; then
+  sudo apt-get upgrade
+  sudo apt-get install python3
+fi
 
 if [[ -z "$1" ]]; then
 

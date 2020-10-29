@@ -2,10 +2,13 @@
 
 import os
 import time
+import sys
+sys.path.append(".")
+from logos import Logo
 
-
-os.system("python ./logos.py")
+Logo('Server Pinging')
 time.sleep(1)
+
 hostname = input("Domain: ")
 response = os.system("ping -c 1 " + hostname)
 

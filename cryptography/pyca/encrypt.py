@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 
 from cryptography.fernet import Fernet
+import sys
+sys.path.append(".")
+from logos import Logo
+import time
+
+Logo('Pyca encryption')
+time.sleep(1)
 
 file = input('What is the key? ')
 f = open(file, 'rb')

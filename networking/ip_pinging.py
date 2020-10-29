@@ -2,6 +2,13 @@
 
 import subprocess
 import os
+import sys
+sys.path.append(".")
+from logos import Logo
+import time
+
+Logo('IP Pinging')
+time.sleep(1)
 
 file = open('/tmp/ip_ping_results.txt', 'w')
 

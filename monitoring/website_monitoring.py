@@ -2,7 +2,13 @@
 
 import requests
 import smtplib
+import sys
+sys.path.append(".")
+from logos import Logo
+import time
 
+Logo('Website Monitoring')
+time.sleep(1)
 
 url = input('Your URL: ')
 PORT = 587

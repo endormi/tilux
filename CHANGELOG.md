@@ -1,6 +1,12 @@
 # Changelog
 
-This will follow `semantic versioning` when the scripts (I still want to add) are added.
+## 0.2.0
+- Fix logos for python scripts
+- Use python3 to explicitly run the script
+- Dockerize the script
+- Add cryptography
+- Add the ability to run the script if given 2 arguments in cryptography
+- Update arguments
 
 ## 0.1.5
 - Add IP pinging, ansi-colors, logos.py & aclrs.py

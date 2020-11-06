@@ -8,7 +8,13 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 ```
 
-**More to come.**
+## What is Tilux?
+
+Tilux is a tool for Linux with a bunch of scripts included. These scripts vary from cryptography to sysamdin.
+
+This is still very much a work in progress.
+
+If you want to see a certain script added, open up a new [issue](https://github.com/endormi/tilux/issues/new/choose) or make a pull request.
 
 Usage:
 

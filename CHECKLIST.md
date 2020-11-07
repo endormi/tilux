@@ -19,5 +19,6 @@
 - [ ] - Monitoring (server monitoring)
 - [ ] - Convert args to lowercase
 - [ ] - Bettering and adding cryptography scripts
+- [ ] - Add ruby scripts and ruby validation
 
 ## TBD

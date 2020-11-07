@@ -14,11 +14,11 @@
 - [x] - Add the ability to run the script if given 2 arguments in cryptography
 - [x] - Dockerize the script
 - [x] - Convert args to lowercase
+- [x] - Convert misc/exists script to ruby from shell
 
 ## In progress
 - [ ] - Add the ability to run the script instantly when running interactively e.g. misc 1
 - [ ] - Monitoring (server monitoring)
 - [ ] - Bettering and adding cryptography scripts
-- [ ] - Add ruby scripts and ruby validation
 
 ## TBD

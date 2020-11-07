@@ -331,7 +331,7 @@ networking_run() {
 
 misc_run() {
   clear
-  ./misc/exists.sh
+  ./misc/exists.rb
 }
 
 
@@ -511,7 +511,7 @@ else
 
     "misc")
       clear
-      ./misc/exists.sh
+      ./misc/exists.rb
       ;;
 
     "help" | "--help" | "--h" | "Help" | "--Help" | "--H")

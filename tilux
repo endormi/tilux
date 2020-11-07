@@ -334,10 +334,22 @@ misc_run() {
   ./misc/exists.sh
 }
 
+
+# Validations
 if [[ "$(which python3)" == "" ]]; then
   sudo apt-get upgrade
   sudo apt-get install python3
 fi
+
+if [[ "$(which ruby)" == "" ]]; then
+  sudo apt-get upgrade
+  sudo apt install ruby ruby-bundler ruby-rspec-core
+fi
+
+if [[ ! -f "Gemfile.lock" ]]; then
+  bundle
+fi
+
 
 if [[ -z "$1" ]]; then
 

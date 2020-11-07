@@ -10,7 +10,7 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 
 ## What is Tilux?
 
-Tilux is a tool for Linux with a bunch of scripts included. These scripts vary from cryptography to sysamdin.
+Tilux is a tool for Linux with a bunch of scripts included.
 
 This is still very much a work in progress.
 

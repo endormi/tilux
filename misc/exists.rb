@@ -21,20 +21,14 @@ fd = gets.chomp.to_s.downcase
 if (fd == "file" || fd == "f")
   print "Path to file: "
   f = gets.chomp.to_s
-  if File.file?(f) == true
-    puts "\n#{f} exists"
-  else
-    puts "\n#{f} doesn't exist"
-  end
+  res = File.file?(f) == true ? "\n#{f} exists" : "\n#{f} doesn't exist"
+  puts res
 
 elsif (fd == "dir" || fd == "directory" || fd == "d")
   print "Path to directory: "
   d = gets.chomp.to_s
-  if File.directory?(d) == true
-    puts "\n#{d} exists"
-  else
-    puts "\n#{d} doesn't exist"
-  end
+  res = File.directory?(d) == true ? "\n#{d} exists" : "\n#{d} doesn't exist"
+  puts res
 else
   puts "\nWrong choice!"
   puts "Use #{choice}"

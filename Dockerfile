@@ -3,9 +3,12 @@ FROM ubuntu:18.04
 MAINTAINER Endormi
 
 RUN apt-get update \
-    && apt-get install -y python3 \
+    && apt install -y python3 \
     python3-pip \
     git \
+    ruby \
+    ruby-bundler \
+    ruby-rspec-core \
     && apt-get clean
 
 RUN git clone https://github.com/endormi/tilux.git \

@@ -20,17 +20,23 @@ chmod +x ./monitoring/website_monitoring.py
 chmod +x ./networking/ip_pinging.py
 chmod +x ./networking/server_pinging.py
 
+chmod +x ./info.rb
 chmod +x ./misc/exists.rb
 
 # Validations
 if [[ "$(which python3)" == "" ]]; then
   sudo apt-get upgrade
-  sudo apt-get install python3
+  sudo apt install python3
 fi
 
 if [[ "$(which ruby)" == "" ]]; then
   sudo apt-get upgrade
   sudo apt install ruby ruby-bundler ruby-rspec-core
+fi
+
+if [[ "$(which lsb_release)" == "" ]]; then
+  sudo apt-get upgrade
+  sudo apt install lsb_release
 fi
 
 if [[ ! -f "Gemfile.lock" ]]; then

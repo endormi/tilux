@@ -23,22 +23,25 @@ chmod +x ./networking/server_pinging.py
 chmod +x ./info.rb
 chmod +x ./misc/exists.rb
 
-# Validations
+# Python3 is required to run the python scripts
 if [[ "$(which python3)" == "" ]]; then
   sudo apt-get upgrade
   sudo apt install python3
 fi
 
+# Ruby is required to run ruby scripts
 if [[ "$(which ruby)" == "" ]]; then
   sudo apt-get upgrade
   sudo apt install ruby ruby-bundler ruby-rspec-core
 fi
 
+# lsb_release is required to run info script
 if [[ "$(which lsb_release)" == "" ]]; then
   sudo apt-get upgrade
   sudo apt install lsb_release
 fi
 
+# Gemfile.lock is required to have required dependencies
 if [[ ! -f "Gemfile.lock" ]]; then
   bundle
 fi

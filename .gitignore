@@ -3,4 +3,3 @@ new_version.sh
 notes.md
 *.pyc
 __pycache__
-Gemfile.lock

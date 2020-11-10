@@ -5,7 +5,7 @@
 - [x] - Add the ability to able to run interactively and with args
 - [x] - Add the ability to run the script even if given 1 argument
 - [x] - Info
-- [x] - Misc. (exists)
+- [x] - Misc. (del, exists, fd)
 - [x] - Networking (server pinging and IP pinging)
 - [x] - Monitoring (CPU, memory and website)
 - [x] - Use better logos for scripts
@@ -16,6 +16,7 @@
 - [x] - Convert args to lowercase
 - [x] - Convert misc/exists script to ruby from shell
 - [x] - Convert info script to ruby from shell
+- [x] - Add sys
 
 ## In progress
 - [ ] - Add the ability to run the script instantly when running interactively e.g. misc 1

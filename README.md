@@ -54,7 +54,8 @@ Info | Gain info about the host (name, OS, kernel version etc. and public IP) | 
 Cryptography | Encryption (-e) and decryption (-d) (ccrypt, gpg, openssl, pyca and zip) | -c, -g, -o, -p or -z
 Monitoring | Monitor different processes (cpu monitoring, memory monitoring and website monitoring) | -c, -m or -w
 Networking | IP pinging and server pinging | -i or -s
-Misc | Miscellaneous scripts (check if file or dir exists) | misc
+System | System scripts (bf backup folder, truncate logs and remove trash, last updated file, parse date and check if you are root) | -b, -c, -l, -p or -r
+Misc | Miscellaneous scripts (delete file or folder, check if file or folder exists and number of files and folders) | -d, -e or -f
 
 Running with Docker:
 

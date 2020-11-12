@@ -1,12 +1,18 @@
 # Changelog
 
+## 0.2.1
+- Add misc/del and misc/fd
+- Add system scripts (bf, clean, last_updated, parse_date and root)
+- Convert misc/exists script to ruby from shell
+- Convert info script to ruby from shells
+- Validate ruby is installed and Gemfile.lock exists
+
 ## 0.2.0
 - Fix logos for python scripts
 - Use python3 to explicitly run the script
 - Dockerize the script
 - Add cryptography
 - Add the ability to run the script if given 2 arguments in cryptography
-- Update arguments
 
 ## 0.1.5
 - Add IP pinging, ansi-colors, logos.py & aclrs.py

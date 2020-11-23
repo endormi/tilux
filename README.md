@@ -16,19 +16,23 @@ This is still very much a work in progress.
 
 If you want to see a certain script added, open up a new [issue](https://github.com/endormi/tilux/issues/new/choose) or make a pull request.
 
-Usage:
+#### Usage:
 
 ```
 git clone https://github.com/endormi/tilux.git
 ```
 
-Install requirements:
+#### Install requirements:
 
 ```
 pip install -r requirements.txt
 ```
 
-Run `usage`:
+```
+bundle
+```
+
+**Run** `usage`:
 
 ```bash
 bash usage
@@ -36,7 +40,7 @@ bash usage
 
 > After running `usage` for the first time, you can use `tilux` instead of `usage`.
 
-Run `tilux`:
+**Run** `tilux`:
 
 ```bash
 ./tilux
@@ -57,7 +61,7 @@ Networking | IP pinging and server pinging | -i or -s
 System | System scripts (bf backup folder, truncate logs and remove trash, last updated file, parse date and check if you are root) | -b, -c, -l, -p or -r
 Misc | Miscellaneous scripts (delete file or folder, check if file or folder exists and number of files and folders) | -d, -e or -f
 
-Running with Docker:
+### Running with Docker:
 
 > It's still a bit buggy.
 
@@ -66,25 +70,25 @@ You need:
 
 > If you have a permission issue when running `docker-compose`, you can use `sudo docker-compose`.
 
-Build:
+#### Build:
 
 ```
 docker-compose build
 ```
 
-Up:
+#### Up:
 
 ```
 docker-compose up -d
 ```
 
-Execute:
+#### Execute:
 
 ```
 docker-compose exec tilux tilux
 ```
 
-Down:
+#### Down:
 
 ```
 docker-compose down

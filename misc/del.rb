@@ -26,8 +26,7 @@ if (c == "file" || c == "f")
     print "Are you sure you want to remove the file? (Y/n) "
     yn = gets.chomp.to_s.downcase
 
-    case yn
-    when "y"
+    if (yn == "y" || yn == "yes")
       puts "\nRemoving file.."
       sleep 1
       File.delete(f)
@@ -48,8 +47,7 @@ elsif (c == "dir" || c == "directory" || c == "d")
     print "Are you sure you want to remove the folder? (Y/n) "
     yn = gets.chomp.to_s.downcase
 
-    case yn
-    when "y"
+    if (yn == "y" || yn == "yes")
       puts "\nRemoving folder.."
       sleep 1
       Dir.delete(d)

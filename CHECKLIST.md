@@ -17,10 +17,11 @@
 - [x] - Convert misc/exists script to ruby from shell
 - [x] - Convert info script to ruby from shell
 - [x] - Add sys
+- [x] - Cryptography scripts
 
 ## In progress
 - [ ] - Add the ability to run the script instantly when running interactively e.g. misc 1
 - [ ] - Monitoring (server monitoring)
-- [ ] - Bettering and adding cryptography scripts
+- [ ] - DBA script
 
 ## TBD

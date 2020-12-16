@@ -52,6 +52,7 @@ help () {
   echo "networking -s: Server pinging"
   echo "system -b: bf (backup folder)"
   echo "system -c: clean (clean system of logs and trash)"
+  echo "system -f: file updated"
   echo "system -l: last updated (file)"
   echo "system -p: parse date"
   echo "system -r: root (check if you are root or not)"
@@ -337,17 +338,21 @@ sys_run() {
       clear
       ./sys/clean.sh
       ;;
-    "3" | "-l" | "--l" | "-L" | "--L")
+    "3" | "-f" | "--f" | "-F" | "--F")
+      clear
+      ./sys/file_updated.rb
+      ;;
+    "4" | "-l" | "--l" | "-L" | "--L")
       clear
       ./sys/last_updated.sh
       ;;
-    "4" | "-p" | "--p" | "-P" | "--P")
+    "5" | "-p" | "--p" | "-P" | "--P")
       clear
-      ./sys/parse_date.sh
+      ./sys/parse_date.rb
       ;;
-    "5" | "-r" | "--r" | "-R" | "--R")
+    "6" | "-r" | "--r" | "-R" | "--R")
       clear
-      ./sys/root.sh
+      ./sys/root.rb
       ;;
     *)
     echo Not a valid choice!
@@ -569,17 +574,21 @@ else
           clear
           ./sys/clean.sh
           ;;
-        "3" | "-l" | "--l" | "-L" | "--L")
+        "3" | "-f" | "--f" | "-F" | "--F")
+          clear
+          ./sys/file_updated.rb
+          ;;
+        "4" | "-l" | "--l" | "-L" | "--L")
           clear
           ./sys/last_updated.sh
           ;;
-        "4" | "-p" | "--p" | "-P" | "--P")
+        "5" | "-p" | "--p" | "-P" | "--P")
           clear
-          ./sys/parse_date.sh
+          ./sys/parse_date.rb
           ;;
-        "5" | "-r" | "--r" | "-R" | "--R")
+        "6" | "-r" | "--r" | "-R" | "--R")
           clear
-          ./sys/root.sh
+          ./sys/root.rb
           ;;
         *)
         sys_run

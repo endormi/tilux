@@ -16,8 +16,6 @@ chmod +x ./monitoring/mem_monitoring.sh
 chmod +x ./sys/bf.sh
 chmod +x ./sys/clean.sh
 chmod +x ./sys/last_updated.sh
-chmod +x ./sys/parse_date.sh
-chmod +x ./sys/root.sh
 
 chmod +x ./cryptography/pyca/encrypt.py
 chmod +x ./cryptography/pyca/decrypt.py
@@ -29,6 +27,9 @@ chmod +x ./networking/server_pinging.py
 chmod +x ./info.rb
 chmod +x ./misc/del.rb
 chmod +x ./misc/exists.rb
+chmod +x ./sys/file_updated.rb
+chmod +x ./sys/parse_date.rb
+chmod +x ./sys/root.rb
 
 # Python3 is required to run the python scripts
 if [[ "$(which python3)" == "" ]]; then

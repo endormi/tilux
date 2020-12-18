@@ -10,22 +10,23 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 
 ## What is Tilux?
 
-Tilux is a tool for Linux with a bunch of scripts included.
+Tilux is a CLI with a bunch of scripts included that are useful and concise.
 
 This is still very much a work in progress.
 
 If you want to see a certain script added, open up a new [issue](https://github.com/endormi/tilux/issues/new/choose) or make a pull request.
 
+## Why?
+
+I as also many others (probably) as well have a ton of useful scripts for Linux, that just happen to be all over
+the system and not in one specific folder. So this is where this project comes handy, everything is in one CLI,.
+
+Also, a big part of the reason why I created this project is to learn, that's why I have used different programming languages when I could've just used one.
+
 #### Usage:
 
 ```
 git clone https://github.com/endormi/tilux.git
-```
-
-#### Install requirements:
-
-```
-pip install -r requirements.txt && bundle
 ```
 
 **Run** `usage`:
@@ -36,10 +37,23 @@ bash usage
 
 > After running `usage` for the first time, you can use `tilux` instead of `usage`.
 
+#### Install requirements:
+
+```
+pip install -r requirements.txt && bundle
+```
+
 **Run** `tilux`:
 
 ```bash
 ./tilux
+```
+
+**Run** `tilux` using arguments:
+> for example (exactly the same choices as running interactively)
+
+```bash
+./tilux monitoring -c
 ```
 
 `--help`:
@@ -54,8 +68,7 @@ Info | Gain info about the host (name, OS, kernel version etc. and public IP) | 
 Cryptography | Encryption (-e) and decryption (-d) (ccrypt, gpg, openssl, pyca and zip) | -c, -g, -o, -p or -z
 Monitoring | Monitor different processes (cpu monitoring, memory monitoring and website monitoring) | -c, -m or -w
 Networking | IP pinging and server pinging | -i or -s
-System | System scripts (bf backup folder, truncate logs and remove trash, file updated, last updated file, parse date and check if you are root) | -b, -c, -f, -l, -p or -r
-Misc | Miscellaneous scripts (delete file or folder, check if file or folder exists and number of files and folders) | -d, -e or -f
+System | System scripts (bf backup folder, truncate logs and remove trash, delete file or folder, check if file or folder exists, number of files and folders, file updated, file size, last updated file, parse date and check if you are root) | -b, -c, -d, -e, -f, -fl, -fs, -l, -p or -r
 
 ### Running with Docker:
 

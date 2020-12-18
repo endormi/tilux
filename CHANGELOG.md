@@ -1,9 +1,9 @@
 # Changelog
 
 ## 0.2.1
-- Add misc/del and misc/fd
+- Add sys/del and sys/fd
 - Add system scripts (bf, clean, last_updated, parse_date and root)
-- Convert misc/exists script to ruby from shell
+- Convert sys/exists script to ruby from shell
 - Convert info script to ruby from shells
 - Validate ruby is installed and Gemfile.lock exists
 

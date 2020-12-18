@@ -28,7 +28,9 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 
 ${y}$version ${w}by Endormi \e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a"
-sleep 3
+sleep 1
+
+prompt=$(echo -e "${g}tilux~# ${w}")
 
  # I used a function since i'm using the same text multiple times
 help () {
@@ -52,13 +54,14 @@ help () {
   echo "networking -s: Server pinging"
   echo "system -b: bf (backup folder)"
   echo "system -c: clean (clean system of logs and trash)"
-  echo "system -f: file updated"
+  echo "system -d: del (Delete file or directory)"
+  echo "system -e: exists (Check if file or dir exists)"
+  echo "system -f: fd (number of files and folders)"
+  echo "system -fl: file updated"
+  echo "system -fs: file size"
   echo "system -l: last updated (file)"
   echo "system -p: parse date"
   echo "system -r: root (check if you are root or not)"
-  echo "misc -d: del (Delete file or directory)"
-  echo "misc -e: exists (Check if file or dir exists)"
-  echo -e "misc -f: fd (number of files and folders)\n"
   echo -n "Press [ENTER] to continue..."
   read
 }
@@ -89,15 +92,17 @@ sys () {
   echo -e "\\e[0;47m${bl}System\\e[0m${w}"
   echo "-b: bf (backup folder)"
   echo "-c: clean (clean system of logs and trash)"
+  echo "-d: del (delete file or directory)"
+  echo "-e: exists (file or directory)"
+  echo "-f: fd (number of files and folders"
+  echo "-fl: file updated"
+  echo "-fs: file size"
   echo "-l: last updated (file)"
   echo "-p: parse date"
   echo -e "-r: root (check if you are root or not)\n"
 }
 misc () {
   echo -e "\\e[0;47m${bl}Misc.\\e[0m${w}"
-  echo "-d: del (delete file or directory)"
-  echo "-e: exists (file or directory)"
-  echo -e "-f: fd (number of files and folders)\n"
 }
 
 
@@ -109,13 +114,19 @@ info_run() {
   ./info.rb
 }
 
+# didn't want to start struggling with adding python to c code
+run_fs() {
+  python3 -c "from logos import Logo; Logo('FS');"
+  ./fs
+}
+
 ccrypt_func () {
   cmd="-e or -d"
   clear
   echo -e "\\e[0;47m${bl}ccrypt\\e[0m${w}"
   echo "-e: Encryption"
   echo -e "-d: Decryption\n"
-  read -p "Type in your choice: " process
+  read -p "${prompt}" process
   echo
 
   case "$process" in
@@ -141,7 +152,7 @@ gpg_func () {
   echo -e "\\e[0;47m${bl}GPG\\e[0m${w}"
   echo "-e: Encryption"
   echo -e "-d: Decryption\n"
-  read -p "Type in your choice: " process
+  read -p "${prompt}" process
   echo
 
   case "$process" in
@@ -167,7 +178,7 @@ openssl_func () {
   echo -e "\\e[0;47m${bl}Openssl\\e[0m${w}"
   echo "-e: Encryption"
   echo -e "-d: Decryption\n"
-  read -p "Type in your choice: " process
+  read -p "${prompt}" process
   echo
 
   case "$process" in
@@ -193,7 +204,7 @@ pyca_func () {
   echo -e "\\e[0;47m${bl}Pyca\\e[0m${w}"
   echo "-e: Encryption"
   echo -e "-d: Decryption\n"
-  read -p "Type in your choice: " process
+  read -p "${prompt}" process
   echo
 
   case "$process" in
@@ -219,7 +230,7 @@ zip_func () {
   echo -e "\\e[0;47m${bl}Zip\\e[0m${w}"
   echo "-e: Encryption"
   echo -e "-d: Decryption\n"
-  read -p "Type in your choice: " process
+  read -p "${prompt}" process
   echo
 
   case "$process" in
@@ -243,7 +254,7 @@ cryptography_run() {
   cmd="-c, -g, -o or -p"
   clear
   cryptography
-  read -p "Type in your choice: " input_process
+  read -p "${prompt}" input_process
   echo
 
   case "$input_process" in
@@ -274,7 +285,7 @@ monitoring_run() {
   cmd="-c, -m or -w"
   clear
   monitoring
-  read -p "Type in your choice: " input_process
+  read -p "${prompt}" input_process
   echo
 
   case "$input_process" in
@@ -302,7 +313,7 @@ networking_run() {
   cmd="-i or -s"
   clear
   networking
-  read -p "Type in your choice: " input_process
+  read -p "${prompt}" input_process
   echo
 
   case "$input_process" in
@@ -323,10 +334,10 @@ networking_run() {
 }
 
 sys_run() {
-  cmd="-b, -c, -l, -p or -r"
+  cmd="-b, -c, -d, -e, -f, -fl, -fs, -l, -p or -r"
   clear
   sys
-  read -p "Type in your choice: " input_process
+  read -p "${prompt}" input_process
   echo
 
   case "$input_process" in
@@ -338,24 +349,40 @@ sys_run() {
       clear
       ./sys/clean.sh
       ;;
-    "3" | "-f" | "--f" | "-F" | "--F")
+    "3" | "-d" | "--d" | "-D" | "--D")
+      clear
+      ./sys/del.rb
+      ;;
+    "4" | "-e" | "--e" | "-E" | "--E")
+      clear
+      ./sys/exists.rb
+      ;;
+    "5" | "-f" | "--f" | "-F" | "--F")
+      clear
+      ./sys/fd.py
+      ;;
+    "6" | "-fl" | "--fl" | "-Fl" | "--Fl" | "-FL" | "--FL")
       clear
       ./sys/file_updated.rb
       ;;
-    "4" | "-l" | "--l" | "-L" | "--L")
+    "7" | "-fs" | "--fs" | "-Fs" | "--Fs" | "-FS" | "--FS")
+      clear
+      run_fs
+      ;;
+    "8" | "-l" | "--l" | "-L" | "--L")
       clear
       ./sys/last_updated.sh
       ;;
-    "5" | "-p" | "--p" | "-P" | "--P")
+    "9" | "-p" | "--p" | "-P" | "--P")
       clear
       ./sys/parse_date.rb
       ;;
-    "6" | "-r" | "--r" | "-R" | "--R")
+    "10" | "-r" | "--r" | "-R" | "--R")
       clear
       ./sys/root.rb
       ;;
     *)
-    echo Not a valid choice!
+    echo "Not a valid choice!"
     echo Use $cmd
     exit
     ;;
@@ -363,28 +390,12 @@ sys_run() {
 }
 
 misc_run() {
-  cmd="-d, -e or -f"
-  clear
-  misc
-  read -p "Type in your choice: " input_process
-  echo
-
   case "$input_process" in
-    "1" | "-d" | "--d" | "-D" | "--D")
+    "1")
       clear
-      ./misc/del.rb
-      ;;
-    "2" | "-e" | "--e" | "-E" | "--E")
-      clear
-      ./misc/exists.rb
-      ;;
-    "3" | "-f" | "--f" | "-F" | "--F")
-      clear
-      ./misc/fd.py
+      :
       ;;
     *)
-    echo Not a valid choice!
-    echo Use $cmd
     exit
     ;;
   esac
@@ -399,14 +410,14 @@ if [[ -z "$1" ]]; then
   monitoring
   networking
   sys
-  misc
+  # misc
   echo -e "\\e[0;47m${bl}--help\\e[0m${w}"
   echo -e "How to use Tilux?\n"
-  list_of_commands="Info, Cryptography, Monitoring, Networking, Sys, Misc && --help"
+  list_of_commands="Info, Cryptography, Monitoring, Networking, Sys && --help"
 
   sleep .7
   echo Choices: $list_of_commands
-  read -p "Type in your choice: " choice
+  read -p "${prompt}" choice
   choice="$(echo ${choice} | tr 'A-Z' 'a-z')"
 
   if [[ $choice == "monitoring" ]]; then
@@ -424,8 +435,8 @@ if [[ -z "$1" ]]; then
   elif [[ $choice == "system" || $choice == "sys" ]]; then
     sys_run
 
-  elif [[ $choice == "misc" || $choice == "miscellaneous" || $choice == "misc." ]]; then
-    misc_run
+#  elif [[ $choice == "misc" || $choice == "miscellaneous" || $choice == "misc." ]]; then
+#    misc_run
 
   elif [[ $choice == "help" || $choice == "--help" || $choice == "--h" ]]; then
     clear
@@ -574,19 +585,35 @@ else
           clear
           ./sys/clean.sh
           ;;
-        "3" | "-f" | "--f" | "-F" | "--F")
+        "3" | "-d" | "--d" | "-D" | "--D")
+          clear
+          ./sys/del.rb
+          ;;
+        "4" | "-e" | "--e" | "-E" | "--E")
+          clear
+          ./sys/exists.rb
+          ;;
+        "5" | "-f" | "--f" | "-F" | "--F")
+          clear
+          ./sys/fd.py
+          ;;
+        "6" | "-fl" | "--fl" | "-Fl" | "--Fl" | "-FL" | "--FL")
           clear
           ./sys/file_updated.rb
           ;;
-        "4" | "-l" | "--l" | "-L" | "--L")
+        "7" | "-fs" | "--fs" | "-Fs" | "--Fs" | "-FS" | "--FS")
+          clear
+          run_fs
+          ;;
+        "8" | "-l" | "--l" | "-L" | "--L")
           clear
           ./sys/last_updated.sh
           ;;
-        "5" | "-p" | "--p" | "-P" | "--P")
+        "9" | "-p" | "--p" | "-P" | "--P")
           clear
           ./sys/parse_date.rb
           ;;
-        "6" | "-r" | "--r" | "-R" | "--R")
+        "10" | "-r" | "--r" | "-R" | "--R")
           clear
           ./sys/root.rb
           ;;
@@ -596,32 +623,24 @@ else
       esac
       ;;
 
-    "misc")
-      case "$2" in
-        "1" | "-d" | "--d" | "-D" | "--D")
-          clear
-          ./misc/del.rb
-          ;;
-        "2" | "-e" | "--e" | "-E" | "--E")
-          clear
-          ./misc/exists.rb
-          ;;
-        "3" | "-f" | "--f" | "-F" | "--F")
-          clear
-          ./misc/fd.py
-          ;;
-        *)
-        misc_run
-          ;;
-        esac
-        ;;
+#    "misc")
+#      case "$2" in
+#        "1")
+#          clear
+#          :
+#          ;;
+#        *)
+#        misc_run
+#          ;;
+#        esac
+#        ;;
 
     "help" | "--help" | "--h" | "Help" | "--Help" | "--H")
       clear
       help
       ;;
     *)
-    echo Not a valid choice!
+    echo "Not a valid choice!"
     echo Use $command
     exit
       ;;

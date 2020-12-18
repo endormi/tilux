@@ -14,7 +14,7 @@
 - [x] - Add the ability to run the script if given 2 arguments in cryptography
 - [x] - Dockerize the script
 - [x] - Convert args to lowercase
-- [x] - Convert misc/exists script to ruby from shell
+- [x] - Convert sys/exists script to ruby from shell
 - [x] - Convert info script to ruby from shell
 - [x] - Add sys
 - [x] - Cryptography scripts

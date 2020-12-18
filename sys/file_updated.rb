@@ -16,5 +16,9 @@ RubyPython.stop
 print "Filename: "
 f = gets.chomp.to_s
 
-ft = File.mtime("#{f}").strftime("%d/%m/%Y %H:%M")
-puts "File updated: #{ft}"
+if (File.file?(f) == true)
+  ft = File.mtime("#{f}").strftime("%d/%m/%Y %H:%M")
+  puts "File updated: #{ft}"
+else
+  puts "#{f} doesn't exist."
+end

@@ -62,45 +62,6 @@ pip install -r requirements.txt && bundle
 ./tilux --help
 ```
 
-Type | About | Choices
-:------:|-----------|:------:
-Info | Gain info about the host (name, OS, kernel version etc. and public IP) | info
-Cryptography | Encryption (-e) and decryption (-d) (ccrypt, gpg, openssl, pyca and zip) | -c, -g, -o, -p or -z
-Monitoring | Monitor different processes (cpu monitoring, memory monitoring and website monitoring) | -c, -m or -w
-Networking | IP pinging and server pinging | -i or -s
-System | System scripts (bf backup folder, truncate logs and remove trash, delete file or folder, check if file or folder exists, number of files and folders, file updated, file size, last updated file, parse date and check if you are root) | -b, -c, -d, -e, -f, -fl, -fs, -l, -p or -r
-
-### Running with Docker:
-
-> It's still a bit buggy.
-
-You need:
-[Docker](https://docker.com) && [Docker-compose](https://docs.docker.com/compose/)
-
-> If you have a permission issue when running `docker-compose`, you can use `sudo docker-compose`.
-
-#### Build:
-
-```
-docker-compose build
-```
-
-#### Up:
-
-```
-docker-compose up -d
-```
-
-#### Execute:
-
-```
-docker-compose exec tilux tilux
-```
-
-#### Down:
-
-```
-docker-compose down
-```
+To see the commands to use and how to run using Docker, click [here](docs/README.md).
 
 [Tested](TESTED_ON.md) on (these are manually tested).

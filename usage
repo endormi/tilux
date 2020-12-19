@@ -31,8 +31,7 @@ chmod +x ./sys/file_updated.rb
 chmod +x ./sys/parse_date.rb
 chmod +x ./sys/root.rb
 
-# compiling C files
-gcc sys/fs.c -o fs
+chmod +x ./proc_script.rb
 
 # Python3 is required to run the python scripts
 if [[ "$(which python3)" == "" ]]; then
@@ -52,9 +51,21 @@ if [[ "$(which lsb_release)" == "" ]]; then
   sudo apt install lsb_release
 fi
 
+# required for compiling C and C++ files
+if [ "$(which gcc)" == "" ] || [ "$(which g++)" == "" ]; then
+  sudo apt-get upgrade
+  sudo apt install build-essential
+fi
+
 if [[ ! -f "Gemfile.lock" ]]; then
   bundle
 fi
+
+# compiling C files
+gcc sys/fs.c -o fs
+
+# compiling C++ file
+g++ proc.cpp -o proc
 
 
 clear

@@ -3,4 +3,7 @@ new_version.sh
 notes.md
 *.pyc
 __pycache__
+
+# compiled c/c++ files
 fs
+proc

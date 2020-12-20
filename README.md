@@ -8,6 +8,10 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 ```
 
+![v](https://img.shields.io/badge/tilux-v.0.2.1-blue)
+[![Travis (.org) branch](https://img.shields.io/travis/endormi/tilux/master)](https://travis-ci.org/github/endormi/tilux)
+[![License](https://img.shields.io/github/license/endormi/tilux)](LICENSE)
+
 ## What is Tilux?
 
 Tilux is a CLI with a bunch of scripts included that are useful and concise.
@@ -65,3 +69,7 @@ pip install -r requirements.txt && bundle install
 To see the commands to use and how to run using Docker, click [here](docs/README.md).
 
 [Tested](TESTED_ON.md) on (these are manually tested).
+
+## License
+
+The source code is released under the [MIT License](LICENSE).

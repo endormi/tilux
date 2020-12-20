@@ -63,6 +63,7 @@ fi
 
 # compiling C files
 gcc sys/fs.c -o fs
+gcc spec.c -o spec
 
 # compiling C++ file
 g++ proc.cpp -o proc

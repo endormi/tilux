@@ -60,5 +60,15 @@ end
 
 print "Python3 version: ", `python3 -V`
 sleep 1
-print "Ruby version: ", `ruby -v`
+print "Ruby version: ", `ruby -v`, "\n"
 sleep 1
+
+
+print "Do you also want to check the computer specs? (Y/n) "
+choice = gets.chomp.to_s.downcase
+
+if (choice == "y" || choice == "yes")
+  print `./spec`
+else
+  exit
+end

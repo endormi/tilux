@@ -7,3 +7,4 @@ __pycache__
 # compiled c/c++ files
 fs
 proc
+spec

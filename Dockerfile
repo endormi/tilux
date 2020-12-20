@@ -2,10 +2,14 @@ FROM ubuntu:18.04
 
 MAINTAINER Endormi
 
+WORKDIR /usr/src/app
+
 RUN apt-get update \
     && apt install -y python3 \
     python3-pip \
     git \
+    sudo \
+    lsb-core \
     ruby \
     ruby-bundler \
     ruby-rspec-core \
@@ -13,14 +17,24 @@ RUN apt-get update \
     && apt-get clean
 
 RUN git clone https://github.com/endormi/tilux.git \
-    && cd tilux \
-    && bash usage
+    && cd tilux
 
 COPY . ./
 
+RUN bash usage
+
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-RUN bundle install
+ENV BUNDLER_VERSION=2.1.4
+
+# Needed to get rid of "You must use Bundler 2 or greater with this lockfile" error
+RUN gem sources -a https://rubygems.org
+RUN gem install bundler -v $BUNDLER_VERSION
+
+ENV GEM_HOME /usr/local/bundle
+# You need to be root in order to run certain scripts
+ENV BUNDLE_SILENCE_ROOT_WARNING=1 \
+  BUNDLE_APP_CONFIG="$GEM_HOME"
 
 # Keep the container running
 CMD exec /bin/bash -c "sleep infinity & wait"

@@ -18,10 +18,13 @@
 - [x] - Convert info script to ruby from shell
 - [x] - Add sys
 - [x] - Cryptography scripts
+- [x] - Add proc to check how long a script takes to run
 
 ## In progress
 - [ ] - Add the ability to run the script instantly when running interactively e.g. misc 1
 - [ ] - Monitoring (server monitoring)
 - [ ] - DBA script
+- [ ] - Fix the docker-compose exec command (it sometimes works sometimes doesn't)
+- [ ] - Spec script
 
 ## TBD

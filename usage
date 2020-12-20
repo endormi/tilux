@@ -48,7 +48,7 @@ fi
 # lsb_release is required to run info script
 if [[ "$(which lsb_release)" == "" ]]; then
   sudo apt-get upgrade
-  sudo apt install lsb_release
+  sudo apt install lsb-core
 fi
 
 # required for compiling C and C++ files

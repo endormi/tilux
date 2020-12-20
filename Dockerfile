@@ -20,7 +20,7 @@ COPY . ./
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-RUN bundle
+RUN bundle install
 
 # Keep the container running
 CMD exec /bin/bash -c "sleep infinity & wait"

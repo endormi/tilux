@@ -40,7 +40,7 @@ bash usage
 #### Install requirements:
 
 ```
-pip install -r requirements.txt && bundle
+pip install -r requirements.txt && bundle install
 ```
 
 **Run** `tilux`:

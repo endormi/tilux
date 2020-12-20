@@ -10,10 +10,11 @@ RUN apt-get update \
     git \
     sudo \
     lsb-core \
-    ruby \
+    ruby-dev \
     ruby-bundler \
     ruby-rspec-core \
     build-essential \
+    make \
     && apt-get clean
 
 RUN git clone https://github.com/endormi/tilux.git \
@@ -35,6 +36,8 @@ ENV GEM_HOME /usr/local/bundle
 # You need to be root in order to run certain scripts
 ENV BUNDLE_SILENCE_ROOT_WARNING=1 \
   BUNDLE_APP_CONFIG="$GEM_HOME"
+
+RUN bundle install
 
 # Keep the container running
 CMD exec /bin/bash -c "sleep infinity & wait"

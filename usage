@@ -42,7 +42,7 @@ fi
 # Ruby is required to run ruby scripts
 if [[ "$(which ruby)" == "" ]]; then
   sudo apt-get upgrade
-  sudo apt install ruby ruby-bundler ruby-rspec-core
+  sudo apt install ruby-dev ruby-bundler ruby-rspec-core
 fi
 
 # lsb_release is required to run info script
@@ -58,7 +58,7 @@ if [ "$(which gcc)" == "" ] || [ "$(which g++)" == "" ]; then
 fi
 
 if [[ ! -f "Gemfile.lock" ]]; then
-  bundle
+  bundle install
 fi
 
 # compiling C files

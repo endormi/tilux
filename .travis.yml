@@ -17,6 +17,7 @@ before_script:
 
 script:
   - docker-compose up -d
+  # - docker-compose exec tilux tilux
 
 after_script:
   - docker-compose down

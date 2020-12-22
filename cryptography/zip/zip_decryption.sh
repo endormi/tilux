@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python3 -c "from logos import Logo; Logo('Zip Decryption');"
+python3 -c "from tools.logos import Logo; Logo('Zip Decryption');"
 sleep 1
 
 if [[ "$(which unzip)" == "" ]]; then

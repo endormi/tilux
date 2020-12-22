@@ -11,10 +11,10 @@
 
 comment
 
-# `resize -s` doesn't work, so need to figure out a way to get screen size bigger
-
 # ANSI-colors
-source ansi-colors
+source tools/ansi-colors
+
+source tools/funcs
 
 version="v.0.2.1"
 clear
@@ -32,83 +32,7 @@ sleep 1
 
 prompt=$(echo -e "${g}tilux~# ${w}")
 
- # I used a function since i'm using the same text multiple times
-help () {
-  echo -e "\\e[0;47m${bl}Help\\e[0m${w}\n"
-  echo Interactive:
-  echo -e "Running the files interactively ./tilux and then follow the choices\n"
-  echo Args:
-  echo "Running the files with args ./tilux (and then the argument e.g. cryptography -c -e)"
-  echo -e "Note: The uppercase doesn't work currently with args\n"
 
-  echo "info: host (name, OS, kernel version, DNS domain and local IP address)"
-  echo "cryptography -c: ccrypt -e (for encryption) or -d (for decryption)"
-  echo "cryptography -g: GPG -e (for encryption) or -d (for decryption)"
-  echo "cryptography -o: Openssl -e (for encryption) or -d (for decryption)"
-  echo "cryptography -p: Pyca -e (for encryption) or -d (for decryption)"
-  echo "cryptography -z: Zip -e (for encryption) or -d (for decryption)"
-  echo "monitoring -c: monitoring cpu processes"
-  echo "monitoring -m: monitoring memory consumption"
-  echo "monitoring -w: monitoring website (if it's up and if not it sends an email)"
-  echo "networking -i: IP pinging"
-  echo "networking -s: Server pinging"
-  echo "system -b: bf (backup folder)"
-  echo "system -c: clean (clean system of logs and trash)"
-  echo "system -d: del (Delete file or directory)"
-  echo "system -e: exists (Check if file or dir exists)"
-  echo "system -f: fd (number of files and folders)"
-  echo "system -fl: file updated"
-  echo "system -fs: file size"
-  echo "system -l: last updated (file)"
-  echo "system -p: parse date"
-  echo "system -r: root (check if you are root or not)"
-  echo -n "Press [ENTER] to continue..."
-  read
-}
-info () {
-  echo -e "\\e[0;47m${bl}Info\\e[0m${w}"
-  echo -e "Host (name, OS, kernel version & more)\n"
-}
-cryptography () {
-  echo -e "\\e[0;47m${bl}Cryptography\\e[0m${w}"
-  echo "cryptography -c: ccrypt"
-  echo "cryptography -g: GPG"
-  echo "cryptography -o: Openssl"
-  echo "cryptography -p: Pyca"
-  echo -e "cryptography -z: Zip\n"
-}
-monitoring () {
-  echo -e "\\e[0;47m${bl}Monitoring\\e[0m${w}"
-  echo "-c: cpu_monitoring"
-  echo "-m: mem_monitoring"
-  echo -e "-w: website_monitoring\n"
-}
-networking () {
-  echo -e "\\e[0;47m${bl}Networking\\e[0m${w}"
-  echo "-i: ip_pinging"
-  echo -e "-s: server_pinging\n"
-}
-sys () {
-  echo -e "\\e[0;47m${bl}System\\e[0m${w}"
-  echo "-b: bf (backup folder)"
-  echo "-c: clean (clean system of logs and trash)"
-  echo "-d: del (delete file or directory)"
-  echo "-e: exists (file or directory)"
-  echo "-f: fd (number of files and folders"
-  echo "-fl: file updated"
-  echo "-fs: file size"
-  echo "-l: last updated (file)"
-  echo "-p: parse date"
-  echo -e "-r: root (check if you are root or not)\n"
-}
-misc () {
-  echo -e "\\e[0;47m${bl}Misc.\\e[0m${w}"
-}
-
-
-# Why?
-# I wanted to have the option to run using args e.g ./tilux misc
-# and still have the chance to run the script instead of being an error.
 info_run() {
   clear
   ./info.rb
@@ -116,7 +40,7 @@ info_run() {
 
 # didn't want to start struggling with adding python to c code
 run_fs() {
-  python3 -c "from logos import Logo; Logo('FS');"
+  python3 -c "from tools.logos import Logo; Logo('FS');"
   ./fs
 }
 

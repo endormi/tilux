@@ -3,7 +3,7 @@
 import requests
 import smtplib
 import sys
-sys.path.append(".")
+sys.path.append("./tools")
 from logos import Logo
 import time
 

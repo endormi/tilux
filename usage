@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ansi-colors
+source tools/ansi-colors
 
 chmod +x tilux
 chmod +x ./cryptography/ccrypt/ccrypt_encryption.sh

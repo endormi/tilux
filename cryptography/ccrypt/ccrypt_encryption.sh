@@ -4,7 +4,7 @@
 # Still a WIP code
 #
 
-python3 -c "from logos import Logo; Logo('CCRYPT Encryption');"
+python3 -c "from tools.logos import Logo; Logo('CCRYPT Encryption');"
 
 if [[ "$(which ccrypt)" == "" ]]; then
   sudo apt-get upgrade

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python3 -c "from logos import Logo; Logo('BF');"
+python3 -c "from tools.logos import Logo; Logo('BF');"
 
 bu=`date +%d-%m-%y`
 read -p "Type in the folder you want to backup: " src

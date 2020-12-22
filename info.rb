@@ -10,7 +10,7 @@ require "net/http"
 RubyPython.start
 
   sys = RubyPython.import("sys")
-  sys.path.append(".")
+  sys.path.append("./tools")
   lg = RubyPython.import("logos")
   lg.Logo("Host")
 

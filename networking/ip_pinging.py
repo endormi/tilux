@@ -3,7 +3,7 @@
 import subprocess
 import os
 import sys
-sys.path.append(".")
+sys.path.append("./tools")
 from logos import Logo
 import time
 

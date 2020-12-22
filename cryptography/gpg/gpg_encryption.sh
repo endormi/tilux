@@ -4,7 +4,7 @@
 # Still a WIP code
 #
 
-python3 -c "from logos import Logo; Logo('GPG Encryption');"
+python3 -c "from tools.logos import Logo; Logo('GPG Encryption');"
 
 read -p "What is your name? " your_name
 read -p "What is the filename? " file

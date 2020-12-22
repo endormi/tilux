@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python3 -c "from logos import Logo; Logo('Openssl Encryption');"
+python3 -c "from tools.logos import Logo; Logo('Openssl Encryption');"
 sleep 1
 
 if [[ "$(which openssl)" == "" ]]; then

@@ -18,7 +18,7 @@ function cpu {
   exit 0
 }
 
-python3 -c "from logos import Logo; Logo('CPU Monitoring');"
+python3 -c "from tools.logos import Logo; Logo('CPU Monitoring');"
 sleep 1
 
 trap 'cpu' INT

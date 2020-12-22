@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.5
+- Add filesize and spec script
+- Add proc script to check how long a script takes to run
+- Add tools (logos.py, ansi-colors etc.)
+- Add prompt
+- Convert more scripts from shell to ruby
+- Fix Dockerfile and CI
+- Update installation
+- Add badges
+- Add docs
+
 ## 0.2.1
 - Add sys/del and sys/fd
 - Add system scripts (bf, clean, last_updated, parse_date and root)

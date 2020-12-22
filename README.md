@@ -8,7 +8,7 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 ```
 
-![v](https://img.shields.io/badge/tilux-v.0.2.1-blue)
+![v](https://img.shields.io/badge/tilux-v.0.2.5-blue)
 [![Travis (.org) branch](https://img.shields.io/travis/endormi/tilux/master)](https://travis-ci.org/github/endormi/tilux)
 [![License](https://img.shields.io/github/license/endormi/tilux)](LICENSE)
 

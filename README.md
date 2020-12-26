@@ -23,7 +23,7 @@ If you want to see a certain script added, open up a new [issue](https://github.
 ## Why?
 
 I as also many others (probably) as well have a ton of useful scripts for Linux, that just happen to be all over
-the system and not in one specific folder. So this is where this project comes handy, everything is in one CLI,.
+the system and not in one specific folder. So this is where this project comes handy, everything is in one CLI.
 
 Also, a big part of the reason why I created this project is to learn, that's why I have used different programming languages when I could've just used one.
 

@@ -22,7 +22,7 @@ RUN git clone https://github.com/endormi/tilux.git \
 
 COPY . ./
 
-RUN bash usage
+RUN bash build
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 

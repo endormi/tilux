@@ -33,13 +33,13 @@ Also, a big part of the reason why I created this project is to learn, that's wh
 git clone https://github.com/endormi/tilux.git
 ```
 
-**Run** `usage`:
+**Run** `build`:
 
 ```bash
-bash usage
+bash build
 ```
 
-> After running `usage` for the first time, you can use `tilux` instead of `usage`.
+> After running `build` for the first time, you can use `tilux` instead of `build`.
 
 #### Install requirements:
 

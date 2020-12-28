@@ -1,5 +1,7 @@
 github/
 .output/
+push_to_github.sh
+new_version.sh
 *.md
 *.pyc
 __pycache__

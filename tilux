@@ -271,7 +271,7 @@ sys_run() {
       ;;
     "2" | "-c" | "--c" | "-C" | "--C")
       clear
-      ./sys/clean.sh
+      ./sys/clean.rb
       ;;
     "3" | "-d" | "--d" | "-D" | "--D")
       clear
@@ -283,7 +283,7 @@ sys_run() {
       ;;
     "5" | "-f" | "--f" | "-F" | "--F")
       clear
-      ./sys/fd.py
+      ./sys/fd.rb
       ;;
     "6" | "-fl" | "--fl" | "-Fl" | "--Fl" | "-FL" | "--FL")
       clear
@@ -507,7 +507,7 @@ else
           ;;
         "2" | "-c" | "--c" | "-C" | "--C")
           clear
-          ./sys/clean.sh
+          ./sys/clean.rb
           ;;
         "3" | "-d" | "--d" | "-D" | "--D")
           clear
@@ -519,7 +519,7 @@ else
           ;;
         "5" | "-f" | "--f" | "-F" | "--F")
           clear
-          ./sys/fd.py
+          ./sys/fd.rb
           ;;
         "6" | "-fl" | "--fl" | "-Fl" | "--Fl" | "-FL" | "--FL")
           clear

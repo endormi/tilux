@@ -14,7 +14,6 @@ chmod +x ./cryptography/zip/zip_decryption.sh
 chmod +x ./monitoring/cpu_monitoring.sh
 chmod +x ./monitoring/mem_monitoring.sh
 chmod +x ./sys/bf.sh
-chmod +x ./sys/clean.sh
 chmod +x ./sys/last_updated.sh
 
 chmod +x ./cryptography/pyca/encrypt.py
@@ -22,11 +21,12 @@ chmod +x ./cryptography/pyca/decrypt.py
 chmod +x ./monitoring/website_monitoring.py
 chmod +x ./networking/ip_pinging.py
 chmod +x ./networking/server_pinging.py
-chmod +x ./sys/fd.py
 
 chmod +x ./info.rb
+chmod +x ./sys/clean.rb
 chmod +x ./sys/del.rb
 chmod +x ./sys/exists.rb
+chmod +x ./sys/fd.rb
 chmod +x ./sys/file_updated.rb
 chmod +x ./sys/parse_date.rb
 chmod +x ./sys/root.rb

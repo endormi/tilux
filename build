@@ -22,6 +22,7 @@ chmod +x ./monitoring/website_monitoring.py
 chmod +x ./networking/ip_pinging.py
 chmod +x ./networking/server_pinging.py
 
+chmod +x tilux.rb
 chmod +x ./info.rb
 chmod +x ./sys/clean.rb
 chmod +x ./sys/del.rb

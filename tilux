@@ -11,9 +11,7 @@
 
 comment
 
-# ANSI-colors
 source tools/ansi-colors
-
 source tools/funcs
 
 version="v.0.2.5"

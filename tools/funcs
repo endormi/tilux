@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source ansi-colors
-
 # I used a function since i'm using the same text multiple times
 help () {
  echo -e "\\e[0;47m${bl}Help\\e[0m${w}\n"

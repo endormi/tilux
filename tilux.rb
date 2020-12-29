@@ -1,12 +1,11 @@
 #!/usr/bin/ruby
 
-###############################
+########################################
 #
-# => Starting point
-# WIP code
-# Still need to implement everything :D
+# Still a WIP
+# I will be refactoring code quite a bit
 #
-###############################
+########################################
 
 require_relative "tools/col"
 require_relative "tools/catch_exception"
@@ -43,41 +42,343 @@ if (ARGV.empty?)
 
   case c
     when "info"
-      puts("info")
+      system("clear")
+      system("./info.rb")
+
     when "cryptography", "crypto"
-      puts("cryptography")
+      # TODO
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase
+
+      case input
+        when "1", "-c", "--c", "-C", "--C"
+          # TODO
+          print "#{prompt} "
+          i = gets.chomp.to_s.downcase
+
+          case i
+            when "1", "-e", "--e", "-E", "--E"
+              system("clear")
+              system("./cryptography/ccrypt/ccrypt_encryption.sh")
+            when "2", "-d", "--d", "-D", "--D"
+              system("clear")
+              system("./cryptography/ccrypt/ccrypt_decryption.sh")
+            else
+              # TODO
+              puts "Invalid choice!"
+            end
+
+        when "2", "-g", "--g", "-G", "--G"
+          # TODO
+          print "#{prompt} "
+          i = gets.chomp.to_s.downcase
+
+          case i
+            when "1", "-e", "--e", "-E", "--E"
+              system("clear")
+              system("./cryptography/gpg/gpg_encryption.sh")
+            when "2", "-d", "--d", "-D", "--D"
+              system("clear")
+              system("./cryptography/gpg/gpg_decryption.sh")
+            else
+              # TODO
+              puts "Invalid choice!"
+          end
+
+        when "3", "-o", "--o", "-O", "--O"
+          # TODO
+          print "#{prompt} "
+          i = gets.chomp.to_s.downcase
+
+          case i
+            when "1", "-e", "--e", "-E", "--E"
+              system("clear")
+              system("./cryptography/openssl/openssl_encryption.sh")
+            when "2", "-d", "--d", "-D", "--D"
+              system("clear")
+              system("./cryptography/openssl/openssl_decryption.sh")
+            else
+              # TODO
+              puts "Invalid choice!"
+          end
+
+        when "4", "-p", "--p", "-P", "--P"
+          # TODO
+          print "#{prompt} "
+          i = gets.chomp.to_s.downcase
+
+          case i
+            when "1", "-e", "--e", "-E", "--E"
+              system("clear")
+              system("./cryptography/pyca/encrypt.py")
+            when "2", "-d", "--d", "-D", "--D"
+              system("clear")
+              system("./cryptography/pyca/decrypt.py")
+            else
+              # TODO
+              puts "Invalid choice!"
+          end
+
+        when "5", "-z", "--z", "-Z", "--Z"
+          # TODO
+          print "#{prompt} "
+          i = gets.chomp.to_s.downcase
+
+          case i
+            when "1", "-e", "--e", "-E", "--E"
+              system("clear")
+              system("./cryptography/zip/zip_encryption.sh")
+            when "2", "-d", "--d", "-D", "--D"
+              system("clear")
+              system("./cryptography/zip/zip_decryption.sh")
+            else
+              # TODO
+              puts "Invalid choice!"
+          end
+
+        else
+          # TODO
+          puts "Invalid choice"
+        end
+
     when "monitoring"
-      puts("monitoring")
+      # TODO
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase
+
+      case input
+        when "1", "-c", "--c", "-C", "--C"
+          system("clear")
+          system("./monitoring/cpu_monitoring.sh")
+        when "2", "-m", "--m", "-M", "--M"
+          system("clear")
+          system("./monitoring/mem_monitoring.sh")
+        when "3", "-w", "--w", "-W", "--W"
+          system("clear")
+          system("./monitoring/website_monitoring.py")
+        else
+          # TODO
+          puts "Invalid choice"
+      end
+
     when "networking", "net"
-      puts("networking")
+      # TODO
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase
+
+      case input
+        when "1", "-i", "--i", "-I", "--I"
+          system("clear")
+          system("./networking/ip_pinging.py")
+        when "1", "-s", "--s", "-S", "--S"
+          system("clear")
+          system("./networking/server_pinging.py")
+        else
+          # TODO
+          puts "Invalid choice"
+      end
+
     when "sys", "system"
-      puts("system")
+      # TODO
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase
+
+      case input
+        when "1", "-b", "--b", "-B", "--B"
+          system("clear")
+          system("./sys/bf.sh")
+        when "2", "-c", "--c", "-C", "--C"
+          system("clear")
+          system("./sys/clean.rb")
+        when "3", "-d", "--d", "-D", "--D"
+          system("clear")
+          system("./sys/del.rb")
+        when "4", "-e", "--e", "-E", "--E"
+          system("clear")
+          system("./sys/exists.rb")
+        when "5", "-f", "--f", "-F", "--F"
+          system("clear")
+          system("./sys/fd.rb")
+        when "6", "-fl", "--fl", "-Fl", "--Fl", "-FL", "--FL"
+          system("clear")
+          system("./sys/file_updated.rb")
+        when "7", "-fs", "--fs", "-Fs", "--Fs", "-FS", "--FS"
+          system("clear")
+          # TODO
+          system("./fs")
+        when "8", "-l", "--l", "-L", "--L"
+          system("clear")
+          system("./sys/last_updated.sh")
+        when "9", "-p", "--p", "-P", "--P"
+          system("clear")
+          system("./sys/parse_date.rb")
+        when "10", "-r", "--r", "-R", "--R"
+          system("clear")
+          system("./sys/root.rb")
+        else
+          # TODO
+          puts "Invalid choice"
+      end
+
     #when "misc"
     #  puts "misc"
+
     when "help", "--help", "--h"
-      puts("help")
+      puts("no help")
     else
       puts("\nNot a valid choice!")
       puts "Use #{list_of_commands}"
   end
 
-
 else
   case ARGV[0]
     when "info"
-      puts("info")
+        system("clear")
+        system("./info.rb")
+
     when "cryptography", "crypto"
-      puts("cryptography")
+      case ARGV[1]
+        when "1", "-c", "--c", "-C", "--C"
+          case ARGV[2]
+            when "1", "-e", "--e", "-E", "--E"
+              system("clear")
+              system("./cryptography/ccrypt/ccrypt_encryption.sh")
+            when "2", "-d", "--d", "-D", "--D"
+              system("clear")
+              system("./cryptography/ccrypt/ccrypt_decryption.sh")
+            else
+              # TODO
+              puts "Invalid choice!"
+          end
+
+        when "2", "-g", "--g", "-G", "--G"
+          case ARGV[2]
+            when "1", "-e", "--e", "-E", "--E"
+              system("clear")
+              system("./cryptography/gpg/gpg_encryption.sh")
+            when "2", "-d", "--d", "-D", "--D"
+              system("clear")
+              system("./cryptography/gpg/gpg_decryption.sh")
+            else
+              # TODO
+              puts "Invalid choice!"
+          end
+
+        when "3", "-o", "--o", "-O", "--O"
+          case ARGV[2]
+            when "1", "-e", "--e", "-E", "--E"
+              system("clear")
+              system("./cryptography/openssl/openssl_encryption.sh")
+            when "2", "-d", "--d", "-D", "--D"
+              system("clear")
+              system("./cryptography/openssl/openssl_decryption.sh")
+            else
+              # TODO
+              puts "Invalid choice!"
+          end
+
+        when "4", "-p", "--p", "-P", "--P"
+          case ARGV[2]
+            when "1", "-e", "--e", "-E", "--E"
+              system("clear")
+              system("./cryptography/pyca/encrypt.py")
+            when "2", "-d", "--d", "-D", "--D"
+              system("clear")
+              system("./cryptography/pyca/decrypt.py")
+            else
+              # TODO
+              puts "Invalid choice!"
+          end
+
+        when "5", "-z", "--z", "-Z", "--Z"
+          case ARGV[2]
+            when "1", "-e", "--e", "-E", "--E"
+              system("clear")
+              system("./cryptography/zip/zip_encryption.sh")
+            when "2", "-d", "--d", "-D", "--D"
+              system("clear")
+              system("./cryptography/zip/zip_decryption.sh")
+            else
+              # TODO
+              puts "Invalid choice!"
+          end
+        else
+          # TODO
+          puts "Invalid choice"
+      end
+
     when "monitoring"
-      puts("monitoring")
+      case ARGV[1]
+        when "1", "-c", "--c", "-C", "--C"
+          system("clear")
+          system("./monitoring/cpu_monitoring.sh")
+        when "2", "-m", "--m", "-M", "--M"
+          system("clear")
+          system("./monitoring/mem_monitoring.sh")
+        when "3", "-w", "--w", "-W", "--W"
+          system("clear")
+          system("./monitoring/website_monitoring.py")
+        else
+          # TODO
+          puts "Invalid choice"
+      end
+
     when "networking", "net"
-      puts("networking")
+      case ARGV[1]
+        when "1", "-i", "--i", "-I", "--I"
+          system("clear")
+          system("./networking/ip_pinging.py")
+        when "1", "-s", "--s", "-S", "--S"
+          system("clear")
+          system("./networking/server_pinging.py")
+        else
+          # TODO
+          puts "Invalid choice"
+      end
+
     when "sys", "system"
-      puts("sys")
+      case ARGV[1]
+        when "1", "-b", "--b", "-B", "--B"
+          system("clear")
+          system("./sys/bf.sh")
+        when "2", "-c", "--c", "-C", "--C"
+          system("clear")
+          system("./sys/clean.rb")
+        when "3", "-d", "--d", "-D", "--D"
+          system("clear")
+          system("./sys/del.rb")
+        when "4", "-e", "--e", "-E", "--E"
+          system("clear")
+          system("./sys/exists.rb")
+        when "5", "-f", "--f", "-F", "--F"
+          system("clear")
+          system("./sys/fd.rb")
+        when "6", "-fl", "--fl", "-Fl", "--Fl", "-FL", "--FL"
+          system("clear")
+          system("./sys/file_updated.rb")
+        when "7", "-fs", "--fs", "-Fs", "--Fs", "-FS", "--FS"
+          system("clear")
+          # TODO
+          system("./fs")
+        when "8", "-l", "--l", "-L", "--L"
+          system("clear")
+          system("./sys/last_updated.sh")
+        when "9", "-p", "--p", "-P", "--P"
+          system("clear")
+          system("./sys/parse_date.rb")
+        when "10", "-r", "--r", "-R", "--R"
+          system("clear")
+          system("./sys/root.rb")
+        else
+          # TODO
+          puts "Invalid choice"
+      end
+
     #when "misc"
     #  puts("misc")
+
     when "help", "--help", "--h"
-      puts("help")
+      puts("no help yet")
     else
       puts("Not a valid choice!")
   end

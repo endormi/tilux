@@ -26,5 +26,6 @@
 - [ ] - Monitoring (server monitoring)
 - [ ] - DBA script
 - [ ] - Fix the docker-compose exec command (it sometimes works sometimes doesn't)
+- [ ] - Add cybersecurity scripts (not too complex) 
 
 ## TBD

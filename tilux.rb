@@ -22,10 +22,12 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
      888       888   888       o   88.    .8     d8    888b
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 ".green
-print "version #{version}".yellow
+print "version #{version}".light_yellow
 print " by Endormi "
 link="\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a"
 puts link
+
+sleep 1
 
 prompt="tilux~# ".green
 

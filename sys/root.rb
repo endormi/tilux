@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 require "rubypython"
+require_relative "../tools/catch_exception"
 
 
 RubyPython.start

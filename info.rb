@@ -6,6 +6,8 @@ require "socket"
 require "resolv"
 require "net/http"
 
+require_relative "tools/catch_exception"
+
 
 RubyPython.start
 

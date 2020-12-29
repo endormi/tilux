@@ -8,7 +8,8 @@
 #
 ###############################
 
-require_relative 'tools/col.rb'
+require_relative "tools/col"
+require_relative "tools/catch_exception"
 
 
 version="v.0.2.5"

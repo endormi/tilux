@@ -2,6 +2,7 @@
 
 require "rubypython"
 require "date"
+require_relative "../tools/catch_exception"
 
 
 RubyPython.start

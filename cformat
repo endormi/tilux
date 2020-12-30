@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ "$(which clang-format)" == "" ]]; then
+  sudo apt-get upgrade
+  sudo apt install clang-format
+fi
+
+clang-format -i proc.cpp
+clang-format -i sys/fs.c
+clang-format -i spec.c

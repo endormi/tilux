@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source tools/ansi-colors
-
 chmod +x tilux
 chmod +x ./cryptography/ccrypt/ccrypt_encryption.sh
 chmod +x ./cryptography/ccrypt/ccrypt_decryption.sh

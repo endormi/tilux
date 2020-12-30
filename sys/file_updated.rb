@@ -15,7 +15,7 @@ RubyPython.stop
 
 
 print "Filename: "
-f = gets.chomp.to_s
+f = gets.chomp.to_s.strip
 
 if (File.file?(f) == true)
   ft = File.mtime("#{f}").strftime("%d/%m/%Y %H:%M")

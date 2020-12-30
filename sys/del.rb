@@ -21,7 +21,7 @@ c = gets.chomp.to_s.downcase
 
 if (c == "file" || c == "f")
   print "Path to file: "
-  f = gets.chomp.to_s
+  f = gets.chomp.to_s.strip
 
   if File.file?(f) == true
     print "Are you sure you want to remove the file? (Y/n) "
@@ -42,7 +42,7 @@ if (c == "file" || c == "f")
 
 elsif (c == "dir" || c == "directory" || c == "d")
   print "Path to directory: "
-  d = gets.chomp.to_s
+  d = gets.chomp.to_s.strip
 
   if File.directory?(d) == true
     print "Are you sure you want to remove the folder? (Y/n) "

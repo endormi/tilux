@@ -1,10 +1,16 @@
 #include <fcntl.h>
-#include <unistd.h>
+#include <signal.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/stat.h>
+#include <unistd.h>
 
+void handler(int sig)
+{
+    printf("\nExiting\n");
+    exit(sig);
+}
 
 void check_filesize(char filename[])
 {
@@ -23,18 +29,23 @@ void check_filesize(char filename[])
         printf("\nfailed to fstat %s\n", filename);
         exit(EXIT_FAILURE);
     }
-    printf("\nFile: %s is %ld %s\n", filename, statbuf.st_size, "bytes");
+    printf("File: %s is %ld %s\n", filename, statbuf.st_size, "bytes\n");
 }
-
 
 int main()
 {
-    int MAX = 100;
+    signal(SIGINT, handler);
 
-    char f[MAX];
+    while (1)
+    {
+        int MAX = 100;
 
-    printf("Filename: ");
-    scanf("%s", f);
+        char f[MAX];
 
-    check_filesize(f);
+        printf("Filename: ");
+        scanf("%s", f);
+
+        check_filesize(f);
+    }
+    return 0;
 }

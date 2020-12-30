@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# TODO:
+# Fix: some ansi-colors don't work in the ruby version
+
 # I used a function since i'm using the same text multiple times
 help () {
  echo -e "\\e[0;47m${bl}Help\\e[0m${w}\n"
@@ -32,6 +35,10 @@ help () {
  echo "system -r: root (check if you are root or not)"
  echo -n "Press [ENTER] to continue..."
  read
+}
+help2 () {
+  echo -e "\\e[0;47m${bl}--help\\e[0m${w}"
+  echo -e "How to use Tilux?\n"
 }
 info () {
  echo -e "\\e[0;47m${bl}Info\\e[0m${w}"
@@ -72,3 +79,23 @@ sys () {
 misc () {
  echo -e "\\e[0;47m${bl}Misc.\\e[0m${w}"
 }
+
+
+# Required for running in tilux.rb
+if [[ $1 == "help" ]]; then
+  help
+elif [[ $1 == "info" ]]; then
+  info
+elif [[ $1 == "cryptography" ]]; then
+  cryptography
+elif [[ $1 == "monitoring" ]]; then
+  monitoring
+elif [[ $1 == "networking" ]]; then
+  networking
+elif [[ $1 == "sys" ]]; then
+  sys
+elif [[ $1 == "misc" ]]; then
+  misc
+elif [[ $1 == "help2" ]]; then
+  help2
+fi

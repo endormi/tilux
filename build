@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source tools/ansi-colors
+
 chmod +x tilux
 chmod +x ./cryptography/ccrypt/ccrypt_encryption.sh
 chmod +x ./cryptography/ccrypt/ccrypt_decryption.sh
@@ -70,3 +72,5 @@ g++ proc.cpp -o proc
 
 
 clear
+
+echo -e "${g}Thanks for using Tilux!${w}\n"

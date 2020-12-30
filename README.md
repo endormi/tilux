@@ -9,7 +9,7 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 ```
 
 ![v](https://img.shields.io/badge/tilux-v.0.2.5-blue)
-[![Travis (.org) branch](https://img.shields.io/travis/endormi/tilux/master)](https://travis-ci.org/github/endormi/tilux)
+![docker-compose-action-CI](https://github.com/endormi/tilux/workflows/docker-compose-action-CI/badge.svg)
 [![License](https://img.shields.io/github/license/endormi/tilux)](LICENSE)
 
 ## What is Tilux?

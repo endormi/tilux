@@ -15,7 +15,7 @@ RubyPython.stop
 
 
 print "Path to directory: "
-dir = gets.chomp.to_s
+dir = gets.chomp.to_s.strip
 
 if (File.directory?(dir) == false)
   puts "\n#{dir} doesn't exist."
@@ -31,22 +31,21 @@ puts
 
 case c
 when "1", "ns", "-ns", "--ns"
-  # TODO
-  count = `ls -1 #{dir} | wc -l`.to_i
+  count = `find #{dir} -maxdepth 1 -type f | wc -l`.to_i
 
   unless count != 0
-    puts "No files found"
+    puts "No files found!"
   else
-    puts "Found files #{count}"
+    puts "Found files: #{count}"
   end
 
 when "2", "s", "-s", "--s"
   files = Dir.glob(File.join(dir, '**', '*')).select { |file| File.file?(file) }.count
 
   unless files != 0
-    puts "No files found"
+    puts "No files found!"
   else
-    puts "Found files #{files}"
+    puts "Found files: #{files}"
   end
 
 else
@@ -56,7 +55,7 @@ end
 
 folders = `find #{dir} -mindepth 1 -type d | wc -l`.to_i
 if (folders == 0)
-  puts "No folders found"
+  puts "No folders found!"
 else
   puts "Found folders: #{folders}"
 end

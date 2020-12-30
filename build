@@ -34,7 +34,6 @@ chmod +x ./sys/root.rb
 
 chmod +x ./proc_script.rb
 
-chmod +x start_docker
 
 # Python3 is required to run the python scripts
 if [[ "$(which python3)" == "" ]]; then

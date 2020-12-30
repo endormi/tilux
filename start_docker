@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# TODO: Validate that docker exists and docker-compose
+
+docker-compose build
+docker-compose up -d

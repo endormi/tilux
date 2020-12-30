@@ -5,6 +5,7 @@ import os
 import sys
 sys.path.append("./tools")
 from logos import Logo
+import catch_exception
 import time
 
 Logo('IP Pinging')

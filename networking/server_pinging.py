@@ -5,6 +5,7 @@ import time
 import sys
 sys.path.append("./tools")
 from logos import Logo
+import catch_exception
 
 Logo('Server Pinging')
 time.sleep(1)

@@ -108,8 +108,9 @@ def sys_options(c)
     when "6", "-fl", "--fl", "-Fl", "--Fl", "-FL", "--FL"
       sys("./sys/file_updated.rb")
     when "7", "-fs", "--fs", "-Fs", "--Fs", "-FS", "--FS"
-      cmd=%x[python3 -c "from logos import Logo; Logo('FS');"]
-      sys("./fs")
+      system("clear")
+      print `python3 -c "from tools.logos import Logo; Logo('FS');"`
+      system("./fs")
     when "8", "-l", "--l", "-L", "--L"
       sys("./sys/last_updated.sh")
     when "9", "-p", "--p", "-P", "--P"

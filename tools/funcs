@@ -4,6 +4,16 @@
 # Fix: some ansi-colors don't work in the ruby version
 
 # I used a function since i'm using the same text multiple times
+til () {
+  echo -e "  {1} -- Host (name, OS, kernel version & more)"
+  echo "  {2} -- 5 choices for encryption and decryption"
+  echo "  {3} -- monitoring different processes"
+  echo "  {4} -- Pinging networks"
+  echo "  {5} -- System scripts"
+  echo -e "  {--help} -- How to use Tilux?\n"
+}
+
+
 help () {
  echo Interactive:
  echo -e "Running the files interactively ./tilux and then follow the choices\n"
@@ -89,4 +99,6 @@ elif [[ $1 == "misc" ]]; then
   misc
 elif [[ $1 == "help2" ]]; then
   help2
+elif [[ $1 == "til" ]]; then
+  til
 fi

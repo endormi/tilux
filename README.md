@@ -56,7 +56,6 @@ pip install -r requirements.txt && bundle install
 ```
 
 **Run** `tilux` using arguments:
-> for example (exactly the same choices as running interactively)
 
 ```bash
 ./tilux monitoring -c

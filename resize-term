@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cmd_gnome=$(cat /etc/alternatives/x-terminal-emulator | grep exec | grep gnome)
+cmd_xterm=$(cat /etc/alternatives/x-terminal-emulator | grep exec | grep xterm)
+
+[ $cmd_gnome != 0 ] && echo -e "\nResizing terminal.. (this will open a new terminal)" && sleep .5 && gnome-terminal --geometry 150x50 && echo -e "Done!\n" && exit
+[ $cmd_xterm != 0 ] && echo -e "\nResizing terminal.. (this will open a new terminal)" && sleep .5 && xterm -geometry 150x50 && echo -e "Done!\n" && exit

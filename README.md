@@ -20,6 +20,8 @@ This is still very much a work in progress.
 
 If you want to see a certain script added, open up a new [issue](https://github.com/endormi/tilux/issues/new/choose) or make a pull request.
 
+**Note**: This works on Debian-based distros. Other distros are not supported at the moment.
+
 ## Why?
 
 I as also many others (probably) as well have a ton of useful scripts for Linux, that just happen to be all over

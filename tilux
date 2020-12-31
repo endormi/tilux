@@ -1,22 +1,12 @@
-#!/bin/bash
+#!/usr/bin/ruby
 
-<<comment
+require_relative "tools/col"
+require_relative "tools/def"
+require_relative "tools/catch_exception"
 
- Tilux by endormi (v.0.2.5)
-
- You can run the script interactively or by using arguments
-
- For interactive: run ./tilux and follow the choices.
- For args: e.g. ./tilux monitoring -c
-
-comment
-
-source tools/ansi-colors
-source tools/funcs
 
 version="v.0.2.5"
-clear
-echo -e "${g}
+puts "
 ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 8    888    8  888   888          888       8    8888    d8
      888       888   888          888       8     Y888..8P
@@ -24,548 +14,189 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
      888       888   888          888       8     .8PY888.
      888       888   888       o   88.    .8     d8    888b
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
+".green
+print "version".white
+print " #{version}".light_yellow
+print " by Endormi ".white
+link="\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a"
+puts link.white
 
-${y}$version ${w}by Endormi \e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a"
 sleep 1
 
-prompt=$(echo -e "${g}tilux~# ${w}")
+prompt="tilux~# ".green
 
 
-info_run() {
-  clear
-  ./info.rb
-}
+def sys(file)
+  system("clear")
+  system(file)
+end
 
-# didn't want to start struggling with adding python to c code
-run_fs() {
-  python3 -c "from tools.logos import Logo; Logo('FS');"
-  ./fs
-}
+def func_to_run(title, func)
+  system("clear")
+  echo(title)
+  system(func)
+end
 
-ccrypt_func () {
-  cmd="-e or -d"
-  clear
-  echo -e "\\e[0;47m${bl}ccrypt\\e[0m${w}"
-  echo "-e: Encryption"
-  echo -e "-d: Decryption\n"
-  read -p "${prompt}" process
-  echo
-
-  case "$process" in
-    "1" | "-e" | "--e" | "-E" | "--E")
-      clear
-      ./cryptography/ccrypt/ccrypt_encryption.sh
-      ;;
-    "2" | "-d" | "--d" | "-D" | "--D")
-      clear
-      ./cryptography/ccrypt/ccrypt_decryption.sh
-      ;;
-    *)
-    echo Not a valid choice!
-    echo Use $cmd
-    exit
-    ;;
-  esac
-}
-
-gpg_func () {
-  cmd="-e or -d"
-  clear
-  echo -e "\\e[0;47m${bl}GPG\\e[0m${w}"
-  echo "-e: Encryption"
-  echo -e "-d: Decryption\n"
-  read -p "${prompt}" process
-  echo
-
-  case "$process" in
-    "1" | "-e" | "--e" | "-E" | "--E")
-      clear
-      ./cryptography/gpg/gpg_encryption.sh
-      ;;
-    "2" | "-d" | "--d" | "-D" | "--D")
-      clear
-      ./cryptography/gpg/gpg_decryption.sh
-      ;;
-    *)
-    echo Not a valid choice!
-    echo Use $cmd
-    exit
-    ;;
-  esac
-}
-
-openssl_func () {
-  cmd="-e or -d"
-  clear
-  echo -e "\\e[0;47m${bl}Openssl\\e[0m${w}"
-  echo "-e: Encryption"
-  echo -e "-d: Decryption\n"
-  read -p "${prompt}" process
-  echo
-
-  case "$process" in
-    "1" | "-e" | "--e" | "-E" | "--E")
-      clear
-      ./cryptography/openssl/openssl_encryption.sh
-      ;;
-    "2" | "-d" | "--d" | "-D" | "--D")
-      clear
-      ./cryptography/openssl/openssl_decryption.sh
-      ;;
-    *)
-    echo Not a valid choice!
-    echo Use $cmd
-    exit
-    ;;
-  esac
-}
-
-pyca_func () {
-  cmd="-e or -d"
-  clear
-  echo -e "\\e[0;47m${bl}Pyca\\e[0m${w}"
-  echo "-e: Encryption"
-  echo -e "-d: Decryption\n"
-  read -p "${prompt}" process
-  echo
-
-  case "$process" in
-    "1" | "-e" | "--e" | "-E" | "--E")
-      clear
-      ./cryptography/pyca/encrypt.py
-      ;;
-    "2" | "-d" | "--d" | "-D" | "--D")
-      clear
-      ./cryptography/pyca/decrypt.py
-      ;;
-    *)
-    echo Not a valid choice!
-    echo Use $cmd
-    exit
-    ;;
-  esac
-}
-
-zip_func () {
-  cmd="-e or -d"
-  clear
-  echo -e "\\e[0;47m${bl}Zip\\e[0m${w}"
-  echo "-e: Encryption"
-  echo -e "-d: Decryption\n"
-  read -p "${prompt}" process
-  echo
-
-  case "$process" in
-    "1" | "-e" | "--e" | "-E" | "--E")
-      clear
-      ./cryptography/zip/zip_encryption.sh
-      ;;
-    "2" | "-d" | "--d" | "-D" | "--D")
-      clear
-      ./cryptography/zip/zip_decryption.sh
-      ;;
-    *)
-    echo Not a valid choice!
-    echo Use $cmd
-    exit
-    ;;
-  esac
-}
-
-cryptography_run() {
-  cmd="-c, -g, -o or -p"
-  clear
-  cryptography
-  read -p "${prompt}" input_process
-  echo
-
-  case "$input_process" in
-    "1" | "-c" | "--c" | "-C" | "--C")
-      ccrypt_func
-        ;;
-    "2" | "-g" | "--g" | "-G" | "--G")
-      gpg_func
-        ;;
-    "3" | "-o" | "--o" | "-O" | "--O")
-      openssl_func
-        ;;
-    "4" | "-p" | "--p" | "-P" | "--P")
-      pyca_func
-      ;;
-    "5" | "-z" | "--z" | "-Z" | "--Z")
-      zip_func
-      ;;
-    *)
-    echo Not a valid choice!
-    echo Use $cmd
-    exit
-    ;;
-  esac
-}
-
-monitoring_run() {
-  cmd="-c, -m or -w"
-  clear
-  monitoring
-  read -p "${prompt}" input_process
-  echo
-
-  case "$input_process" in
-    "1" | "-c" | "--c" | "-C" | "--C")
-      clear
-      ./monitoring/cpu_monitoring.sh
-      ;;
-    "2" | "-m" | "--m" | "-M" | "--M")
-      clear
-      ./monitoring/mem_monitoring.sh
-      ;;
-    "3" | "-w" | "--w" | "-W" | "--W")
-      clear
-      ./monitoring/website_monitoring.py
-      ;;
-    *)
-    echo Not a valid choice!
-    echo Use $cmd
-    exit
-    ;;
-  esac
-}
-
-networking_run() {
-  cmd="-i or -s"
-  clear
-  networking
-  read -p "${prompt}" input_process
-  echo
-
-  case "$input_process" in
-    "1" | "-i" | "--i" | "-I" | "--I")
-      clear
-      ./networking/ip_pinging.py
-      ;;
-    "2" | "-s" | "--s" | "-S" | "--S")
-      clear
-      ./networking/server_pinging.py
-      ;;
-    *)
-    echo Not a valid choice!
-    echo Use $cmd
-    exit
-    ;;
-  esac
-}
-
-sys_run() {
-  cmd="-b, -c, -d, -e, -f, -fl, -fs, -l, -p or -r"
-  clear
-  sys
-  read -p "${prompt}" input_process
-  echo
-
-  case "$input_process" in
-    "1" | "-b" | "--b" | "-B" | "--B")
-      clear
-      ./sys/bf.sh
-      ;;
-    "2" | "-c" | "--c" | "-C" | "--C")
-      clear
-      ./sys/clean.rb
-      ;;
-    "3" | "-d" | "--d" | "-D" | "--D")
-      clear
-      ./sys/del.rb
-      ;;
-    "4" | "-e" | "--e" | "-E" | "--E")
-      clear
-      ./sys/exists.rb
-      ;;
-    "5" | "-f" | "--f" | "-F" | "--F")
-      clear
-      ./sys/fd.rb
-      ;;
-    "6" | "-fl" | "--fl" | "-Fl" | "--Fl" | "-FL" | "--FL")
-      clear
-      ./sys/file_updated.rb
-      ;;
-    "7" | "-fs" | "--fs" | "-Fs" | "--Fs" | "-FS" | "--FS")
-      clear
-      run_fs
-      ;;
-    "8" | "-l" | "--l" | "-L" | "--L")
-      clear
-      ./sys/last_updated.sh
-      ;;
-    "9" | "-p" | "--p" | "-P" | "--P")
-      clear
-      ./sys/parse_date.rb
-      ;;
-    "10" | "-r" | "--r" | "-R" | "--R")
-      clear
-      ./sys/root.rb
-      ;;
-    *)
-    echo "Not a valid choice!"
-    echo Use $cmd
-    exit
-    ;;
-  esac
-}
-
-misc_run() {
-  case "$input_process" in
-    "1")
-      clear
-      :
-      ;;
-    *)
-    exit
-    ;;
-  esac
-}
+def echo(text)
+  puts text.white
+end
 
 
-if [[ -z "$1" ]]; then
+if (ARGV.empty?)
+  puts "\nWhat script do you want to run?\n".white
+  echo("::Info::")
+  system("bash tools/funcs info")
+  echo("::Cryptography::")
+  system("bash tools/funcs cryptography")
+  echo("::Monitoring::")
+  system("bash tools/funcs monitoring")
+  echo("::Networking::")
+  system("bash tools/funcs networking")
+  echo("::System::")
+  system("bash tools/funcs sys")
+  #echo("misc")
+  #system("bash tools/funcs misc")
+  echo("::--help::")
+  system("bash tools/funcs help2")
 
-  echo -e "\nWhat script do you want to run?\n"
-  info
-  cryptography
-  monitoring
-  networking
-  sys
-  # misc
-  echo -e "\\e[0;47m${bl}--help\\e[0m${w}"
-  echo -e "How to use Tilux?\n"
   list_of_commands="Info, Cryptography, Monitoring, Networking, Sys && --help"
 
-  sleep .7
-  echo Choices: $list_of_commands
-  read -p "${prompt}" choice
-  choice="$(echo ${choice} | tr 'A-Z' 'a-z')"
+  puts "Choices: #{list_of_commands}"
+  print "#{prompt} "
+  c = gets.chomp.to_s.downcase.strip
 
-  if [[ $choice == "monitoring" ]]; then
-    monitoring_run
+  case c
+    when "info"
+      sys("./info.rb")
 
-  elif [[ $choice == "info" ]]; then
-    info_run
+    when "cryptography", "crypto"
+      func_to_run("::Cryptography::", "bash tools/funcs cryptography")
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
 
-  elif [[ $choice == "cryptography" || $choice == "crypto" ]]; then
-    cryptography_run
+      case input
+        when "1", "-c", "--c", "-C", "--C"
+          system("clear")
+          echo("::CCRYPT::")
+          cryptography_encryption()
+          print "#{prompt} "
+          i = gets.chomp.to_s.downcase.strip
 
-  elif [[ $choice == "networking" || $choice == "net" ]]; then
-    networking_run
+          ccrypt_options(i)
 
-  elif [[ $choice == "system" || $choice == "sys" ]]; then
-    sys_run
+        when "2", "-g", "--g", "-G", "--G"
+          system("clear")
+          echo("::GPG::")
+          cryptography_encryption()
+          print "#{prompt} "
+          i = gets.chomp.to_s.downcase.strip
 
-#  elif [[ $choice == "misc" || $choice == "miscellaneous" || $choice == "misc." ]]; then
-#    misc_run
+          gpg_options(i)
 
-  elif [[ $choice == "help" || $choice == "--help" || $choice == "--h" ]]; then
-    clear
-    help
+        when "3", "-o", "--o", "-O", "--O"
+          system("clear")
+          echo("::Openssl::")
+          cryptography_encryption()
+          print "#{prompt} "
+          i = gets.chomp.to_s.downcase.strip
 
-  else
-    echo -e "\nNot a valid choice!"
-    echo Use $list_of_commands
-  fi
+          openssl_options(i)
+
+        when "4", "-p", "--p", "-P", "--P"
+          system("clear")
+          echo("::Pyca::")
+          cryptography_encryption()
+          print "#{prompt} "
+          i = gets.chomp.to_s.downcase.strip
+
+          pyca_options(i)
+
+        when "5", "-z", "--z", "-Z", "--Z"
+          system("clear")
+          echo("::Zip::")
+          cryptography_encryption()
+          print "#{prompt} "
+          i = gets.chomp.to_s.downcase.strip
+
+          zip_options(i)
+
+        else
+          # TODO
+          puts "Invalid choice"
+        end
+
+    when "monitoring"
+      func_to_run("::Monitoring::", "bash tools/funcs monitoring")
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
+
+      monitoring_options(input)
+
+    when "networking", "net"
+      func_to_run("::Networking::", "bash tools/funcs networking")
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
+
+      networking_options(input)
+
+    when "sys", "system"
+      func_to_run("::System::", "bash tools/funcs sys")
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
+
+      sys_options(input)
+
+    #when "misc"
+    #  puts "misc"
+
+    when "help", "--help", "--h"
+      func_to_run("::--help::", "bash tools/funcs help")
+    else
+      puts("\nNot a valid choice!")
+      puts "Use #{list_of_commands}"
+  end
 
 else
+  case ARGV[0]
+    when "info"
+        sys("./info.rb")
 
-  command="e.g. ./tilux monitoring -c
-  (same choices when used interactively)"
+    when "cryptography", "crypto"
+      case ARGV[1]
+        when "1", "-c", "--c", "-C", "--C"
+          ccrypt_options(ARGV[2])
 
-  case "$1" in
-    "monitoring")
-      case "$2" in
-        "1" | "-c" | "--c" | "-C" | "--C")
-          clear
-          ./monitoring/cpu_monitoring.sh
-          ;;
-        "2" | "-m" | "--m" | "-M" | "--M")
-          clear
-          ./monitoring/mem_monitoring.sh
-          ;;
-        "3" | "-w" | "--w" | "-W" | "--W")
-          clear
-          ./monitoring/website_monitoring.py
-          ;;
-        *)
-        monitoring_run
-          ;;
-      esac
-      ;;
+        when "2", "-g", "--g", "-G", "--G"
+          gpg_options(ARGV[2])
 
-    "info")
-      info_run
-      ;;
+        when "3", "-o", "--o", "-O", "--O"
+          openssl_options(ARGV[2])
 
-    "cryptography" | "crypto")
-      case "$2" in
-        "1" | "-c" | "--c" | "-C" | "--C")
-          case "$3" in
-            "1" | "-e" | "--e" | "-E" | "--E")
-              clear
-              ./cryptography/ccrypt/ccrypt_encryption.sh
-              ;;
-            "2" | "-d" | "--d" | "-D" | "--D")
-              clear
-              ./cryptography/ccrypt/ccrypt_decryption.sh
-              ;;
-            *)
-            ccrypt_func
-            ;;
-          esac
-            ;;
-        "2" | "-g" | "--g" | "-G" | "--G")
-          case "$3" in
-            "1" | "-e" | "--e" | "-E" | "--E")
-              clear
-              ./cryptography/gpg/gpg_encryption.sh
-              ;;
-            "2" | "-d" | "--d" | "-D" | "--D")
-              clear
-              ./cryptography/gpg/gpg_decryption.sh
-              ;;
-            *)
-            gpg_func
-            ;;
-          esac
-            ;;
-        "3" | "-o" | "--o" | "-O" | "--O")
-          case "$3" in
-            "1" | "-e" | "--e" | "-E" | "--E")
-              clear
-              ./cryptography/openssl/openssl_encryption.sh
-              ;;
-            "2" | "-d" | "--d" | "-D" | "--D")
-              clear
-              ./cryptography/openssl/openssl_decryption.sh
-              ;;
-            *)
-            openssl_func
-            ;;
-          esac
-            ;;
-        "4" | "-p" | "--p" | "-P" | "--P")
-          case "$3" in
-            "1" | "-e" | "--e" | "-E" | "--E")
-              clear
-              ./cryptography/pyca/encrypt.py
-              ;;
-            "2" | "-d" | "--d" | "-D" | "--D")
-              clear
-              ./cryptography/pyca/decrypt.py
-              ;;
-            *)
-            pyca_func
-            ;;
-          esac
-            ;;
-        "5" | "-z" | "--z" | "-Z" | "--Z")
-          case "$3" in
-            "1" | "-e" | "--e" | "-E" | "--E")
-              clear
-              ./cryptography/zip/zip_encryption.sh
-              ;;
-            "2" | "-d" | "--d" | "-D" | "--D")
-              clear
-              ./cryptography/zip/zip_decryption.sh
-              ;;
-            *)
-            zip_func
-            ;;
-          esac
-            ;;
-        *)
-        cryptography_run
-      esac
-      ;;
+        when "4", "-p", "--p", "-P", "--P"
+          pyca_options(ARGV[2])
 
-    "networking" | "net")
-      case "$2" in
-        "1" | "-i" | "--i" | "-I" | "--I")
-          clear
-          ./networking/ip_pinging.py
-          ;;
-        "2" | "-s" | "--s" | "-S" | "--S")
-          clear
-          ./networking/server_pinging.py
-          ;;
-        *)
-        networking_run
-          ;;
-      esac
-      ;;
+        when "5", "-z", "--z", "-Z", "--Z"
+          zip_options(ARGV[2])
+        else
+          # TODO
+          puts "Invalid choice"
+      end
 
-    "system" | "sys")
-      case "$2" in
-        "1" | "-b" | "--b" | "-B" | "--B")
-          clear
-          ./sys/bf.sh
-          ;;
-        "2" | "-c" | "--c" | "-C" | "--C")
-          clear
-          ./sys/clean.rb
-          ;;
-        "3" | "-d" | "--d" | "-D" | "--D")
-          clear
-          ./sys/del.rb
-          ;;
-        "4" | "-e" | "--e" | "-E" | "--E")
-          clear
-          ./sys/exists.rb
-          ;;
-        "5" | "-f" | "--f" | "-F" | "--F")
-          clear
-          ./sys/fd.rb
-          ;;
-        "6" | "-fl" | "--fl" | "-Fl" | "--Fl" | "-FL" | "--FL")
-          clear
-          ./sys/file_updated.rb
-          ;;
-        "7" | "-fs" | "--fs" | "-Fs" | "--Fs" | "-FS" | "--FS")
-          clear
-          run_fs
-          ;;
-        "8" | "-l" | "--l" | "-L" | "--L")
-          clear
-          ./sys/last_updated.sh
-          ;;
-        "9" | "-p" | "--p" | "-P" | "--P")
-          clear
-          ./sys/parse_date.rb
-          ;;
-        "10" | "-r" | "--r" | "-R" | "--R")
-          clear
-          ./sys/root.rb
-          ;;
-        *)
-        sys_run
-          ;;
-      esac
-      ;;
+    when "monitoring"
+      monitoring_options(ARGV[1])
 
-#    "misc")
-#      case "$2" in
-#        "1")
-#          clear
-#          :
-#          ;;
-#        *)
-#        misc_run
-#          ;;
-#        esac
-#        ;;
+    when "networking", "net"
+      networking_options(ARGV[1])
 
-    "help" | "--help" | "--h" | "Help" | "--Help" | "--H")
-      clear
-      help
-      ;;
-    *)
-    echo "Not a valid choice!"
-    echo Use $command
-    exit
-      ;;
-  esac
+    when "sys", "system"
+      sys_options(ARGV[1])
 
-fi
+    #when "misc"
+    #  puts("misc")
+
+    when "help", "--help", "--h"
+      func_to_run("--h", "bash tools/funcs help")
+    else
+      puts("Not a valid choice!")
+  end
+end

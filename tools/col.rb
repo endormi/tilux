@@ -2,7 +2,7 @@
 
 
 class String
-  def colorize(color_code)
+  def color(color_code)
     "\e[#{color_code}m#{self}\e[0m"
   end
 
@@ -12,11 +12,11 @@ class String
   end
 
   def red
-    colorize(31)
+    color(31)
   end
 
   def green
-    colorize(32)
+    color(32)
   end
 
   def light_green
@@ -24,7 +24,7 @@ class String
   end
 
   def yellow
-    colorize(33)
+    color(33)
   end
 
   def light_yellow
@@ -32,7 +32,7 @@ class String
   end
 
   def blue
-    colorize(34)
+    color(34)
   end
 
   def white

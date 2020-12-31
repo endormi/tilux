@@ -62,6 +62,13 @@ def zip_options(c)
   end
 end
 
+
+def cryptography_encryption()
+  puts "-e: Encryption"
+  puts "-d: Decrypt\n"
+  puts
+end
+
 ### End cryptography
 
 def monitoring_options(c)

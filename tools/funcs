@@ -5,7 +5,6 @@
 
 # I used a function since i'm using the same text multiple times
 help () {
- echo -e "\\e[0;47m${bl}Help\\e[0m${w}\n"
  echo Interactive:
  echo -e "Running the files interactively ./tilux and then follow the choices\n"
  echo Args:
@@ -37,15 +36,12 @@ help () {
  read
 }
 help2 () {
-  echo -e "\\e[0;47m${bl}--help\\e[0m${w}"
   echo -e "How to use Tilux?\n"
 }
 info () {
- echo -e "\\e[0;47m${bl}Info\\e[0m${w}"
  echo -e "Host (name, OS, kernel version & more)\n"
 }
 cryptography () {
- echo -e "\\e[0;47m${bl}Cryptography\\e[0m${w}"
  echo "cryptography -c: ccrypt"
  echo "cryptography -g: GPG"
  echo "cryptography -o: Openssl"
@@ -53,18 +49,15 @@ cryptography () {
  echo -e "cryptography -z: Zip\n"
 }
 monitoring () {
- echo -e "\\e[0;47m${bl}Monitoring\\e[0m${w}"
  echo "-c: cpu_monitoring"
  echo "-m: mem_monitoring"
  echo -e "-w: website_monitoring\n"
 }
 networking () {
- echo -e "\\e[0;47m${bl}Networking\\e[0m${w}"
  echo "-i: ip_pinging"
  echo -e "-s: server_pinging\n"
 }
 sys () {
- echo -e "\\e[0;47m${bl}System\\e[0m${w}"
  echo "-b: bf (backup folder)"
  echo "-c: clean (clean system of logs and trash)"
  echo "-d: del (delete file or directory)"
@@ -76,9 +69,7 @@ sys () {
  echo "-p: parse date"
  echo -e "-r: root (check if you are root or not)\n"
 }
-misc () {
- echo -e "\\e[0;47m${bl}Misc.\\e[0m${w}"
-}
+# misc () {}
 
 
 # Required for running in tilux.rb

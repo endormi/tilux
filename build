@@ -2,7 +2,6 @@
 
 source tools/ansi-colors
 
-chmod +x tilux
 chmod +x ./cryptography/ccrypt/ccrypt_encryption.sh
 chmod +x ./cryptography/ccrypt/ccrypt_decryption.sh
 chmod +x ./cryptography/gpg/gpg_encryption.sh
@@ -22,7 +21,7 @@ chmod +x ./monitoring/website_monitoring.py
 chmod +x ./networking/ip_pinging.py
 chmod +x ./networking/server_pinging.py
 
-chmod +x tilux.rb
+chmod +x tilux
 chmod +x ./info.rb
 chmod +x ./sys/clean.rb
 chmod +x ./sys/del.rb

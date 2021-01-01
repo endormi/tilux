@@ -10,7 +10,6 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 
 ![v](https://img.shields.io/badge/tilux-v.0.2.5-blue)
 ![docker-compose-action-CI](https://github.com/endormi/tilux/workflows/docker-compose-action-CI/badge.svg)
-![clang-format-formatter](https://github.com/endormi/tilux/workflows/clang-format-formatter/badge.svg)
 [![License](https://img.shields.io/github/license/endormi/tilux)](LICENSE)
 
 ## What is Tilux?

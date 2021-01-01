@@ -7,7 +7,7 @@
 til () {
   echo -e "  {1} -- Host (name, OS, kernel version & more)"
   echo "  {2} -- 5 choices for encryption and decryption"
-  echo "  {3} -- monitoring different processes"
+  echo "  {3} -- Monitoring different processes"
   echo "  {4} -- Pinging networks"
   echo "  {5} -- System scripts"
   echo -e "  {--help} -- How to use Tilux?\n"

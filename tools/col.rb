@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 
+# ANSI-Colors but specifically for ruby
 
 class String
   def color(color_code)

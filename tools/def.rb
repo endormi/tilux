@@ -1,5 +1,8 @@
 #!/usr/bin/ruby
 
+# I'm using the same options, when running interactively and by using arguments
+# The only difference is case so I included the functions here
+# and then to make it functional, using sys_options(input)
 
 ### Cryptography options
 def ccrypt_options(c)

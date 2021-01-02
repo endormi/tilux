@@ -13,6 +13,8 @@
 ./tilux cryptography -g -e
 ```
 
+All of the available commands:
+
 ```
 info: host (name, OS, kernel version, DNS domain and local IP address)
 cryptography -c: ccrypt -e (for encryption) or -d (for decryption)
@@ -25,7 +27,7 @@ monitoring -m: monitoring memory consumption
 monitoring -w: monitoring website (if it's up and if not it sends an email)
 networking -i: IP pinging
 networking -s: Server pinging
-system  -b: bf (backup folder)
+system -b: bf (backup folder)
 system -c: clean (clean system of logs and trash)
 system -d: del (Delete file or directory)
 system -e: exists (Check if file or dir exists)

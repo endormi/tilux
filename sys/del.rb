@@ -1,17 +1,19 @@
 #!/usr/bin/ruby
 
-require "rubypython"
+#require "rubypython"
 require_relative "../tools/catch_exception"
 
 
-RubyPython.start
+#RubyPython.start
 
-  sys = RubyPython.import("sys")
-  sys.path.append("./tools")
-  lg = RubyPython.import("logos")
-  lg.Logo("Del")
+#  sys = RubyPython.import("sys")
+#  sys.path.append("./tools")
+#  lg = RubyPython.import("logos")
+#  lg.Logo("Del")
 
-RubyPython.stop
+#RubyPython.stop
+
+print `python3 -c "from tools.logos import Logo; Logo('Del');"`
 
 
 choice = "file or directory"

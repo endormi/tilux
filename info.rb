@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 require "rbconfig"
-require "rubypython"
+#require "rubypython"
 require "socket"
 require "resolv"
 require "net/http"
@@ -9,14 +9,16 @@ require "net/http"
 require_relative "tools/catch_exception"
 
 
-RubyPython.start
+#RubyPython.start
 
-  sys = RubyPython.import("sys")
-  sys.path.append("./tools")
-  lg = RubyPython.import("logos")
-  lg.Logo("Host")
+#  sys = RubyPython.import("sys")
+#  sys.path.append("./tools")
+#  lg = RubyPython.import("logos")
+#  lg.Logo("Host")
 
-RubyPython.stop
+#RubyPython.stop
+
+print `python3 -c "from tools.logos import Logo; Logo('Host');"`
 
 
 os = RbConfig::CONFIG["host_os"]

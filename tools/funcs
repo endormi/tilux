@@ -42,6 +42,7 @@ help () {
  echo "system -l: last updated (file)"
  echo "system -p: parse date"
  echo "system -r: root (check if you are root or not)"
+ echo "system -s: space (display computer space, uptime and number of processes running)"
  echo -n "Press [ENTER] to continue..."
  read
 }
@@ -77,7 +78,8 @@ sys () {
  echo "-fs: file size"
  echo "-l: last updated (file)"
  echo "-p: parse date"
- echo -e "-r: root (check if you are root or not)\n"
+ echo "-r: root (check if you are root or not)"
+ echo -e "-s: (display computer space, uptime and number of processes running)\n"
 }
 # misc () {}
 

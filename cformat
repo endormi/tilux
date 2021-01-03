@@ -7,4 +7,5 @@ fi
 
 clang-format -i proc.cpp
 clang-format -i sys/fs.c
+clang-format -i sys/space.c
 clang-format -i spec.c

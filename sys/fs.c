@@ -44,8 +44,8 @@ int main()
 
     if (strlen(f) == 0)
     {
-      printf("Filename cannot be empty!\n");
-      exit(EXIT_FAILURE);
+        printf("Filename cannot be empty!\n");
+        exit(EXIT_FAILURE);
     }
 
     check_filesize(f);

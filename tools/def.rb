@@ -127,6 +127,10 @@ def sys_options(c)
       sys("./sys/parse_date.rb")
     when "10", "-r", "--r", "-R", "--R"
       sys("./sys/root.rb")
+    when "11", "-s", "--s", "-S", "--S"
+      system("clear")
+      print `python3 -c "from tools.logos import Logo; Logo('Space');"`
+      system("./space")
     else
       # TODO
       puts "Invalid choice"

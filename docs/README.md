@@ -37,6 +37,7 @@ system -fs: file size
 system -l: last updated (file)
 system -p: parse date
 system -r: root (check if you are root or not)
+system -s: space (display computer space, uptime and number of processes running)
 ```
 
 ## Running with Docker:

@@ -6,13 +6,15 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+#define MAX 100
+
 void handler(int sig)
 {
-    printf("\nExiting\n");
+    printf("\nExiting...\n");
     exit(sig);
 }
 
-void check_filesize(char filename[])
+void check_filesize(const char* filename)
 {
     int fd;
     struct stat statbuf;
@@ -36,16 +38,16 @@ int main()
 {
     signal(SIGINT, handler);
 
-    while (1)
+    char f[MAX];
+    printf("Filename: ");
+    scanf("%[^\n]", f);
+
+    if (strlen(f) == 0)
     {
-        int MAX = 100;
-
-        char f[MAX];
-
-        printf("Filename: ");
-        scanf("%s", f);
-
-        check_filesize(f);
+      printf("Filename cannot be empty!\n");
+      exit(EXIT_FAILURE);
     }
+
+    check_filesize(f);
     return 0;
 }

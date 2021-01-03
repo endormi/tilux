@@ -64,6 +64,7 @@ fi
 
 # compiling C files
 gcc sys/fs.c -o fs
+gcc sys/space.c -o space
 gcc spec.c -o spec
 
 # compiling C++ file

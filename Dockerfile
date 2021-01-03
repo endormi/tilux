@@ -15,6 +15,7 @@ RUN apt-get update \
     ruby-rspec-core \
     build-essential \
     make \
+    clang-format \
     && apt-get clean
 
 RUN git clone https://github.com/endormi/tilux.git \

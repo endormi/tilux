@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# required for compiling C and C++ files
+if [ "$(which gcc)" == "" ] || [ "$(which g++)" == "" ]; then
+  sudo apt-get upgrade
+  sudo apt install build-essential
+fi
+
+
+# compiling C files
+gcc sys/fs.c -o fs
+gcc sys/space.c -o space
+
+# compiling C++ file
+g++ proc.cpp -o proc

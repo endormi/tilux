@@ -1,0 +1,10 @@
+# Also checking for errors when adding new C or C++ files
+name: compile-c-and-cpp
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: compiler
+        run: bash compile

@@ -65,3 +65,20 @@ end
 print "Python3 version: ", `python3 -V`
 sleep 0.5
 print "Ruby version: ", `ruby -v`, "\n"
+
+
+print "Display computer specs? (Y/n): "
+c = gets.chomp.to_s.downcase
+
+if (c == "yes" || c == "y")
+  # TODO: Update the script
+  # TODO: Only works on x86 platform
+  system("if [ `uname -m | grep 'x86_64'` != 0 ]; then echo 'System: 64-bit'; else echo 'System: 32-bit'; fi")
+  #system("cat /proc/cpuinfo | grep 'vendor' | uniq")
+  system("cat /proc/cpuinfo | grep 'model name' | uniq")
+  system("glxinfo | grep 'Device'")
+  system("./space")
+else
+  puts
+  system("exit")
+end

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#
-# Still a WIP code
-#
-
 python3 -c "from tools.logos import Logo; Logo('CCRYPT Encryption');"
 
 if [[ "$(which ccrypt)" == "" ]]; then

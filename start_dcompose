@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ "$(which docker)" == "" || "$(which docker-compose)" == "" ]]; then
+  echo "You need to install Docker && Docker-Compose"
+  exit
+fi
+
+docker-compose build
+docker-compose up -d

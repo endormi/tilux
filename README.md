@@ -47,6 +47,10 @@ bash build
 
 ```
 pip install -r requirements.txt && bundle install
+
+or
+
+bash install_req
 ```
 
 **Run** `tilux`:

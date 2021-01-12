@@ -9,3 +9,5 @@ jobs:
         run: docker-compose build
       - name: Up
         run: docker-compose up -d
+      - name: Down
+        run: docker-compose down

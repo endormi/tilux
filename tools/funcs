@@ -32,6 +32,7 @@ help () {
  echo "monitoring -w: monitoring website (if it's up and if not it sends an email)"
  echo "networking -i: IP pinging"
  echo "networking -s: Server pinging"
+ echo "system -a: add alias"
  echo "system -b: bf (backup folder)"
  echo "system -c: clean (clean system of logs and trash)"
  echo "system -d: del (Delete file or directory)"
@@ -41,6 +42,7 @@ help () {
  echo "system -fs: file size"
  echo "system -l: last updated (file)"
  echo "system -p: parse date"
+ echo "system -rt: resize terminal"
  echo "system -r: root (check if you are root or not)"
  echo "system -s: space (display computer space, uptime and number of processes running)"
  echo -n "Press [ENTER] to continue..."
@@ -69,6 +71,7 @@ networking () {
  echo -e "-s: server_pinging\n"
 }
 sys () {
+ echo "-a: add alias"
  echo "-b: bf (backup folder)"
  echo "-c: clean (clean system of logs and trash)"
  echo "-d: del (delete file or directory)"
@@ -78,6 +81,7 @@ sys () {
  echo "-fs: file size"
  echo "-l: last updated (file)"
  echo "-p: parse date"
+ echo "-rt: resize terminal"
  echo "-r: root (check if you are root or not)"
  echo -e "-s: (display computer space, uptime and number of processes running)\n"
 }

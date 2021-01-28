@@ -27,6 +27,7 @@ monitoring -m: monitoring memory consumption
 monitoring -w: monitoring website (if it's up and if not it sends an email)
 networking -i: IP pinging
 networking -s: Server pinging
+system -a: add alias
 system -b: bf (backup folder)
 system -c: clean (clean system of logs and trash)
 system -d: del (Delete file or directory)
@@ -36,6 +37,7 @@ system -fl: file updated
 system -fs: file size
 system -l: last updated (file)
 system -p: parse date
+system -rt: resize terminal
 system -r: root (check if you are root or not)
 system -s: space (display computer space, uptime and number of processes running)
 ```

@@ -12,8 +12,10 @@ chmod +x ./cryptography/zip/zip_encryption.sh
 chmod +x ./cryptography/zip/zip_decryption.sh
 chmod +x ./monitoring/cpu_monitoring.sh
 chmod +x ./monitoring/mem_monitoring.sh
+chmod +x ./sys/add_alias.sh
 chmod +x ./sys/bf.sh
 chmod +x ./sys/last_updated.sh
+chmod +x ./sys/resize_terminal.sh
 
 chmod +x ./cryptography/pyca/encrypt.py
 chmod +x ./cryptography/pyca/decrypt.py

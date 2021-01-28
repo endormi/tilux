@@ -7,9 +7,9 @@
 ### Cryptography options
 def ccrypt_options(c)
   case c
-    when "1", "-e", "--e", "-E", "--E"
+    when "1", "-e", "--e"
       sys("./cryptography/ccrypt/ccrypt_encryption.sh")
-    when "2", "-d", "--d", "-D", "--D"
+    when "2", "-d", "--d"
       sys("./cryptography/ccrypt/ccrypt_decryption.sh")
     else
       # TODO
@@ -19,9 +19,9 @@ end
 
 def gpg_options(c)
   case c
-    when "1", "-e", "--e", "-E", "--E"
+    when "1", "-e", "--e"
       sys("./cryptography/gpg/gpg_encryption.sh")
-    when "2", "-d", "--d", "-D", "--D"
+    when "2", "-d", "--d"
       sys("./cryptography/gpg/gpg_decryption.sh")
     else
       # TODO
@@ -31,9 +31,9 @@ end
 
 def openssl_options(c)
   case c
-    when "1", "-e", "--e", "-E", "--E"
+    when "1", "-e", "--e"
       sys("./cryptography/openssl/openssl_encryption.sh")
-    when "2", "-d", "--d", "-D", "--D"
+    when "2", "-d", "--d"
       sys("./cryptography/openssl/openssl_decryption.sh")
     else
       # TODO
@@ -43,9 +43,9 @@ end
 
 def pyca_options(c)
   case c
-    when "1", "-e", "--e", "-E", "--E"
+    when "1", "-e", "--e"
       sys("./cryptography/pyca/encrypt.py")
-    when "2", "-d", "--d", "-D", "--D"
+    when "2", "-d", "--d"
       sys("./cryptography/pyca/decrypt.py")
     else
       # TODO
@@ -55,9 +55,9 @@ end
 
 def zip_options(c)
   case c
-    when "1", "-e", "--e", "-E", "--E"
+    when "1", "-e", "--e"
       sys("./cryptography/zip/zip_encryption.sh")
-    when "2", "-d", "--d", "-D", "--D"
+    when "2", "-d", "--d"
       sys("./cryptography/zip/zip_decryption.sh")
     else
       # TODO
@@ -76,13 +76,13 @@ end
 
 def monitoring_options(c)
   case c
-    when "1", "-c", "--c", "-C", "--C"
+    when "1", "-c", "--c"
       system("clear")
       system("./monitoring/cpu_monitoring.sh")
-    when "2", "-m", "--m", "-M", "--M"
+    when "2", "-m", "--m"
       system("clear")
       system("./monitoring/mem_monitoring.sh")
-    when "3", "-w", "--w", "-W", "--W"
+    when "3", "-w", "--w"
       system("clear")
       system("./monitoring/website_monitoring.py")
     else
@@ -93,9 +93,9 @@ end
 
 def networking_options(c)
   case c
-    when "1", "-i", "--i", "-I", "--I"
+    when "1", "-i", "--i"
       sys("./networking/ip_pinging.py")
-    when "1", "-s", "--s", "-S", "--S"
+    when "1", "-s", "--s"
       sys("./networking/server_pinging.py")
     else
       # TODO
@@ -105,29 +105,33 @@ end
 
 def sys_options(c)
   case c
-    when "1", "-b", "--b", "-B", "--B"
+    when "1", "-a", "--a"
+      sys("./sys/add_alias.sh")
+    when "2", "-b", "--b"
       sys("./sys/bf.sh")
-    when "2", "-c", "--c", "-C", "--C"
+    when "3", "-c", "--c"
       sys("./sys/clean.rb")
-    when "3", "-d", "--d", "-D", "--D"
+    when "4", "-d", "--d"
       sys("./sys/del.rb")
-    when "4", "-e", "--e", "-E", "--E"
+    when "5", "-e", "--e"
       sys("./sys/exists.rb")
-    when "5", "-f", "--f", "-F", "--F"
+    when "6", "-f", "--f"
       sys("./sys/fd.rb")
-    when "6", "-fl", "--fl", "-Fl", "--Fl", "-FL", "--FL"
+    when "7", "-fl", "--fl"
       sys("./sys/file_updated.rb")
-    when "7", "-fs", "--fs", "-Fs", "--Fs", "-FS", "--FS"
+    when "8", "-fs", "--fs"
       system("clear")
       print `python3 -c "from tools.logos import Logo; Logo('FS');"`
       system("./fs")
-    when "8", "-l", "--l", "-L", "--L"
+    when "9", "-l", "--l"
       sys("./sys/last_updated.sh")
-    when "9", "-p", "--p", "-P", "--P"
+    when "10", "-p", "--p"
       sys("./sys/parse_date.rb")
-    when "10", "-r", "--r", "-R", "--R"
+    when "11", "-rt", "--rt"
+      sys("./sys/resize_terminal.sh")
+    when "12", "-r", "--r"
       sys("./sys/root.rb")
-    when "11", "-s", "--s", "-S", "--S"
+    when "13", "-s", "--s"
       system("clear")
       print `python3 -c "from tools.logos import Logo; Logo('Space');"`
       system("./space")

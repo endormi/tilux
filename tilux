@@ -83,16 +83,7 @@ if (ARGV.empty?)
 
           gpg_options(i)
 
-        when "3", "-o", "--o", "-O", "--O"
-          system("clear")
-          echo("::Openssl::")
-          cryptography_encryption()
-          print "#{prompt} "
-          i = gets.chomp.to_s.downcase.strip
-
-          openssl_options(i)
-
-        when "4", "-p", "--p", "-P", "--P"
+        when "3", "-p", "--p", "-P", "--P"
           system("clear")
           echo("::Pyca::")
           cryptography_encryption()
@@ -101,7 +92,7 @@ if (ARGV.empty?)
 
           pyca_options(i)
 
-        when "5", "-z", "--z", "-Z", "--Z"
+        when "4", "-z", "--z", "-Z", "--Z"
           system("clear")
           echo("::Zip::")
           cryptography_encryption()
@@ -159,13 +150,10 @@ else
         when "2", "-g", "--g", "-G", "--G"
           gpg_options(ARGV[2])
 
-        when "3", "-o", "--o", "-O", "--O"
-          openssl_options(ARGV[2])
-
-        when "4", "-p", "--p", "-P", "--P"
+        when "3", "-p", "--p", "-P", "--P"
           pyca_options(ARGV[2])
 
-        when "5", "-z", "--z", "-Z", "--Z"
+        when "4", "-z", "--z", "-Z", "--Z"
           zip_options(ARGV[2])
         else
           # TODO

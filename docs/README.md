@@ -19,7 +19,6 @@ All of the available commands:
 info: host (name, OS, kernel version, DNS domain and local IP address)
 cryptography -c: ccrypt -e (for encryption) or -d (for decryption)
 cryptography -g: GPG -e (for encryption) or -d (for decryption)
-cryptography -o: Openssl -e (for encryption) or -d (for decryption)
 cryptography -p: Pyca -e (for encryption) or -d (for decryption)
 cryptography -z: Zip -e (for encryption) or -d (for decryption)
 monitoring -c: monitoring cpu processes

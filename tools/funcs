@@ -6,7 +6,7 @@
 # I used a function since i'm using the same text multiple times
 til () {
   echo -e "  {1} -- Host (name, OS, kernel version & more)"
-  echo "  {2} -- 5 choices for encryption and decryption"
+  echo "  {2} -- 4 choices for encryption and decryption"
   echo "  {3} -- Monitoring different processes"
   echo "  {4} -- Pinging networks"
   echo "  {5} -- System scripts"
@@ -25,7 +25,6 @@ help () {
  echo "cryptography -c: ccrypt -e (for encryption) or -d (for decryption)"
  echo "cryptography -g: GPG -e (for encryption) or -d (for decryption)"
  echo "cryptography -o: Openssl -e (for encryption) or -d (for decryption)"
- echo "cryptography -p: Pyca -e (for encryption) or -d (for decryption)"
  echo "cryptography -z: Zip -e (for encryption) or -d (for decryption)"
  echo "monitoring -c: monitoring cpu processes"
  echo "monitoring -m: monitoring memory consumption"
@@ -57,7 +56,6 @@ info () {
 cryptography () {
  echo "cryptography -c: ccrypt"
  echo "cryptography -g: GPG"
- echo "cryptography -o: Openssl"
  echo "cryptography -p: Pyca"
  echo -e "cryptography -z: Zip\n"
 }

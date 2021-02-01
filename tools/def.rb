@@ -29,18 +29,6 @@ def gpg_options(c)
   end
 end
 
-def openssl_options(c)
-  case c
-    when "1", "-e", "--e"
-      sys("./cryptography/openssl/openssl_encryption.sh")
-    when "2", "-d", "--d"
-      sys("./cryptography/openssl/openssl_decryption.sh")
-    else
-      # TODO
-      puts "Invalid choice!"
-  end
-end
-
 def pyca_options(c)
   case c
     when "1", "-e", "--e"

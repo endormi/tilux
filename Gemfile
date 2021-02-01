@@ -1,4 +1,5 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "rubypython"
-gem "config"
+gem 'config'
+gem 'rubocop', require: false
+gem 'rubypython'

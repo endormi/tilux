@@ -8,8 +8,8 @@ class String
   end
 
   # lighter colors
-  def light_color(c)
-    "\e[1;#{c}m#{self}\e[0m"
+  def light_color(lcolor_code)
+    "\e[1;#{lcolor_code}m#{self}\e[0m"
   end
 
   def red

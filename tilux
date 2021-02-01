@@ -1,11 +1,11 @@
 #!/usr/bin/ruby
+# frozen_string_literal: true
 
-require_relative "tools/col"
-require_relative "tools/def"
-require_relative "tools/catch_exception"
+require_relative 'tools/col'
+require_relative 'tools/def'
+require_relative 'tools/catch_exception'
 
-
-version="v.0.2.5"
+version = 'v.0.2.5'
 puts "
 ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 8    888    8  888   888          888       8    8888    d8
@@ -15,24 +15,23 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
      888       888   888       o   88.    .8     d8    888b
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 ".green
-print "version".white
+print 'version'.white
 print " #{version}".light_yellow
-print " by Endormi ".white
-link="\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a"
+print ' by Endormi '.white
+link = "\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a"
 puts link.white
 
 sleep 1
 
-prompt="tilux~# ".green
-
+prompt = 'tilux~# '.green
 
 def sys(file)
-  system("clear")
+  system('clear')
   system(file)
 end
 
 def func_to_run(title, func)
-  system("clear")
+  system('clear')
   echo(title)
   system(func)
 end
@@ -41,140 +40,139 @@ def echo(text)
   puts text.white
 end
 
-
-if (ARGV.empty?)
+if ARGV.empty?
   puts "\nWhat script do you want to run?\n\n".white
-  system("bash tools/funcs til")
+  system('bash tools/funcs til')
 
-  #list_of_commands="Info, Cryptography, Monitoring, Networking, Sys && --help"
+  # list_of_commands="Info, Cryptography, Monitoring, Networking, Sys && --help"
 
-  #puts "Choices: #{list_of_commands}"
-  #puts "Also you can use numbers"
+  # puts "Choices: #{list_of_commands}"
+  # puts "Also you can use numbers"
   print "\n#{prompt} "
   c = gets.chomp.to_s.downcase.strip
 
   empty_input?(c)
 
   case c
-    when "info", "1"
-      sys("./info.rb")
+  when 'info', '1'
+    sys('./info.rb')
 
-    when "cryptography", "crypto", "2"
-      func_to_run("::Cryptography::", "bash tools/funcs cryptography")
+  when 'cryptography', 'crypto', '2'
+    func_to_run('::Cryptography::', 'bash tools/funcs cryptography')
+    print "#{prompt} "
+    input = gets.chomp.to_s.downcase.strip
+
+    case input
+    when '1', '-c', '--c', '-C', '--C'
+      system('clear')
+      echo('::CCRYPT::')
+      cryptography_encryption
       print "#{prompt} "
-      input = gets.chomp.to_s.downcase.strip
+      i = gets.chomp.to_s.downcase.strip
 
-      case input
-        when "1", "-c", "--c", "-C", "--C"
-          system("clear")
-          echo("::CCRYPT::")
-          cryptography_encryption()
-          print "#{prompt} "
-          i = gets.chomp.to_s.downcase.strip
+      ccrypt_options(i)
 
-          ccrypt_options(i)
-
-        when "2", "-g", "--g", "-G", "--G"
-          system("clear")
-          echo("::GPG::")
-          cryptography_encryption()
-          print "#{prompt} "
-          i = gets.chomp.to_s.downcase.strip
-
-          gpg_options(i)
-
-        when "3", "-p", "--p", "-P", "--P"
-          system("clear")
-          echo("::Pyca::")
-          cryptography_encryption()
-          print "#{prompt} "
-          i = gets.chomp.to_s.downcase.strip
-
-          pyca_options(i)
-
-        when "4", "-z", "--z", "-Z", "--Z"
-          system("clear")
-          echo("::Zip::")
-          cryptography_encryption()
-          print "#{prompt} "
-          i = gets.chomp.to_s.downcase.strip
-
-          zip_options(i)
-
-        else
-          # TODO
-          puts "Invalid choice"
-        end
-
-    when "monitoring", "3"
-      func_to_run("::Monitoring::", "bash tools/funcs monitoring")
+    when '2', '-g', '--g', '-G', '--G'
+      system('clear')
+      echo('::GPG::')
+      cryptography_encryption
       print "#{prompt} "
-      input = gets.chomp.to_s.downcase.strip
+      i = gets.chomp.to_s.downcase.strip
 
-      monitoring_options(input)
+      gpg_options(i)
 
-    when "networking", "net", "4"
-      func_to_run("::Networking::", "bash tools/funcs networking")
+    when '3', '-p', '--p', '-P', '--P'
+      system('clear')
+      echo('::Pyca::')
+      cryptography_encryption
       print "#{prompt} "
-      input = gets.chomp.to_s.downcase.strip
+      i = gets.chomp.to_s.downcase.strip
 
-      networking_options(input)
+      pyca_options(i)
 
-    when "sys", "system", "5"
-      func_to_run("::System::", "bash tools/funcs sys")
+    when '4', '-z', '--z', '-Z', '--Z'
+      system('clear')
+      echo('::Zip::')
+      cryptography_encryption
       print "#{prompt} "
-      input = gets.chomp.to_s.downcase.strip
+      i = gets.chomp.to_s.downcase.strip
 
-      sys_options(input)
+      zip_options(i)
 
-    #when "misc"
+    else
+      # TODO
+      puts 'Invalid choice'
+    end
+
+  when 'monitoring', '3'
+    func_to_run('::Monitoring::', 'bash tools/funcs monitoring')
+    print "#{prompt} "
+    input = gets.chomp.to_s.downcase.strip
+
+    monitoring_options(input)
+
+  when 'networking', 'net', '4'
+    func_to_run('::Networking::', 'bash tools/funcs networking')
+    print "#{prompt} "
+    input = gets.chomp.to_s.downcase.strip
+
+    networking_options(input)
+
+  when 'sys', 'system', '5'
+    func_to_run('::System::', 'bash tools/funcs sys')
+    print "#{prompt} "
+    input = gets.chomp.to_s.downcase.strip
+
+    sys_options(input)
+
+    # when "misc"
     #  puts "misc"
 
-    when "help", "--help", "--h", "6"
-      func_to_run("::--help::", "bash tools/funcs help")
-    else
-      puts("\nNot a valid choice!")
-      puts "Use #{list_of_commands}"
+  when 'help', '--help', '--h', '6'
+    func_to_run('::--help::', 'bash tools/funcs help')
+  else
+    puts("\nNot a valid choice!")
+    puts "Use #{list_of_commands}"
   end
 
 else
   case ARGV[0]
-    when "info", "1"
-        sys("./info.rb")
+  when 'info', '1'
+    sys('./info.rb')
 
-    when "cryptography", "crypto", "2"
-      case ARGV[1]
-        when "1", "-c", "--c", "-C", "--C"
-          ccrypt_options(ARGV[2])
+  when 'cryptography', 'crypto', '2'
+    case ARGV[1]
+    when '1', '-c', '--c', '-C', '--C'
+      ccrypt_options(ARGV[2])
 
-        when "2", "-g", "--g", "-G", "--G"
-          gpg_options(ARGV[2])
+    when '2', '-g', '--g', '-G', '--G'
+      gpg_options(ARGV[2])
 
-        when "3", "-p", "--p", "-P", "--P"
-          pyca_options(ARGV[2])
+    when '3', '-p', '--p', '-P', '--P'
+      pyca_options(ARGV[2])
 
-        when "4", "-z", "--z", "-Z", "--Z"
-          zip_options(ARGV[2])
-        else
-          # TODO
-          puts "Invalid choice"
-      end
+    when '4', '-z', '--z', '-Z', '--Z'
+      zip_options(ARGV[2])
+    else
+      # TODO
+      puts 'Invalid choice'
+    end
 
-    when "monitoring", "3"
-      monitoring_options(ARGV[1])
+  when 'monitoring', '3'
+    monitoring_options(ARGV[1])
 
-    when "networking", "net", "4"
-      networking_options(ARGV[1])
+  when 'networking', 'net', '4'
+    networking_options(ARGV[1])
 
-    when "sys", "system", "5"
-      sys_options(ARGV[1])
+  when 'sys', 'system', '5'
+    sys_options(ARGV[1])
 
-    #when "misc"
+    # when "misc"
     #  puts("misc")
 
-  when "help", "--help", "--h", "6"
-      func_to_run("--h", "bash tools/funcs help")
-    else
-      puts("Not a valid choice!")
+  when 'help', '--help', '--h', '6'
+    func_to_run('--h', 'bash tools/funcs help')
+  else
+    puts('Not a valid choice!')
   end
 end

@@ -1,25 +1,24 @@
 #!/usr/bin/ruby
+# frozen_string_literal: true
 
-#require "rubypython"
-require "date"
-require_relative "../tools/catch_exception"
+# require "rubypython"
+require 'date'
+require_relative '../tools/catch_exception'
 
-
-#RubyPython.start
+# RubyPython.start
 
 #  sys = RubyPython.import("sys")
 #  sys.path.append("./tools")
 #  lg = RubyPython.import("logos")
 #  lg.Logo("Parse date")
 
-#RubyPython.stop
+# RubyPython.stop
 
 print `python3 -c "from tools.logos import Logo; Logo('Parse date');"`
 
-
 now = DateTime.now
-date = now.strftime "%d/%m/%Y"
-time = now.strftime "%H:%M"
+date = now.strftime '%d/%m/%Y'
+time = now.strftime '%H:%M'
 
 puts "Current date is: #{date}"
 puts "Current time is: #{time}"

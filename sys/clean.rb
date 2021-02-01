@@ -1,5 +1,4 @@
 #!/usr/bin/ruby
-# frozen_string_literal: true
 
 # require "rubypython"
 require_relative '../tools/catch_exception'

@@ -24,6 +24,9 @@ start = input('Starting IP: ')
 end = input('Ending IP: ')
 print()
 
+if net == "" or start == "" or end == "":
+    print("Choice can't be empty!")
+    sys.exit()
 
 for i in range(int(start), int(end)):
     try:

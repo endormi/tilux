@@ -9,4 +9,10 @@ if [[ "$(which unzip)" == "" ]]; then
 fi
 
 read -p "What is the name of the .zip file? " zf
+
+if [[ $zf == "" ]]; then
+  echo "Choice can't be empty!"
+  exit;
+fi
+
 unzip $zf

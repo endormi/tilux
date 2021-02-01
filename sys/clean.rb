@@ -35,6 +35,8 @@ puts "Choices: #{choice} (1 means going through files one by one and all means, 
 print "Choice: "
 c = gets.chomp.to_s.downcase
 
+empty_input?(c)
+
 if (c == "1")
   cmd=%x[rm -rf -i #{trash_dir}]
 elsif (c == "2" || c == "all" || c == "-a" || c == "--a" || c == "a")

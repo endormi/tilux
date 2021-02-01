@@ -19,6 +19,8 @@ print `python3 -c "from tools.logos import Logo; Logo('File updated');"`
 print "Filename: "
 f = gets.chomp.to_s.strip
 
+empty_input?(f)
+
 if (File.file?(f) == true)
   ft = File.mtime("#{f}").strftime("%d/%m/%Y %H:%M")
   puts "File updated: #{ft}"

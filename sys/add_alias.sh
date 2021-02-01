@@ -8,9 +8,19 @@ python3 -c "from tools.logos import Logo; Logo('Add alias');"
 
 read -p "Alias: " alias
 
+if [[ $alias == "" ]]; then
+  echo "Alias can't be empty!"
+  exit;
+fi
+
 if [ `alias | grep "$alias" | wc -l` != 0 ]; then echo "Alias $alias already exists"; exit; fi
 
 read -p "Command: " cmd
+
+if [[ $cmd == "" ]]; then
+  echo "Command can't be empty!"
+  exit;
+fi
 
 # >> to append
 echo -e "$alias='$cmd'" >> ~/.bash_aliases

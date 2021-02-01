@@ -19,6 +19,8 @@ print `python3 -c "from tools.logos import Logo; Logo('FD');"`
 print "Path to directory: "
 dir = gets.chomp.to_s.strip
 
+empty_input?(dir)
+
 if (File.directory?(dir) == false)
   puts "\n#{dir} doesn't exist."
   exit
@@ -30,6 +32,8 @@ puts "Choices: #{choice}"
 print "Choice: "
 c = gets.chomp.to_s.downcase
 puts
+
+empty_input?(c)
 
 case c
 when "1", "ns", "-ns", "--ns"

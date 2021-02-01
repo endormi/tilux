@@ -20,6 +20,9 @@ https://myaccount.google.com/apppasswords
 """
 Your_Password = input('Your password: ')
 
+if url == "" or Your_Email == "" or Your_Password == "":
+    print("Choice can't be empty!")
+    sys.exit()
 
 req = requests.get(url, timeout=1)
 req.raise_for_status()

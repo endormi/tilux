@@ -11,4 +11,10 @@ fi
 
 
 read -p "What file do you want to encrypt? " f
+
+if [[ $f == "" ]]; then
+  echo "Choice can't be empty!"
+  exit;
+fi
+
 ccencrypt $f

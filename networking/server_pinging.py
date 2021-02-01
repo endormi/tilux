@@ -11,6 +11,11 @@ Logo('Server Pinging')
 time.sleep(1)
 
 hostname = input("Domain: ")
+
+if hostname == "":
+    print("Choice can't be empty!")
+    sys.exit()
+
 response = os.system("ping -c 1 " + hostname)
 
 

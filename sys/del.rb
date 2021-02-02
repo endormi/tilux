@@ -31,7 +31,7 @@ if %w[file f].include?(c)
     print 'Are you sure you want to remove the file? (Y/n) '
     yn = gets.chomp.to_s.downcase
 
-    if %w[file f file f y yes].include?(yn)
+    if %w[y yes].include?(yn)
       puts "\nRemoving file.."
       sleep 1
       File.delete(f)
@@ -44,7 +44,7 @@ if %w[file f].include?(c)
     puts "\n#{f} doesn't exist."
   end
 
-elsif %w[file f file f y yes y yes dir directory d].include?(c)
+elsif %w[dir directory d].include?(c)
   print 'Path to directory: '
   d = gets.chomp.to_s.strip
 
@@ -54,8 +54,7 @@ elsif %w[file f file f y yes y yes dir directory d].include?(c)
     print 'Are you sure you want to remove the folder? (Y/n) '
     yn = gets.chomp.to_s.downcase
 
-    if %w[file f file f y yes y yes dir directory d dir directory d y
-          yes].include?(yn)
+    if %w[y yes].include?(yn)
       puts "\nRemoving folder.."
       sleep 1
       Dir.delete(d)

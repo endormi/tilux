@@ -37,7 +37,7 @@ empty_input?(c)
 
 if c == '1'
   `rm -rf -i #{trash_dir}`
-elsif ['2', 'all', '-a', '--a', 'a'].include?(c)
+elsif %w[2 all -a --a a].include?(c)
   # files = Dir.glob("#{trash_dir}")
   # puts files
   puts "\nEmptying the trash..."

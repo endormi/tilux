@@ -28,7 +28,7 @@ if %w[file f].include?(fd)
   res = File.file?(f) == true ? "#{f} exists" : "#{f} doesn't exist"
   puts "\n#{res}"
 
-elsif %w[file f file f dir directory d].include?(fd)
+elsif %w[dir directory d].include?(fd)
   print 'Path to directory: '
   d = gets.chomp.to_s.strip
   empty_input?(d)

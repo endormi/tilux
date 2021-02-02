@@ -10,7 +10,7 @@ til () {
   echo "  {3} -- Monitoring different processes"
   echo "  {4} -- Pinging networks"
   echo "  {5} -- System scripts"
-  echo -e "  {--help} -- How to use Tilux?\n"
+  echo -e "  --help -- How to use Tilux?\n"
 }
 
 

@@ -1,11 +1,9 @@
 name: rubocop
 on: push
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: rubocop
         uses: andrewmcodes/rubocop-linter-action@v3.3.0
-        with:
-          action_config_path: ".rubocop.yml"

@@ -7,7 +7,6 @@ import os
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
-from cryptography.fernet import Fernet
 import sys
 sys.path.append("./tools")
 from logos import Logo
@@ -22,15 +21,13 @@ def pw():
     # Use a password to create a key
     p = input('What is the password you want to use? ')
     password = p.encode()
-
     salt = os.urandom(16)
-
     kdf = PBKDF2HMAC(
-         algorithm=hashes.SHA256(),
-         length=32,
-         salt=salt,
-         iterations=100000,
-         backend=default_backend()
+        algorithm=hashes.SHA256(),
+        length=32,
+        salt=salt,
+        iterations=100000,
+        backend=default_backend()
     )
     key = base64.urlsafe_b64encode(kdf.derive(password))
     print(key)
@@ -44,7 +41,6 @@ def pw():
 def main():
     choices = "pw (Uses a password to create a key) & no_pw"
     print("Choices " + choices)
-
     choose_cmd = input("Type in the command you want to use: ").lower()
 
     if choose_cmd == "pw":
@@ -60,6 +56,7 @@ def main():
     else:
         print("\nNot a valid command!")
         print("Use " + choices)
+
 
 if __name__ == '__main__':
     main()

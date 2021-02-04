@@ -4,8 +4,8 @@ from pyfiglet import figlet_format
 from termcolor import cprint
 
 
-font='slant'
-c='green'
+font = 'slant'
+c = 'green'
 
 
 class Logo:

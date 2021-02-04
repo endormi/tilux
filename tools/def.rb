@@ -97,7 +97,7 @@ def sys_options(choice)
   when '2', '-b', '--b'
     sys('./sys/bf.sh')
   when '3', '-c', '--c'
-    sys('./sys/clean.rb')
+    sys('./sys/clean.sh')
   when '4', '-d', '--d'
     sys('./sys/del.rb')
   when '5', '-e', '--e'

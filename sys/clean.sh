@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python3 -c "from logos import Logo; Logo('Clean');"
+python3 -c "from tools.logos import Logo; Logo('Clean');"
 
 
 echo "Truncate logs:"

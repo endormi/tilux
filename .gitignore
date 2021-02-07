@@ -9,3 +9,9 @@ fs
 proc
 spec
 space
+
+# For emacs
+*~
+\#*\#
+auto-save-list
+.\#*

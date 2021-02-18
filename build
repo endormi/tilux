@@ -52,11 +52,17 @@ if [[ "$(which lsb_release)" == "" ]]; then
   sudo apt install lsb-core
 fi
 
+# Required for compiling C/C++ files
+if [ "$(which gcc)" == "" ] || [ "$(which g++)" == "" ]; then
+  sudo apt-get upgrade
+  sudo apt install build-essential
+fi
+
 if [[ ! -f "Gemfile.lock" ]]; then
   bundle install
 fi
 
-source compile
+make -s
 
 clear
 

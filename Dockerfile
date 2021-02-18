@@ -25,6 +25,9 @@ COPY . ./
 
 RUN bash build
 
+# Needed to get rid of cryptography package issue
+RUN python3 -m pip install -U pip
+
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 ENV BUNDLER_VERSION=2.1.4

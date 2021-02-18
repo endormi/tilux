@@ -1,10 +1,21 @@
-# Also checking for errors when adding new C or C++ files
-name: compile-c-and-cpp
+name: compile
 on: push
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: compiler
+      - name: make
         run: make
+
+      - run: sudo apt install flake8
+      - name: flake8
+        run: flake8
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.5
+          bundler-cache: true
+      - run: gem install rubocop -v '~> 1.9.1'
+      - name: rubocop
+        run: rubocop

@@ -71,6 +71,18 @@ bash install_req
 ./tilux --help
 ```
 
+If you run the `add_alias` script, you can run tilux by simply running:
+
+> Now you can run `tilux` without having to be inside the folder.
+
+```
+tilux
+
+# Arguments work the same
+```
+
+**Note**: For now `tilux` command `CD` into the `tilux` folder location. 
+
 To see the commands to use and how to run using Docker, click [here](docs/README.md).
 
 [Tested](TESTED_ON.md) on (these are manually tested).

@@ -23,6 +23,6 @@ if [[ $cmd == "" ]]; then
 fi
 
 # >> to append
-echo -e "$alias='$cmd'" >> ~/.bash_aliases
+echo -e "alias $alias='$cmd'" >> ~/.bash_aliases
 echo "Added ${alias} to .bash_aliases"
 exec "$BASH"

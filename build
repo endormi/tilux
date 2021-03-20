@@ -33,6 +33,8 @@ chmod +x ./sys/root.rb
 
 chmod +x ./proc_script.rb
 
+chmod +x ./install_req
+
 
 # Python3 is required to run the python scripts
 if [[ "$(which python3)" == "" ]]; then
@@ -58,11 +60,9 @@ if [ "$(which gcc)" == "" ] || [ "$(which g++)" == "" ]; then
   sudo apt install build-essential
 fi
 
-if [[ ! -f "Gemfile.lock" ]]; then
-  bundle install
-fi
-
 make -s
+
+./install_req
 
 clear
 

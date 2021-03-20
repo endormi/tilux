@@ -43,16 +43,6 @@ bash build
 
 > After running `build` for the first time, you can use `tilux` instead of `build`.
 
-#### Install requirements:
-
-```
-pip install -r requirements.txt && bundle install
-
-or
-
-bash install_req
-```
-
 **Run** `tilux`:
 
 ```bash
@@ -81,7 +71,7 @@ tilux
 # Arguments work the same
 ```
 
-**Note**: For now `tilux` command `CD` into the `tilux` folder location. 
+**Note**: For now `tilux` command `CD` into the `tilux` folder location.
 
 To see the commands to use and how to run using Docker, click [here](docs/README.md).
 

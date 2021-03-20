@@ -23,12 +23,8 @@ RUN git clone https://github.com/endormi/tilux.git \
 
 COPY . ./
 
-RUN bash build
-
 # Needed to get rid of cryptography package issue
 RUN python3 -m pip install -U pip
-
-RUN pip3 install --no-cache-dir -r requirements.txt
 
 ENV BUNDLER_VERSION=2.1.4
 
@@ -41,7 +37,7 @@ ENV GEM_HOME /usr/local/bundle
 ENV BUNDLE_SILENCE_ROOT_WARNING=1 \
   BUNDLE_APP_CONFIG="$GEM_HOME"
 
-RUN bundle install
+RUN bash build
 
 # Keep the container running
 CMD exec /bin/bash -c "sleep infinity & wait"

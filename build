@@ -42,6 +42,11 @@ if [[ "$(which python3)" == "" ]]; then
   sudo apt install python3
 fi
 
+if [[ "$(which pip3)" == "" ]]; then
+  sudo apt-get upgrade
+  sudo apt install python3-pip
+fi
+
 # Ruby is required to run ruby scripts
 if [[ "$(which ruby)" == "" ]]; then
   sudo apt-get upgrade

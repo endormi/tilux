@@ -1,9 +1,22 @@
 # Changelog
 
+## 0.3.0
+- Convert tilux to ruby
+- Add GitHub actions (compile, docker and stale)
+- Add configuration files (Clang format, flake8, rubocop)
+- Rename usage script to build and update the script
+- Update installation and guide
+- Add scripts for running tilux better etc. (add_alias, resize_term)
+- Add more tools (ansi-colors for ruby, error handling and ruby functions)
+- Remove openssl (for now)
+- Add sys/add_alias, sys/resize_terminal and sys/space
+- Convert scripts to ruby
+- Format code
+
 ## 0.2.5
 - Add filesize and spec script
 - Add proc script to check how long a script takes to run
-- Add tools (logos.py, ansi-colors etc.)
+- Add tools (logos.py etc.)
 - Add prompt
 - Convert more scripts from shell to ruby
 - Fix Dockerfile and CI

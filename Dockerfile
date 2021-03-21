@@ -23,9 +23,6 @@ RUN git clone https://github.com/endormi/tilux.git \
 
 COPY . ./
 
-# Needed to get rid of cryptography package issue
-RUN python3 -m pip install -U pip
-
 ENV BUNDLER_VERSION=2.1.4
 
 # Needed to get rid of "You must use Bundler 2 or greater with this lockfile" error

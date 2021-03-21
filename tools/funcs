@@ -13,7 +13,6 @@ til () {
   echo -e "  --help -- How to use Tilux?\n"
 }
 
-
 help () {
  echo Interactive:
  echo -e "Running the files interactively ./tilux and then follow the choices\n"
@@ -86,7 +85,7 @@ sys () {
 # misc () {}
 
 
-# Required for running in tilux.rb
+# Required for running in tilux
 if [[ $1 == "help" ]]; then
   help
 elif [[ $1 == "info" ]]; then

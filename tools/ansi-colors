@@ -1,8 +1,0 @@
-#!/bin/bash
-
-r="\033[0;31m" # Red
-b="\033[0;34m" # Blue
-g="\033[0;32m" # Green
-y="\033[1;33m" # Yellow
-bl="\033[1;30m" # Black
-w="\033[1;37m" # White

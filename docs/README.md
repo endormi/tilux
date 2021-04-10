@@ -35,6 +35,7 @@ system -f: fd (number of files and folders)
 system -fl: file updated
 system -fr: force reboot
 system -fs: file size
+system -g: configure git
 system -l: last updated (file)
 system -p: parse date
 system -rt: resize terminal

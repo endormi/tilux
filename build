@@ -15,6 +15,7 @@ chmod +x ./sys/add_alias.sh
 chmod +x ./sys/bf.sh
 chmod +x ./sys/clean.sh
 chmod +x ./sys/force_reboot.sh
+chmod +x ./sys/git_config.sh
 chmod +x ./sys/last_updated.sh
 chmod +x ./sys/resize_terminal.sh
 
@@ -65,6 +66,12 @@ fi
 if [ "$(which gcc)" == "" ] || [ "$(which g++)" == "" ]; then
   sudo apt-get upgrade
   sudo apt install build-essential
+fi
+
+# if by chance you don't have git which is unlikely
+if [[ "$(which git)" == "" ]]; then
+  sudo apt-get upgrade
+  sudo apt install git
 fi
 
 # fixes issue with cryptography package

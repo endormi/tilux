@@ -4,6 +4,7 @@
 - Add git config and force reboot
 - Add emptyinput catching to the rest of the inputs
 - Add header file
+- Move all chmods to one specific file
 - Delete CHECKLIST.md
 
 ## 0.3.0

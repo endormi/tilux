@@ -12,7 +12,8 @@ catch_empty $your_name
 read -p "What is the filename? " file
 catch_empty $file
 
-echo -e "\nChoices: 1 basic encryption, 2 send file"
+cmd="1 basic encryption, 2 send file"
+echo -e "\nChoices: $cmd"
 read -p "Type in the number of the script you want to use: " input_process
 catch_empty $input_process
 echo
@@ -23,7 +24,8 @@ case "$input_process" in
     less $file.gpg
     ;;
   "2")
-    echo -e "\nChoices: 1 GPG extension, 2 ASCII extension"
+    cmd="1 GPG extension, 2 ASCII extension"
+    echo -e "\nChoices: $cmd"
     read -p "Type in the number of the script you want to use: " process
 
     case "$process" in

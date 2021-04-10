@@ -10,7 +10,7 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 import sys
 sys.path.append("./tools")
 from logos import Logo
-import catch_exception
+import catch_exception as ce
 import time
 
 Logo('Pyca Generate key')
@@ -20,6 +20,7 @@ time.sleep(1)
 def pw():
     # Use a password to create a key
     p = input('What is the password you want to use? ')
+    ce.__input__(p)
     password = p.encode()
     salt = os.urandom(16)
     kdf = PBKDF2HMAC(
@@ -33,6 +34,7 @@ def pw():
     print(key)
     print('\nRemember to add .key to the end of the file.\nAlso, if you wish to add the file to a different directory\nadd /directory/ before key name.')
     file = input('What is the filename? ')
+    ce.__input__(file)
     f = open(file, 'wb')
     f.write(key)
     f.close()
@@ -42,6 +44,7 @@ def main():
     choices = "pw (Uses a password to create a key) & no_pw"
     print("Choices " + choices)
     choose_cmd = input("Type in the command you want to use: ").lower()
+    ce.__input__(choose_cmd)
 
     if choose_cmd == "pw":
         pw()
@@ -50,6 +53,7 @@ def main():
         print(key)
         print('\nRemember to add .key to the end of the file.\nAlso, if you wish to add the file to a different directory\nadd /directory/ before key name.')
         file = input('What is the filename? ')
+        ce.__input__(file)
         f = open(file, 'wb')
         f.write(key)
         f.close()

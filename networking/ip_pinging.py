@@ -4,7 +4,7 @@ import subprocess
 import sys
 sys.path.append("./tools")
 from logos import Logo
-import catch_exception
+import catch_exception as ce
 import time
 
 Logo('IP Pinging')
@@ -23,9 +23,7 @@ start = input('Starting IP: ')
 end = input('Ending IP: ')
 print()
 
-if net == "" or start == "" or end == "":
-    print("Choice can't be empty!")
-    sys.exit()
+ce.__input__(net, start, end)
 
 for i in range(int(start), int(end)):
     try:

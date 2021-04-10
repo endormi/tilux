@@ -5,7 +5,7 @@ import smtplib
 import sys
 sys.path.append("./tools")
 from logos import Logo
-import catch_exception
+import catch_exception as ce
 import time
 
 Logo('Website Monitoring')
@@ -20,9 +20,7 @@ https://myaccount.google.com/apppasswords
 """
 Your_Password = input('Your password: ')
 
-if url == "" or Your_Email == "" or Your_Password == "":
-    print("Choice can't be empty!")
-    sys.exit()
+ce.__input__(url, Your_Email, Your_Password)
 
 req = requests.get(url, timeout=1)
 req.raise_for_status()

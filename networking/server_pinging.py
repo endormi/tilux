@@ -5,16 +5,14 @@ import time
 import sys
 sys.path.append("./tools")
 from logos import Logo
-import catch_exception
+import catch_exception as ce
 
 Logo('Server Pinging')
 time.sleep(1)
 
 hostname = input("Domain: ")
 
-if hostname == "":
-    print("Choice can't be empty!")
-    sys.exit()
+ce.__input__(hostname)
 
 response = os.system("ping -c 1 " + hostname)
 

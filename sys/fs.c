@@ -5,8 +5,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
-#define MAX 100
+#include "sys.h"
 
 void handler(int sig)
 {

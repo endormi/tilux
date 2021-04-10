@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/sysinfo.h>
-
-#define c 1024
+#include "sys.h"
 
 int main()
 {

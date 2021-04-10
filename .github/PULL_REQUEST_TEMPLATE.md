@@ -1,5 +1,5 @@
 <!--
-  Have any questions? Ask us at our discord channel or open a new issue. :)
+  Have any questions? Open a new issue. :)
 -->
 
 ## Description

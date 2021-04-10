@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+function catch_empty(){
+  args="$1"
+
+  if [[ $args == "" ]]; then
+    echo "Choice can't be empty!"
+    exit;
+  fi
+}

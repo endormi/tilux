@@ -106,19 +106,21 @@ def sys_options(choice)
     sys('./sys/fd.rb')
   when '7', '-fl', '--fl'
     sys('./sys/file_updated.rb')
-  when '8', '-fs', '--fs'
+  when '8', '-fr', '--fr'
+    sys('./sys/force_reboot.sh')
+  when '9', '-fs', '--fs'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('FS');"`
     system('./fs')
-  when '9', '-l', '--l'
+  when '10', '-l', '--l'
     sys('./sys/last_updated.sh')
-  when '10', '-p', '--p'
+  when '11', '-p', '--p'
     sys('./sys/parse_date.rb')
-  when '11', '-rt', '--rt'
-    sys('./sys/resize_terminal.sh')
-  when '12', '-r', '--r'
+  when '12', '-p', '--p'
+    sys('./sys/parse_date.rb')
+  when '13', '-r', '--r'
     sys('./sys/root.rb')
-  when '13', '-s', '--s'
+  when '14', '-s', '--s'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Space');"`
     system('./space')

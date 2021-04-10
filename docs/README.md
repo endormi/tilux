@@ -33,6 +33,7 @@ system -d: del (Delete file or directory)
 system -e: exists (Check if file or dir exists)
 system -f: fd (number of files and folders)
 system -fl: file updated
+system -fr: force reboot
 system -fs: file size
 system -l: last updated (file)
 system -p: parse date

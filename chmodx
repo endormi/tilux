@@ -1,0 +1,36 @@
+#!/bin/bash
+
+chmod +x ./cryptography/ccrypt/ccrypt_encryption.sh
+chmod +x ./cryptography/ccrypt/ccrypt_decryption.sh
+chmod +x ./cryptography/gpg/gpg_encryption.sh
+chmod +x ./cryptography/gpg/gpg_decryption.sh
+chmod +x ./cryptography/zip/zip_encryption.sh
+chmod +x ./cryptography/zip/zip_decryption.sh
+chmod +x ./monitoring/cpu_monitoring.sh
+chmod +x ./monitoring/mem_monitoring.sh
+chmod +x ./sys/add_alias.sh
+chmod +x ./sys/bf.sh
+chmod +x ./sys/clean.sh
+chmod +x ./sys/force_reboot.sh
+chmod +x ./sys/git_config.sh
+chmod +x ./sys/last_updated.sh
+chmod +x ./sys/resize_terminal.sh
+
+chmod +x ./cryptography/pyca/encrypt.py
+chmod +x ./cryptography/pyca/decrypt.py
+chmod +x ./monitoring/website_monitoring.py
+chmod +x ./networking/ip_pinging.py
+chmod +x ./networking/server_pinging.py
+
+chmod +x tilux
+chmod +x ./info.rb
+chmod +x ./sys/del.rb
+chmod +x ./sys/exists.rb
+chmod +x ./sys/fd.rb
+chmod +x ./sys/file_updated.rb
+chmod +x ./sys/parse_date.rb
+chmod +x ./sys/root.rb
+
+chmod +x ./proc_script.rb
+
+chmod +x ./install_req

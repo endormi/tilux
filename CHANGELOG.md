@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.5
+- Add empty input catching for python
+- Add empty input catching for shell
+- Fix GPG command error
+- Create new workflow
+
 ## 0.3.1
 - Add git config and force reboot
 - Add emptyinput catching to the rest of the inputs

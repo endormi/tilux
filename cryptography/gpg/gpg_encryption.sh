@@ -4,13 +4,17 @@
 # Still a WIP code
 #
 
+source ./tools/catch
 python3 -c "from tools.logos import Logo; Logo('GPG Encryption');"
 
 read -p "What is your name? " your_name
+catch_empty $your_name
 read -p "What is the filename? " file
+catch_empty $file
 
 echo -e "\nChoices: 1 basic encryption, 2 send file"
 read -p "Type in the number of the script you want to use: " input_process
+catch_empty $input_process
 echo
 
 case "$input_process" in

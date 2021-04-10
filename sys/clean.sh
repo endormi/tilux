@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source ./tools/catch
 python3 -c "from tools.logos import Logo; Logo('Clean');"
 
 
@@ -22,6 +23,7 @@ echo "Empty the trash:"
 choices="1 or all"
 echo "choices: $choices (1 means going through files one by one and all means, well you know..) "
 read -p "Type in your choice: " choice
+catch_empty $choice
 choice="$(echo ${choice} | tr 'A-Z' 'a-z')"
 
 case "$choice" in

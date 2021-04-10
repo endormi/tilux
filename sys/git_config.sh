@@ -1,9 +1,12 @@
 #!/bin/bash
 
+source ./tools/catch
 python3 -c "from tools.logos import Logo; Logo('Git Config');"
 
 read -p "Name: " name
+catch_empty $name
 read -p "Email: " email
+catch_empty $email
 read -p "Do you want to set it globally? (Y/n) " c
 c="$(echo ${c} | tr 'A-Z' 'a-z')"
 

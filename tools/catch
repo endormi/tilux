@@ -1,0 +1,22 @@
+#!/bin/bash
+
+: '
+----
+  This is a quick implementation just for
+  the initial functionality.
+
+  I wanted to commit the code as-is,
+  but I am planning on adding three
+  arguments of which two are going to
+  be optional.
+----
+'
+
+function catch_empty(){
+  args="$1"
+
+  if [[ $args == "" ]]; then
+    echo "Choice can't be empty!"
+    exit;
+  fi
+}

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source ./tools/catch
 python3 -c "from tools.logos import Logo; Logo('Zip Encryption');"
 sleep 1
 
@@ -10,11 +11,8 @@ fi
 
 echo -e "Warning! The standard ZIP encryption is very weak.\n"
 read -p "What file(s) do you want to encrypt? " f
+catch_empty $f
 read -p "What is the name for the .zip file? " zf
-
-if [[ $f == "" || $zf == "" ]]; then
-  echo "Choice can't be empty!"
-  exit;
-fi
+catch_empty $zf
 
 zip --encrypt -r $zf $f

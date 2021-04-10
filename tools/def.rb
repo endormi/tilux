@@ -116,8 +116,8 @@ def sys_options(choice)
     sys('./sys/last_updated.sh')
   when '11', '-p', '--p'
     sys('./sys/parse_date.rb')
-  when '12', '-p', '--p'
-    sys('./sys/parse_date.rb')
+  when '12', '-rt', '--rt'
+    sys('./sys/resize_terminal.sh')
   when '13', '-r', '--r'
     sys('./sys/root.rb')
   when '14', '-s', '--s'

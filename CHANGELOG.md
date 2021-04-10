@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1
+- Add git config and force reboot
+- Add emptyinput catching to the rest of the inputs
+- Add header file
+- Delete CHECKLIST.md
+
 ## 0.3.0
 - Convert tilux to ruby
 - Add GitHub actions (compile, docker and stale)

@@ -11,7 +11,7 @@ read -p "Do you want to set it globally? (Y/n) " c
 c="$(echo ${c} | tr 'A-Z' 'a-z')"
 
 case "$c" in
-  "y")
+  "y" | "yes")
     echo "Setting git configs globally..."
     git config --global user.name $name
     git config --global user.email $email

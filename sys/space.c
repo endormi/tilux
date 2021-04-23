@@ -2,9 +2,12 @@
 #include <stdlib.h>
 #include <sys/sysinfo.h>
 #include "sys.h"
+#include "../tools/handler.h"
 
 int main()
 {
+    signal(SIGINT, handler);
+
     int days, hours, mins;
     struct sysinfo info;
     int err = sysinfo(&info);

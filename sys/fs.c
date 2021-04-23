@@ -1,17 +1,11 @@
 #include <fcntl.h>
-#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include "sys.h"
-
-void handler(int sig)
-{
-    printf("\nExiting...\n");
-    exit(sig);
-}
+#include "../tools/handler.h"
 
 void check_filesize(const char* filename)
 {

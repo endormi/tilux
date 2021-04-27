@@ -5,10 +5,7 @@ notes.md
 __pycache__
 
 # compiled c/c++ files
-fs
-proc
-spec
-space
+*.o
 
 # For emacs
 *~

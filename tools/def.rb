@@ -111,7 +111,7 @@ def sys_options(choice)
   when '9', '-fs', '--fs'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('FS');"`
-    system('./fs')
+    system('./fs.o')
   when '10', '-g', '--g'
     sys('./sys/git_config.sh')
   when '11', '-l', '--l'
@@ -125,7 +125,7 @@ def sys_options(choice)
   when '15', '-s', '--s'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Space');"`
-    system('./space')
+    system('./space.o')
   else
     # TODO
     puts 'Invalid choice'

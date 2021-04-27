@@ -1,9 +1,13 @@
+CC = gcc
+CFLAGS = -g -Wall
+
 default:
-	gcc sys/fs.c -o fs
-	gcc sys/space.c -o space
-	g++ proc.cpp -o proc
+	$(CC) sys/fs.c $(CFLAGS) -o fs.o
+	$(CC) sys/space.c $(CFLAGS) -o space.o
+
+# Doesn't affect the functionality in any way and is not needed
+c+:
+	g++ proc.cpp -o proc.o
 
 clean:
-	rm -rf fs
-	rm -rf space
-	rm -rf proc
+	rm -rf *.o

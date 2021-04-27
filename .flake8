@@ -1,9 +1,6 @@
-# TODO
 [flake8]
 ignore:
 	E402,
 	E501,
-	# This is due to me importing a catch exception module
-	F401,
 	H301,
 	H306

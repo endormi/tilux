@@ -114,15 +114,17 @@ def sys_options(choice)
     system('./fs.o')
   when '10', '-g', '--g'
     sys('./sys/git_config.sh')
-  when '11', '-l', '--l'
+  when '11', '-i', '--i'
+    sys('./sys/ip.rb')
+  when '12', '-l', '--l'
     sys('./sys/last_updated.sh')
-  when '12', '-p', '--p'
+  when '13', '-p', '--p'
     sys('./sys/parse_date.rb')
-  when '13', '-rt', '--rt'
+  when '14', '-rt', '--rt'
     sys('./sys/resize_terminal.sh')
-  when '14', '-r', '--r'
+  when '15', '-r', '--r'
     sys('./sys/root.rb')
-  when '15', '-s', '--s'
+  when '16', '-s', '--s'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Space');"`
     system('./space.o')

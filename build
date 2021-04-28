@@ -45,7 +45,7 @@ python3 -m pip install -U pip
 
 make -s
 
-./scripts/install_req
+pip3 install -r requirements.txt && bundle install
 
 clear
 

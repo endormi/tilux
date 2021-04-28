@@ -33,5 +33,3 @@ chmod +x ./sys/parse_date.rb
 chmod +x ./sys/root.rb
 
 chmod +x ./proc_script.rb
-
-chmod +x ./scripts/install_req

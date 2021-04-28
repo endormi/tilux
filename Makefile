@@ -1,9 +1,9 @@
 CC = gcc
-CFLAGS = -g -Wall
+CFLAGS = -g -Wall -o
 
 default:
-	$(CC) sys/fs.c $(CFLAGS) -o fs.o
-	$(CC) sys/space.c $(CFLAGS) -o space.o
+	$(CC) sys/fs.c $(CFLAGS) fs.o
+	$(CC) sys/space.c $(CFLAGS) space.o
 
 # Doesn't affect the functionality in any way and is not needed
 c+:

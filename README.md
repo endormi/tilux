@@ -76,6 +76,8 @@ tilux
 
 To see the commands to use and how to run using Docker, click [here](docs/README.md).
 
+Check useful scripts [here](scripts/README.md).
+
 [Tested](TESTED_ON.md) on (these are manually tested).
 
 ## License

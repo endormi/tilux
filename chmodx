@@ -34,4 +34,4 @@ chmod +x ./sys/root.rb
 
 chmod +x ./proc_script.rb
 
-chmod +x ./install_req
+chmod +x ./scripts/install_req

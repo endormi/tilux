@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ..
+
 # Creates a new file
 [ ! -f ~/.bash_aliases ] && touch ~/.bash_aliases
 

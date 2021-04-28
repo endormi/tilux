@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ..
+
 # Works only with gnome terminal and xterm for now
 cmd_gnome=$(cat /etc/alternatives/x-terminal-emulator | grep exec | grep gnome)
 cmd_xterm=$(cat /etc/alternatives/x-terminal-emulator | grep exec | grep xterm)

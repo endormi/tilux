@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ..
+
 if [[ "$(which clang-format)" == "" ]]; then
   sudo apt-get upgrade
   sudo apt install clang-format

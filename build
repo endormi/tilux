@@ -45,7 +45,7 @@ python3 -m pip install -U pip
 
 make -s
 
-./install_req
+./scripts/install_req
 
 clear
 

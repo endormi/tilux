@@ -62,7 +62,7 @@ bash build
 ./tilux --help
 ```
 
-If you run the `add_alias` script, you can run tilux by simply running:
+If you run the `add_alias` script inside scripts folder, you can run tilux by simply running:
 
 > Now you can run `tilux` without having to be inside the folder.
 

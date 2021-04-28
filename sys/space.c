@@ -19,18 +19,18 @@ int main()
 
     days = info.uptime / 86400;
     hours = (info.uptime / 3600) - (days * 24);
-    mins = (info.uptime / 60) - (days * 1440) - (hours * 60);
+    mins = (info.uptime / H) - (days * 1440) - (hours * H);
 
     printf("Uptime: %d days, %d hours, %d minutes, %ld seconds\n", days, hours,
-           mins, info.uptime % 60);
+           mins, info.uptime % H);
 
-    printf("Total Ram: %ldk Free: %ldk\n", info.totalram / c, info.freeram / c);
+    printf("Total Ram: %ldk Free: %ldk\n", info.totalram / C, info.freeram / C);
 
-    printf("Shared Ram: %ldk\n", info.sharedram / c);
-    printf("Buffered Ram: %ldk\n", info.bufferram / c);
+    printf("Shared Ram: %ldk\n", info.sharedram / C);
+    printf("Buffered Ram: %ldk\n", info.bufferram / C);
 
-    printf("Total Swap: %ldk Free: %ldk\n", info.totalswap / c,
-           info.freeswap / c);
+    printf("Total Swap: %ldk Free: %ldk\n", info.totalswap / C,
+           info.freeswap / C);
 
     printf("Number of processes: %d running\n", info.procs);
 

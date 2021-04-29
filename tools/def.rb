@@ -92,57 +92,57 @@ end
 
 def sys_options(choice)
   case choice
-  when '1', '-a', '--a'
+  when '-a', '--a'
     sys('./sys/add_alias.sh')
-  when '2', '-bf', '--bf'
+  when '-bf', '--bf'
     sys('./sys/bf.sh')
-  when '3', '-b', '--b'
+  when '-b', '--b'
     sys('./sys/bit.sh')
-  when '4', '-c', '--c'
+  when '-c', '--c'
     sys('./sys/clean.sh')
-  when '5', '-cpu', '--cpu'
+  when '-cpu', '--cpu'
     sys('./sys/cpu_name.sh')
-  when '6', '-d', '--d'
+  when '-d', '--d'
     sys('./sys/del.rb')
-  when '7', '-di', '--di'
+  when '-di', '--di'
     sys('./sys/distro.sh')
-  when '8', '-e', '--e'
+  when '-e', '--e'
     sys('./sys/exists.rb')
-  when '9', '-f', '--f'
+  when '-f', '--f'
     sys('./sys/fd.rb')
-  when '10', '-fl', '--fl'
+  when '-fl', '--fl'
     sys('./sys/file_updated.rb')
-  when '11', '-fp', '--fp'
+  when '-fp', '--fp'
     sys('./sys/force_poweroff.sh')
-  when '12', '-fr', '--fr'
+  when '-fr', '--fr'
     sys('./sys/force_reboot.sh')
-  when '13', '-fs', '--fs'
+  when '-fs', '--fs'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('FS');"`
     system('./fs.o')
-  when '14', '-g', '--g'
+  when '-g', '--g'
     sys('./sys/git_config.sh')
-  when '15', '-gpu', '--gpu'
+  when '-gpu', '--gpu'
     sys('./sys/gpu_name.sh')
-  when '16', '-h', '--h'
+  when '-h', '--h'
     sys('./sys/hostname.rb')
-  when '17', '-i', '--i'
+  when '-i', '--i'
     sys('./sys/ip.rb')
-  when '18', '-k', '--k'
+  when '-k', '--k'
     sys('./sys/kernel_version.sh')
-  when '19', '-l', '--l'
+  when '-l', '--l'
     sys('./sys/last_updated.sh')
-  when '20', '-o', '--o'
+  when '-o', '--o'
     sys('./sys/os.rb')
-  when '21', '-p', '--p'
+  when '-p', '--p'
     sys('./sys/parse_date.rb')
-  when '22', '-prv', '--prv'
+  when '-prv', '--prv'
     sys('./sys/prv.sh')
-  when '23', '-rt', '--rt'
+  when '-rt', '--rt'
     sys('./sys/resize_terminal.sh')
-  when '24', '-r', '--r'
+  when '-r', '--r'
     sys('./sys/root.rb')
-  when '25', '-s', '--s'
+  when '-s', '--s'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Space');"`
     system('./space.o')

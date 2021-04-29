@@ -16,9 +16,9 @@
 All of the available commands:
 
 ```
-info: host (name, OS, kernel version, DNS domain and local IP address)
 cryptography -c: ccrypt -e (for encryption) or -d (for decryption)
 cryptography -g: GPG -e (for encryption) or -d (for decryption)
+cryptography -o: Openssl -e (for encryption) or -d (for decryption)
 cryptography -p: Pyca -e (for encryption) or -d (for decryption)
 cryptography -z: Zip -e (for encryption) or -d (for decryption)
 monitoring -c: monitoring cpu processes
@@ -31,9 +31,9 @@ system -bf: bf (backup folder)
 system -b: computer bit system
 system -c: clean (clean system of logs and trash)
 system -cpu: CPU name
-system -d: del (Delete file or directory)
+system -d: del (delete file or directory)
 system -di: check distro
-system -e: exists (Check if file or dir exists)
+system -e: exists (check if file or dir exists)
 system -f: fd (number of files and folders)
 system -fl: file updated
 system -fp: force poweroff

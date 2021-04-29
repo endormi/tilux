@@ -4,7 +4,11 @@
 # Still a WIP
 #
 
+source ./tools/catch
+python3 -c "from tools.logos import Logo; Logo('Generate key');"
+
 read -p "Your email: " email_address
+catch_empty $email_address
 email_address="$(echo ${email_address} | tr 'A-Z' 'a-z')"
 read -p "Do you want to generate a key for yourself? (Y/n) " generate_key
 generate_key="$(echo ${generate_key} | tr 'A-Z' 'a-z')"
@@ -24,10 +28,12 @@ if [[ $import_or_not == "y" ]]; then
 
   if [[ $known_key == "y" ]]; then
     read -p "Key: " pub_key
+    catch_empty $pub_key
     gpg --import $pub_key
   else
     # I'm working on this to figure out what happens if a key is found
     read -p "Add the email of the person: " email_key
+    catch_empty $email_key
     gpg --keyserver pgp.mit.edu --search-keys $email_key
   fi
 fi
@@ -35,11 +41,13 @@ fi
 read -p "Do you wish to verify a key? (Y/n) " verify_key
 if [[ $verify_key == "y" ]]; then
   read -p "Add the email of the person you wish to verify a key from: " email_addr
+  catch_empty $email_addr
   gpg --fingerprint $email_addr
   gpg --sign-key $email_addr
 fi
 
 read -p "What is your key? " u_key
+catch_empty $u_key
 gpg --output ~/$u_key --armor --export $email_address
 less $u_key
 gpg --send-keys --keyserver pgp.mit.edu $u_key

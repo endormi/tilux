@@ -43,14 +43,15 @@ end
 def run_option(option)
   case option
   when 'tilux'
-    puts '  {1} -- 4 choices for encryption and decryption'
+    puts '  {1} -- 5 choices for encryption and decryption'
     puts '  {2} -- Monitoring different processes'
     puts '  {3} -- Pinging networks'
     puts '  {4} -- System scripts'
     puts "  --help -- How to use Tilux?\n"
   when 'crypto'
-    puts 'cryptography -c: ccrypt'
+    puts 'cryptography -c: CCRYPT'
     puts 'cryptography -g: GPG'
+    puts 'cryptography -o: Openssl'
     puts 'cryptography -p: Pyca'
     puts "cryptography -z: Zip\n"
   when 'monitoring'
@@ -93,10 +94,10 @@ def run_option(option)
     puts 'Running the files with args ./tilux (and then the argument e.g. cryptography -c -e)'
     puts "Note: The uppercase doesn't work currently with args\n"
 
-    puts 'info: host (name, OS, kernel version, DNS domain and local IP address)'
     puts 'cryptography -c: ccrypt -e (for encryption) or -d (for decryption)'
     puts 'cryptography -g: GPG -e (for encryption) or -d (for decryption)'
     puts 'cryptography -o: Openssl -e (for encryption) or -d (for decryption)'
+    puts 'cryptography -p: Pyca -e (for encryption) or -d (for decryption)'
     puts 'cryptography -z: Zip -e (for encryption) or -d (for decryption)'
     puts 'monitoring -c: monitoring cpu processes'
     puts 'monitoring -m: monitoring memory consumption'
@@ -108,9 +109,9 @@ def run_option(option)
     puts 'system -b: computer bit system'
     puts 'system -c: clean (clean system of logs and trash)'
     puts 'system -cpu: CPU name'
-    puts 'system -d: del (Delete file or directory)'
+    puts 'system -d: del (delete file or directory)'
     puts 'system -di: check distro'
-    puts 'system -e: exists (Check if file or dir exists)'
+    puts 'system -e: exists (check if file or dir exists)'
     puts 'system -f: fd (number of files and folders)'
     puts 'system -fl: file updated'
     puts 'system -fp: force poweroff'
@@ -174,7 +175,16 @@ if ARGV.empty?
       empty_input?(i)
       gpg_options(i)
 
-    when '3', '-p', '--p', '-P', '--P'
+    when '3', '-o', '--o', '-O', '--O'
+      title?('::Openssl::')
+      cryptography_encryption
+      print "#{prompt} "
+      i = gets.chomp.to_s.downcase.strip
+
+      empty_input?(i)
+      openssl_options(i)
+
+    when '4', '-p', '--p', '-P', '--P'
       title?('::Pyca::')
       cryptography_encryption
       print "#{prompt} "
@@ -183,7 +193,7 @@ if ARGV.empty?
       empty_input?(i)
       pyca_options(i)
 
-    when '4', '-z', '--z', '-Z', '--Z'
+    when '5', '-z', '--z', '-Z', '--Z'
       title?('::Zip::')
       cryptography_encryption
       print "#{prompt} "

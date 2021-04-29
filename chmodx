@@ -4,6 +4,8 @@ chmod +x ./cryptography/ccrypt/ccrypt_encryption.sh
 chmod +x ./cryptography/ccrypt/ccrypt_decryption.sh
 chmod +x ./cryptography/gpg/gpg_encryption.sh
 chmod +x ./cryptography/gpg/gpg_decryption.sh
+chmod +x ./cryptography/openssl/openssl_encryption.sh
+chmod +x ./cryptography/openssl/openssl_decryption.sh
 chmod +x ./cryptography/zip/zip_encryption.sh
 chmod +x ./cryptography/zip/zip_decryption.sh
 chmod +x ./monitoring/cpu_monitoring.sh
@@ -23,6 +25,12 @@ chmod +x ./sys/last_updated.sh
 chmod +x ./sys/prv.sh
 chmod +x ./sys/resize_terminal.sh
 
+chmod +x ./scripts/add_alias
+chmod +x ./scripts/cformat
+chmod +x ./scripts/install_req
+chmod +x ./scripts/resize_term
+chmod +x ./scripts/start_dcompose
+
 chmod +x ./cryptography/pyca/encrypt.py
 chmod +x ./cryptography/pyca/decrypt.py
 chmod +x ./monitoring/website_monitoring.py
@@ -39,5 +47,9 @@ chmod +x ./sys/ip.rb
 chmod +x ./sys/os.rb
 chmod +x ./sys/parse_date.rb
 chmod +x ./sys/root.rb
+
+# Generate keys
+chmod +x ./cryptography/gpg/gpg_generate_and_verify_keys.sh
+chmod +x ./cryptography/pyca/generate_key.py
 
 chmod +x ./proc_script.rb

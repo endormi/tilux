@@ -19,5 +19,7 @@ now = DateTime.now
 date = now.strftime '%d/%m/%Y'
 time = now.strftime '%H:%M'
 
+sleep 0.5
 puts "Current date is: #{date}"
+sleep 0.5
 puts "Current time is: #{time}"

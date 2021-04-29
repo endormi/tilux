@@ -43,14 +43,11 @@ end
 def run_option(option)
   case option
   when 'tilux'
-    puts '  {1} -- Host (name, OS, kernel version & more)'
-    puts '  {2} -- 4 choices for encryption and decryption'
-    puts '  {3} -- Monitoring different processes'
-    puts '  {4} -- Pinging networks'
-    puts '  {5} -- System scripts'
+    puts '  {1} -- 4 choices for encryption and decryption'
+    puts '  {2} -- Monitoring different processes'
+    puts '  {3} -- Pinging networks'
+    puts '  {4} -- System scripts'
     puts "  --help -- How to use Tilux?\n"
-  when 'info'
-    puts "Host (name, OS, kernel version & more)\n"
   when 'crypto'
     puts 'cryptography -c: ccrypt'
     puts 'cryptography -g: GPG'
@@ -65,18 +62,27 @@ def run_option(option)
     puts "-s: server_pinging\n"
   when 'system'
     puts '-a: add alias'
-    puts '-b: bf (backup folder)'
+    puts '-bf: bf (backup folder)'
+    puts '-b: computer bit system'
     puts '-c: clean (clean system of logs and trash)'
+    puts '-cpu: CPU name'
     puts '-d: del (delete file or directory)'
+    puts '-di: check distro'
     puts '-e: exists (file or directory)'
     puts '-f: fd (number of files and folders'
     puts '-fl: file updated'
+    puts '-fp: force poweroff'
     puts '-fr: force reboot'
     puts '-fs: file size'
     puts '-g: configure git'
+    puts '-gpu: GPU name'
+    puts '-h: check hostname'
     puts '-i: IP address'
+    puts '-k: kernel version'
     puts '-l: last updated (file)'
+    puts '-o: check OS'
     puts '-p: parse date'
+    puts '-prv: python and ruby version'
     puts '-rt: resize terminal'
     puts '-r: root (check if you are root or not)'
     puts "-s: (display computer space, uptime and number of processes running)\n"
@@ -98,18 +104,27 @@ def run_option(option)
     puts 'networking -i: IP pinging'
     puts 'networking -s: Server pinging'
     puts 'system -a: add alias'
-    puts 'system -b: bf (backup folder)'
+    puts 'system -bf: bf (backup folder)'
+    puts 'system -b: computer bit system'
     puts 'system -c: clean (clean system of logs and trash)'
+    puts 'system -cpu: CPU name'
     puts 'system -d: del (Delete file or directory)'
+    puts 'system -di: check distro'
     puts 'system -e: exists (Check if file or dir exists)'
     puts 'system -f: fd (number of files and folders)'
     puts 'system -fl: file updated'
+    puts 'system -fp: force poweroff'
     puts 'system -fr: force reboot'
     puts 'system -fs: file size'
     puts 'system -g: configure git'
+    puts 'system -gpu: GPU name'
+    puts 'system -h: check hostname'
     puts 'system -i: IP address'
+    puts 'system -k: kernel version'
     puts 'system -l: last updated (file)'
+    puts 'system -o: check OS'
     puts 'system -p: parse date'
+    puts 'system -prv: python and ruby version'
     puts 'system -rt: resize terminal'
     puts 'system -r: root (check if you are root or not)'
     puts 'system -s: space (display computer space, uptime and number of processes running)'
@@ -132,10 +147,7 @@ if ARGV.empty?
   empty_input?(c)
 
   case c
-  when 'info', '1'
-    sys('./info.rb')
-
-  when 'cryptography', 'crypto', '2'
+  when 'cryptography', 'crypto', '1'
     title?('::Cryptography::')
     run_option('crypto')
     print "#{prompt} "
@@ -185,7 +197,7 @@ if ARGV.empty?
       puts 'Invalid choice'
     end
 
-  when 'monitoring', '3'
+  when 'monitoring', '2'
     title?('::Monitoring::')
     run_option('monitoring')
     print "#{prompt} "
@@ -194,7 +206,7 @@ if ARGV.empty?
     empty_input?(input)
     monitoring_options(input)
 
-  when 'networking', 'net', '4'
+  when 'networking', 'net', '3'
     title?('::Networking::')
     run_option('net')
     print "#{prompt} "
@@ -203,7 +215,7 @@ if ARGV.empty?
     empty_input?(input)
     networking_options(input)
 
-  when 'sys', 'system', '5'
+  when 'sys', 'system', '4'
     title?('::System::')
     run_option('system')
     print "#{prompt} "
@@ -215,7 +227,7 @@ if ARGV.empty?
     # when "misc"
     #  puts "misc"
 
-  when 'help', '--help', '--h', '6'
+  when 'help', '--help', '--h', '5'
     title?('::--help::')
     run_option('help')
   else
@@ -225,10 +237,7 @@ if ARGV.empty?
 
 else
   case ARGV[0]
-  when 'info', '1'
-    sys('./info.rb')
-
-  when 'cryptography', 'crypto', '2'
+  when 'cryptography', 'crypto', '1'
     case ARGV[1]
     when '1', '-c', '--c', '-C', '--C'
       ccrypt_options(ARGV[2])
@@ -246,19 +255,19 @@ else
       puts 'Invalid choice'
     end
 
-  when 'monitoring', '3'
+  when 'monitoring', '2'
     monitoring_options(ARGV[1])
 
-  when 'networking', 'net', '4'
+  when 'networking', 'net', '3'
     networking_options(ARGV[1])
 
-  when 'sys', 'system', '5'
+  when 'sys', 'system', '4'
     sys_options(ARGV[1])
 
     # when "misc"
     #  puts("misc")
 
-  when 'help', '--help', '--h', '6'
+  when 'help', '--help', '--h', '5'
     title?('--h')
     run_option('help')
   else

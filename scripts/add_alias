@@ -1,6 +1,21 @@
 #!/bin/bash
 
-cd ..
+: '
+  ------
+  Quick hack to check if script is ran inside
+  scripts folder and if it is CD out of the folder.
+
+  add_alias script is meant to be ran inside tilux folder, not outside
+  so this should not cause any errors.
+
+  I did not create and include a function, because in order to
+  source the file, same check would have been needed.
+  ------
+'
+
+if [[ ! -d scripts ]]; then
+  cd ..
+fi
 
 # Creates a new file
 [ ! -f ~/.bash_aliases ] && touch ~/.bash_aliases
@@ -11,7 +26,6 @@ alias="tilux"
 
 if [ `alias | grep "$alias" | wc -l` != 0 ]; then echo "Alias $alias already exists"; exit; fi
 
-# >> to append
-echo -e "# Running the tilux CLI\n# In order for the script to work, you need to cd in the folder\nalias $alias='cd $PWD && ./tilux'" >> ~/.bash_aliases
+echo -e "\n# Running the tilux CLI\n# In order for the script to work, you need to cd in the folder\nalias $alias='cd $PWD && ./tilux'" >> ~/.bash_aliases
 echo "Added ${alias} to .bash_aliases"
 exec "$BASH"

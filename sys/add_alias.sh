@@ -15,7 +15,6 @@ if [ `alias | grep "$alias" | wc -l` != 0 ]; then echo "Alias $alias already exi
 read -p "Command: " cmd
 catch_empty $cmd
 
-# >> to append
 echo -e "alias $alias='$cmd'" >> ~/.bash_aliases
 echo "Added ${alias} to .bash_aliases"
 exec "$BASH"

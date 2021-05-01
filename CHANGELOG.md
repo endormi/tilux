@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1-br
+- Fix typos
+- Update Openssl choices
+- Keep consistency with run option choices
+
 ## 0.4.0
 - Bring back Openssl
 - Move info.rb into separate scripts
@@ -21,7 +26,7 @@
 
 ## 0.3.1
 - Add git config and force reboot
-- Add emptyinput catching to the rest of the inputs
+- Add empty input catching to the rest of the inputs
 - Add header file
 - Move all chmods to one specific file
 - Delete CHECKLIST.md

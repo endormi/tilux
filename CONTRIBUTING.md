@@ -9,6 +9,23 @@ Please ensure your pull request adheres to the following guidelines:
 - End all descriptions with a full stop/period.
 - Check your spelling and grammar.
 
+## New scripts
+
+For adding new scripts keep the code clear and concise.
+
+If the script you're adding is under a folder, follow the format in `tools/def.rb`.
+
+i.e.
+
+```
+when '-cpu', '--cpu'
+  sys('./sys/cpu_name.sh')
+```
+
+> If you have a better way to call scripts, feel free to implement it.
+
+Remember to add the new script to [docs](docs/README.md), [tilux](tilux) run_option function (both to the category and help, following the format) and [chmodx](chmodx).
+
 ## Contribution to GitHub steps
 
 - Fork it!

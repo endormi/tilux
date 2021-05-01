@@ -14,4 +14,4 @@ A clear and concise description of what the problem is. Ex. I'm always frustrate
 A clear and concise description of what you want to happen.
 
 **Additional context**
-Add any other context or screenshots about the
+Add any other context or screenshots about the request.

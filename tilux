@@ -103,7 +103,7 @@ def run_option(option)
     puts 'monitoring -m: monitoring memory consumption'
     puts "monitoring -w: monitoring website (if it's up and if not it sends an email)"
     puts 'networking -i: IP pinging'
-    puts 'networking -s: Server pinging'
+    puts 'networking -s: server pinging'
     puts 'system -a: add alias'
     puts 'system -bf: bf (backup folder)'
     puts 'system -b: computer bit system'

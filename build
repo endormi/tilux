@@ -22,7 +22,7 @@ if [[ "$(which ruby)" == "" ]]; then
   sudo apt install ruby-dev ruby-bundler ruby-rspec-core make
 fi
 
-# lsb_release is required to run info script
+# lsb_release is required to run sys/distro.sh script
 if [[ "$(which lsb_release)" == "" ]]; then
   sudo apt-get upgrade
   sudo apt install lsb-core

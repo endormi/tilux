@@ -2,7 +2,7 @@
 
 In the files you see `if [[ ! -d scripts ]]`, that's a quick hack to check if script is ran inside scripts folder and if it is CD out of the folder.
 
-Script are meant to be ran inside tilux folder, not outside
+Scripts are meant to be ran inside tilux folder, not outside
 so this should not cause any errors.
 
 I did not create and include a function, because in order to

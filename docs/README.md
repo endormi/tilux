@@ -25,7 +25,7 @@ monitoring -c: monitoring cpu processes
 monitoring -m: monitoring memory consumption
 monitoring -w: monitoring website (if it's up and if not it sends an email)
 networking -i: IP pinging
-networking -s: Server pinging
+networking -s: server pinging
 system -a: add alias
 system -bf: bf (backup folder)
 system -b: computer bit system

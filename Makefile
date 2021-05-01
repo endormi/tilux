@@ -7,7 +7,7 @@ default:
 
 # Doesn't affect the functionality in any way and is not needed
 c+:
-	g++ proc.cpp -o proc.o
+	g++ proc.cpp $(CFLAGS) proc.o
 
 clean:
 	rm -rf *.o

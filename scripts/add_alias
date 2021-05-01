@@ -1,18 +1,5 @@
 #!/bin/bash
 
-: '
-  ------
-  Quick hack to check if script is ran inside
-  scripts folder and if it is CD out of the folder.
-
-  add_alias script is meant to be ran inside tilux folder, not outside
-  so this should not cause any errors.
-
-  I did not create and include a function, because in order to
-  source the file, same check would have been needed.
-  ------
-'
-
 if [[ ! -d scripts ]]; then
   cd ..
 fi

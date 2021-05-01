@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.4.0
+- Bring back Openssl
+- Move info.rb into separate scripts
+- Move helpful scripts inside scripts folder
+- Add run option text directly to tilux
+- Add handler for C files
+- Add pre-commit and CodeQL
+- Remove numbers from system scripts
+- Update rubygems
+- Update contribution guidelines
+- Add README.md for tools and scripts
+- Add badges
+
 ## 0.3.5
 - Add empty input catching for python
 - Add empty input catching for shell

@@ -10,7 +10,7 @@ python3 -c "from tools.logos import Logo; Logo('Add alias');"
 read -p "Alias: " alias
 catch_empty $alias
 
-if [ `alias | grep "$alias" | wc -l` != 0 ]; then echo "Alias $alias already exists"; exit; fi
+[ `alias | grep "$alias" | wc -l` != 0 ] && echo "Alias $alias already exists" && exit
 
 read -p "Command: " cmd
 catch_empty $cmd

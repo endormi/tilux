@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if [[ ! -d scripts ]]; then
-  cd ..
-fi
+[ ! -d scripts ] && cd ..
 
 # Creates a new file
 [ ! -f ~/.bash_aliases ] && touch ~/.bash_aliases

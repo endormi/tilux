@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if [[ ! -d scripts ]]; then
-  cd ..
-fi
+[ ! -d scripts ] && cd ..
 
 if [[ "$(which docker)" == "" || "$(which docker-compose)" == "" ]]; then
   echo "You need to install Docker && Docker-Compose"

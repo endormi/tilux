@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if [[ ! -d scripts ]]; then
-  cd ..
-fi
+[ ! -d scripts ] && cd ..
 
 # Works only with gnome terminal and xterm for now
 cmd_gnome=$(cat /etc/alternatives/x-terminal-emulator | grep exec | grep gnome)

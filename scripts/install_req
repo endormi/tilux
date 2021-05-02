@@ -1,7 +1,5 @@
 #!/bin/bash
 
-if [[ ! -d scripts ]]; then
-  cd ..
-fi
+[ ! -d scripts ] && cd ..
 
 pip3 install -r requirements.txt && bundle install

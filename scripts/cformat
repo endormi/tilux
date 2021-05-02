@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if [[ ! -d scripts ]]; then
-  cd ..
-fi
+[ ! -d scripts ] && cd ..
 
 if [[ "$(which clang-format)" == "" ]]; then
   sudo apt-get upgrade

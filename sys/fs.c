@@ -1,11 +1,12 @@
+#include "fs.h"
+#include "../tools/handler.h"
+#include "sys.h"
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include "sys.h"
-#include "../tools/handler.h"
 
 void check_filesize(const char* filename)
 {

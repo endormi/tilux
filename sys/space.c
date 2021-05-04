@@ -1,8 +1,8 @@
+#include "../tools/handler.h"
+#include "sys.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/sysinfo.h>
-#include "sys.h"
-#include "../tools/handler.h"
 
 int main()
 {

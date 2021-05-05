@@ -1,4 +1,4 @@
-name: "Rubocop"
+name: rubocop-code-scan
 
 on: push
 jobs:

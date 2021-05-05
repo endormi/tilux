@@ -12,6 +12,7 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 ![docker-compose-action-CI](https://github.com/endormi/tilux/workflows/docker-compose-action-CI/badge.svg?branch=master)
 ![compile](https://github.com/endormi/tilux/actions/workflows/compile.yml/badge.svg?branch=master)
 ![CodeQL](https://github.com/endormi/tilux/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)
+![rubocop-code-scan](https://github.com/endormi/tilux/actions/workflows/rubocop-analysis.yml/badge.svg?branch=master)
 [![License](https://img.shields.io/github/license/endormi/tilux)](LICENSE)
 
 ## What is Tilux?

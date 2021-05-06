@@ -8,9 +8,9 @@
 def ccrypt_options(choice)
   case choice
   when '1', '-e', '--e'
-    sys('./cryptography/ccrypt/ccrypt_encryption.sh')
+    sys('./cryptography/ccrypt/ccrypt_encryption.sh tilux')
   when '2', '-d', '--d'
-    sys('./cryptography/ccrypt/ccrypt_decryption.sh')
+    sys('./cryptography/ccrypt/ccrypt_decryption.sh tilux')
   else
     # TODO
     puts 'Invalid choice!'
@@ -20,9 +20,9 @@ end
 def gpg_options(choice)
   case choice
   when '1', '-e', '--e'
-    sys('./cryptography/gpg/gpg_encryption.sh')
+    sys('./cryptography/gpg/gpg_encryption.sh tilux')
   when '2', '-d', '--d'
-    sys('./cryptography/gpg/gpg_decryption.sh')
+    sys('./cryptography/gpg/gpg_decryption.sh tilux')
   else
     # TODO
     puts 'Invalid choice!'
@@ -32,9 +32,9 @@ end
 def openssl_options(choice)
   case choice
   when '1', '-e', '--e'
-    sys('./cryptography/openssl/openssl_encryption.sh')
+    sys('./cryptography/openssl/openssl_encryption.sh tilux')
   when '2', '-d', '--d'
-    sys('./cryptography/openssl/openssl_decryption.sh')
+    sys('./cryptography/openssl/openssl_decryption.sh tilux')
   else
     # TODO
     puts 'Invalid choice!'
@@ -56,9 +56,9 @@ end
 def zip_options(choice)
   case choice
   when '1', '-e', '--e'
-    sys('./cryptography/zip/zip_encryption.sh')
+    sys('./cryptography/zip/zip_encryption.sh tilux')
   when '2', '-d', '--d'
-    sys('./cryptography/zip/zip_decryption.sh')
+    sys('./cryptography/zip/zip_decryption.sh tilux')
   else
     # TODO
     puts 'Invalid choice!'
@@ -77,10 +77,10 @@ def monitoring_options(choice)
   case choice
   when '1', '-c', '--c'
     system('clear')
-    system('./monitoring/cpu_monitoring.sh')
+    system('./monitoring/cpu_monitoring.sh tilux')
   when '2', '-m', '--m'
     system('clear')
-    system('./monitoring/mem_monitoring.sh')
+    system('./monitoring/mem_monitoring.sh tilux')
   when '3', '-w', '--w'
     system('clear')
     system('./monitoring/website_monitoring.py')
@@ -105,55 +105,55 @@ end
 def sys_options(choice)
   case choice
   when '-a', '--a'
-    sys('./sys/add_alias.sh')
+    sys('./sys/add_alias.sh tilux')
   when '-bf', '--bf'
-    sys('./sys/bf.sh')
+    sys('./sys/bf.sh tilux')
   when '-b', '--b'
-    sys('./sys/bit.sh')
+    sys('./sys/bit.sh tilux')
   when '-c', '--c'
-    sys('./sys/clean.sh')
+    sys('./sys/clean.sh tilux')
   when '-cpu', '--cpu'
-    sys('./sys/cpu_name.sh')
+    sys('./sys/cpu_name.sh tilux')
   when '-d', '--d'
-    sys('./sys/del.rb')
+    sys('./sys/del.rb tilux')
   when '-di', '--di'
-    sys('./sys/distro.sh')
+    sys('./sys/distro.sh tilux')
   when '-e', '--e'
-    sys('./sys/exists.rb')
+    sys('./sys/exists.rb tilux')
   when '-f', '--f'
-    sys('./sys/fd.rb')
+    sys('./sys/fd.rb tilux')
   when '-fl', '--fl'
-    sys('./sys/file_updated.rb')
+    sys('./sys/file_updated.rb tilux')
   when '-fp', '--fp'
-    sys('./sys/force_poweroff.sh')
+    sys('./sys/force_poweroff.sh tilux')
   when '-fr', '--fr'
-    sys('./sys/force_reboot.sh')
+    sys('./sys/force_reboot.sh tilux')
   when '-fs', '--fs'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('FS');"`
     system('./fs.o')
   when '-g', '--g'
-    sys('./sys/git_config.sh')
+    sys('./sys/git_config.sh tilux')
   when '-gpu', '--gpu'
-    sys('./sys/gpu_name.sh')
+    sys('./sys/gpu_name.sh tilux')
   when '-h', '--h'
-    sys('./sys/hostname.rb')
+    sys('./sys/hostname.rb tilux')
   when '-i', '--i'
-    sys('./sys/ip.rb')
+    sys('./sys/ip.rb tilux')
   when '-k', '--k'
-    sys('./sys/kernel_version.sh')
+    sys('./sys/kernel_version.sh tilux')
   when '-l', '--l'
-    sys('./sys/last_updated.sh')
+    sys('./sys/last_updated.sh tilux')
   when '-o', '--o'
-    sys('./sys/os.rb')
+    sys('./sys/os.rb tilux')
   when '-p', '--p'
-    sys('./sys/parse_date.rb')
+    sys('./sys/parse_date.rb tilux')
   when '-prv', '--prv'
-    sys('./sys/prv.sh')
+    sys('./sys/prv.sh tilux')
   when '-rt', '--rt'
-    sys('./sys/resize_terminal.sh')
+    sys('./sys/resize_terminal.sh tilux')
   when '-r', '--r'
-    sys('./sys/root.rb')
+    sys('./sys/root.rb tilux')
   when '-s', '--s'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Space');"`

@@ -1,19 +1,9 @@
 #!/usr/bin/ruby
 
-# require "rubypython"
 require 'date'
 require_relative '../tools/catch_exception'
 
-# RubyPython.start
-
-#  sys = RubyPython.import("sys")
-#  sys.path.append("./tools")
-#  lg = RubyPython.import("logos")
-#  lg.Logo("Parse date")
-
-# RubyPython.stop
-
-print `python3 -c "from tools.logos import Logo; Logo('Parse date');"`
+print `python3 -c "from tools.logos import Logo; Logo('Parse date');"` if ARGV[0] == "tilux"
 
 now = DateTime.now
 date = now.strftime '%d/%m/%Y'

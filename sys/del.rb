@@ -1,35 +1,26 @@
 #!/usr/bin/ruby
 
-# require "rubypython"
+require 'io/console'
 require_relative '../tools/catch_exception'
 
-# RubyPython.start
-
-#  sys = RubyPython.import("sys")
-#  sys.path.append("./tools")
-#  lg = RubyPython.import("logos")
-#  lg.Logo("Del")
-
-# RubyPython.stop
-
-print `python3 -c "from tools.logos import Logo; Logo('Del');"`
+print `python3 -c "from tools.logos import Logo; Logo('Del');"` if ARGV[0] == "tilux"
 
 choice = 'file or directory'
 puts "Choices: #{choice}"
 print 'Choice: '
-c = gets.chomp.to_s.downcase
+c = $stdin.gets.chomp.to_s.downcase
 
 empty_input?(c)
 
 if %w[file f].include?(c)
   print 'Path to file: '
-  f = gets.chomp.to_s.strip
+  f = $stdin.gets.chomp.to_s.strip
 
   empty_input?(f)
 
   if File.file?(f) == true
     print 'Are you sure you want to remove the file? (Y/n) '
-    yn = gets.chomp.to_s.downcase
+    yn = $stdin.gets.chomp.to_s.downcase
 
     if %w[y yes].include?(yn)
       puts "\nRemoving file.."
@@ -46,13 +37,13 @@ if %w[file f].include?(c)
 
 elsif %w[dir directory d].include?(c)
   print 'Path to directory: '
-  d = gets.chomp.to_s.strip
+  d = $stdin.gets.chomp.to_s.strip
 
   empty_input?(d)
 
   if File.directory?(d) == true
     print 'Are you sure you want to remove the folder? (Y/n) '
-    yn = gets.chomp.to_s.downcase
+    yn = $stdin.gets.chomp.to_s.downcase
 
     if %w[y yes].include?(yn)
       puts "\nRemoving folder.."

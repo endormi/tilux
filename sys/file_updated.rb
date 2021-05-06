@@ -1,22 +1,12 @@
 #!/usr/bin/ruby
 
-# require "rubypython"
+require 'io/console'
 require_relative '../tools/catch_exception'
 
-# RubyPython.start
-
-#  sys = RubyPython.import("sys")
-#  sys.path.append("./tools")
-#  lg = RubyPython.import("logos")
-#  lg.Logo("File updated")
-
-# RubyPython.stop
-
-print `python3 -c "from tools.logos import Logo; Logo('File updated');"`
+print `python3 -c "from tools.logos import Logo; Logo('File updated');"` if ARGV[0] == "tilux"
 
 print 'Filename: '
-f = gets.chomp.to_s.strip
-
+f = $stdin.gets.chomp.to_s.strip
 empty_input?(f)
 
 if File.file?(f) == true

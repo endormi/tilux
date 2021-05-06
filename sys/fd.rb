@@ -1,21 +1,12 @@
 #!/usr/bin/ruby
 
-# require "rubypython"
+require 'io/console'
 require_relative '../tools/catch_exception'
 
-# RubyPython.start
-
-#  sys = RubyPython.import("sys")
-#  sys.path.append("./tools")
-#  lg = RubyPython.import("logos")
-#  lg.Logo("FD")
-
-# RubyPython.stop
-
-print `python3 -c "from tools.logos import Logo; Logo('FD');"`
+print `python3 -c "from tools.logos import Logo; Logo('FD');"` if ARGV[0] == "tilux"
 
 print 'Path to directory: '
-dir = gets.chomp.to_s.strip
+dir = $stdin.gets.chomp.to_s.strip
 
 empty_input?(dir)
 
@@ -28,7 +19,7 @@ puts "\nNOTE: This is for files only for now and not dirs.."
 choice = 'ns (no subdirectories) or s (subdirectories)'
 puts "Choices: #{choice}"
 print 'Choice: '
-c = gets.chomp.to_s.downcase
+c = $stdin.gets.chomp.to_s.downcase
 puts
 
 empty_input?(c)

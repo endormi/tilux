@@ -1,27 +1,10 @@
 #!/usr/bin/ruby
 
-# require "rubypython"
 require 'socket'
 require 'resolv'
-
 require_relative '../tools/catch_exception'
 
-# RubyPython.start
-
-#  sys = RubyPython.import("sys")
-#  sys.path.append("./tools")
-#  lg = RubyPython.import("logos")
-#  lg.Logo("IP")
-
-# RubyPython.stop
-
-#
-# This is the exact code in info.rb for getting IP.
-# Instead of having to wait for the IP to show up in info,
-# I wanted to include this option.
-#
-
-print `python3 -c "from tools.logos import Logo; Logo('IP');"`
+print `python3 -c "from tools.logos import Logo; Logo('IP');"` if ARGV[0] == "tilux"
 
 # Should work with ruby version 1.8.6+
 # Check internet connection

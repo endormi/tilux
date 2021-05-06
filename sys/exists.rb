@@ -1,36 +1,27 @@
 #!/usr/bin/ruby
 
-# require "rubypython"
+require 'io/console'
 require_relative '../tools/catch_exception'
 
-# RubyPython.start
-
-#  sys = RubyPython.import("sys")
-#  sys.path.append("./tools")
-#  lg = RubyPython.import("logos")
-#  lg.Logo("Exists")
-
-# RubyPython.stop
-
-print `python3 -c "from tools.logos import Logo; Logo('Exists');"`
+print `python3 -c "from tools.logos import Logo; Logo('Exists');"` if ARGV[0] == "tilux"
 
 choice = 'file or directory'
 puts "Choices: #{choice}"
 print 'Choice: '
-fd = gets.chomp.to_s.downcase
+fd = $stdin.gets.chomp.to_s.downcase
 
 empty_input?(fd)
 
 if %w[file f].include?(fd)
   print 'Path to file: '
-  f = gets.chomp.to_s.strip
+  f = $stdin.gets.chomp.to_s.strip
   empty_input?(f)
   res = File.file?(f) == true ? "#{f} exists" : "#{f} doesn't exist"
   puts "\n#{res}"
 
 elsif %w[dir directory d].include?(fd)
   print 'Path to directory: '
-  d = gets.chomp.to_s.strip
+  d = $stdin.gets.chomp.to_s.strip
   empty_input?(d)
   res = File.directory?(d) == true ? "#{d} exists" : "#{d} doesn't exist"
   puts "\n#{res}"

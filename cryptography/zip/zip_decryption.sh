@@ -1,7 +1,9 @@
 #!/bin/bash
 
-source ./tools/catch
-python3 -c "from tools.logos import Logo; Logo('Zip Decryption');"
+if [[ $1 == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('Zip Decryption');"
+fi
 sleep 1
 
 if [[ "$(which unzip)" == "" ]]; then
@@ -10,5 +12,5 @@ if [[ "$(which unzip)" == "" ]]; then
 fi
 
 read -p "What is the name of the .zip file? " zf
-catch_empty $zf
+if [[ $1 == "tilux" ]]; then catch_empty $zf; fi
 unzip $zf

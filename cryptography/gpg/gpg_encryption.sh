@@ -4,18 +4,20 @@
 # Still a WIP code
 #
 
-source ./tools/catch
-python3 -c "from tools.logos import Logo; Logo('GPG Encryption');"
+if [[ $1 == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('GPG Encryption');"
+fi
 
 read -p "What is your name? " your_name
-catch_empty $your_name
+if [[ $1 == "tilux" ]]; then catch_empty $your_name; fi
 read -p "What is the filename? " file
-catch_empty $file
+if [[ $1 == "tilux" ]]; then catch_empty $file; fi
 
 cmd="1 basic encryption, 2 send file"
 echo -e "\nChoices: $cmd"
 read -p "Type in the number of the script you want to use: " input_process
-catch_empty $input_process
+if [[ $1 == "tilux" ]]; then catch_empty $input_process; fi
 echo
 
 case "$input_process" in

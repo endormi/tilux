@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# top
-# sar -r 1 2
-
 secs=3000
 time=10
 mproc=$(( $secs / $time ))
@@ -17,7 +14,7 @@ function mem {
   exit 0
 }
 
-python3 -c "from tools.logos import Logo; Logo('Mem Monitoring');"
+if [[ $1 == "tilux" ]]; then python3 -c "from tools.logos import Logo; Logo('Mem monitoring');"; fi
 sleep 1
 
 trap 'mem' INT

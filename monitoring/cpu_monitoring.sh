@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# top
-# sar -r 1 2
-# sar -P ALL 1 2
-
 secs=3000
 time=10
 cproc=$(( $secs / $time ))
@@ -18,7 +14,7 @@ function cpu {
   exit 0
 }
 
-python3 -c "from tools.logos import Logo; Logo('CPU Monitoring');"
+if [[ $1 == "tilux" ]]; then python3 -c "from tools.logos import Logo; Logo('CPU monitoring');"; fi
 sleep 1
 
 trap 'cpu' INT

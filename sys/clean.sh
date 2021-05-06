@@ -1,7 +1,9 @@
 #!/bin/bash
 
-source ./tools/catch
-python3 -c "from tools.logos import Logo; Logo('Clean');"
+if [[ $1 == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('Clean');"
+fi
 
 
 echo "Truncate logs:"
@@ -23,7 +25,7 @@ echo "Empty the trash:"
 choices="1 or all"
 echo "choices: $choices (1 means going through files one by one and all means, well you know..) "
 read -p "Type in your choice: " choice
-catch_empty $choice
+if [[ $1 == "tilux" ]]; then catch_empty $choice; fi
 choice="$(echo ${choice} | tr 'A-Z' 'a-z')"
 
 case "$choice" in

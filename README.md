@@ -76,7 +76,9 @@ tilux
 
 **Note**: For now `tilux` command `CD` into the `tilux` folder location.
 
-To see the commands to use and how to run using Docker, click [here](docs/README.md).
+> However `tilux` is not required to run scripts individually. [See here](docs/README.md#run-from-any-folder).
+
+To see the commands to use, how to run from any folder and how to run using Docker, click [here](docs/README.md).
 
 To use `Pyca` and `GPG` you need to first generate keys:
 

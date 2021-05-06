@@ -53,6 +53,29 @@ system -r: root (check if you are root or not)
 system -s: space (display computer space, uptime and number of processes running)
 ```
 
+## Run from any folder
+
+**Note**: You can't run tilux from any folder, but you can run included scripts individually.
+
+> Except python scripts for now..
+
+For example:
+
+**Note**: In the example below, latest updated file runs from current folder not inside tilux.
+
+```bash
+# Ruby
+./tilux/sys/os.rb
+
+# Bash
+./tilux/sys/last_updated.sh
+
+# C
+./tilux/fs.o
+```
+
+You can add the scripts to your alias if you want by using `scripts/add_alias`.
+
 ## Running with Docker:
 
 > It's still a bit buggy.

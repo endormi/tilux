@@ -1,6 +1,7 @@
 # Guide
 
 - [Commands to use](#commands)
+- [Run from any folder](#run-from-any-folder)
 - [Running with Docker](#running-with-docker)
 
 ## Commands
@@ -61,7 +62,7 @@ system -s: space (display computer space, uptime and number of processes running
 
 For example:
 
-**Note**: In the example below, latest updated file runs from current folder not inside tilux.
+**Note**: In the example below, latest updated file runs from current folder not inside tilux, same for fs.
 
 ```bash
 # Ruby

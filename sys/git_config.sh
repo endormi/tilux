@@ -1,12 +1,14 @@
 #!/bin/bash
 
-source ./tools/catch
-python3 -c "from tools.logos import Logo; Logo('Git Config');"
+if [[ $1 == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('Git Config');"
+fi
 
 read -p "Name: " name
-catch_empty $name
+if [[ $1 == "tilux" ]]; then catch_empty $name; fi
 read -p "Email: " email
-catch_empty $email
+if [[ $1 == "tilux" ]]; then catch_empty $email; fi
 read -p "Do you want to set it globally? (Y/n) " c
 c="$(echo ${c} | tr 'A-Z' 'a-z')"
 

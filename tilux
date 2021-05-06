@@ -255,10 +255,13 @@ else
     when '2', '-g', '--g', '-G', '--G'
       gpg_options(ARGV[2])
 
-    when '3', '-p', '--p', '-P', '--P'
+    when '3', '-o', '--o', '-O', '--O'
+      openssl_options(ARGV[2])
+
+    when '4', '-p', '--p', '-P', '--P'
       pyca_options(ARGV[2])
 
-    when '4', '-z', '--z', '-Z', '--Z'
+    when '5', '-z', '--z', '-Z', '--Z'
       zip_options(ARGV[2])
     else
       # TODO

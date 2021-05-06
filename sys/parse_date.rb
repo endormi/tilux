@@ -3,7 +3,7 @@
 require 'date'
 require_relative '../tools/catch_exception'
 
-print `python3 -c "from tools.logos import Logo; Logo('Parse date');"` if ARGV[0] == "tilux"
+print `python3 -c "from tools.logos import Logo; Logo('Parse date');"` if ARGV[0] == 'tilux'
 
 now = DateTime.now
 date = now.strftime '%d/%m/%Y'

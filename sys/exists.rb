@@ -3,7 +3,7 @@
 require 'io/console'
 require_relative '../tools/catch_exception'
 
-print `python3 -c "from tools.logos import Logo; Logo('Exists');"` if ARGV[0] == "tilux"
+print `python3 -c "from tools.logos import Logo; Logo('Exists');"` if ARGV[0] == 'tilux'
 
 choice = 'file or directory'
 puts "Choices: #{choice}"

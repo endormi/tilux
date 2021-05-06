@@ -4,7 +4,7 @@ require 'socket'
 require 'resolv'
 require_relative '../tools/catch_exception'
 
-print `python3 -c "from tools.logos import Logo; Logo('IP');"` if ARGV[0] == "tilux"
+print `python3 -c "from tools.logos import Logo; Logo('IP');"` if ARGV[0] == 'tilux'
 
 # Should work with ruby version 1.8.6+
 # Check internet connection

@@ -63,8 +63,6 @@ system -s:   display computer space, uptime and number of processes running
 
 **Note**: You can't run tilux from any folder, but you can run included scripts individually.
 
-> Except python scripts for now..
-
 For example:
 
 **Note**: In the example below, latest updated file runs from current folder not inside tilux, same for fs.
@@ -75,6 +73,9 @@ For example:
 
 # Bash
 ./tilux/sys/last_updated.sh
+
+# Python
+./tilux/monitoring/website_monitoring.py
 
 # C
 ./tilux/fs.o

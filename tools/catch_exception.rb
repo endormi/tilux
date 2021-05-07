@@ -10,6 +10,6 @@ end
 def empty_input?(choice)
   return unless choice.empty?
 
-  puts "Choice can't be empty"
+  puts "Choice can't be empty!"
   exit
 end

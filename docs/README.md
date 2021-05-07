@@ -27,36 +27,36 @@ monitoring -m: monitoring memory consumption
 monitoring -w: monitoring website (if it's up and if not it sends an email)
 networking -i: IP pinging
 networking -s: server pinging
-system -a: add alias
-system -bf: bf (backup folder)
-system -b: computer bit system
-system -c: clean (clean system of logs and trash)
+system -a:   add alias
+system -bf:  bf (backup folder)
+system -b:   computer bit system
+system -c:   clean (clean system of logs and trash)
 system -cdp: convert doc to pdf
-system -ci: convert image
+system -ci:  convert image
 system -cpu: CPU name
-system -d: del (delete file or directory)
-system -di: check distro
-system -e: exists (check if file or dir exists)
-system -f: fd (number of files and folders)
-system -fl: file updated
-system -fp: force poweroff
-system -fr: force reboot
-system -fs: file size
-system -g: configure git
+system -d:   del (delete file or directory)
+system -di:  check distro
+system -e:   exists (check if file or dir exists)
+system -f:   fd (number of files and folders)
+system -fl:  file updated
+system -fp:  force poweroff
+system -fr:  force reboot
+system -fs:  file size
+system -g:   configure git
 system -gpu: GPU name
-system -h: check hostname
+system -h:   check hostname
 system -img: image info
-system -i: IP address
-system -k: kernel version
-system -l: last updated (file)
-system -o: check OS
-system -p: parse date
+system -i:   IP address
+system -k:   kernel version
+system -l:   last updated (file)
+system -o:   check OS
+system -p:   parse date
 system -prv: python and ruby version
-system -ri: resize image
-system -rt: resize terminal
-system -r: root (check if you are root or not)
-system -ro: rotate image
-system -s: space (display computer space, uptime and number of processes running)
+system -ri:  resize image
+system -rt:  resize terminal
+system -r:   root (check if you are root or not)
+system -ro:  rotate image
+system -s:   display computer space, uptime and number of processes running
 ```
 
 ## Run from any folder

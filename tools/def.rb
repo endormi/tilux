@@ -112,6 +112,10 @@ def sys_options(choice)
     sys('./sys/bit.sh tilux')
   when '-c', '--c'
     sys('./sys/clean.sh tilux')
+  when '-cdp', '--cdp'
+    sys('./sys/convert_doc_to_pdf.rb tilux')
+  when '-ci', '--ci'
+    sys('./sys/convert_img.rb tilux')
   when '-cpu', '--cpu'
     sys('./sys/cpu_name.sh tilux')
   when '-d', '--d'
@@ -138,6 +142,8 @@ def sys_options(choice)
     sys('./sys/gpu_name.sh tilux')
   when '-h', '--h'
     sys('./sys/hostname.rb tilux')
+  when '-img', '--img'
+    sys('./sys/img_info.rb tilux')
   when '-i', '--i'
     sys('./sys/ip.rb tilux')
   when '-k', '--k'
@@ -150,10 +156,14 @@ def sys_options(choice)
     sys('./sys/parse_date.rb tilux')
   when '-prv', '--prv'
     sys('./sys/prv.sh tilux')
+  when '-ri', '--ri'
+    sys('./sys/resize_img.rb tilux')
   when '-rt', '--rt'
     sys('./sys/resize_terminal.sh tilux')
   when '-r', '--r'
     sys('./sys/root.rb tilux')
+  when '-ro', '--ro'
+    sys('./sys/rotate_img.rb tilux')
   when '-s', '--s'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Space');"`

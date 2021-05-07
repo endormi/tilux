@@ -38,15 +38,20 @@ chmod +x ./networking/ip_pinging.py
 chmod +x ./networking/server_pinging.py
 
 chmod +x tilux
+chmod +x ./sys/convert_doc_to_pdf.rb
+chmod +x ./sys/convert_img.rb
 chmod +x ./sys/del.rb
 chmod +x ./sys/exists.rb
 chmod +x ./sys/fd.rb
 chmod +x ./sys/file_updated.rb
 chmod +x ./sys/hostname.rb
+chmod +x ./sys/img_info.rb
 chmod +x ./sys/ip.rb
 chmod +x ./sys/os.rb
 chmod +x ./sys/parse_date.rb
+chmod +x ./sys/resize_img.rb
 chmod +x ./sys/root.rb
+chmod +x ./sys/rotate_img.rb
 
 # Generate keys
 chmod +x ./cryptography/gpg/gpg_generate_and_verify_keys.sh

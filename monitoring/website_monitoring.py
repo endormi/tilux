@@ -2,25 +2,32 @@
 
 import requests
 import smtplib
-import sys
-sys.path.append("./tools")
-from logos import Logo
-import catch_exception as ce
 import time
+import sys
 
-Logo('Website Monitoring')
+if len(sys.argv) == 2:
+    sys.path.append("./tools")
+    from logos import Logo
+    import catch_exception as ce
+
+    Logo('Website Monitoring')
+
 time.sleep(1)
 
 url = input('Your URL: ')
+if len(sys.argv) == 2: ce.__input__(url)
+
 PORT = 587
+
 Your_Email = input('Your email: ')
+if len(sys.argv) == 2: ce.__input__(Your_Email)
+
 """
 Get your password from:
 https://myaccount.google.com/apppasswords
 """
 Your_Password = input('Your password: ')
-
-ce.__input__(url, Your_Email, Your_Password)
+if len(sys.argv) == 2: ce.__input__(Your_Password)
 
 req = requests.get(url, timeout=1)
 req.raise_for_status()

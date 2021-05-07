@@ -44,9 +44,9 @@ end
 def pyca_options(choice)
   case choice
   when '1', '-e', '--e'
-    sys('./cryptography/pyca/encrypt.py')
+    sys('./cryptography/pyca/encrypt.py tilux')
   when '2', '-d', '--d'
-    sys('./cryptography/pyca/decrypt.py')
+    sys('./cryptography/pyca/decrypt.py tilux')
   else
     # TODO
     puts 'Invalid choice!'
@@ -83,7 +83,7 @@ def monitoring_options(choice)
     system('./monitoring/mem_monitoring.sh tilux')
   when '3', '-w', '--w'
     system('clear')
-    system('./monitoring/website_monitoring.py')
+    system('./monitoring/website_monitoring.py tilux')
   else
     # TODO
     puts 'Invalid choice'
@@ -93,9 +93,9 @@ end
 def networking_options(choice)
   case choice
   when '1', '-i', '--i'
-    sys('./networking/ip_pinging.py')
+    sys('./networking/ip_pinging.py tilux')
   when '2', '-s', '--s'
-    sys('./networking/server_pinging.py')
+    sys('./networking/server_pinging.py tilux')
   else
     # TODO
     puts 'Invalid choice'

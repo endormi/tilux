@@ -3,16 +3,18 @@
 import os
 import time
 import sys
-sys.path.append("./tools")
-from logos import Logo
-import catch_exception as ce
 
-Logo('Server Pinging')
+if len(sys.argv) == 2:
+    sys.path.append("./tools")
+    from logos import Logo
+    import catch_exception as ce
+
+    Logo('Server Pinging')
+
 time.sleep(1)
 
 hostname = input("Domain: ")
-
-ce.__input__(hostname)
+if len(sys.argv) == 2: ce.__input__(hostname)
 
 response = os.system("ping -c 1 " + hostname)
 

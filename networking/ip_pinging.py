@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 
 import subprocess
-import sys
-sys.path.append("./tools")
-from logos import Logo
-import catch_exception as ce
 import time
+import sys
 
-Logo('IP Pinging')
+if len(sys.argv) == 2:
+    sys.path.append("./tools")
+    from logos import Logo
+    import catch_exception as ce
+
+    Logo('IP Pinging')
+
 time.sleep(1)
 
 file = open('/tmp/ip_ping_results.txt', 'w')
@@ -19,11 +22,15 @@ print("This is meant for good purposes, DO NOT use this with malicious intent. D
 print("Only PING IPs that belong to you and the people you have gained permission from!\n")
 
 net = input('Enter network e.g. [192.168.1.1]: ')[0:-1]
-start = input('Starting IP: ')
-end = input('Ending IP: ')
-print()
+if len(sys.argv) == 2: ce.__input__(net)
 
-ce.__input__(net, start, end)
+start = input('Starting IP: ')
+if len(sys.argv) == 2: ce.__input__(start)
+
+end = input('Ending IP: ')
+if len(sys.argv) == 2: ce.__input__(end)
+
+print()
 
 for i in range(int(start), int(end)):
     try:

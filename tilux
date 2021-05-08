@@ -248,7 +248,7 @@ if ARGV.empty?
     #  puts "misc"
 
   when 'help', '--help', '--h', '5'
-    title?('::--help::')
+    title?('::Help::')
     run_option('help')
   else
     puts("\nNot a valid choice!")
@@ -291,7 +291,7 @@ else
     #  puts("misc")
 
   when 'help', '--help', '--h', '5'
-    title?('--h')
+    title?('::Help::')
     run_option('help')
   else
     puts('Not a valid choice!')

@@ -6,7 +6,7 @@ require_relative 'tools/col'
 require_relative 'tools/def'
 require_relative 'tools/catch_exception'
 
-version = 'v.0.4.0'
+version = 'v.0.4.1'
 puts "
 ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 8    888    8  888   888          888       8    8888    d8
@@ -248,7 +248,7 @@ if ARGV.empty?
     #  puts "misc"
 
   when 'help', '--help', '--h', '5'
-    title?('::--help::')
+    title?('::Help::')
     run_option('help')
   else
     puts("\nNot a valid choice!")
@@ -291,7 +291,7 @@ else
     #  puts("misc")
 
   when 'help', '--help', '--h', '5'
-    title?('--h')
+    title?('::Help::')
     run_option('help')
   else
     puts('Not a valid choice!')

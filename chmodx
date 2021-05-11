@@ -19,6 +19,8 @@ chmod +x ./sys/distro.sh
 chmod +x ./sys/force_poweroff.sh
 chmod +x ./sys/force_reboot.sh
 chmod +x ./sys/git_config.sh
+chmod +x ./sys/gnome_term_profile_dump.sh
+chmod +x ./sys/gnome_term_profile_load.sh
 chmod +x ./sys/gpu_name.sh
 chmod +x ./sys/kernel_version.sh
 chmod +x ./sys/last_updated.sh

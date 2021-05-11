@@ -138,6 +138,10 @@ def sys_options(choice)
     system('./fs.o')
   when '-g', '--g'
     sys('./sys/git_config.sh tilux')
+  when '-gtd', '--gtd'
+    sys('./sys/gnome_term_profile_dump.sh tilux')
+  when '-gtl', '--gtl'
+    sys('./sys/gnome_term_profile_load.sh tilux')
   when '-gpu', '--gpu'
     sys('./sys/gpu_name.sh tilux')
   when '-h', '--h'

@@ -43,6 +43,8 @@ system -fp:  force poweroff
 system -fr:  force reboot
 system -fs:  file size
 system -g:   configure git
+system -gtd: gnome terminal profile dump
+system -gtl: gnome terminal profile load
 system -gpu: GPU name
 system -h:   check hostname
 system -img: image info
@@ -81,7 +83,7 @@ For example:
 ./tilux/fs.o
 ```
 
-You can add the scripts to your alias if you want by using `scripts/add_alias`.
+You can add the scripts to your alias if you want by using `sys/add_alias`.
 
 ## Running with Docker:
 

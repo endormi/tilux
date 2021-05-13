@@ -74,7 +74,7 @@ tilux
 # Arguments work the same
 ```
 
-**Note**: For now `tilux` command `CD` into the `tilux` folder location.
+**Note**: `tilux` command will `CD` into the `tilux` folder location.
 
 > However `tilux` is not required to run scripts individually. [See here](docs/README.md#run-from-any-folder).
 

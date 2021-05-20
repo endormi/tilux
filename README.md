@@ -44,6 +44,17 @@ git clone https://github.com/endormi/tilux.git
 bash build
 ```
 
+You can also install python packages in `virtualenv`:
+
+```bash
+bash build venv
+
+# after build
+. ./venv/bin/activate
+```
+
+If you build this way, remember to add the `venv` script to alias.
+
 > After running `build` for the first time, you can use `tilux` instead of `build`.
 
 **Run** `tilux`:

@@ -1,6 +1,7 @@
 push_to_github.sh
 new_version.sh
 notes.md
+venv
 *.pyc
 __pycache__
 

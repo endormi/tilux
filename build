@@ -40,15 +40,26 @@ if [[ "$(which git)" == "" ]]; then
   sudo apt install git
 fi
 
+# TODO: Run venv after build
+if [[ $1 == "venv" ]]; then
+  if [[ ! -d "venv" ]]; then
+    if [[ "$(which virtualenv)" == "" ]]; then
+      pip3 install virtualenv
+    fi
+    virtualenv venv
+  fi
+  activate() {
+    . ./venv/bin/activate
+  }
+  activate
+fi
+
 # fixes issue with cryptography package
 python3 -m pip install -U pip
 
 # Compile C files
 make -s
 
-# Add the option to install with virtualenv?
-# Users might have dependency conflicts when not using docker-compose
-# and it's generally good practice to install to virtalenvironment.
 pip3 install -r requirements.txt && bundle install
 
 clear

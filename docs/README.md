@@ -61,6 +61,12 @@ system -ro:  rotate image
 system -s:   display computer space, uptime and number of processes running
 ```
 
+Help command:
+
+```
+tilux --help
+```
+
 ## Run from any folder
 
 **Note**: You can't run tilux from any folder, but you can run included scripts individually.

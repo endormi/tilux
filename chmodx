@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Bash scripts
 chmod +x ./cryptography/ccrypt/ccrypt_encryption.sh
 chmod +x ./cryptography/ccrypt/ccrypt_decryption.sh
 chmod +x ./cryptography/gpg/gpg_encryption.sh
@@ -33,12 +34,14 @@ chmod +x ./scripts/install_req
 chmod +x ./scripts/resize_term
 chmod +x ./scripts/start_dcompose
 
+# Python scripts
 chmod +x ./cryptography/pyca/encrypt.py
 chmod +x ./cryptography/pyca/decrypt.py
 chmod +x ./monitoring/website_monitoring.py
 chmod +x ./networking/ip_pinging.py
 chmod +x ./networking/server_pinging.py
 
+# Ruby scripts
 chmod +x tilux
 chmod +x ./sys/convert_doc_to_pdf.rb
 chmod +x ./sys/convert_img.rb
@@ -55,8 +58,8 @@ chmod +x ./sys/resize_img.rb
 chmod +x ./sys/root.rb
 chmod +x ./sys/rotate_img.rb
 
+chmod +x ./proc_script.rb
+
 # Generate keys
 chmod +x ./cryptography/gpg/gpg_generate_and_verify_keys.sh
 chmod +x ./cryptography/pyca/generate_key.py
-
-chmod +x ./proc_script.rb

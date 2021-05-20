@@ -1,7 +1,7 @@
 # Tested On
 
 ## OS
-- Ubuntu (18.04.1)
+- Ubuntu (18.04 and 20.04)
 - Kali Linux (5.6.0)
 
 ## Version

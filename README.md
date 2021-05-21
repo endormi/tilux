@@ -55,6 +55,21 @@ bash build venv
 
 If you build this way, remember to add the `venv` script to alias.
 
+Run `scripts/add_alias_venv`:
+
+```bash
+./scripts/add_alias_venv
+```
+
+Run `venv`:
+
+```bash
+tvenv
+
+# deactivate venv
+deactivate
+```
+
 > After running `build` for the first time, you can use `tilux` instead of `build`.
 
 **Run** `tilux`:

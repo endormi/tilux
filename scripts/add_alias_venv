@@ -1,0 +1,16 @@
+#!/bin/bash
+
+[ ! -d scripts ] && cd ..
+
+# Creates a new file
+[ ! -f ~/.bash_aliases ] && touch ~/.bash_aliases
+
+. ~/.bash_aliases
+
+alias="tvenv"
+
+[ `alias | grep "$alias" | wc -l` != 0 ] && echo "Alias $alias already exists" && exit
+
+echo "alias $alias='. $PWD/venv/bin/activate'" >> ~/.bash_aliases
+echo "Added ${alias} to .bash_aliases"
+exec "$BASH"

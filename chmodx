@@ -29,6 +29,7 @@ chmod +x ./sys/prv.sh
 chmod +x ./sys/resize_terminal.sh
 
 chmod +x ./scripts/add_alias
+chmod +x ./scripts/add_alias_venv
 chmod +x ./scripts/cformat
 chmod +x ./scripts/install_req
 chmod +x ./scripts/resize_term

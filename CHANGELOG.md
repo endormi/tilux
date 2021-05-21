@@ -1,5 +1,11 @@
 # Changelog
 
+# 0.4.5
+- Add gnome terminal profile dump and load
+- Add the ability to install python pkgs with virtualenv
+- Fix [-Wimplicit-function-declaration] warning
+- Update flake8 and rubocop
+
 ## 0.4.1
 - Enable running scripts in any folder
 - Add img (convert_img, img_info, resize_img and rotate_img) and convert doc to pdf scripts

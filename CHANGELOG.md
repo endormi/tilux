@@ -1,6 +1,6 @@
 # Changelog
 
-# 0.4.5
+## 0.4.5
 - Add gnome terminal profile dump and load
 - Add the ability to install python pkgs with virtualenv
 - Fix [-Wimplicit-function-declaration] warning

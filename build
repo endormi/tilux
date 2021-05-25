@@ -42,10 +42,10 @@ fi
 
 # TODO: Run venv after build
 if [[ $1 == "venv" ]]; then
+  if [[ "$(which virtualenv)" == "" ]]; then
+    pip3 install virtualenv
+  fi
   if [[ ! -d "venv" ]]; then
-    if [[ "$(which virtualenv)" == "" ]]; then
-      pip3 install virtualenv
-    fi
     virtualenv venv
   fi
   activate() {

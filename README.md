@@ -23,7 +23,7 @@ This is still very much a work in progress.
 
 If you want to see a certain script added, open up a new [issue](https://github.com/endormi/tilux/issues/new/choose) or make a pull request.
 
-> Feel free to try on other distros. PR's for supporting different distros is very much appreciated.
+> Feel free to try on other distros. PR's for supporting different distros are very much appreciated.
 
 **Note**: Only tested Debian-based distros.
 

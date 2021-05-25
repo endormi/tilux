@@ -25,7 +25,7 @@ If you want to see a certain script added, open up a new [issue](https://github.
 
 > Feel free to try on other distros. PR's for supporting different distros are very much appreciated.
 
-**Note**: Only tested Debian-based distros.
+**Note**: Only [tested](TESTED_ON.md) Debian-based distros.
 
 ## Why?
 

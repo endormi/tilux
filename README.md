@@ -50,8 +50,11 @@ You can also install python packages in `virtualenv`:
 
 ```bash
 bash build venv
+```
 
-# after build
+After build:
+
+```bash
 . ./venv/bin/activate
 ```
 
@@ -67,8 +70,11 @@ Run `venv`:
 
 ```bash
 tvenv
+```
 
-# deactivate venv
+Deactivate `venv`:
+
+```bash
 deactivate
 ```
 
@@ -110,11 +116,15 @@ To see the commands to use, how to run from any folder and how to run using Dock
 
 To use `Pyca` and `GPG` you need to first generate keys:
 
-```bash
-# Pyca
-./cryptography/pyca/generate_key.py
+`Pyca`:
 
-# GPG
+```bash
+./cryptography/pyca/generate_key.py
+```
+
+`GPG`:
+
+```bash
 ./cryptography/gpg/gpg_generate_and_verify_keys.sh
 ```
 

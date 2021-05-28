@@ -6,7 +6,6 @@ require_relative '../tools/catch_exception'
 
 print `python3 -c "from tools.logos import Logo; Logo('Convert img');"` if ARGV[0] == 'tilux'
 
-# You need ImageMagick or GraphicsMagick CLI tool installed.
 puts "Note: This makes a copy of the original image.\nIt doesn't overwrite.\n\n"
 
 print 'What is the image you want to convert? '

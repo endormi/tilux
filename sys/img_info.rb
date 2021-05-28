@@ -6,7 +6,6 @@ require_relative '../tools/catch_exception'
 
 print `python3 -c "from tools.logos import Logo; Logo('Img info');"` if ARGV[0] == 'tilux'
 
-# You need ImageMagick or GraphicsMagick CLI tool installed.
 print 'What is the image you want to get info about? '
 img = $stdin.gets.chomp.to_s
 empty_input?(img)

@@ -40,6 +40,11 @@ if [[ "$(which git)" == "" ]]; then
   sudo apt install git
 fi
 
+if [[ "$(which gm)" == "" ]]; then
+  sudo apt-get upgrade
+  sudo apt install graphicsmagick
+fi
+
 # TODO: Run venv after build
 if [[ $1 == "venv" ]]; then
   if [[ "$(which virtualenv)" == "" ]]; then

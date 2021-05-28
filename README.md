@@ -36,7 +36,7 @@ Also, a big part of the reason why I created this project is to learn, that's wh
 
 #### Usage:
 
-```
+```bash
 git clone https://github.com/endormi/tilux.git
 ```
 
@@ -102,11 +102,11 @@ If you run the `add_alias` script inside scripts folder, you can run tilux by si
 
 > Now you can run `tilux` without having to be inside the folder.
 
-```
+```bash
 tilux
-
-# Arguments work the same
 ```
+
+> Arguments work the same.
 
 **Note**: `tilux` command will `CD` into the `tilux` folder location.
 

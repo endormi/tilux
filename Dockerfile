@@ -15,7 +15,6 @@ RUN apt-get update \
     ruby-bundler \
     ruby-rspec-core \
     build-essential \
-    make \
     clang-format \
     && apt-get clean
 

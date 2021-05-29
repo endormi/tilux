@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Checks if input is empty
 function catch_empty(){
   args="$1"
 

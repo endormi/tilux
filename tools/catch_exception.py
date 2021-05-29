@@ -4,6 +4,7 @@ import signal
 from sys import exit
 
 
+# Checks if input is empty
 def __input__(choice):
     if not choice:
         print("Choice can't be empty!")

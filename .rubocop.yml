@@ -16,3 +16,8 @@ Metrics/AbcSize:
 
 Metrics/CyclomaticComplexity:
   Enabled: false
+
+# Rubocop also checks pre-commit pkg (only if you use venv).
+# You might need to do rubocop -a few times.
+Gemspec/RequiredRubyVersion:
+  Enabled: false

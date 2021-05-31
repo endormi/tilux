@@ -34,12 +34,6 @@ if [ "$(which gcc)" == "" ] || [ "$(which g++)" == "" ]; then
   sudo apt install build-essential
 fi
 
-# if by chance you don't have git which is unlikely
-if [[ "$(which git)" == "" ]]; then
-  sudo apt-get upgrade
-  sudo apt install git
-fi
-
 if [[ "$(which gm)" == "" ]]; then
   sudo apt-get upgrade
   sudo apt install graphicsmagick

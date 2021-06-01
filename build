@@ -42,9 +42,16 @@ fi
 # TODO: Run venv after build
 if [[ $1 == "venv" ]]; then
   if [[ "$(which virtualenv)" == "" ]]; then
+    # virtualenv probably tries to install here
+    export PATH=$HOME/.local/bin/:$PATH
     pip3 install virtualenv
   fi
   if [[ ! -d "venv" ]]; then
+    # To fix the warning where python pkgs
+    # are installed in ./local/bin
+    # after virtualenv path.
+    # TODO
+    export PATH=$HOME/usr/bin/python3:$PATH
     virtualenv venv
   fi
   activate() {

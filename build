@@ -1,5 +1,30 @@
 #!/bin/bash
 
+# Quick hack to not run the code
+# when using Docker so it doesn't get
+# stuck on read prompt
+if [[ $1 == "-y" ]]; then
+  :
+else
+  echo "This build will install multiple packages."
+  echo -e "You probably already have a lot of the packages,
+  if you have done anything with your OS.\n"
+  echo -e "Will install python3, pip3, ruby, lsb-core, build-essentials & graphicsmagick.\n"
+
+  read -p "Do you want to continue? (Y/n) " continue
+  continue="$(echo ${continue} | tr 'A-Z' 'a-z')"
+
+  if [ "$continue" == "y" ] || [ "$continue" == "yes" ]; then
+    # does nothing
+    # for some reason != didn't work
+    # TODO
+    :
+  else
+    echo "Exiting build.."
+    exit
+  fi
+fi
+
 g="\033[0;32m"
 w="\033[1;37m"
 

@@ -33,35 +33,35 @@ bash chmodx
 # Python3 is required to run the python scripts
 if [[ "$(which python3)" == "" ]]; then
   sudo apt upgrade
-  sudo apt install python3
+  sudo apt install -y python3
 fi
 
 if [[ "$(which pip3)" == "" ]]; then
   sudo apt upgrade
-  sudo apt install python3-pip
+  sudo apt install -y python3-pip
 fi
 
 # Ruby is required to run ruby scripts
 if [[ "$(which ruby)" == "" ]]; then
   sudo apt upgrade
-  sudo apt install ruby-dev ruby-bundler ruby-rspec-core make
+  sudo apt install -y ruby-dev ruby-bundler ruby-rspec-core make
 fi
 
 # lsb_release is required to run sys/distro.sh script
 if [[ "$(which lsb_release)" == "" ]]; then
   sudo apt upgrade
-  sudo apt install lsb-core
+  sudo apt install -y lsb-core
 fi
 
 # Required for compiling C/C++ files
 if [ "$(which gcc)" == "" ] || [ "$(which g++)" == "" ]; then
   sudo apt upgrade
-  sudo apt install build-essential
+  sudo apt install -y build-essential
 fi
 
 if [[ "$(which gm)" == "" ]]; then
   sudo apt upgrade
-  sudo apt install graphicsmagick
+  sudo apt install -y graphicsmagick
 fi
 
 # TODO: Run venv after build

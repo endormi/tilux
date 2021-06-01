@@ -4,7 +4,7 @@ MAINTAINER Endormi
 
 WORKDIR /usr/src/app
 
-RUN apt-get update \
+RUN apt update \
     && apt install -y python3 \
     python3-pip \
     git \
@@ -16,7 +16,7 @@ RUN apt-get update \
     ruby-rspec-core \
     build-essential \
     clang-format \
-    && apt-get clean
+    && apt clean
 
 RUN git clone https://github.com/endormi/tilux.git \
     && cd tilux

@@ -76,7 +76,7 @@ if [[ $1 == "venv" ]]; then
     # are installed in ./local/bin
     # after virtualenv path.
     # TODO
-    export PATH=/usr/local/bin:$PATH
+    export PATH=/usr/local/bin/:$PATH
     virtualenv venv
   fi
   activate() {

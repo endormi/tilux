@@ -48,11 +48,11 @@ if [[ "$(which ruby)" == "" ]]; then
   sudo apt update
   sudo apt install -y ruby-full
 
-  # TODO:
-  # In order for this work you need to 
-  # do some configs.
-  # If you haven't done any then it still
-  # gets stuck on gem permission error for some reason.
+  # whether you're installing in local
+  # or lib gems
+  sudo chmod -R a+w /usr/local/bin/
+  sudo chmod -R a+w /var/lib/gems/
+
   export PATH=$PATH:$HOME/.gem/bin
   gem install bundler -v 2.1.4
 fi

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo -e "\n\nThis might take a while...\n\n"
+
 # Quick hack to not run the code
 # when using Docker so it doesn't get
 # stuck on read prompt

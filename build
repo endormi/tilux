@@ -44,7 +44,7 @@ fi
 # Ruby is required to run ruby scripts
 if [[ "$(which ruby)" == "" ]]; then
   sudo apt update
-  sudo apt install -y ruby-full ruby-bundler
+  sudo apt install -y ruby-full
 
   export PATH=$PATH:$HOME/.gem/bin
   gem install bundler -v 2.1.4

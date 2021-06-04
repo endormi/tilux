@@ -11,9 +11,7 @@ RUN apt update \
     graphicsmagick \
     sudo \
     lsb-core \
-    ruby-dev \
-    ruby-bundler \
-    ruby-rspec-core \
+    ruby-full \
     build-essential \
     clang-format \
     && apt clean

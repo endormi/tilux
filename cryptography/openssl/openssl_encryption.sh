@@ -1,15 +1,16 @@
 #!/bin/bash
 
+if [[ "$(which openssl)" == "" ]]; then
+  sudo apt upgrade
+  sudo apt install openssl
+  clear
+fi
+
 if [[ $1 == "tilux" ]]; then
   source ./tools/catch
   python3 -c "from tools.logos import Logo; Logo('Openssl Encryption');"
 fi
 sleep 1
-
-if [[ "$(which openssl)" == "" ]]; then
-  sudo apt-get upgrade
-  sudo apt-get install openssl
-fi
 
 
 read -p "What file do you want to encrypt? " f

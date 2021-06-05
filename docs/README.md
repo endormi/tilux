@@ -73,7 +73,7 @@ tilux --help
 
 For example:
 
-**Note**: In the example below, latest updated file runs from current folder not inside tilux, same for fs.
+In the example below, latest updated file runs from current folder not inside tilux, same for fs.
 
 ```bash
 # Ruby

@@ -3,8 +3,9 @@
 [ ! -d scripts ] && cd ..
 
 if [[ "$(which clang-format)" == "" ]]; then
-  sudo apt-get upgrade
+  sudo apt upgrade
   sudo apt install clang-format
+  clear
 fi
 
 clang-format -i proc.cpp

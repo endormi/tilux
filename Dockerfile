@@ -4,19 +4,17 @@ MAINTAINER Endormi
 
 WORKDIR /usr/src/app
 
-RUN apt-get update \
+RUN apt update \
     && apt install -y python3 \
     python3-pip \
     git \
     graphicsmagick \
     sudo \
     lsb-core \
-    ruby-dev \
-    ruby-bundler \
-    ruby-rspec-core \
+    ruby-full \
     build-essential \
     clang-format \
-    && apt-get clean
+    && apt clean
 
 RUN git clone https://github.com/endormi/tilux.git \
     && cd tilux
@@ -38,7 +36,7 @@ ENV BUNDLE_SILENCE_ROOT_WARNING=1 \
 # When installing Python packages, it will give an warning:
 # Running pip as root will break packages and permissions.
 # Since we're using a container, we don't need to worry about this.
-RUN bash build
+RUN bash build -y
 
 # Keep the container running
 CMD exec /bin/bash -c "sleep infinity & wait"

@@ -7,7 +7,7 @@ fi
 sleep 1
 
 if [[ "$(which unzip)" == "" ]]; then
-  sudo apt-get upgrade
+  sudo apt upgrade
   sudo apt install unzip
 fi
 

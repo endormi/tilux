@@ -1,13 +1,14 @@
 #!/bin/bash
 
+if [[ "$(which ccrypt)" == "" ]]; then
+  sudo apt upgrade
+  sudo apt install ccrypt
+  clear
+fi
+
 if [[ $1 == "tilux" ]]; then
   source ./tools/catch
   python3 -c "from tools.logos import Logo; Logo('CCRYPT Encryption');"
-fi
-
-if [[ "$(which ccrypt)" == "" ]]; then
-  sudo apt-get upgrade
-  sudo apt-get install ccrypt
 fi
 
 

@@ -6,4 +6,4 @@
 
 ## Version
 - Python 3.6.9
-- Ruby 2.5.1p57
+- Ruby 2.5.1

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0
+- Fix build script to do necessary configs
+- Install graphicsmagick pkg
+- Fix pre-commit check in rubocop
+- Update docs
+- Remove pkg that is included
+- Move and clear pkg installation before logo
+
 ## 0.4.5
 - Add gnome terminal profile dump and load
 - Add the ability to install python pkgs with virtualenv

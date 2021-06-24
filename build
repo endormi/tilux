@@ -9,8 +9,7 @@ if [[ $1 == "-y" ]]; then
   :
 else
   echo "This build will install multiple packages."
-  echo -e "You probably already have a lot of the packages,
-  if you have done anything with your OS.\n"
+  echo -e "You probably already have a lot of the packages, if you have done anything with your OS.\n"
   echo -e "Will install python3, pip3, ruby, lsb-core, build-essentials & graphicsmagick.\n"
 
   read -p "Do you want to continue? (Y/n) " continue
@@ -48,10 +47,7 @@ if [[ "$(which ruby)" == "" ]]; then
   sudo apt update
   sudo apt install -y ruby-full
 
-  # Should be enough to work, but
-  # if it's not a PR is very much appreciated
   sudo chmod -R a+w /usr/local/bin/
-  sudo chmod -R a+w $HOME/.gem/bin/
   sudo chmod -R a+w /var/lib/gems/
 
   gem install bundler -v 2.1.4
@@ -105,4 +101,5 @@ pip3 install -r requirements.txt && bundle install
 
 clear
 
+echo "Note: Certain scripts might require you to install a package. it's included in the script."
 echo -e "${g}Thanks for using Tilux!${w}\n"

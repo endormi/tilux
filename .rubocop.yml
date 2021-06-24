@@ -21,3 +21,7 @@ Metrics/CyclomaticComplexity:
 # You might need to do rubocop -a few times.
 Gemspec/RequiredRubyVersion:
   Enabled: false
+
+# Ignored at least for now
+Lint/ShadowedArgument:
+  Enabled: false

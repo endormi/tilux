@@ -9,8 +9,8 @@
 
 alias="tilux"
 
-[ `alias | grep "$alias" | wc -l` != 0 ] && echo "Alias $alias already exists" && exit
+[ `alias | grep " tilux" | wc -l` != 0 ] && echo "Alias $alias already exists" && exit
 
-echo -e "\n# Running the tilux CLI\n# In order for the script to work, you need to cd in the folder\nalias $alias='cd $PWD && ./tilux'" >> ~/.bash_aliases
+echo "alias $alias='cd $PWD && ./$alias'" >> ~/.bash_aliases
 echo "Added ${alias} to .bash_aliases"
 exec "$BASH"

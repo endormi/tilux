@@ -24,7 +24,7 @@ puts link.white
 
 sleep 1
 
-prompt = 'tilux~# '.green
+$prompt = 'tilux~# '.green
 
 def sys(file)
   system('clear')
@@ -38,6 +38,33 @@ end
 
 def echo(text)
   puts text.white
+end
+
+def input?(input, option)
+  print "\n#{$prompt} "
+  input = gets.chomp.to_s.downcase.strip
+
+  empty_input?(input)
+
+  # TODO: Make it better
+  case option
+  when 'monitor'
+    monitoring_options(input)
+  when 'net'
+    networking_options(input)
+  when 'sys'
+    sys_options(input)
+  when 'ccrypt'
+    ccrypt_options(input)
+  when 'gpg'
+    gpg_options(input)
+  when 'openssl'
+    openssl_options(input)
+  when 'pyca'
+    pyca_options(input)
+  when 'zip'
+    zip_options(input)
+  end
 end
 
 def run_option(option)
@@ -152,7 +179,7 @@ if ARGV.empty?
   puts "\nWhat script do you want to run?\n\n".white
   run_option('tilux')
 
-  print "\n#{prompt} "
+  print "\n#{$prompt} "
   c = gets.chomp.to_s.downcase.strip
 
   empty_input?(c)
@@ -161,7 +188,7 @@ if ARGV.empty?
   when 'cryptography', 'crypto', '1'
     title?('::Cryptography::')
     run_option('crypto')
-    print "#{prompt} "
+    print "#{$prompt} "
     input = gets.chomp.to_s.downcase.strip
 
     empty_input?(input)
@@ -170,47 +197,27 @@ if ARGV.empty?
     when '1', '-c', '--c', '-C', '--C'
       title?('::CCRYPT::')
       cryptography_encryption
-      print "#{prompt} "
-      i = gets.chomp.to_s.downcase.strip
-
-      empty_input?(i)
-      ccrypt_options(i)
+      input?(input, 'ccrypt')
 
     when '2', '-g', '--g', '-G', '--G'
       title?('::GPG::')
       cryptography_encryption
-      print "#{prompt} "
-      i = gets.chomp.to_s.downcase.strip
-
-      empty_input?(i)
-      gpg_options(i)
+      input?(input, 'gpg')
 
     when '3', '-o', '--o', '-O', '--O'
       title?('::Openssl::')
       cryptography_encryption
-      print "#{prompt} "
-      i = gets.chomp.to_s.downcase.strip
-
-      empty_input?(i)
-      openssl_options(i)
+      input?(input, 'openssl')
 
     when '4', '-p', '--p', '-P', '--P'
       title?('::Pyca::')
       cryptography_encryption
-      print "#{prompt} "
-      i = gets.chomp.to_s.downcase.strip
-
-      empty_input?(i)
-      pyca_options(i)
+      input?(input, 'pyca')
 
     when '5', '-z', '--z', '-Z', '--Z'
       title?('::Zip::')
       cryptography_encryption
-      print "#{prompt} "
-      i = gets.chomp.to_s.downcase.strip
-
-      empty_input?(i)
-      zip_options(i)
+      input?(input, 'zip')
 
     else
       # TODO
@@ -220,29 +227,17 @@ if ARGV.empty?
   when 'monitoring', '2'
     title?('::Monitoring::')
     run_option('monitoring')
-    print "#{prompt} "
-    input = gets.chomp.to_s.downcase.strip
-
-    empty_input?(input)
-    monitoring_options(input)
+    input?(input, 'monitor')
 
   when 'networking', 'net', '3'
     title?('::Networking::')
     run_option('net')
-    print "#{prompt} "
-    input = gets.chomp.to_s.downcase.strip
-
-    empty_input?(input)
-    networking_options(input)
+    input?(input, 'net')
 
   when 'sys', 'system', '4'
     title?('::System::')
     run_option('system')
-    print "#{prompt} "
-    input = gets.chomp.to_s.downcase.strip
-
-    empty_input?(input)
-    sys_options(input)
+    input?(input, 'sys')
 
   when 'help', '--help', '--h', '5'
     title?('::Help::')

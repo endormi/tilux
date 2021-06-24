@@ -42,7 +42,7 @@ git clone https://github.com/endormi/tilux.git
 
 **Run** `build`:
 
-> Installing with `venv` is highly recommended.
+> Installing with `virtualenv` is highly recommended.
 
 ```bash
 bash build

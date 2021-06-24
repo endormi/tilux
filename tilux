@@ -244,9 +244,6 @@ if ARGV.empty?
     empty_input?(input)
     sys_options(input)
 
-    # when "misc"
-    #  puts "misc"
-
   when 'help', '--help', '--h', '5'
     title?('::Help::')
     run_option('help')
@@ -288,7 +285,7 @@ else
     sys_options(ARGV[1])
 
   # when "misc"
-    # puts("misc")
+  # puts("misc")
 
   when 'help', '--help', '--h', '5'
     title?('::Help::')

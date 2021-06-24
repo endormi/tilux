@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0
+- Fix add alias script
+- Add input? method to reduce repeatability
+- Check for glxinfo
+- Use update for everything instead of upgrade
+
 ## 0.5.0
 - Fix build script to do necessary configs
 - Install graphicsmagick pkg

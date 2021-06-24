@@ -48,11 +48,7 @@ if [[ "$(which ruby)" == "" ]]; then
   sudo apt update
   sudo apt install -y ruby-full
 
-  # Should be enough to work, but
-  # if it's not a PR is very much appreciated
-  sudo chmod -R a+w /usr/local/bin/
-  sudo chmod -R a+w $HOME/.gem/bin/
-  sudo chmod -R a+w /var/lib/gems/
+  export GEM_HOME=~/.gems
 
   gem install bundler -v 2.1.4
 fi

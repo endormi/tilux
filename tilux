@@ -70,14 +70,14 @@ end
 def run_option(option)
   case option
   when 'tilux'
-    puts '  {1} -- 5 choices for encryption and decryption'
+    puts '  {1} -- 4 choices for encryption and decryption'
     puts '  {2} -- Monitoring different processes'
     puts '  {3} -- Pinging networks'
     puts '  {4} -- System scripts'
     puts "  --help -- How to use Tilux?\n"
   when 'crypto'
     puts 'cryptography -c: CCRYPT'
-    puts 'cryptography -g: GPG'
+    # puts 'cryptography -g: GPG'
     puts 'cryptography -o: Openssl'
     puts 'cryptography -p: Pyca'
     puts "cryptography -z: Zip\n"
@@ -126,10 +126,9 @@ def run_option(option)
     puts "Running the files interactively ./tilux and then follow the choices\n"
     puts 'Args:'
     puts 'Running the files with args ./tilux (and then the argument e.g. cryptography -c -e)'
-    puts "Note: The uppercase doesn't work currently with args\n"
+    puts "Note: The uppercase doesn't work currently with args.\n\n"
 
     puts 'cryptography -c: ccrypt -e (for encryption) or -d (for decryption)'
-    puts 'cryptography -g: GPG -e (for encryption) or -d (for decryption)'
     puts 'cryptography -o: Openssl -e (for encryption) or -d (for decryption)'
     puts 'cryptography -p: Pyca -e (for encryption) or -d (for decryption)'
     puts 'cryptography -z: Zip -e (for encryption) or -d (for decryption)'
@@ -199,22 +198,17 @@ if ARGV.empty?
       cryptography_encryption
       input?(input, 'ccrypt')
 
-    when '2', '-g', '--g', '-G', '--G'
-      title?('::GPG::')
-      cryptography_encryption
-      input?(input, 'gpg')
-
-    when '3', '-o', '--o', '-O', '--O'
+    when '2', '-o', '--o', '-O', '--O'
       title?('::Openssl::')
       cryptography_encryption
       input?(input, 'openssl')
 
-    when '4', '-p', '--p', '-P', '--P'
+    when '3', '-p', '--p', '-P', '--P'
       title?('::Pyca::')
       cryptography_encryption
       input?(input, 'pyca')
 
-    when '5', '-z', '--z', '-Z', '--Z'
+    when '4', '-z', '--z', '-Z', '--Z'
       title?('::Zip::')
       cryptography_encryption
       input?(input, 'zip')
@@ -254,16 +248,13 @@ else
     when '1', '-c', '--c', '-C', '--C'
       ccrypt_options(ARGV[2])
 
-    when '2', '-g', '--g', '-G', '--G'
-      gpg_options(ARGV[2])
-
-    when '3', '-o', '--o', '-O', '--O'
+    when '2', '-o', '--o', '-O', '--O'
       openssl_options(ARGV[2])
 
-    when '4', '-p', '--p', '-P', '--P'
+    when '3', '-p', '--p', '-P', '--P'
       pyca_options(ARGV[2])
 
-    when '5', '-z', '--z', '-Z', '--Z'
+    when '4', '-z', '--z', '-Z', '--Z'
       zip_options(ARGV[2])
     else
       # TODO

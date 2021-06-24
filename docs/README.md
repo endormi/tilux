@@ -18,7 +18,6 @@ All of the available commands:
 
 ```
 cryptography -c: ccrypt -e (for encryption) or -d (for decryption)
-cryptography -g: GPG -e (for encryption) or -d (for decryption)
 cryptography -o: Openssl -e (for encryption) or -d (for decryption)
 cryptography -p: Pyca -e (for encryption) or -d (for decryption)
 cryptography -z: Zip -e (for encryption) or -d (for decryption)

@@ -48,7 +48,8 @@ if [[ "$(which ruby)" == "" ]]; then
   sudo apt update
   sudo apt install -y ruby-full
 
-  export GEM_HOME=~/.gems
+  sudo chmod -R a+w /usr/local/bin/
+  sudo chmod -R a+w /var/lib/gems/
 
   gem install bundler -v 2.1.4
 fi

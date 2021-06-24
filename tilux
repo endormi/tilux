@@ -152,10 +152,6 @@ if ARGV.empty?
   puts "\nWhat script do you want to run?\n\n".white
   run_option('tilux')
 
-  # list_of_commands="Info, Cryptography, Monitoring, Networking, Sys && --help"
-
-  # puts "Choices: #{list_of_commands}"
-  # puts "Also you can use numbers"
   print "\n#{prompt} "
   c = gets.chomp.to_s.downcase.strip
 
@@ -291,8 +287,8 @@ else
   when 'sys', 'system', '4'
     sys_options(ARGV[1])
 
-    # when "misc"
-    #  puts("misc")
+  # when "misc"
+    # puts("misc")
 
   when 'help', '--help', '--h', '5'
     title?('::Help::')

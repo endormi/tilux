@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$(which zip)" == "" ]]; then
-  sudo apt upgrade
+  sudo apt update
   sudo apt install zip
   clear
 fi

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$(which ccrypt)" == "" ]]; then
-  sudo apt upgrade
+  sudo apt update
   sudo apt install ccrypt
   clear
 fi

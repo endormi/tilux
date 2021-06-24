@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$(which openssl)" == "" ]]; then
-  sudo apt upgrade
+  sudo apt update
   sudo apt install openssl
   clear
 fi

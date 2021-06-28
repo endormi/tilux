@@ -238,7 +238,6 @@ if ARGV.empty?
     run_option('help')
   else
     puts("\nNot a valid choice!")
-    puts "Use #{list_of_commands}"
   end
 
 else

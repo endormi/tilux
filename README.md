@@ -118,7 +118,7 @@ tilux
 
 To see the commands to use, how to run from any folder and how to run using Docker, click [here](docs/README.md).
 
-To use `Pyca` you need to first generate keys:
+To use `Pyca` you need to first generate key:
 
 `Pyca`:
 

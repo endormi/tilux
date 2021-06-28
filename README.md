@@ -118,18 +118,12 @@ tilux
 
 To see the commands to use, how to run from any folder and how to run using Docker, click [here](docs/README.md).
 
-To use `Pyca` and `GPG` you need to first generate keys:
+To use `Pyca` you need to first generate keys:
 
 `Pyca`:
 
 ```bash
 ./cryptography/pyca/generate_key.py
-```
-
-`GPG`:
-
-```bash
-./cryptography/gpg/gpg_generate_and_verify_keys.sh
 ```
 
 Check useful scripts [here](scripts/README.md).

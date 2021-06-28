@@ -59,7 +59,7 @@ if [[ "$(which lsb_release)" == "" ]]; then
 fi
 
 # Required for compiling C/C++ files
-if [ "$(which gcc)" == "" ] || [ "$(which g++)" == "" ]; then
+if [[ "$(which gcc)" == "" ]]; then
   sudo apt update
   sudo apt install -y build-essential
 fi

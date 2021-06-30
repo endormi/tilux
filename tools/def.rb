@@ -13,7 +13,7 @@ def ccrypt_options(choice)
     sys('./cryptography/ccrypt/ccrypt_decryption.sh tilux')
   else
     # TODO
-    puts 'Invalid choice!'
+    puts "\nInvalid choice!"
   end
 end
 
@@ -25,7 +25,7 @@ def gpg_options(choice)
     sys('./cryptography/gpg/gpg_decryption.sh tilux')
   else
     # TODO
-    puts 'Invalid choice!'
+    puts "\nInvalid choice!"
   end
 end
 
@@ -37,7 +37,7 @@ def openssl_options(choice)
     sys('./cryptography/openssl/openssl_decryption.sh tilux')
   else
     # TODO
-    puts 'Invalid choice!'
+    puts "\nInvalid choice!"
   end
 end
 
@@ -49,7 +49,7 @@ def pyca_options(choice)
     sys('./cryptography/pyca/decrypt.py tilux')
   else
     # TODO
-    puts 'Invalid choice!'
+    puts "\nInvalid choice!"
   end
 end
 
@@ -61,7 +61,7 @@ def zip_options(choice)
     sys('./cryptography/zip/zip_decryption.sh tilux')
   else
     # TODO
-    puts 'Invalid choice!'
+    puts "\nInvalid choice!"
   end
 end
 
@@ -86,7 +86,7 @@ def monitoring_options(choice)
     system('./monitoring/website_monitoring.py tilux')
   else
     # TODO
-    puts 'Invalid choice'
+    puts "\nInvalid choice!"
   end
 end
 
@@ -98,7 +98,7 @@ def networking_options(choice)
     sys('./networking/server_pinging.py tilux')
   else
     # TODO
-    puts 'Invalid choice'
+    puts "\nInvalid choice!"
   end
 end
 
@@ -174,6 +174,6 @@ def sys_options(choice)
     system('./space.o')
   else
     # TODO
-    puts 'Invalid choice'
+    puts "\nInvalid choice!"
   end
 end

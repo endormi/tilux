@@ -6,7 +6,7 @@ require_relative 'tools/col'
 require_relative 'tools/def'
 require_relative 'tools/catch_exception'
 
-version = 'v.1.0.0'
+version = 'v.1.0.1'
 puts "
 ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 8    888    8  888   888          888       8    8888    d8
@@ -175,7 +175,7 @@ def run_option(option)
 end
 
 if ARGV.empty?
-  puts "\nWhat script do you want to run?\n\n".white
+  puts "\nWhat script do you want to run?\n".white
   run_option('tilux')
 
   print "\n#{$prompt} "
@@ -215,7 +215,7 @@ if ARGV.empty?
 
     else
       # TODO
-      puts 'Invalid choice'
+      puts "\nInvalid choice!"
     end
 
   when 'monitoring', '2'
@@ -237,7 +237,8 @@ if ARGV.empty?
     title?('::Help::')
     run_option('help')
   else
-    puts("\nNot a valid choice!")
+    puts "\nInvalid choice!"
+    puts 'Use --help to show available commands.'
   end
 
 else
@@ -257,7 +258,7 @@ else
       zip_options(ARGV[2])
     else
       # TODO
-      puts 'Invalid choice'
+      puts "\nInvalid choice!"
     end
 
   when 'monitoring', '2'
@@ -276,6 +277,7 @@ else
     title?('::Help::')
     run_option('help')
   else
-    puts('Not a valid choice!')
+    puts "\nInvalid choice!"
+    puts 'Use --help to show available commands.'
   end
 end

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1
+- Export for ruby gems when building
+- Make continue if statement better
+- Update output in a wrong choice
+- Remove unused variable that gives an error
+- Remove unused GPG key from docs
+
 ## 1.0.0
 - Fix add alias script
 - Add input? method to reduce repeatability

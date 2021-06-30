@@ -238,7 +238,7 @@ if ARGV.empty?
     run_option('help')
   else
     puts "\nInvalid choice!"
-    puts "Use --help to show available commands."
+    puts 'Use --help to show available commands.'
   end
 
 else
@@ -278,6 +278,6 @@ else
     run_option('help')
   else
     puts "\nInvalid choice!"
-    puts "Use --help to show available commands."
+    puts 'Use --help to show available commands.'
   end
 end

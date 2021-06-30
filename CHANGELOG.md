@@ -3,7 +3,7 @@
 ## 1.0.1
 - Export for ruby gems when building
 - Make continue if statement better
-- Update output in a wrong choice
+- Update output in a invalid choice
 - Remove unused variable that gives an error
 - Remove unused GPG key from docs
 

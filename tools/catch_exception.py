@@ -13,7 +13,6 @@ def __input__(choice):
 
 # Exception for python files
 def handler(sig, frame):
-    print()
     exit()
 
 

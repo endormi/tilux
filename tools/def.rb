@@ -144,8 +144,6 @@ def sys_options(choice)
     sys('./sys/gnome_term_profile_load.sh tilux')
   when '-gpu', '--gpu'
     sys('./sys/gpu_name.sh tilux')
-  when '-h', '--h'
-    sys('./sys/hostname.rb tilux')
   when '-img', '--img'
     sys('./sys/img_info.rb tilux')
   when '-i', '--i'

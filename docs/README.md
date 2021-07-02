@@ -11,7 +11,7 @@
 ```bash
 # Example
 
-./tilux cryptography -g -e
+./tilux cryptography -o -e
 ```
 
 All of the available commands:
@@ -45,7 +45,6 @@ system -g:   configure git
 system -gtd: gnome terminal profile dump
 system -gtl: gnome terminal profile load
 system -gpu: GPU name
-system -h:   check hostname
 system -img: image info
 system -i:   IP address
 system -k:   kernel version

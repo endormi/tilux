@@ -11,7 +11,7 @@
 ```bash
 # Example
 
-./tilux cryptography -g -e
+./tilux cryptography -o -e
 ```
 
 All of the available commands:

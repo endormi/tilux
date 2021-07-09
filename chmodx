@@ -3,8 +3,8 @@
 # Bash scripts
 chmod +x ./cryptography/ccrypt/ccrypt_encryption.sh
 chmod +x ./cryptography/ccrypt/ccrypt_decryption.sh
-chmod +x ./cryptography/gpg/gpg_encryption.sh
-chmod +x ./cryptography/gpg/gpg_decryption.sh
+#chmod +x ./cryptography/gpg/gpg_encryption.sh
+#chmod +x ./cryptography/gpg/gpg_decryption.sh
 chmod +x ./cryptography/openssl/openssl_encryption.sh
 chmod +x ./cryptography/openssl/openssl_decryption.sh
 chmod +x ./cryptography/zip/zip_encryption.sh
@@ -62,5 +62,5 @@ chmod +x ./sys/rotate_img.rb
 chmod +x ./proc_script.rb
 
 # Generate keys
-chmod +x ./cryptography/gpg/gpg_generate_and_verify_keys.sh
+#chmod +x ./cryptography/gpg/gpg_generate_and_verify_keys.sh
 chmod +x ./cryptography/pyca/generate_key.py

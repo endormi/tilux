@@ -9,7 +9,7 @@
 
 alias="tvenv"
 
-[ `alias | grep "$alias" | wc -l` != 0 ] && echo "Alias $alias already exists" && exit
+[ `alias | grep "alias tvenv" | wc -l` != 0 ] && echo "Alias $alias already exists" && exit
 
 echo "alias $alias='. $PWD/venv/bin/activate'" >> ~/.bash_aliases
 echo "Added ${alias} to .bash_aliases"

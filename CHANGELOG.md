@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.5-br
+- Revert input? method that didn't work
+- Update alias to check for alias [name] instead of just [name]
+- Remove print from python handler
+- Comment out GPG scripts from build
+
 ## 1.0.1
 - Export for ruby gems when building
 - Make continue if statement better

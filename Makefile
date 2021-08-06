@@ -9,5 +9,7 @@ default:
 c+:
 	g++ proc.cpp $(CFLAGS) proc.o
 
+.PHONY: clean
+
 clean:
 	rm -rf *.o

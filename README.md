@@ -128,7 +128,7 @@ To use `Pyca` you need to first generate key:
 ./cryptography/pyca/generate_key.py
 ```
 
-Check useful scripts [here](scripts/README.md).
+Check useful scripts [here](scripts).
 
 [Tested](TESTED_ON.md) on (these are manually tested).
 

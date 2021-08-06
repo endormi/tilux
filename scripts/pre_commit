@@ -1,0 +1,10 @@
+#!/bin/bash
+
+[ ! -d scripts ] && cd ..
+
+if [[ "$(which pre-commit)" == "" ]]; then
+  pip3 install pre-commit
+  clear
+fi
+
+pre-commit run --all-files

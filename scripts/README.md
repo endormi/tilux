@@ -10,4 +10,5 @@ Useful scripts, specifically to be ran for `tilux`.
 - install_req - Installs required packages
 - pre_commit - Installs (if you don't have it) and runs pre-commit
 - resize_term - Resizes terminal
+- run_check - Run compile action check before committing code
 - start_dcompose - Starts docker-compose

@@ -34,6 +34,7 @@ chmod +x ./scripts/cformat
 chmod +x ./scripts/install_req
 chmod +x ./scripts/pre_commit
 chmod +x ./scripts/resize_term
+chmod +x ./scripts/run_check
 chmod +x ./scripts/start_dcompose
 
 # Python scripts

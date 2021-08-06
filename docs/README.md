@@ -132,6 +132,8 @@ All you have to do is:
 
 > In this example I'm downloading the computer bit system script
 
+**Note**: Certain scripts might not work, because by not running the build, you might not have the required packages installed.
+
 ```bash
 # Example
 

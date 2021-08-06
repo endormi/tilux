@@ -34,7 +34,7 @@ the system and not in one specific folder. So this is where this project comes h
 
 If you are using `dotfiles`, this tool still has useful scripts which makes it worth it to be installed.
 
-To install just one script instead of having to build everything, [click here](docs/README.md#download-a-specific-script).
+If you don't want to install the whole tool. You can download specific scripts, to know how [click here](docs/README.md#download-a-specific-script).
 
 Also, a big part of the reason why I created this project is to learn, that's why I have used different programming languages when I could've just used one.
 

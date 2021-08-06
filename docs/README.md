@@ -3,6 +3,7 @@
 - [Commands to use](#commands)
 - [Run from any folder](#run-from-any-folder)
 - [Running with Docker](#running-with-docker)
+- [Download a specific script](#download-a-specific-script)
 
 ## Commands
 
@@ -121,4 +122,18 @@ docker-compose exec tilux tilux
 
 ```
 docker-compose down
+```
+
+## Download a specific script
+
+Instead of having to build everything and install everything, you might want to just install one script (or a few).
+
+All you have to do is:
+
+> In this example I'm downloading the computer bit system script
+
+```bash
+# Example
+
+wget https://raw.githubusercontent.com/endormi/tilux/master/sys/bit.sh
 ```

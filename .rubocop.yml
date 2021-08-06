@@ -1,4 +1,7 @@
 # TODO
+
+# Some of these will be removed later.
+# I will be refactoring the code ASAP
 AllCops:
   NewCops: enable
 

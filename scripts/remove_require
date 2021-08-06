@@ -1,0 +1,7 @@
+#!/bin/bash
+
+[ ! -d scripts ] && cd ..
+
+read -p "Filename (just for ruby scripts): " filename
+
+echo "$(grep -v "require_relative" $filename)" > $filename

@@ -9,6 +9,7 @@ Useful scripts, specifically to be ran for `tilux`.
 - cformat - Formats C and C++ code
 - install_req - Installs required packages
 - pre_commit - Installs (if you don't have it) and runs pre-commit
+- remove_require - Exception to scripts (this script is only meant to be ran outside tilux), only meant for ruby scripts (removes require_relative so the script can actually run)
 - resize_term - Resizes terminal
 - run_check - Run compile action check before committing code
 - start_dcompose - Starts docker-compose

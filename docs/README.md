@@ -54,6 +54,7 @@ system -l:   last updated (file)
 system -o:   check OS
 system -p:   parse date
 system -prv: python and ruby version
+system -rl:  remove line
 system -ri:  resize image
 system -rt:  resize terminal
 system -r:   root (check if you are root or not)

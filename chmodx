@@ -26,6 +26,7 @@ chmod +x ./sys/gpu_name.sh
 chmod +x ./sys/kernel_version.sh
 chmod +x ./sys/last_updated.sh
 chmod +x ./sys/prv.sh
+chmod +x ./sys/remove_line.sh
 chmod +x ./sys/resize_terminal.sh
 
 chmod +x ./scripts/add_alias

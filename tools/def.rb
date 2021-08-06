@@ -160,6 +160,8 @@ def sys_options(choice)
     sys('./sys/parse_date.rb tilux')
   when '-prv', '--prv'
     sys('./sys/prv.sh tilux')
+  when '-rl', '--rl'
+    sys('./sys/remove_line.sh tilux')
   when '-ri', '--ri'
     sys('./sys/resize_img.rb tilux')
   when '-rt', '--rt'

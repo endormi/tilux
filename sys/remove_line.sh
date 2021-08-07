@@ -11,4 +11,6 @@ if [[ $1 == "tilux" ]]; then catch_empty $pattern; fi
 read -p "Filename (to remove the line from): " filename
 if [[ $1 == "tilux" ]]; then catch_empty $filename; fi
 
+[ ! -f $filename ] && echo "$filename doesn't exist." && exit
+
 echo "$(grep -v "$pattern" $filename)" > $filename

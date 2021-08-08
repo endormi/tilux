@@ -140,3 +140,19 @@ All you have to do is:
 
 wget https://raw.githubusercontent.com/endormi/tilux/master/sys/bit.sh
 ```
+
+Make the script an executable:
+
+```bash
+# Example
+
+chmod +x bit.sh
+```
+
+Run:
+
+```bash
+# Example
+
+./bit.sh
+```

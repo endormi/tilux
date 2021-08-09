@@ -11,6 +11,12 @@ Style/FrozenStringLiteralComment:
 Style/GlobalVars:
   Enabled: false
 
+Style/MultilineWhenThen:
+  Enabled: false
+
+Style/Semicolon:
+  Enabled: false
+
 Metrics/MethodLength:
   Enabled: false
 

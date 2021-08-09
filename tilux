@@ -243,33 +243,25 @@ if ARGV.empty?
   end
 
 else
-  case ARGV[0]
+  downcase_arg_one = ARGV[0].to_s.downcase
+  downcase_arg_two = ARGV[1].to_s.downcase
+  downcase_arg_three = ARGV[2].to_s.downcase
+
+  case downcase_arg_one
   when 'cryptography', 'crypto', '1'
-    case ARGV[1]
-    when '1', '-c', '--c', '-C', '--C'
-      ccrypt_options(ARGV[2])
-
-    when '2', '-o', '--o', '-O', '--O'
-      openssl_options(ARGV[2])
-
-    when '3', '-p', '--p', '-P', '--P'
-      pyca_options(ARGV[2])
-
-    when '4', '-z', '--z', '-Z', '--Z'
-      zip_options(ARGV[2])
+    case downcase_arg_two
+    when '-c', '--c' then ccrypt_options(downcase_arg_three)
+    when '-o', '--o' then openssl_options(downcase_arg_three)
+    when '-p', '--p' then pyca_options(downcase_arg_three)
+    when '-z', '--z' then zip_options(downcase_arg_three)
     else
       # TODO
       puts "\nInvalid choice!"
     end
 
-  when 'monitoring', '2'
-    monitoring_options(ARGV[1])
-
-  when 'networking', 'net', '3'
-    networking_options(ARGV[1])
-
-  when 'sys', 'system', '4'
-    sys_options(ARGV[1])
+  when 'monitoring', '2' then monitoring_options(downcase_arg_two)
+  when 'networking', 'net', '3' then networking_options(downcase_arg_two)
+  when 'sys', 'system', '4' then sys_options(downcase_arg_two)
 
   when 'help', '--help', '--h', '5'
     title?('::Help::')

@@ -5,7 +5,7 @@ from sys import exit
 
 
 # Checks if input is empty
-def __input__(choice):
+def __input__(choice: str) -> str:
     if not choice:
         print("Choice can't be empty!")
         exit()

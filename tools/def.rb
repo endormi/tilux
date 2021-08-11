@@ -84,6 +84,11 @@ def networking_options(choice)
   end
 end
 
+# TODO
+# Current function is way too long.
+# Thinking about separating scripts into
+# separate folders like in cryptography
+# and making separate functions.
 def sys_options(choice)
   case choice
   when '-a', '--a' then sys('./sys/add_alias.sh tilux')

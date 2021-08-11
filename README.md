@@ -118,7 +118,7 @@ tilux
 
 > However `tilux` is not required to run scripts individually. [See here](docs/README.md#run-from-any-folder).
 
-To see the commands to use, how to run from any folder and how to run using Docker, click [here](docs/README.md).
+To see the commands to use, how to run from any folder, how to run using Docker and how to download a specific script, click [here](docs/README.md).
 
 To use `Pyca` you need to first generate key:
 

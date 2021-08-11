@@ -166,7 +166,7 @@ if ARGV.empty?
     empty_input?(input)
 
     case input
-    when '1', '-c', '--c', '-C', '--C'
+    when '-c', '--c'
       title?('::CCRYPT::')
       cryptography_encryption
       print "#{prompt} "
@@ -175,7 +175,7 @@ if ARGV.empty?
       empty_input?(i)
       ccrypt_options(i)
 
-    when '2', '-o', '--o', '-O', '--O'
+    when '-o', '--o'
       title?('::Openssl::')
       cryptography_encryption
       print "#{prompt} "
@@ -184,7 +184,7 @@ if ARGV.empty?
       empty_input?(i)
       openssl_options(i)
 
-    when '3', '-p', '--p', '-P', '--P'
+    when '-p', '--p'
       title?('::Pyca::')
       cryptography_encryption
       print "#{prompt} "
@@ -193,7 +193,7 @@ if ARGV.empty?
       empty_input?(i)
       pyca_options(i)
 
-    when '4', '-z', '--z', '-Z', '--Z'
+    when '-z', '--z'
       title?('::Zip::')
       cryptography_encryption
       print "#{prompt} "
@@ -243,9 +243,9 @@ if ARGV.empty?
   end
 
 else
-  downcase_arg_one = ARGV[0].to_s.downcase
-  downcase_arg_two = ARGV[1].to_s.downcase
-  downcase_arg_three = ARGV[2].to_s.downcase
+  downcase_arg_one = ARGV[0].to_s.downcase.strip
+  downcase_arg_two = ARGV[1].to_s.downcase.strip
+  downcase_arg_three = ARGV[2].to_s.downcase.strip
 
   case downcase_arg_one
   when 'cryptography', 'crypto', '1'

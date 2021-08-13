@@ -63,7 +63,6 @@ chmod +x ./sys/resize_img.rb
 chmod +x ./sys/root.rb
 chmod +x ./sys/rotate_img.rb
 
-chmod +x ./proc_script.rb
 
 # Generate keys
 #chmod +x ./cryptography/gpg/gpg_generate_and_verify_keys.sh

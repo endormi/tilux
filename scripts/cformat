@@ -8,6 +8,5 @@ if [[ "$(which clang-format)" == "" ]]; then
   clear
 fi
 
-clang-format -i proc.cpp
 clang-format -i sys/fs.c
 clang-format -i sys/space.c

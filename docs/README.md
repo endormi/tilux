@@ -131,9 +131,9 @@ Instead of having to build everything and install everything, you might want to 
 
 All you have to do is:
 
-> In this example I'm downloading the computer bit system script
+> In this example I'm downloading the computer bit system script.
 
-**Note**: Certain scripts might not work, because by not running the build, you might not have the required packages installed. Ruby scripts might not work running outside of tilux, because of `require_relative`. To fix this `wget` the script `scripts/remove_require` following the example below, but with the right script.
+**Note**: Certain scripts might not work, because by not running the build, you might not have the required packages installed.
 
 ```bash
 # Example

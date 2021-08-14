@@ -84,51 +84,95 @@ def networking_options(choice)
   end
 end
 
-# TODO
-# Current function is way too long.
-# Thinking about separating scripts into
-# separate folders like in cryptography
-# and making separate functions.
-def sys_options(choice)
+def conf(choice)
   case choice
-  when '-a', '--a' then sys('./sys/add_alias.sh tilux')
-  when '-bf', '--bf' then sys('./sys/bf.sh tilux')
-  when '-b', '--b' then sys('./sys/bit.sh tilux')
-  when '-c', '--c' then sys('./sys/clean.sh tilux')
-  when '-cdp', '--cdp' then sys('./sys/convert_doc_to_pdf.rb tilux')
-  when '-ci', '--ci' then sys('./sys/convert_img.rb tilux')
-  when '-cpu', '--cpu' then sys('./sys/cpu_name.sh tilux')
-  when '-d', '--d' then sys('./sys/del.rb tilux')
-  when '-di', '--di' then sys('./sys/distro.sh tilux')
-  when '-e', '--e' then sys('./sys/exists.rb tilux')
-  when '-f', '--f' then sys('./sys/fd.rb tilux')
-  when '-fl', '--fl' then sys('./sys/file_updated.rb tilux')
-  when '-fp', '--fp' then sys('./sys/force_poweroff.sh tilux')
-  when '-fr', '--fr' then sys('./sys/force_reboot.sh tilux')
+  when '-g', '--g' then sys('./sys/config/git_config.sh tilux')
+  when '-gtd', '--gtd' then sys('./sys/config/gnome_term_profile_dump.sh tilux')
+  when '-gtl', '--gtl' then sys('./sys/config/gnome_term_profile_load.sh tilux')
+  else
+    # TODO
+    puts "\nInvalid choice!"
+  end
+end
+
+def ff(choice)
+  case choice
+  when '-bf', '--bf' then sys('./sys/file_folder/bf.sh tilux')
+  when '-d', '--d' then sys('./sys/file_folder/del.rb tilux')
+  when '-e', '--e' then sys('./sys/file_folder/exists.rb tilux')
+  when '-f', '--f' then sys('./sys/file_folder/fd.rb tilux')
+  when '-fl', '--fl' then sys('./sys/file_folder/file_updated.rb tilux')
   when '-fs', '--fs' then
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('FS');"`
     system('./fs.o')
-  when '-g', '--g' then sys('./sys/git_config.sh tilux')
-  when '-gtd', '--gtd' then sys('./sys/gnome_term_profile_dump.sh tilux')
-  when '-gtl', '--gtl' then sys('./sys/gnome_term_profile_load.sh tilux')
-  when '-gpu', '--gpu' then sys('./sys/gpu_name.sh tilux')
-  when '-img', '--img' then sys('./sys/img_info.rb tilux')
-  when '-i', '--i' then sys('./sys/ip.rb tilux')
-  when '-k', '--k' then sys('./sys/kernel_version.sh tilux')
-  when '-l', '--l' then sys('./sys/last_updated.sh tilux')
-  when '-o', '--o' then sys('./sys/os.rb tilux')
-  when '-p', '--p' then sys('./sys/parse_date.rb tilux')
-  when '-prv', '--prv' then sys('./sys/prv.sh tilux')
-  when '-rl', '--rl' then sys('./sys/remove_line.sh tilux')
-  when '-ri', '--ri' then sys('./sys/resize_img.rb tilux')
-  when '-rt', '--rt' then sys('./sys/resize_terminal.sh tilux')
-  when '-r', '--r' then sys('./sys/root.rb tilux')
-  when '-ro', '--ro' then sys('./sys/rotate_img.rb tilux')
+  when '-l', '--l' then sys('./sys/file_folder/last_updated.sh tilux')
+  else
+    # TODO
+    puts "\nInvalid choice!"
+  end
+end
+
+def image(choice)
+  case choice
+  when '-ci', '--ci' then sys('./sys/img/convert_img.rb tilux')
+  when '-i', '--i' then sys('./sys/img/img_info.rb tilux')
+  when '-ri', '--ri' then sys('./sys/img/resize_img.rb tilux')
+  when '-ro', '--ro' then sys('./sys/img/rotate_img.rb tilux')
+  else
+    # TODO
+    puts "\nInvalid choice!"
+  end
+end
+
+def info(choice)
+  case choice
+  when '-b', '--b' then sys('./sys/info/bit.sh tilux')
+  when '-di', '--di' then sys('./sys/info/distro.sh tilux')
+  when '-i', '--i' then sys('./sys/info/ip.rb tilux')
+  when '-k', '--k' then sys('./sys/info/kernel_version.sh tilux')
+  when '-o', '--o' then sys('./sys/info/os.rb tilux')
+  when '-prv', '--prv' then sys('./sys/info/prv.sh tilux')
+  when '-r', '--r' then sys('./sys/info/root.rb tilux')
   when '-s', '--s'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Space');"`
     system('./space.o')
+  else
+    # TODO
+    puts "\nInvalid choice!"
+  end
+end
+
+def proc(choice)
+  case choice
+  when '-cpu', '--cpu' then sys('./sys/proc/cpu_name.sh tilux')
+  when '-gpu', '--gpu' then sys('./sys/proc/gpu_name.sh tilux')
+  else
+    # TODO
+    puts "\nInvalid choice!"
+  end
+end
+
+def shutdown(choice)
+  case choice
+  when '-fp', '--fp' then sys('./sys/shutdown/force_poweroff.sh tilux')
+  when '-fr', '--fr' then sys('./sys/shutdown/force_reboot.sh tilux')
+  else
+    # TODO
+    puts "\nInvalid choice!"
+  end
+end
+
+# Just for now
+def sys_other(choice)
+  case choice
+  when '-a', '--a' then sys('./sys/other/add_alias.sh tilux')
+  when '-c', '--c' then sys('./sys/other/clean.sh tilux')
+  when '-cdp', '--cdp' then sys('./sys/other/convert_doc_to_pdf.rb tilux')
+  when '-p', '--p' then sys('./sys/other/parse_date.rb tilux')
+  when '-rl', '--rl' then sys('./sys/other/remove_line.sh tilux')
+  when '-rt', '--rt' then sys('./sys/other/resize_terminal.sh tilux')
   else
     # TODO
     puts "\nInvalid choice!"

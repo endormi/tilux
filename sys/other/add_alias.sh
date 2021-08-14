@@ -12,7 +12,7 @@ fi
 read -p "Alias: " alias
 if [[ $1 == "tilux" ]]; then catch_empty $alias; fi
 
-[ `alias | grep "$alias" | wc -l` != 0 ] && echo "Alias $alias already exists" && exit
+[ `alias | grep "alias $alias" | wc -l` != 0 ] && echo "Alias $alias already exists" && exit
 
 read -p "Command: " cmd
 if [[ $1 == "tilux" ]]; then catch_empty $cmd; fi

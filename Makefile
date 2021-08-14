@@ -2,8 +2,8 @@ CC = gcc
 CFLAGS = -g -Wall -o
 
 default:
-	$(CC) sys/fs.c $(CFLAGS) fs.o
-	$(CC) sys/space.c $(CFLAGS) space.o
+	$(CC) sys/file_folder/fs.c $(CFLAGS) fs.o
+	$(CC) sys/info/space.c $(CFLAGS) space.o
 
 
 .PHONY: clean

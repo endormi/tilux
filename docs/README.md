@@ -17,6 +17,8 @@
 
 All of the available commands:
 
+> System and cryptography commands have an extra argument for example `-c` and `-f`. This is to separate scripts into folders.
+
 ```
 cryptography -c: ccrypt -e (for encryption) or -d (for decryption)
 cryptography -o: Openssl -e (for encryption) or -d (for decryption)

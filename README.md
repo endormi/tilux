@@ -8,7 +8,7 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 ```
 
-![v](https://img.shields.io/badge/tilux-v.1.0.1-blue)
+![v](https://img.shields.io/badge/tilux-v.1.0.5-blue)
 ![docker-compose-action-CI](https://github.com/endormi/tilux/workflows/docker-compose-action-CI/badge.svg?branch=master)
 ![compile](https://github.com/endormi/tilux/actions/workflows/compile.yml/badge.svg?branch=master)
 ![CodeQL](https://github.com/endormi/tilux/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)

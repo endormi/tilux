@@ -100,7 +100,7 @@ def ff(choice)
   when '-bf', '--bf' then sys('./sys/file_folder/bf.sh tilux')
   when '-d', '--d' then sys('./sys/file_folder/del.rb tilux')
   when '-e', '--e' then sys('./sys/file_folder/exists.rb tilux')
-  when '-f', '--f' then sys('./sys/file_folder/fd.rb tilux')
+  when '-fd', '--fd' then sys('./sys/file_folder/fd.rb tilux')
   when '-fl', '--fl' then sys('./sys/file_folder/file_updated.rb tilux')
   when '-fs', '--fs' then
     system('clear')

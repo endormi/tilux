@@ -54,7 +54,6 @@ chmod +x ./sys/del.rb
 chmod +x ./sys/exists.rb
 chmod +x ./sys/fd.rb
 chmod +x ./sys/file_updated.rb
-chmod +x ./sys/hostname.rb
 chmod +x ./sys/img_info.rb
 chmod +x ./sys/ip.rb
 chmod +x ./sys/os.rb

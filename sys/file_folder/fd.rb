@@ -1,14 +1,16 @@
 #!/usr/bin/ruby
 
 require 'io/console'
-require_relative '../tools/catch_exception'
 
-print `python3 -c "from tools.logos import Logo; Logo('FD');"` if ARGV[0] == 'tilux'
+if ARGV[0] == 'tilux'
+  require_relative '../../tools/catch_exception'
+  print `python3 -c "from tools.logos import Logo; Logo('FD');"`
+end
 
 print 'Path to directory: '
 dir = $stdin.gets.chomp.to_s.strip
 
-empty_input?(dir)
+empty_input?(dir) if ARGV[0] == 'tilux'
 
 if File.directory?(dir) == false
   puts "\n#{dir} doesn't exist."
@@ -22,7 +24,7 @@ print 'Choice: '
 c = $stdin.gets.chomp.to_s.downcase
 puts
 
-empty_input?(c)
+empty_input?(c) if ARGV[0] == 'tilux'
 
 case c
 when '1', 'ns', '-ns', '--ns'

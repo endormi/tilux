@@ -2,15 +2,17 @@
 
 require 'mini_magick'
 require 'io/console'
-require_relative '../tools/catch_exception'
 
-print `python3 -c "from tools.logos import Logo; Logo('Convert img');"` if ARGV[0] == 'tilux'
+if ARGV[0] == 'tilux'
+  require_relative '../../tools/catch_exception'
+  print `python3 -c "from tools.logos import Logo; Logo('Convert img');"`
+end
 
 puts "Note: This makes a copy of the original image.\nIt doesn't overwrite.\n\n"
 
 print 'What is the image you want to convert? '
 img = $stdin.gets.chomp.to_s
-empty_input?(img)
+empty_input?(img) if ARGV[0] == 'tilux'
 unless File.file?(img)
   puts "File doesn't exist."
   exit
@@ -20,7 +22,7 @@ image = MiniMagick::Image.open(img)
 puts 'Format: i.e. JPG, PNG etc.'
 print 'What format for the image (do not add .)? '
 format = $stdin.gets.chomp.to_s
-empty_input?(format)
+empty_input?(format) if ARGV[0] == 'tilux'
 if format.include? '.'
   puts 'Do not add .'
   exit
@@ -30,7 +32,7 @@ puts "\nUse the same file extension as in format."
 puts "Using a different file extension as format works, but it will most likely cause issues.\n\n"
 print 'Save image as: '
 name = $stdin.gets.chomp.to_s
-empty_input?(name)
+empty_input?(name) if ARGV[0] == 'tilux'
 unless name.include? '.'
   puts 'You need to add the file extension.'
   exit

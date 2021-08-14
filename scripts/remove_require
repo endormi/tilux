@@ -1,8 +1,0 @@
-#!/bin/bash
-
-[ ! -d scripts ] && cd ..
-
-read -p "Filename (just for ruby scripts): " filename
-[ ! -f $filename ] && echo "$filename doesn't exist." && exit
-
-echo "$(grep -v "require_relative" $filename)" > $filename

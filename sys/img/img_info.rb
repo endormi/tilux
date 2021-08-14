@@ -2,13 +2,15 @@
 
 require 'mini_magick'
 require 'io/console'
-require_relative '../tools/catch_exception'
 
-print `python3 -c "from tools.logos import Logo; Logo('Img info');"` if ARGV[0] == 'tilux'
+if ARGV[0] == 'tilux'
+  require_relative '../../tools/catch_exception'
+  print `python3 -c "from tools.logos import Logo; Logo('Img info');"`
+end
 
 print 'What is the image you want to get info about? '
 img = $stdin.gets.chomp.to_s
-empty_input?(img)
+empty_input?(img) if ARGV[0] == 'tilux'
 unless File.file?(img)
   puts "File doesn't exist."
   exit

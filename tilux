@@ -61,39 +61,52 @@ def run_option(option)
     puts '-i: ip_pinging'
     puts "-s: server_pinging\n"
   when 'system'
-    puts '-a:   add alias'
-    puts '-bf:  bf (backup folder)'
-    puts '-b:   computer bit system'
-    puts '-c:   clean (clean system of logs and trash)'
-    puts '-cdp: convert doc to pdf'
-    puts '-ci:  convert image'
-    puts '-cpu: CPU name'
-    puts '-d:   del (delete file or directory)'
-    puts '-di:  check distro'
-    puts '-e:   exists (file or directory)'
-    puts '-f:   fd (number of files and folders'
-    puts '-fl:  file updated'
-    puts '-fp:  force poweroff'
-    puts '-fr:  force reboot'
-    puts '-fs:  file size'
+    puts 'system -c: config'
+    puts 'system -f: files and folders'
+    puts 'system -img: image'
+    puts 'system -i: info'
+    puts 'system -o: other'
+    puts 'system -p: processors'
+    puts "system -s: shutdown\n"
+  when 'systemc'
     puts '-g:   configure git'
     puts '-gtd: gnome terminal profile dump'
-    puts '-gtl: gnome terminal profile load'
-    puts '-gpu: GPU name'
-    puts '-h:   check hostname'
-    puts '-img: image info'
-    puts '-i:   IP address'
+    puts "-gtl: gnome terminal profile load\n"
+  when 'systemf'
+    puts '-bf: bf (backup folder)'
+    puts '-d:  del (delete file or directory)'
+    puts '-e:  exists (file or directory)'
+    puts '-f:  fd (number of files and folders)'
+    puts '-fl: file updated'
+    puts '-fs: file size'
+    puts "-l:  last updated (file)\n"
+  when 'system_img'
+    puts '-ci: convert image'
+    puts '-i:  image info'
+    puts '-ri: resize image'
+    puts "-ro: rotate image\n"
+  when 'system_info'
+    puts '-b:   computer bit system'
+    puts '-di:  check distro'
+    puts '-ip:  IP address'
     puts '-k:   kernel version'
-    puts '-l:   last updated (file)'
     puts '-o:   check OS'
-    puts '-p:   parse date'
     puts '-prv: python and ruby version'
-    puts '-rl:  remove line'
-    puts '-ri:  resize image'
-    puts '-rt:  resize terminal'
     puts '-r:   root (check if you are root or not)'
-    puts '-ro:  rotate image'
     puts "-s:   display computer space, uptime and number of processes running\n"
+  when 'system_other'
+    puts '-a:   add alias'
+    puts '-c:   clean (clean system of logs and trash)'
+    puts '-cdp: convert doc to pdf'
+    puts '-p:   parse date'
+    puts '-rl:  remove line from file matching text'
+    puts "-rt:  resize terminal\n"
+  when 'system_proc'
+    puts '-cpu: CPU name'
+    puts "-gpu: GPU name\n"
+  when 'system_shutdown'
+    puts '-fp: force poweroff'
+    puts "-fr: force reboot\n"
   when 'help'
     puts 'Interactive:'
     puts "Running the files interactively ./tilux and then follow the choices\n"
@@ -232,7 +245,67 @@ if ARGV.empty?
     input = gets.chomp.to_s.downcase.strip
 
     empty_input?(input)
-    sys_options(input)
+    case input
+    when '-c', '--c' then
+      title?('::CONFIG::')
+      run_option('systemc')
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
+
+      empty_input?(input)
+      conf(input)
+    when '-f', '--f' then
+      title?('::FF::')
+      run_option('systemf')
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
+
+      empty_input?(input)
+      ff(input)
+    when '-img', '--img' then
+      title?('::IMG::')
+      run_option('system_img')
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
+
+      empty_input?(input)
+      image(input)
+    when '-i', '--i' then
+      title?('::INFO::')
+      run_option('system_info')
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
+
+      empty_input?(input)
+      info(input)
+    when '-o', '--o' then
+      title?('::OTHER::')
+      run_option('system_other')
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
+
+      empty_input?(input)
+      sys_other(input)
+    when '-p', '--p' then
+      title?('::PROC::')
+      run_option('system_proc')
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
+
+      empty_input?(input)
+      proc(input)
+    when '-s', '--s' then
+      title?('::SHUTDOWN::')
+      run_option('system_shutdown')
+      print "#{prompt} "
+      input = gets.chomp.to_s.downcase.strip
+
+      empty_input?(input)
+      shutdown(input)
+    else
+      # TODO
+      puts "\nInvalid choice!"
+    end
 
   when 'help', '--help', '--h', '5'
     title?('::Help::')

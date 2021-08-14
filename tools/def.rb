@@ -129,7 +129,7 @@ def info(choice)
   case choice
   when '-b', '--b' then sys('./sys/info/bit.sh tilux')
   when '-di', '--di' then sys('./sys/info/distro.sh tilux')
-  when '-i', '--i' then sys('./sys/info/ip.rb tilux')
+  when '-ip', '--ip' then sys('./sys/info/ip.rb tilux')
   when '-k', '--k' then sys('./sys/info/kernel_version.sh tilux')
   when '-o', '--o' then sys('./sys/info/os.rb tilux')
   when '-prv', '--prv' then sys('./sys/info/prv.sh tilux')

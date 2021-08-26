@@ -2,7 +2,6 @@
 
 ## 1.0.5
 - Move system scripts into separate methods and folders
-- Add remove_line.sh script
 - Add pre_commit and run_check to scripts folder
 - Add how to run downloaded script
 - Update docs

@@ -23,44 +23,7 @@ g="\033[0;32m"
 w="\033[1;37m"
 
 bash chmodx
-
-# Python3 is required to run the python scripts
-if [[ "$(which python3)" == "" ]]; then
-  sudo apt update
-  sudo apt install -y python3
-fi
-
-if [[ "$(which pip3)" == "" ]]; then
-  sudo apt update
-  sudo apt install -y python3-pip
-fi
-
-# Ruby is required to run ruby scripts
-if [[ "$(which ruby)" == "" ]]; then
-  sudo apt update
-  sudo apt install -y ruby-full
-
-  export GEM_HOME="$HOME/.gem"
-
-  gem install bundler -v 2.1.4
-fi
-
-# lsb_release is required to run sys/distro.sh script
-if [[ "$(which lsb_release)" == "" ]]; then
-  sudo apt update
-  sudo apt install -y lsb-core
-fi
-
-# Required for compiling C/C++ files
-if [[ "$(which gcc)" == "" ]]; then
-  sudo apt update
-  sudo apt install -y build-essential
-fi
-
-if [[ "$(which gm)" == "" ]]; then
-  sudo apt update
-  sudo apt install -y graphicsmagick
-fi
+bash pkgs
 
 # TODO: Run venv after build
 if [[ $1 == "venv" ]]; then

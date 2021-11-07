@@ -24,7 +24,7 @@ when '-cpu', '--cpu'
 
 > If you have a better way to call scripts, feel free to implement it.
 
-Remember to add the new script to [docs](docs/README.md), [tilux](tilux) run_option function (both to the category and help, following the format) and [chmodx](chmodx).
+Remember to add the new script to [guide](GUIDE.md), [tilux](tilux) run_option function (both to the category and help, following the format) and [chmodx](chmodx).
 
 ## Contribution to GitHub steps
 

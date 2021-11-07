@@ -34,7 +34,7 @@ the system and not in one specific folder. So this is where this project comes h
 
 If you are using `dotfiles`, this tool still has useful scripts which makes it worth it to be installed.
 
-If you don't want to install the whole tool. You can download specific scripts, to know how [click here](docs/README.md#download-a-specific-script).
+If you don't want to install the whole tool. You can download specific scripts, to know how [click here](GUIDE.md#download-a-specific-script).
 
 Also, a big part of the reason why I created this project is to learn, that's why I have used different programming languages when I could've just used one.
 
@@ -116,9 +116,9 @@ tilux
 
 **Note**: `tilux` command will `CD` into the `tilux` folder location.
 
-> However `tilux` is not required to run scripts individually. [See here](docs/README.md#run-from-any-folder).
+> However `tilux` is not required to run scripts individually. [See here](GUIDE.md#run-from-any-folder).
 
-To see the commands to use, how to run from any folder, how to run using Docker and how to download a specific script, click [here](docs/README.md).
+To see the commands to use, how to run from any folder, how to run using Docker and how to download a specific script, click [here](GUIDE.md).
 
 To use `Pyca` you need to first generate key:
 

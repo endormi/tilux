@@ -43,6 +43,7 @@ chmod +x ./sys/shutdown/force_reboot.sh
 chmod +x ./scripts/add_alias
 chmod +x ./scripts/add_alias_venv
 chmod +x ./scripts/cformat
+chmod +x ./scripts/groff
 chmod +x ./scripts/install_req
 chmod +x ./scripts/pre_commit
 chmod +x ./scripts/resize_term

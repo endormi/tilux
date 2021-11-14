@@ -21,6 +21,7 @@ chmod +x ./sys/config/gnome_term_profile_dump.sh
 chmod +x ./sys/config/gnome_term_profile_load.sh
 
 chmod +x ./sys/file_folder/bf.sh
+chmod +x ./sys/file_folder/clean.sh
 chmod +x ./sys/file_folder/last_updated.sh
 
 chmod +x ./sys/info/bit.sh
@@ -29,7 +30,6 @@ chmod +x ./sys/info/kernel_version.sh
 chmod +x ./sys/info/prv.sh
 
 chmod +x ./sys/other/add_alias.sh
-chmod +x ./sys/other/clean.sh
 chmod +x ./sys/other/cmd_search.sh
 chmod +x ./sys/other/remove_line.sh
 chmod +x ./sys/other/resize_terminal.sh

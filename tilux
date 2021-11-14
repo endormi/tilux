@@ -74,6 +74,7 @@ def run_option(option)
     puts "-gtl: gnome terminal profile load\n"
   when 'systemf'
     puts '-bf: bf (backup folder)'
+    puts '-c:  clean (clean system of logs and trash)'
     puts '-d:  del (delete file or directory)'
     puts '-e:  exists (file or directory)'
     puts '-fd: fd (number of files and folders)'
@@ -96,7 +97,6 @@ def run_option(option)
     puts "-s:   display computer space, uptime and number of processes running\n"
   when 'system_other'
     puts '-a:   add alias'
-    puts '-c:   clean (clean system of logs and trash)'
     puts '-cdp: convert doc to pdf'
     puts '-p:   parse date'
     puts '-rl:  remove line from file matching text'
@@ -128,6 +128,7 @@ def run_option(option)
     puts 'system -c -gtd:  gnome terminal profile dump'
     puts 'system -c -gtl:  gnome terminal profile load'
     puts 'system -f -bf:   bf (backup folder)'
+    puts 'system -f -c:    clean (clean system of logs and trash)'
     puts 'system -f -d:    del (delete file or directory)'
     puts 'system -f -e:    exists (check if file or dir exists)'
     puts 'system -f -fd:   fd (number of files and folders)'
@@ -147,7 +148,6 @@ def run_option(option)
     puts 'system -i -r:    root (check if you are root or not)'
     puts 'system -i -s:    display computer space, uptime and number of processes running'
     puts 'system -o -a:    add alias'
-    puts 'system -o -c:    clean (clean system of logs and trash)'
     puts 'system -o -cdp:  convert doc to pdf'
     puts 'system -o -p:    parse date'
     puts 'system -o -rl:   remove line'

@@ -33,6 +33,7 @@ system -c -g:    configure git
 system -c -gtd:  gnome terminal profile dump
 system -c -gtl:  gnome terminal profile load
 system -f -bf:   bf (backup folder)
+system -f -c:    clean (clean system of logs and trash)
 system -f -d:    del (delete file or directory)
 system -f -e:    exists (check if file or dir exists)
 system -f -fd:   fd (number of files and folders)
@@ -52,7 +53,6 @@ system -i -prv:  python and ruby version
 system -i -r:    root (check if you are root or not)
 system -i -s:    display computer space, uptime and number of processes running
 system -o -a:    add alias
-system -o -c:    clean (clean system of logs and trash)
 system -o -cdp:  convert doc to pdf
 system -o -p:    parse date
 system -o -rl:   remove line

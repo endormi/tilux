@@ -98,6 +98,7 @@ end
 def ff(choice)
   case choice
   when '-bf', '--bf' then sys('./sys/file_folder/bf.sh tilux')
+  when '-c', '--c' then sys('./sys/file_folder/clean.sh tilux')
   when '-d', '--d' then sys('./sys/file_folder/del.rb tilux')
   when '-e', '--e' then sys('./sys/file_folder/exists.rb tilux')
   when '-fd', '--fd' then sys('./sys/file_folder/fd.rb tilux')
@@ -168,7 +169,6 @@ end
 def sys_other(choice)
   case choice
   when '-a', '--a' then sys('./sys/other/add_alias.sh tilux')
-  when '-c', '--c' then sys('./sys/other/clean.sh tilux')
   when '-cdp', '--cdp' then sys('./sys/other/convert_doc_to_pdf.rb tilux')
   when '-s', '--s' then sys('./sys/other/cmd_search.sh tilux')
   when '-p', '--p' then sys('./sys/other/parse_date.rb tilux')

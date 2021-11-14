@@ -30,6 +30,7 @@ chmod +x ./sys/info/prv.sh
 
 chmod +x ./sys/other/add_alias.sh
 chmod +x ./sys/other/clean.sh
+chmod +x ./sys/other/cmd_search.sh
 chmod +x ./sys/other/remove_line.sh
 chmod +x ./sys/other/resize_terminal.sh
 

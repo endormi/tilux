@@ -57,6 +57,7 @@ system -o -cdp:  convert doc to pdf
 system -o -p:    parse date
 system -o -rl:   remove line
 system -o -rt:   resize terminal
+system -o -s:    search specific command
 system -p -cpu:  CPU name
 system -p -gpu:  GPU name
 system -s -fp:   force poweroff

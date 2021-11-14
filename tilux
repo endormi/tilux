@@ -100,7 +100,8 @@ def run_option(option)
     puts '-cdp: convert doc to pdf'
     puts '-p:   parse date'
     puts '-rl:  remove line from file matching text'
-    puts "-rt:  resize terminal\n"
+    puts '-rt:  resize terminal'
+    puts "-s:   search specific command\n"
   when 'system_proc'
     puts '-cpu: CPU name'
     puts "-gpu: GPU name\n"
@@ -151,6 +152,7 @@ def run_option(option)
     puts 'system -o -p:    parse date'
     puts 'system -o -rl:   remove line'
     puts 'system -o -rt:   resize terminal'
+    puts 'system -o -s:    search specific command'
     puts 'system -p -cpu:  CPU name'
     puts 'system -p -gpu:  GPU name'
     puts 'system -s -fp:   force poweroff'

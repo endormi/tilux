@@ -1,0 +1,10 @@
+#!/bin/bash
+
+[ ! -d scripts ] && cd ..
+
+if [[ "$(which groff)" == "" ]]; then
+  sudo apt update
+  sudo apt install -y groff
+fi
+
+groff -man -Tascii ./man/tilux.1 | less

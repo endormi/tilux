@@ -1,0 +1,174 @@
+.TH Tilux 1 GNU
+.SH NAME
+tilux
+
+.SH SYNOPSIS
+.B ./tilux
+[-h]
+[--help]
+[1 -c -e]
+[2 -c]
+[3 -i]
+[4 -i -o]
+
+.SH DESCRIPTTION
+.B tilux
+is a CLI that has many useful and consice scripts. The scripts are located in cryptography, monitoring, networking and system folder and you then specify which script you want to run.
+.PP
+Shortly about the folders:
+.PP
+Cryptography consists of ccrypt, openssl, pyca and zip and all have an encryption and decryption option.
+.PP
+Monitoring consists of CPU, memory and website.
+.PP
+Networking consists of IP and server pinging.
+.PP
+System consists of many system related scripts such as. configurations, system info etc.
+.PP
+NOTE: In the options example below, I have for example cryptography -c -e. Here is a list of the available options: cryptography (1, cryptography or crypto), monitoring (2 or monitoring), networking (3, networking or net) and system (4, system or sys).
+
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+display help information.
+.TP
+.BR cryptography " " -c " " -e
+ccrypt encryption.
+.TP
+.BR cryptography " " -c " " -d
+ccrypt decryption.
+.TP
+.BR cryptography " " -o " " -e
+Openssl encryption.
+.TP
+.BR cryptography " " -o " " -d
+Openssl decryption.
+.TP
+.BR cryptography " " -p " " -e
+Pyca encryption.
+.TP
+.BR cryptography " " -p " " -d
+Pyca decryption.
+.TP
+.BR cryptography " " -z " " -e
+Zip encryption.
+.TP
+.BR cryptography " " -z " " -d
+Zip decryption.
+.TP
+.BR monitoring " " -c
+monitoring cpu processes.
+.TP
+.BR monitoring " " -m
+monitoring memory consumption.
+.TP
+.BR monitoring " " -w
+monitoring website (if it's up and if not it sends an email).
+.TP
+.BR networking " " -i
+IP pinging.
+.TP
+.BR networking " " -s
+server pinging.
+.TP
+.BR system -c -g
+configure git.
+.TP
+.BR system " " -c " " -gtd
+gnome terminal profile dump.
+.TP
+.BR system " " -c " " -gtl
+gnome terminal profile load.
+.TP
+.BR system " " -f " " -bf
+bf (backup folder).
+.TP
+.BR system " " -f " " -c
+clean (clean system of logs and trash).
+.TP
+.BR system " " -f " " -d
+del (delete file or directory).
+.TP
+.BR system " " -f " " -e
+exists (check if file or dir exists).
+.TP
+.BR system " " -f " " -fd
+fd (number of files and folders).
+.TP
+.BR system " " -f " " -fl
+file updated.
+.TP
+.BR system " " -f " " -fs
+file size.
+.TP
+.BR system " " -f " " -l
+last updated (file).
+.TP
+.BR system " " -img " " -ci
+convert image.
+.TP
+.BR system " " -img " " -i
+image info.
+.TP
+.BR system " " -img " " -ri
+resize image.
+.TP
+.BR system " " -img " " -ro
+rotate image.
+.TP
+.BR system " " -i " " -b
+computer bit system.
+.TP
+.BR system " " -i " " -di
+check distro.
+.TP
+.BR system " " -i " " -ip
+IP address.
+.TP
+.BR system " " -i " " -k
+kernel version.
+.TP
+.BR system " " -i " " -o
+check OS.
+.TP
+.BR system " " -i " " -prv
+python and ruby version.
+.TP
+.BR system " " -i " " -r
+root (check if you are root or not).
+.TP
+.BR system " " -i " " -s
+display computer space, uptime and number of processes running.
+.TP
+.BR system " " -o " " -a
+add alias.
+.TP
+.BR system " " -o " " -cdp
+convert doc to pdf.
+.TP
+.BR system " " -o " " -p
+parse date.
+.TP
+.BR system " " -o " " -rl
+remove line.
+.TP
+.BR system " " -o " " -rt
+resize terminal.
+.TP
+.BR system " " -o " " -s
+search specific command.
+.TP
+.BR system " " -p " " -cpu
+CPU name.
+.TP
+.BR system " " -p " " -gpu
+GPU name.
+.TP
+.BR system " " -s " " -fp
+force poweroff.
+.TP
+.BR system " " -s " " -fr
+force reboot.
+
+.SH AUTHOR
+Endormi

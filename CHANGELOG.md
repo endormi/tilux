@@ -4,6 +4,7 @@
 - Add cmd_search script
 - Add manpage and PACKAGES.md
 - Move docs/README.md to GUIDE.md
+- Move clean script from sys/other to sys/file_folder
 - Update issue templates
 - Update to run GitHub actions on push to master and PR
 - Remove extra space from prompt

@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.75
+- Add cmd_search script
+- Add manpage and PACKAGES.md
+- Move docs/README.md to GUIDE.md
+- Move clean script from sys/other to sys/file_folder
+- Update issue templates
+- Update to run GitHub actions on push to master and PR
+- Remove extra space from prompt
+
 ## 1.0.5
 - Move system scripts into separate methods and folders
 - Add pre_commit and run_check to scripts folder

@@ -24,7 +24,7 @@ puts link.white
 
 sleep 1
 
-prompt = 'tilux~# '.green
+prompt = 'tilux~#'.green
 
 def sys(file)
   system('clear')

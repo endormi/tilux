@@ -9,6 +9,7 @@ Useful scripts, specifically to be ran for `tilux`.
 - `cformat` - Formats C and C++ code
 - `groff` - Runs the manpage
 - `install_req` - Installs required packages
+- `open_repo` - Opens tilux repository
 - `pre_commit` - Installs (if you don't have it) and runs pre-commit
 - `resize_term` - Resizes terminal
 - `run_check` - Run compile action check before committing code

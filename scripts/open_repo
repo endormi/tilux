@@ -1,0 +1,4 @@
+#!/bin/bash
+
+url="https://github.com/endormi/tilux"
+xdg-open $url

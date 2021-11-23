@@ -47,6 +47,7 @@ chmod +x ./scripts/add_alias_venv
 chmod +x ./scripts/cformat
 chmod +x ./scripts/groff
 chmod +x ./scripts/install_req
+chmod +x ./scripts/open_repo
 chmod +x ./scripts/pre_commit
 chmod +x ./scripts/resize_term
 chmod +x ./scripts/run_check

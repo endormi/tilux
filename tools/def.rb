@@ -170,6 +170,7 @@ def sys_other(choice)
   case choice
   when '-a', '--a' then sys('./sys/other/add_alias.sh tilux')
   when '-cdp', '--cdp' then sys('./sys/other/convert_doc_to_pdf.rb tilux')
+  when '-d', '--d' then sys('./sys/other/default_web_browser.sh tilux')
   when '-s', '--s' then sys('./sys/other/cmd_search.sh tilux')
   when '-o', '--o' then sys('./sys/other/open.sh tilux')
   when '-p', '--p' then sys('./sys/other/parse_date.rb tilux')

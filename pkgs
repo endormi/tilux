@@ -37,3 +37,9 @@ if [[ "$(which gm)" == "" ]]; then
   sudo apt update
   sudo apt install -y graphicsmagick
 fi
+
+# xdg-open is included inside xdg-utils
+if [[ "$(which xdg-open)" == "" ]]; then
+  sudo apt update
+  sudo apt install -y xdg-utils
+fi

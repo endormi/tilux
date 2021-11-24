@@ -2,9 +2,10 @@
 
 [ ! -d scripts ] && cd ..
 
-if [[ "$(which docker)" == "" || "$(which docker-compose)" == "" ]]; then
-  echo "You need to install Docker && Docker-Compose"
-  exit
+if [[ "$(which docker)" == "" ]] || [[ "$(which docker-compose)" == "" ]]; then
+  sudo apt update
+  sudo apt install -y docker.io docker-compose
+  clear
 fi
 
 docker-compose build

@@ -2,9 +2,6 @@
 
 [ ! -d scripts ] && cd ..
 
-# Run Makefile
-make
-
 if [[ "$(which flake8)" == "" ]]; then
   sudo apt update
   sudo apt install flake8
@@ -12,9 +9,5 @@ if [[ "$(which flake8)" == "" ]]; then
 fi
 
 # Run flake8 with settings configured in .flake8
+echo "flake8 might take a while..."
 flake8
-
-[ "$(which rubocop)" == "" ] && gem install rubocop -v '~> 1.9.1'
-
-# Run rubocop with settings configured in .rubocop.yml
-rubocop

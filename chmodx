@@ -50,7 +50,9 @@ chmod +x ./scripts/install_req
 chmod +x ./scripts/open_repo
 chmod +x ./scripts/pre_commit
 chmod +x ./scripts/resize_term
-chmod +x ./scripts/run_check
+chmod +x ./scripts/run_all_checks
+chmod +x ./scripts/run_flake8
+chmod +x ./scripts/run_rubocop
 chmod +x ./scripts/start_dcompose
 
 # Python scripts

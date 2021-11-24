@@ -12,5 +12,7 @@ Useful scripts, specifically to be ran for `tilux`.
 - `open_repo` - Opens tilux repository
 - `pre_commit` - Installs (if you don't have it) and runs pre-commit
 - `resize_term` - Resizes terminal
-- `run_check` - Run compile action check before committing code
+- `run_all_checks` - Run compile action check before committing code
+- `run_flake8` - Run flake8 check
+- `run_rubocop` - Run rubocop check
 - `start_dcompose` - Starts docker-compose

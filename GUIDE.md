@@ -29,7 +29,7 @@ monitoring -m: monitoring memory consumption
 monitoring -w: monitoring website (if it's up and if not it sends an email)
 networking -i: IP pinging
 networking -s: server pinging
-system -c -g:    configure git
+system -c -gc:    configure git
 system -c -gtd:  gnome terminal profile dump
 system -c -gtl:  gnome terminal profile load
 system -f -bf:   bf (backup folder)

@@ -86,7 +86,7 @@ end
 
 def conf(choice)
   case choice
-  when '-g', '--g' then sys('./sys/config/git_config.sh tilux')
+  when '-gc', '--gc' then sys('./sys/config/git_config.sh tilux')
   when '-gtd', '--gtd' then sys('./sys/config/gnome_term_profile_dump.sh tilux')
   when '-gtl', '--gtl' then sys('./sys/config/gnome_term_profile_load.sh tilux')
   else
@@ -99,7 +99,7 @@ def ff(choice)
   case choice
   when '-bf', '--bf' then sys('./sys/file_folder/bf.sh tilux')
   when '-c', '--c' then sys('./sys/file_folder/clean.sh tilux')
-  when '-d', '--d' then sys('./sys/file_folder/del.rb tilux')
+  when '-del', '--del' then sys('./sys/file_folder/del.rb tilux')
   when '-e', '--e' then sys('./sys/file_folder/exists.rb tilux')
   when '-fd', '--fd' then sys('./sys/file_folder/fd.rb tilux')
   when '-fl', '--fl' then sys('./sys/file_folder/file_updated.rb tilux')
@@ -128,11 +128,11 @@ end
 
 def info(choice)
   case choice
-  when '-b', '--b' then sys('./sys/info/bit.sh tilux')
+  when '-bit', '--bit' then sys('./sys/info/bit.sh tilux')
   when '-di', '--di' then sys('./sys/info/distro.sh tilux')
   when '-ip', '--ip' then sys('./sys/info/ip.rb tilux')
   when '-k', '--k' then sys('./sys/info/kernel_version.sh tilux')
-  when '-o', '--o' then sys('./sys/info/os.rb tilux')
+  when '-os', '--os' then sys('./sys/info/os.rb tilux')
   when '-prv', '--prv' then sys('./sys/info/prv.sh tilux')
   when '-r', '--r' then sys('./sys/info/root.rb tilux')
   when '-s', '--s'
@@ -170,9 +170,9 @@ def sys_other(choice)
   case choice
   when '-a', '--a' then sys('./sys/other/add_alias.sh tilux')
   when '-cdp', '--cdp' then sys('./sys/other/convert_doc_to_pdf.rb tilux')
-  when '-d', '--d' then sys('./sys/other/default_web_browser.sh tilux')
+  when '-def', '--def' then sys('./sys/other/default_web_browser.sh tilux')
   when '-s', '--s' then sys('./sys/other/cmd_search.sh tilux')
-  when '-o', '--o' then sys('./sys/other/open.sh tilux')
+  when '-op', '--op' then sys('./sys/other/open.sh tilux')
   when '-p', '--p' then sys('./sys/other/parse_date.rb tilux')
   when '-rl', '--rl' then sys('./sys/other/remove_line.sh tilux')
   when '-rt', '--rt' then sys('./sys/other/resize_terminal.sh tilux')

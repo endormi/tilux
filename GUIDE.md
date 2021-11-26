@@ -91,7 +91,7 @@ In the example below, latest updated file runs from current folder not inside ti
 ./tilux/monitoring/website_monitoring.py
 
 # C
-./tilux/fs.o
+./tilux/sys/file_folder/fs.o
 ```
 
 You can add the scripts to your alias if you want by using `sys/other/add_alias`.

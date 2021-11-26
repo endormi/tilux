@@ -1,12 +1,16 @@
 CC = gcc
-CFLAGS = -g -Wall -o
+CFLAGS = -Wall -g
 
-default:
-	$(CC) sys/file_folder/fs.c $(CFLAGS) fs.o
-	$(CC) sys/info/space.c $(CFLAGS) space.o
+# Since the codes are not in the same directory
+SRCS = $(wildcard sys/file_folder/*.c) $(wildcard sys/info/*.c)
+OBJS = $(patsubst %.c,%.o,$(SRCS))
 
+.PHONY: all clean
 
-.PHONY: clean
+all: $(OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -o $@ $<
 
 clean:
-	rm -rf *.o
+	rm -rf $(OBJS)

@@ -106,7 +106,7 @@ def ff(choice)
   when '-fs', '--fs' then
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('FS');"`
-    system('./fs.o')
+    system('./sys/file_folder/fs.o')
   when '-l', '--l' then sys('./sys/file_folder/last_updated.sh tilux')
   else
     # TODO
@@ -138,7 +138,7 @@ def info(choice)
   when '-s', '--s'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Space');"`
-    system('./space.o')
+    system('./sys/info/space.o')
   else
     # TODO
     puts "\nInvalid choice!"

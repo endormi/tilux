@@ -5,6 +5,7 @@
 if [[ "$(which groff)" == "" ]]; then
   sudo apt update
   sudo apt install -y groff
+  clear
 fi
 
 groff -man -Tascii ./man/tilux.1 | less

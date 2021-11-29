@@ -152,6 +152,7 @@ def proc(choice)
   when '-oc', '--oc'
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Single core');"`
+    sleep(1)
     system('./sys/proc/one_core.o')
   else
     # TODO

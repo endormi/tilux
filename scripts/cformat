@@ -10,3 +10,4 @@ fi
 
 clang-format -i sys/file_folder/fs.c
 clang-format -i sys/info/space.c
+clang-format -i sys/proc/one_core.c

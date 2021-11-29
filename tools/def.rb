@@ -149,6 +149,10 @@ def proc(choice)
   case choice
   when '-cpu', '--cpu' then sys('./sys/proc/cpu_name.sh tilux')
   when '-gpu', '--gpu' then sys('./sys/proc/gpu_name.sh tilux')
+  when '-oc', '--oc'
+    system('clear')
+    print `python3 -c "from tools.logos import Logo; Logo('Single core');"`
+    system('./sys/proc/one_core.o')
   else
     # TODO
     puts "\nInvalid choice!"

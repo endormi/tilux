@@ -1,6 +1,5 @@
 #include "one_core.h"
 #include "../../tools/handler.h"
-#include <stdbool.h>
 #include <stdio.h>
 #include <time.h>
 

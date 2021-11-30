@@ -3,7 +3,7 @@
 ## 1.1.0
 - Add open website and default web browser script
 - Add cryptography/README.md
-- Add single core process time and Add multi-core process time script
+- Add single core process time and multi-core process time script
 - Separate run_check script and call all in run_all_checks
 - Fix start_dcompose script
 - Change certain arguments

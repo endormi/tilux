@@ -106,7 +106,9 @@ def run_option(option)
     puts "-s:   search specific command\n"
   when 'system_proc'
     puts '-cpu: CPU name'
-    puts "-gpu: GPU name\n"
+    puts '-gpu: GPU name'
+    puts '-mc:  multi-core process time'
+    puts "-oc:  single core process time\n"
   when 'system_shutdown'
     puts '-fp: force poweroff'
     puts "-fr: force reboot\n"
@@ -159,6 +161,8 @@ def run_option(option)
     puts 'system -o -s:    search specific command'
     puts 'system -p -cpu:  CPU name'
     puts 'system -p -gpu:  GPU name'
+    puts 'system -p -mc:   multi-core process time'
+    puts 'system -p -oc:   single core process time'
     puts 'system -s -fp:   force poweroff'
     puts 'system -s -fr:   force reboot'
     puts 'Press [ENTER] to continue...'

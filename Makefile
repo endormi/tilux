@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -g
 
 # Since the codes are not in the same directory
-SRCS = $(wildcard sys/file_folder/*.c) $(wildcard sys/info/*.c)
+SRCS = $(wildcard sys/file_folder/*.c) $(wildcard sys/info/*.c) $(wildcard sys/proc/*.c)
 OBJS = $(patsubst %.c,%.o,$(SRCS))
 
 .PHONY: all clean

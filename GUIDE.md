@@ -62,6 +62,8 @@ system -o -rt:   resize terminal
 system -o -s:    search specific command
 system -p -cpu:  CPU name
 system -p -gpu:  GPU name
+system -p -mc:   multi-core process time
+system -p -oc:   single core process time
 system -s -fp:   force poweroff
 system -s -fr:   force reboot
 ```

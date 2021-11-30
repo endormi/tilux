@@ -154,6 +154,11 @@ def proc(choice)
     print `python3 -c "from tools.logos import Logo; Logo('Single core');"`
     sleep(1)
     system('./sys/proc/one_core.o')
+  when '-mc', '--mc'
+    system('clear')
+    print `python3 -c "from tools.logos import Logo; Logo('Multi-core');"`
+    sleep(1)
+    system('./sys/proc/multi_core.o')
   else
     # TODO
     puts "\nInvalid choice!"

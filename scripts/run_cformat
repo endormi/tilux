@@ -10,4 +10,4 @@ if [[ "$(which clang-format-10)" == "" ]]; then
   clear
 fi
 
-make cformat
+make cformat_check

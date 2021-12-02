@@ -8,9 +8,6 @@
 #include <unistd.h>
 
 void check_filesize(const char* filename)
-
-
-
 {
     int fd;
     struct stat statbuf;

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+[ ! -d scripts ] && cd ..
+
+# Check for clang-format version 10, because
+# it has --dry-run included which is necessary.
+if [[ "$(which clang-format-10)" == "" ]]; then
+  sudo apt update
+  sudo apt install clang-format-10
+  clear
+fi
+
+make cformat_check

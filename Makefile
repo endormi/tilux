@@ -1,5 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -g
+FORMATTER = clang-format
 
 # Since the codes are not in the same directory
 SRCS = $(wildcard sys/file_folder/*.c) $(wildcard sys/info/*.c) $(wildcard sys/proc/*.c)
@@ -14,3 +15,6 @@ all: $(OBJS)
 
 clean:
 	rm -rf $(OBJS)
+
+cformat:
+	$(FORMATTER) -i $(SRCS)

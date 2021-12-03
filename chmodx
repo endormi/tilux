@@ -44,6 +44,7 @@ chmod +x ./sys/shutdown/force_reboot.sh
 
 chmod +x ./scripts/add_alias
 chmod +x ./scripts/add_alias_venv
+chmod +x ./scripts/build_sphinx
 chmod +x ./scripts/cformat
 chmod +x ./scripts/groff
 chmod +x ./scripts/install_req
@@ -54,6 +55,7 @@ chmod +x ./scripts/run_all_checks
 chmod +x ./scripts/run_cformat
 chmod +x ./scripts/run_flake8
 chmod +x ./scripts/run_rubocop
+chmod +x ./scripts/run_sphinx_locally
 chmod +x ./scripts/start_dcompose
 
 # Python scripts

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# TODO: Make better
+[ ! -d scripts ] && cd ..
+[ -d docs ] && cd docs
+
+[ ! -d build ] && ../scripts/build_sphinx
+
+fl="./build/html/index.html"
+xdg-open $fl

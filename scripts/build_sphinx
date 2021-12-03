@@ -11,4 +11,11 @@ if [ $? == 1 ]; then
   clear
 fi
 
+cmd=$(pip3 show myst-parser)
+
+if [ $? == 1 ]; then
+  pip3 install myst-parser
+  clear
+fi
+
 make html

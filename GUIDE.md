@@ -107,25 +107,25 @@ You need:
 
 > If you have a permission issue when running `docker-compose`, you can use `sudo docker-compose`.
 
-#### Build:
+### Build:
 
 ```
 docker-compose build
 ```
 
-#### Up:
+### Up:
 
 ```
 docker-compose up -d
 ```
 
-#### Execute:
+### Execute:
 
 ```
 docker-compose exec tilux tilux
 ```
 
-#### Down:
+### Down:
 
 ```
 docker-compose down

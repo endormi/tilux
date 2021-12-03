@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Tilux's documentation!
-=================================
+Welcome to Tilux' documentation!
+================================
 
 .. toctree::
    :maxdepth: 2
@@ -12,7 +12,6 @@ Welcome to Tilux's documentation!
 
    installation
    commands
-
 
 Indices and tables
 ==================

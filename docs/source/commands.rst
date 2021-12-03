@@ -1,7 +1,7 @@
 Commands
 ========
 
-*Every command can be run interactively or by using arguments*
+*Every command can be run interactively or by using arguments.*
 
 All commands
 ------------

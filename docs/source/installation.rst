@@ -26,7 +26,7 @@ Run `build`:
 
    bash build venv
 
-After `build` (if you installed with `virtualenv`):
+After `build`:
 
 .. code-block:: sh
 
@@ -59,7 +59,7 @@ Run `tilux`:
 
    ./tilux
 
-You can also arguments to run `tilux`:
+You can also use arguments to run `tilux`:
 
 .. code-block:: sh
 
@@ -77,10 +77,10 @@ If you run the `add_alias` script inside scripts folder:
 
    ./scripts/add_alias
 
-You can run tilux by simply running:
-
-**NOTE**: the command will CD into the `tilux` folder location.
+You can then run `tilux` by simply running:
 
 .. code-block:: sh
 
    tilux
+
+**NOTE**: the command will CD into the `tilux` folder location.

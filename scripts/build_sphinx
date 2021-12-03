@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# TODO: Make better
+[ ! -d scripts ] && cd ..
+[ -d docs ] && cd docs
+
+cmd=$(pip3 show sphinx)
+
+if [ $? == 1 ]; then
+  pip3 install sphinx
+  clear
+fi
+
+make html

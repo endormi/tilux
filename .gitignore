@@ -13,3 +13,5 @@ __pycache__
 \#*\#
 auto-save-list
 .\#*
+
+docs/build/

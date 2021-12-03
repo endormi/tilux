@@ -6,7 +6,8 @@ Useful scripts, specifically to be ran for `tilux`.
 
 - `add_alias` - Adds tilux alias to `bash_aliases`
 - `add_alias_venv` - Adds virtualenv alias (tvenv) to `bash_aliases`
-- `cformat` - Formats C and C++ code automatically
+- `build_sphinx` - Build documentation
+- `cformat` - Formats C code automatically
 - `groff` - Runs the manpage
 - `install_req` - Installs required packages
 - `open_repo` - Opens tilux repository
@@ -16,4 +17,5 @@ Useful scripts, specifically to be ran for `tilux`.
 - `run_cformat` - Check if you need to format the code
 - `run_flake8` - Run flake8 check
 - `run_rubocop` - Run rubocop check
+- `run_sphinx_locally` - Run sphinx documentation locally
 - `start_dcompose` - Starts docker-compose

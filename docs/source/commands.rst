@@ -64,6 +64,12 @@ Help command:
 
    tilux --help
 
+To use `Pyca` you need to first generate key:
+
+.. code-block:: sh
+
+  ./cryptography/pyca/generate_key.py
+
 Run from any folder
 -------------------
 

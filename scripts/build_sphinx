@@ -4,11 +4,17 @@
 [ ! -d scripts ] && cd ..
 [ -d docs ] && cd docs
 
-cmd=$(pip3 show sphinx)
+function cmd_install(){
+  args="$1"
+  cmd=$(pip3 show $args)
 
-if [ $? == 1 ]; then
-  pip3 install sphinx
-  clear
-fi
+  if [ $? == 1 ]; then
+    pip3 install $args
+    clear
+  fi
+}
+
+cmd_install sphinx
+cmd_install myst-parser
 
 make html

@@ -1,4 +1,4 @@
-# Guide
+# Commands
 
 - [Commands to use](#commands)
 - [Run from any folder](#run-from-any-folder)

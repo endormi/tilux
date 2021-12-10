@@ -5,6 +5,19 @@ body:
   - type: markdown
     attributes:
       value: Thank you for opening a bug report!
+  - type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue already exists for the bug you encountered.
+    options:
+    - label: I have searched the existing issues
+      required: true
+  - type: textarea
+    attributes:
+      label: Environment
+      description: Operating system
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: Describe the Bug
@@ -14,7 +27,7 @@ body:
   - type: textarea
     attributes:
       label: To Reproduce
-      description: Steps to reproduce the behavior, (1, 2, 3...)
+      description: Steps to reproduce the behavior.
     validations:
       required: true
   - type: textarea

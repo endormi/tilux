@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.5
+- Add clang-format check (use clang-format-10) to CI and scripts folder
+- Add sphinx documentation
+- Add copy_content script to copy docs/source/commands.md to GUIDE.md
+- Add build_sphinx and run_sphinx_locally script
+- Add pre-commit workflow
+- Increase stale issue to 45 days
+- Update issue templates to use yml syntax
+
 ## 1.1.0
 - Add open website and default web browser script
 - Add cryptography/README.md

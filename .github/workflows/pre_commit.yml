@@ -17,10 +17,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      # Just in case
-      - name: Install pip3
-        run: sudo apt install pip3
       - name: Install pre-commit
-        run: pip3 install pre-commit
+        run: pip install pre-commit
       - name: Run pre-commit
         run: pre-commit run --all-files

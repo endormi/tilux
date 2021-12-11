@@ -6,11 +6,13 @@ Useful scripts, specifically to be ran for `tilux`.
 
 - `add_alias` - Adds tilux alias to `bash_aliases`
 - `add_alias_venv` - Adds virtualenv alias (tvenv) to `bash_aliases`
+- `all_releases` - Display all releases
 - `build_sphinx` - Build documentation
 - `cformat` - Formats C code automatically
 - `copy_content` - Copies `docs/source/commands.md` to `GUIDE.md` and updates heading.
 - `groff` - Runs the manpage
 - `install_req` - Installs required packages
+- `latest_release` - Display latest release
 - `open_repo` - Opens tilux repository
 - `pre_commit` - Installs (if you don't have it) and runs pre-commit
 - `resize_term` - Resizes terminal

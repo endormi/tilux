@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ "$(which jq)" == "" ]]; then
+  sudo apt update
+  sudo apt install jq
+  clear
+fi
+
+# jq is in the official Debian and Ubuntu repositories since 16,04
+# If you have an earlier version, follow this link
+# https://stackoverflow.com/questions/33184780/install-jq-json-processor-on-ubuntu-10-04
+latest=$(curl -sL https://api.github.com/repos/endormi/tilux/releases/latest | jq -r ".tag_name")
+echo "Latest release: $latest"

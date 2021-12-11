@@ -44,11 +44,13 @@ chmod +x ./sys/shutdown/force_reboot.sh
 
 chmod +x ./scripts/add_alias
 chmod +x ./scripts/add_alias_venv
+chmod +x ./scripts/all_releases
 chmod +x ./scripts/build_sphinx
 chmod +x ./scripts/cformat
 chmod +x ./scripts/copy_content
 chmod +x ./scripts/groff
 chmod +x ./scripts/install_req
+chmod +x ./scripts/latest_release
 chmod +x ./scripts/open_repo
 chmod +x ./scripts/pre_commit
 chmod +x ./scripts/resize_term

@@ -1,4 +1,4 @@
-name: rubocop-code-scan
+name: rubocop
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
         ruby-version: 2.5
       
     - run: gem install rubocop -v '~> 1.9.1'
-    - name: rubocop
+    - name: Check Rubocop
       run: rubocop
 
     - name: Install Code Scanning integration
@@ -31,7 +31,7 @@ jobs:
     - name: Install dependencies
       run: bundle install
 
-    - name: Rubocop run
+    - name: Run code scan
       run: |
         bash -c "
           bundle exec rubocop --require code_scanning --format CodeScanning::SarifFormatter -o rubocop.sarif

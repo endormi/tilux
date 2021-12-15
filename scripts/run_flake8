@@ -9,5 +9,4 @@ if [[ "$(which flake8)" == "" ]]; then
 fi
 
 # Run flake8 with settings configured in .flake8
-echo "flake8 might take a while..."
-flake8
+flake8 . --show-source --statistics

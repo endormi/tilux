@@ -11,15 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: make
-        run: make
-      - name: clean
-        run: make clean
-
-      - run: sudo apt install clang-format-10
-      - name: clang-format
-        run: make cformat_check
-
       - run: sudo apt install flake8
       - name: flake8
         run: flake8

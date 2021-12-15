@@ -3,6 +3,7 @@
 [ ! -d scripts ] && cd ..
 
 if [[ "$(which flake8)" == "" ]]; then
+  echo "Installing flake8 which is required to run this script."
   sudo apt update
   sudo apt install flake8
   clear

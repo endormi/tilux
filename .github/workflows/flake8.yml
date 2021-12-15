@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: sudo apt install flake8
-      - name: flake8 version
+      - name: Check flake8 version
         run: flake8 --version
-      - name: run flake8
+      - name: Run flake8
         run: flake8 . --show-source --statistics

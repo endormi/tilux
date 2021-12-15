@@ -21,7 +21,8 @@ jobs:
       with:
         ruby-version: 2.5
 
-    - run: gem install rubocop -v '~> 1.9.1'
+    - name: Install rubocop
+      run: gem install rubocop -v '~> 1.9.1'
     - name: Check Rubocop
       run: rubocop
 

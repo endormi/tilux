@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: make
+      - name: Run make
         run: make
       - run: sudo apt install clang-format-10
-      - name: clang-format
+      - name: Run clang-format check
         run: make cformat_check
-      - name: clean
+      - name: Clean files
         run: make clean

@@ -1,0 +1,20 @@
+name: make
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: make
+        run: make
+      - run: sudo apt install clang-format-10
+      - name: clang-format
+        run: make cformat_check
+      - name: clean
+        run: make clean

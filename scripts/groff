@@ -3,8 +3,9 @@
 [ ! -d scripts ] && cd ..
 
 if [[ "$(which groff)" == "" ]]; then
+  echo "Installing groff which is required to run this script."
   sudo apt update
-  sudo apt install -y groff
+  sudo apt install groff
   clear
 fi
 

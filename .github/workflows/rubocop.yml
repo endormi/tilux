@@ -1,4 +1,4 @@
-name: rubocop-code-scan
+name: rubocop
 
 on:
   push:
@@ -16,21 +16,22 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    # If running on a self-hosted runner, check it meets the requirements
-    # listed at https://github.com/ruby/setup-ruby#using-self-hosted-runners
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6
+        ruby-version: 2.5
 
-    # This step is not necessary if you add the gem to your Gemfile
+    - run: gem install rubocop -v '~> 1.9.1'
+    - name: Check Rubocop
+      run: rubocop
+
     - name: Install Code Scanning integration
       run: bundle add code-scanning-rubocop --skip-install
 
     - name: Install dependencies
       run: bundle install
 
-    - name: Rubocop run
+    - name: Run code scan
       run: |
         bash -c "
           bundle exec rubocop --require code_scanning --format CodeScanning::SarifFormatter -o rubocop.sarif

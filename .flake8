@@ -3,3 +3,8 @@ ignore:
 	E402,
 	E501,
 	E701
+exclude =
+	venv
+	env
+	*.pyc
+	__pycache_

@@ -1,0 +1,18 @@
+name: flake8
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: sudo apt install flake8
+      - name: flake8 version
+        run: flake8 --version
+      - name: run flake8
+        run: flake8 . --show-source --statistics

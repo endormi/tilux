@@ -5,8 +5,9 @@
 [ ! -d docs ] && cd ..
 
 if [[ "$(which sed)" == "" ]]; then
+  echo "Installing sed which is required to run this script."
   sudo apt update
-  sudo apt install -y sed
+  sudo apt install sed
   clear
 fi
 

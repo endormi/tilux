@@ -10,9 +10,10 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 
 ![v](https://img.shields.io/badge/tilux-v.1.1.5-blue)
 ![docker-compose-action-CI](https://github.com/endormi/tilux/workflows/docker-compose-action-CI/badge.svg?branch=master)
-![compile](https://github.com/endormi/tilux/actions/workflows/compile.yml/badge.svg?branch=master)
+![rubocop](https://github.com/endormi/tilux/actions/workflows/rubocop.yml/badge.svg)
+![make](https://github.com/endormi/tilux/actions/workflows/make.yml/badge.svg)
+![flake8](https://github.com/endormi/tilux/actions/workflows/flake8.yml/badge.svg)
 ![CodeQL](https://github.com/endormi/tilux/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)
-![rubocop-code-scan](https://github.com/endormi/tilux/actions/workflows/rubocop-analysis.yml/badge.svg?branch=master)
 [![License](https://img.shields.io/github/license/endormi/tilux)](LICENSE)
 
 ## What is Tilux?

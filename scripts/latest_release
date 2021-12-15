@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [[ "$(which jq)" == "" ]]; then
+  echo "Installing jq which is required to run this script."
   sudo apt update
   sudo apt install jq
   clear

@@ -11,6 +11,6 @@ fi
 # If you have an earlier version, follow this link
 # https://stackoverflow.com/questions/33184780/install-jq-json-processor-on-ubuntu-10-04
 echo -e "\nAll releases:\n"
-latest=$(curl -sL https://api.github.com/repos/endormi/tilux/releases | jq -r '.[]' | jq -r ".tag_name")
+latest=$(curl -sL https://api.github.com/repos/endormi/tilux/releases | jq -r ".[]" | jq -r ".tag_name")
 # Displayed on the first result which is the latest
 echo "Latest release: $latest"

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.75
+- Add all_releases and latest_release script
+- Use new theme for docs and update it with a custom.css
+- Add a docs workflow
+- Convert installation documentation to markdown
+- Update status badges
+- Separate compile workflow
+
 ## 1.1.5
 - Add clang-format check (use clang-format-10) to CI and scripts folder
 - Add sphinx documentation
@@ -72,13 +80,13 @@
 ## 0.4.1
 - Enable running scripts in any folder
 - Add img (convert_img, img_info, resize_img and rotate_img) and convert doc to pdf scripts
-- Fix: Running Openssl by using arguments
-- Fix: Different title when running interactively and using arguments
+- Fix running Openssl by using arguments
+- Fix different title when running interactively and using arguments
 - Display system scripts on the same line
 - Add rubocop-code-scan workflow
 
 ## 0.4.1-br
-- Fix: Typos
+- Fix typos
 - Update Openssl choices
 - Keep consistency with run option choices
 
@@ -98,7 +106,7 @@
 ## 0.3.5
 - Add empty input catching for python
 - Add empty input catching for shell
-- Fix: GPG command error
+- Fix GPG command error
 - Create new workflow
 
 ## 0.3.1
@@ -140,7 +148,7 @@
 - Validate ruby is installed and Gemfile.lock exists
 
 ## 0.2.0
-- Fix: logos for python scripts
+- Fix logos for python scripts
 - Use python3 to explicitly run the script
 - Dockerize the script
 - Add cryptography
@@ -148,7 +156,7 @@
 
 ## 0.1.5
 - Add IP pinging, ansi-colors, logos.py & aclrs.py
-- Fix: Functionality and add the ability to run files using args even if second argument isn't given
+- Fix functionality and add the ability to run files using args even if second argument isn't given
 
 ## 0.1.1
 - Add help, server pinging and exists

@@ -9,7 +9,7 @@
 
 > Every command can be run interactively or by using arguments
 
-```bash
+```
 # Example
 
 ./tilux cryptography -o -e
@@ -82,7 +82,7 @@ For example:
 
 In the example below, latest updated file runs from current folder not inside tilux, same for fs.
 
-```bash
+```
 # Ruby
 ./tilux/sys/info/os.rb
 
@@ -141,7 +141,7 @@ All you have to do is:
 
 **Note**: Certain scripts might not work, because by not running the build, you might not have the required packages installed.
 
-```bash
+```
 # Example
 
 wget https://raw.githubusercontent.com/endormi/tilux/master/sys/info/bit.sh
@@ -149,7 +149,7 @@ wget https://raw.githubusercontent.com/endormi/tilux/master/sys/info/bit.sh
 
 Make the script an executable:
 
-```bash
+```
 # Example
 
 chmod +x bit.sh
@@ -157,7 +157,7 @@ chmod +x bit.sh
 
 Run:
 
-```bash
+```
 # Example
 
 ./bit.sh

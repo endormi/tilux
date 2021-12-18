@@ -13,7 +13,7 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 ![rubocop](https://github.com/endormi/tilux/actions/workflows/rubocop.yml/badge.svg)
 ![make](https://github.com/endormi/tilux/actions/workflows/make.yml/badge.svg)
 ![flake8](https://github.com/endormi/tilux/actions/workflows/flake8.yml/badge.svg)
-![docs](https://github.com/endormi/tilux/actions/workflows/sphinx.yml/badge.svg)
+![docs](https://github.com/endormi/tilux/actions/workflows/docs.yml/badge.svg)
 ![CodeQL](https://github.com/endormi/tilux/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)
 [![License](https://img.shields.io/github/license/endormi/tilux)](LICENSE)
 

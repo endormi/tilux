@@ -4,7 +4,10 @@ ignore:
 	E501,
 	E701
 exclude =
+	.git
 	venv
+	.venv
 	env
+	.env
 	*.pyc
-	__pycache_
+	__pycache__

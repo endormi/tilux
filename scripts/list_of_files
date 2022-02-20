@@ -1,0 +1,21 @@
+#!/bin/bash
+
+[ ! -d scripts ] && cd ..
+
+function list_of_files(){
+  args="$1"
+
+  find . -type f -name "*.$args" -not -path "./venv/*" && echo
+}
+
+declare -a languages=(
+  "rb"
+  "py"
+  "c"
+  "sh"
+)
+
+for i in "${languages[@]}"
+do
+  list_of_files $i
+done

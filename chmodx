@@ -51,6 +51,7 @@ chmod +x ./scripts/copy_content
 chmod +x ./scripts/groff
 chmod +x ./scripts/install_req
 chmod +x ./scripts/latest_release
+chmod +x ./scripts/list_of_files
 chmod +x ./scripts/open_repo
 chmod +x ./scripts/pre_commit
 chmod +x ./scripts/resize_term

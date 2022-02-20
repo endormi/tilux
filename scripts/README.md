@@ -13,6 +13,7 @@ Useful scripts, specifically to be ran for `tilux`.
 - `groff` - Runs the manpage
 - `install_req` - Installs required packages
 - `latest_release` - Display latest release
+- `list_of_files` - Display list of files in each language, because there are many (does not include `/scripts`)
 - `open_repo` - Opens tilux repository
 - `pre_commit` - Installs (if you don't have it) and runs pre-commit
 - `resize_term` - Resizes terminal

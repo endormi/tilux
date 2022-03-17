@@ -4,8 +4,7 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-void handler(int sig)
-{
+void handler(int sig) {
   printf("\n");
   return exit(sig);
 };

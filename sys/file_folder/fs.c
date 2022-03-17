@@ -7,40 +7,36 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-void check_filesize(const char* filename)
-{
-    int fd;
-    struct stat statbuf;
+void check_filesize(const char *filename) {
+  int fd;
+  struct stat statbuf;
 
-    fd = open(filename, O_RDONLY, S_IRUSR | S_IRGRP);
-    if (fd == -1)
-    {
-        printf("\nfailed to open %s\n", filename);
-        exit(EXIT_FAILURE);
-    }
+  fd = open(filename, O_RDONLY, S_IRUSR | S_IRGRP);
+  if (fd == -1) {
+    printf("\nfailed to open %s\n", filename);
+    exit(EXIT_FAILURE);
+  }
 
-    if (fstat(fd, &statbuf) == -1)
-    {
-        printf("\nfailed to fstat %s\n", filename);
-        exit(EXIT_FAILURE);
-    }
-    printf("File: %s is %ld %s\n", filename, statbuf.st_size, "bytes\n");
+  if (fstat(fd, &statbuf) == -1) {
+    printf("\nfailed to fstat %s\n", filename);
+    exit(EXIT_FAILURE);
+  }
+
+  printf("File: %s is %ld %s\n", filename, statbuf.st_size, "bytes\n");
 }
 
-int main()
-{
-    signal(SIGINT, handler);
+int main() {
+  signal(SIGINT, handler);
 
-    char f[MAX];
-    printf("Filename: ");
-    scanf("%[^\n]", f);
+  char f[MAX];
+  printf("Filename: ");
+  scanf("%[^\n]", f);
 
-    if (strlen(f) == 0)
-    {
-        printf("Filename cannot be empty!\n");
-        exit(EXIT_FAILURE);
-    }
+  if (strlen(f) == 0) {
+    printf("Filename cannot be empty!\n");
+    exit(EXIT_FAILURE);
+  }
 
-    check_filesize(f);
-    return 0;
+  check_filesize(f);
+  return 0;
 }

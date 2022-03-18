@@ -18,7 +18,7 @@ if [[ "$(which ruby)" == "" ]]; then
 
   export GEM_HOME="$HOME/.gem"
 
-  gem install bundler -v 2.1.4
+  gem install bundler # -v 2.1.4
 fi
 
 # lsb_release is required to run sys/distro.sh script

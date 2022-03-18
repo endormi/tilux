@@ -6,9 +6,8 @@ echo -e "\n\nThis might take a while...\n\n"
 # when using Docker so it doesn't get
 # stuck on read prompt
 if [[ $1 != "-y" ]]; then
-  echo "This build will install multiple packages."
-  echo -e "You probably already have a lot of the packages, if you have done anything with your OS.\n"
-  echo -e "Will install python3, pip3, ruby, lsb-core, build-essentials & graphicsmagick.\n"
+  echo "This will install multiple packages if you don't already have them."
+  echo -e "Packages: python3, pip3, ruby, lsb-core, build-essentials & graphicsmagick.\n"
 
   read -p "Do you want to continue? (Y/n) " continue
   continue="$(echo ${continue} | tr 'A-Z' 'a-z')"

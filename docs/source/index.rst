@@ -21,8 +21,6 @@ If you want to see a certain script added, open up a new `issue`_ or make a pull
 
 **Note**: Only tested on Debian-based distros.
 
-I recommend you to use the ruby `2.5.1` version as it is the only tested version.
-
 Why?
 ----
 

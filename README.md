@@ -29,8 +29,6 @@ If you want to see a certain script added, open up a new [issue](https://github.
 
 **Note**: Only [tested](TESTED_ON.md) on Debian-based distros.
 
-I recommend you to use the ruby `2.5.1` version as it is the only tested version.
-
 ## Why?
 
 I as also many others (probably) as well have a ton of useful scripts for Linux, that just happen to be all over

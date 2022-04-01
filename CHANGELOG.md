@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.0
+- Add list_of_files script
+- Add formatter flags variable
+- Reconfigure clang-format and reformat files also include header files
+- Remove .editorconfig
+- Update build text
+- Update flake8 exclude items
+- Don't specify bundler version
+
 ## 1.1.75
 - Add all_releases and latest_release script
 - Use new theme for docs and update it with a custom.css

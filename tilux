@@ -6,7 +6,7 @@ require_relative 'tools/col'
 require_relative 'tools/def'
 require_relative 'tools/catch_exception'
 
-version = 'v.1.1.75'
+version = 'v.1.2.0'
 puts "
 ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 8    888    8  888   888          888       8    8888    d8

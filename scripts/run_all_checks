@@ -1,8 +1,0 @@
-#!/bin/bash
-
-[ ! -d scripts ] && cd ..
-
-make
-./scripts/run_flake8
-./scripts/run_rubocop
-./scripts/run_cformat

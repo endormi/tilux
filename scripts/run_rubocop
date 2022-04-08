@@ -1,8 +1,0 @@
-#!/bin/bash
-
-[ ! -d scripts ] && cd ..
-
-[ "$(which rubocop)" == "" ] && gem install rubocop -v '~> 1.9.1'
-
-# Run rubocop with settings configured in .rubocop.yml
-rubocop

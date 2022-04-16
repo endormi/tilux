@@ -7,5 +7,6 @@ Required for the project.
 - lsb-core
 - build-essential
 - graphicsmagick
+- xdg-utils
 
 Check [TESTED_ON.md](TESTED_ON.md) to see versions.

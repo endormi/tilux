@@ -7,7 +7,7 @@ echo -e "\n\nThis might take a while...\n\n"
 # stuck on read prompt
 if [[ $1 != "-y" ]]; then
   echo "This will install multiple packages if you don't already have them."
-  echo -e "Packages: python3, pip3, ruby, lsb-core, build-essentials & graphicsmagick.\n"
+  echo -e "Packages: python3, pip3, ruby, lsb-core, build-essentials, graphicsmagick & xdg-utils.\n"
 
   read -p "Do you want to continue? (Y/n) " continue
   continue="$(echo ${continue} | tr 'A-Z' 'a-z')"

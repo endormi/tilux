@@ -2,6 +2,7 @@
 
 require 'io/console'
 
+require_relative 'tools/help_print'
 require_relative 'tools/col'
 require_relative 'tools/def'
 require_relative 'tools/catch_exception'
@@ -40,139 +41,25 @@ def echo(text)
   puts text.white
 end
 
-def run_option(option)
-  case option
-  when 'tilux'
-    puts '  {1} -- 4 choices for encryption and decryption'
-    puts '  {2} -- Monitoring different processes'
-    puts '  {3} -- Pinging networks'
-    puts '  {4} -- System scripts'
-    puts "  --help -- How to use Tilux?\n"
-  when 'crypto'
-    puts 'cryptography -c: CCRYPT'
-    puts 'cryptography -o: Openssl'
-    puts 'cryptography -p: Pyca'
-    puts "cryptography -z: Zip\n"
-  when 'monitoring'
-    puts '-c: cpu_monitoring'
-    puts '-m: mem_monitoring'
-    puts "-w: website_monitoring\n"
-  when 'net'
-    puts '-i: ip_pinging'
-    puts "-s: server_pinging\n"
-  when 'system'
-    puts 'system -c:   config'
-    puts 'system -f:   files and folders'
-    puts 'system -img: image'
-    puts 'system -i:   info'
-    puts 'system -o:   other'
-    puts 'system -p:   processors'
-    puts "system -s:   shutdown\n"
-  when 'systemc'
-    puts '-gc:  configure git'
-    puts '-gtd: gnome terminal profile dump'
-    puts "-gtl: gnome terminal profile load\n"
-  when 'systemf'
-    puts '-bf:  bf (backup folder)'
-    puts '-c:   clean (clean system of logs and trash)'
-    puts '-del: del (delete file or directory)'
-    puts '-e:   exists (file or directory)'
-    puts '-fd:  fd (number of files and folders)'
-    puts '-fl:  file updated'
-    puts '-fs:  file size'
-    puts "-l:   last updated (file)\n"
-  when 'system_img'
-    puts '-ci: convert image'
-    puts '-i:  image info'
-    puts '-ri: resize image'
-    puts "-ro: rotate image\n"
-  when 'system_info'
-    puts '-bit: computer bit system'
-    puts '-di:  check distro'
-    puts '-ip:  IP address'
-    puts '-k:   kernel version'
-    puts '-os:  check OS'
-    puts '-prv: python and ruby version'
-    puts '-r:   root (check if you are root or not)'
-    puts "-s:   display computer space, uptime and number of processes running\n"
-  when 'system_other'
-    puts '-a:   add alias'
-    puts '-cdp: convert doc to pdf'
-    puts '-def: default web browser'
-    puts '-op:  open website'
-    puts '-p:   parse date'
-    puts '-rl:  remove line from file matching text'
-    puts '-rt:  resize terminal'
-    puts "-s:   search specific command\n"
-  when 'system_proc'
-    puts '-cpu: CPU name'
-    puts '-gpu: GPU name'
-    puts '-mc:  multi-core process time'
-    puts "-oc:  single core process time\n"
-  when 'system_shutdown'
-    puts '-fp: force poweroff'
-    puts "-fr: force reboot\n"
-  when 'help'
-    puts 'Interactive:'
-    puts "Running the files interactively ./tilux and then follow the choices\n"
-    puts 'Args:'
-    puts 'Running the files with args ./tilux (and then the argument e.g. cryptography -c -e)'
-    puts "Note: The uppercase doesn't work currently with args.\n\n"
-
-    puts 'cryptography -c: ccrypt -e (for encryption) or -d (for decryption)'
-    puts 'cryptography -o: Openssl -e (for encryption) or -d (for decryption)'
-    puts 'cryptography -p: Pyca -e (for encryption) or -d (for decryption)'
-    puts 'cryptography -z: Zip -e (for encryption) or -d (for decryption)'
-    puts 'monitoring -c: monitoring cpu processes'
-    puts 'monitoring -m: monitoring memory consumption'
-    puts "monitoring -w: monitoring website (if it's up and if not it sends an email)"
-    puts 'networking -i: IP pinging'
-    puts 'networking -s: server pinging'
-    puts 'system -c -gc:   configure git'
-    puts 'system -c -gtd:  gnome terminal profile dump'
-    puts 'system -c -gtl:  gnome terminal profile load'
-    puts 'system -f -bf:   bf (backup folder)'
-    puts 'system -f -c:    clean (clean system of logs and trash)'
-    puts 'system -f -del:  del (delete file or directory)'
-    puts 'system -f -e:    exists (check if file or dir exists)'
-    puts 'system -f -fd:   fd (number of files and folders)'
-    puts 'system -f -fl:   file updated'
-    puts 'system -f -fs:   file size'
-    puts 'system -f -l:    last updated (file)'
-    puts 'system -img -ci: convert image'
-    puts 'system -img -i:  image info'
-    puts 'system -img -ri: resize image'
-    puts 'system -img -ro: rotate image'
-    puts 'system -i -bit:  computer bit system'
-    puts 'system -i -di:   check distro'
-    puts 'system -i -ip:   IP address'
-    puts 'system -i -k:    kernel version'
-    puts 'system -i -os:   check OS'
-    puts 'system -i -prv:  python and ruby version'
-    puts 'system -i -r:    root (check if you are root or not)'
-    puts 'system -i -s:    display computer space, uptime and number of processes running'
-    puts 'system -o -a:    add alias'
-    puts 'system -o -cdp:  convert doc to pdf'
-    puts 'system -o -def:  default web browser'
-    puts 'system -o -op:   open website'
-    puts 'system -o -p:    parse date'
-    puts 'system -o -rl:   remove line'
-    puts 'system -o -rt:   resize terminal'
-    puts 'system -o -s:    search specific command'
-    puts 'system -p -cpu:  CPU name'
-    puts 'system -p -gpu:  GPU name'
-    puts 'system -p -mc:   multi-core process time'
-    puts 'system -p -oc:   single core process time'
-    puts 'system -s -fp:   force poweroff'
-    puts 'system -s -fr:   force reboot'
-    puts 'Press [ENTER] to continue...'
-    $stdin.getch
-  end
-end
+print_cmd = {
+  'tilux'      => -> { tilux_print },
+  'crypto'     => -> { crypto_print },
+  'monitoring' => -> { monitoring_print },
+  'net'        => -> { net_print },
+  'system'     => -> { system_print },
+  'systemc'    => -> { systemc_print },
+  'systemf'    => -> { systemf_print },
+  'systemi'    => -> { systemi_print },
+  'systemin'   => -> { systemin_print },
+  'systemo'    => -> { systemo_print },
+  'systemp'    => -> { systemp_print },
+  'systems'    => -> { systems_print },
+  'help'       => -> { help_print }
+}
 
 if ARGV.empty?
   puts "\nWhat script do you want to run?\n".white
-  run_option('tilux')
+  print_cmd['tilux'].call
   print "\n#{prompt} "
   c = gets.chomp.to_s.downcase.strip
 
@@ -181,7 +68,7 @@ if ARGV.empty?
   case c
   when 'cryptography', 'crypto', '1'
     title?('::Cryptography::')
-    run_option('crypto')
+    print_cmd['crypto'].call
     print "#{prompt} "
     input = gets.chomp.to_s.downcase.strip
 
@@ -195,7 +82,7 @@ if ARGV.empty?
       i = gets.chomp.to_s.downcase.strip
 
       empty_input?(i)
-      ccrypt_options(i)
+      $ccrypt_options[i].call
 
     when '-o', '--o'
       title?('::Openssl::')
@@ -204,7 +91,7 @@ if ARGV.empty?
       i = gets.chomp.to_s.downcase.strip
 
       empty_input?(i)
-      openssl_options(i)
+      $openssl_options[i].call
 
     when '-p', '--p'
       title?('::Pyca::')
@@ -213,7 +100,7 @@ if ARGV.empty?
       i = gets.chomp.to_s.downcase.strip
 
       empty_input?(i)
-      pyca_options(i)
+      $pyca_options[i].call
 
     when '-z', '--z'
       title?('::Zip::')
@@ -222,7 +109,7 @@ if ARGV.empty?
       i = gets.chomp.to_s.downcase.strip
 
       empty_input?(i)
-      zip_options(i)
+      $zip_options[i].call
 
     else
       # TODO
@@ -231,25 +118,25 @@ if ARGV.empty?
 
   when 'monitoring', '2'
     title?('::Monitoring::')
-    run_option('monitoring')
+    print_cmd['monitoring'].call
     print "#{prompt} "
     input = gets.chomp.to_s.downcase.strip
 
     empty_input?(input)
-    monitoring_options(input)
+    $monitoring_options[input].call
 
   when 'networking', 'net', '3'
     title?('::Networking::')
-    run_option('net')
+    print_cmd['net'].call
     print "#{prompt} "
     input = gets.chomp.to_s.downcase.strip
 
     empty_input?(input)
-    networking_options(input)
+    $networking_options[input].call
 
   when 'sys', 'system', '4'
     title?('::System::')
-    run_option('system')
+    print_cmd['system'].call
     print "#{prompt} "
     input = gets.chomp.to_s.downcase.strip
 
@@ -257,60 +144,60 @@ if ARGV.empty?
     case input
     when '-c', '--c' then
       title?('::CONFIG::')
-      run_option('systemc')
+      print_cmd['systemc'].call
       print "#{prompt} "
       input = gets.chomp.to_s.downcase.strip
 
       empty_input?(input)
-      conf(input)
+      $conf_options[input].call
     when '-f', '--f' then
       title?('::FF::')
-      run_option('systemf')
+      print_cmd['systemf'].call
       print "#{prompt} "
       input = gets.chomp.to_s.downcase.strip
 
       empty_input?(input)
-      ff(input)
+      $ff_options[input].call
     when '-img', '--img' then
       title?('::IMG::')
-      run_option('system_img')
+      print_cmd['systemi'].call
       print "#{prompt} "
       input = gets.chomp.to_s.downcase.strip
 
       empty_input?(input)
-      image(input)
+      $image_options[input].call
     when '-i', '--i' then
       title?('::INFO::')
-      run_option('system_info')
+      print_cmd['systemin'].call
       print "#{prompt} "
       input = gets.chomp.to_s.downcase.strip
 
       empty_input?(input)
-      info(input)
+      $info_options[input].call
     when '-o', '--o' then
       title?('::OTHER::')
-      run_option('system_other')
+      print_cmd['systemo'].call
       print "#{prompt} "
       input = gets.chomp.to_s.downcase.strip
 
       empty_input?(input)
-      sys_other(input)
+      $sys_other_options[input].call
     when '-p', '--p' then
       title?('::PROC::')
-      run_option('system_proc')
+      print_cmd['systemp'].call
       print "#{prompt} "
       input = gets.chomp.to_s.downcase.strip
 
       empty_input?(input)
-      proc(input)
+      $proc_options[input].call
     when '-s', '--s' then
       title?('::SHUTDOWN::')
-      run_option('system_shutdown')
+      print_cmd['systems'].call
       print "#{prompt} "
       input = gets.chomp.to_s.downcase.strip
 
       empty_input?(input)
-      shutdown(input)
+      $shutdown_options[input].call
     else
       # TODO
       puts "\nInvalid choice!"
@@ -318,7 +205,7 @@ if ARGV.empty?
 
   when 'help', '--help', '--h', '5'
     title?('::Help::')
-    run_option('help')
+    print_cmd['help'].call
   else
     puts "\nInvalid choice!"
     puts 'Use --help to show available commands.'
@@ -331,27 +218,27 @@ else
   case ARGV[0].to_s.downcase.strip
   when 'cryptography', 'crypto', '1'
     case downcase_arg_one
-    when '-c', '--c' then ccrypt_options(downcase_arg_two)
-    when '-o', '--o' then openssl_options(downcase_arg_two)
-    when '-p', '--p' then pyca_options(downcase_arg_two)
-    when '-z', '--z' then zip_options(downcase_arg_two)
+    when '-c', '--c' then $ccrypt_options[downcase_arg_two].call
+    when '-o', '--o' then $openssl_options[downcase_arg_two].call
+    when '-p', '--p' then $pyca_options[downcase_arg_two].call
+    when '-z', '--z' then $zip_options[downcase_arg_two].call
     else
       # TODO
       puts "\nInvalid choice!"
     end
 
-  when 'monitoring', '2' then monitoring_options(downcase_arg_one)
-  when 'networking', 'net', '3' then networking_options(downcase_arg_one)
+  when 'monitoring', '2' then $monitoring_options[downcase_arg_one].call
+  when 'networking', 'net', '3' then $networking_options[downcase_arg_one].call
 
   when 'sys', 'system', '4'
     case downcase_arg_one
-    when '-c', '--c' then conf(downcase_arg_two)
-    when '-f', '--f' then ff(downcase_arg_two)
-    when '-img', '--img' then image(downcase_arg_two)
-    when '-i', '--i' then info(downcase_arg_two)
-    when '-o', '--o' then sys_other(downcase_arg_two)
-    when '-p', '--p' then proc(downcase_arg_two)
-    when '-s', '--s' then shutdown(downcase_arg_two)
+    when '-c', '--c' then $conf_options[downcase_arg_two].call
+    when '-f', '--f' then $ff_options[downcase_arg_two].call
+    when '-img', '--img' then $image_options[downcase_arg_two].call
+    when '-i', '--i' then $info_options[downcase_arg_two].call
+    when '-o', '--o' then $sys_other_options[downcase_arg_two].call
+    when '-p', '--p' then $proc_options[downcase_arg_two].call
+    when '-s', '--s' then $shutdown_options[downcase_arg_two].call
     else
       # TODO
       puts "\nInvalid choice!"
@@ -359,7 +246,7 @@ else
 
   when 'help', '--help', '--h', '5'
     title?('::Help::')
-    run_option('help')
+    print_cmd['help'].call
   else
     puts "\nInvalid choice!"
     puts 'Use --help to show available commands.'

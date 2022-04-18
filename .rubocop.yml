@@ -2,16 +2,10 @@
 
 # Some of these will be removed later.
 # I will be refactoring the code ASAP
-AllCops:
-  NewCops: enable
-
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/GlobalVars:
-  Enabled: false
-
-Style/MultilineWhenThen:
   Enabled: false
 
 Style/Semicolon:
@@ -27,6 +21,9 @@ Metrics/CyclomaticComplexity:
   Enabled: false
 
 Metrics/LineLength:
+  Enabled: false
+
+Layout/AlignHash:
   Enabled: false
 
 # Rubocop also checks pre-commit pkg (only if you use venv).

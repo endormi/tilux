@@ -53,12 +53,7 @@ chmod +x ./scripts/install_req
 chmod +x ./scripts/latest_release
 chmod +x ./scripts/list_of_files
 chmod +x ./scripts/open_repo
-chmod +x ./scripts/pre_commit
 chmod +x ./scripts/resize_term
-chmod +x ./scripts/run_all_checks
-chmod +x ./scripts/run_cformat
-chmod +x ./scripts/run_flake8
-chmod +x ./scripts/run_rubocop
 chmod +x ./scripts/run_sphinx_locally
 chmod +x ./scripts/start_dcompose
 
@@ -94,3 +89,8 @@ chmod +x ./sys/other/parse_date.rb
 # Generate keys
 #chmod +x ./cryptography/gpg/gpg_generate_and_verify_keys.sh
 chmod +x ./cryptography/pyca/generate_key.py
+
+# Tools
+chmod +x ./tools/catch_exception.rb
+chmod +x ./tools/col.rb
+chmod +x ./tools/def.rb

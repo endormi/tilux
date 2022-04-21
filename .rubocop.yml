@@ -26,9 +26,6 @@ Metrics/CyclomaticComplexity:
 Layout/LineLength:
   Enabled: false
 
-Layout/AlignHash:
-  Enabled: false
-
 Layout/HashAlignment:
   Enabled: false
 

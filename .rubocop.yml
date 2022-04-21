@@ -11,6 +11,9 @@ Style/GlobalVars:
 Style/Semicolon:
   Enabled: false
 
+Style/MultilineWhenThen:
+  Enabled: false
+
 Metrics/MethodLength:
   Enabled: false
 
@@ -23,7 +26,7 @@ Metrics/CyclomaticComplexity:
 Layout/LineLength:
   Enabled: false
 
-Layout/HashAlignment:
+Layout/AlignHash:
   Enabled: false
 
 # Rubocop also checks pre-commit pkg (only if you use venv).

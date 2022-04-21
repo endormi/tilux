@@ -29,6 +29,9 @@ Layout/LineLength:
 Layout/AlignHash:
   Enabled: false
 
+Layout/HashAlignment:
+  Enabled: false
+
 # Rubocop also checks pre-commit pkg (only if you use venv).
 # You might need to do rubocop -a few times.
 Gemspec/RequiredRubyVersion:

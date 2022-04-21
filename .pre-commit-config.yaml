@@ -16,7 +16,3 @@ repos:
     rev: v2.1.0
     hooks:
     -   id: ruby-validate
--   repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 1.11.0
-    hooks:
-    -   id: rubocop

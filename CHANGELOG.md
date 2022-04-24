@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.1
+- Start refactoring
+- Add xdg-utils to build and package list
+- Add flake8 and ruby-validate to pre-commit
+- Update rubocop configuration
+- Update chmodx
+- Mention about other packages not included in build
+- Schedule CodeQL to run every night at midnight
+- Remove flake8 workflow and badge
+
 ## 1.2.0
 - Add list_of_files script
 - Add formatter flags variable

@@ -10,17 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Update docs year
         run: |
+          files="LICENSE docs/source/conf.py"
           last_year=$(date --date="1 year ago" +%Y)
           current_year=$(date +%Y)
 
-          find docs/source/conf.py -exec sed -i "s/${current_year}/${last_year}/g" {} \;
+          find $files -exec sed -i "s/${current_year}/${last_year}/g" {} \;
+          
+      - name: Setup Git configuration
+        run: |
+          git config user.name "Year Bot"
+          git config user.email "<>"
 
-      - name: Update license year
-      - uses: FantasticFiasco/action-update-license-year@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit changes
+        run: |
+          git commit -am "Update copyright year"
+          git push origin master

@@ -1,0 +1,30 @@
+name: Update year
+
+on:
+  pull_request:
+#  schedule:
+#    - cron: "0 1 1 1 *" # 01:00 on January 1
+
+jobs:
+  year:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update docs year
+        run: |
+          files="LICENSE docs/source/conf.py"
+          last_year=$(date --date="1 year ago" +%Y)
+          current_year=$(date +%Y)
+
+          find $files -exec sed -i "s/${current_year}/${last_year}/g" {} \;
+
+      - name: Setup Git configuration
+        run: |
+          git config user.name "Year Bot"
+          git config user.email "<>"
+
+      - name: Commit changes
+        run: |
+          git commit -am "Update copyright year"
+          git push origin master

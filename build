@@ -2,10 +2,14 @@
 
 echo -e "\n\nThis might take a while...\n\n"
 
+arg=$@
+skip_prompt=$(echo ${arg[@]} | grep -o "y" | wc -w)
+use_venv=$(echo ${arg[@]} | grep -o "venv" | wc -w)
+
 # Quick hack to not run the code
 # when using Docker so it doesn't get
 # stuck on read prompt
-if [[ $1 != "-y" ]]; then
+if [[ "$skip_prompt" -eq 0 ]]; then
   echo "This will install multiple packages if you don't already have them."
   echo -e "Packages: python3, pip3, ruby, lsb-core, build-essentials, graphicsmagick & xdg-utils.\n"
 
@@ -25,7 +29,7 @@ bash chmodx
 bash pkgs
 
 # TODO: Run venv after build
-if [[ $1 == "venv" ]]; then
+if [[ "$use_venv" -eq 1 ]]; then
   if [[ "$(which virtualenv)" == "" ]]; then
     # virtualenv probably tries to install here
     export PATH=$HOME/.local/bin/:$PATH

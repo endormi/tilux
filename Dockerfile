@@ -36,7 +36,7 @@ ENV BUNDLE_SILENCE_ROOT_WARNING=1 \
 # When installing Python packages, it will give an warning:
 # Running pip as root will break packages and permissions.
 # Since we're using a container, we don't need to worry about this.
-RUN bash build -y
+RUN bash build y
 
 # Keep the container running
 CMD exec /bin/bash -c "sleep infinity & wait"

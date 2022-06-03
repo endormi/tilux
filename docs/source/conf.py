@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Tilux'
-copyright = '2022, Endormi'
+copyright = '2021, Endormi'
 author = 'Endormi'
 
 # The full version, including alpha/beta/rc tags

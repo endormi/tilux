@@ -1,7 +1,6 @@
 name: Update year
 
-on:
-  pull_request:
+on: push
 #  schedule:
 #    - cron: "0 1 1 1 *" # 01:00 on January 1
 

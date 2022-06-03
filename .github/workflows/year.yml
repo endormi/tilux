@@ -18,7 +18,7 @@ jobs:
           current_year=$(date +%Y)
 
           find $files -exec sed -i "s/${current_year}/${last_year}/g" {} \;
-          
+
       - name: Setup Git configuration
         run: |
           git config user.name "Year Bot"

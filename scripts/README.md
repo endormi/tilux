@@ -18,3 +18,4 @@ Useful scripts, specifically to be ran for `tilux`.
 - `resize_term` - Resizes terminal
 - `run_sphinx_locally` - Run sphinx documentation locally
 - `start_dcompose` - Starts docker-compose
+- `version_update` - Updates all files that have the current version and adds a new version heading for `CHANGELOG.md`

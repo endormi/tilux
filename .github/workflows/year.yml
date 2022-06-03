@@ -1,8 +1,8 @@
 name: Update year
 
-on: push
-#  schedule:
-#    - cron: "0 1 1 1 *" # 01:00 on January 1
+on:
+  schedule:
+    - cron: "0 1 1 1 *" # 01:00 on January 1
 
 jobs:
   year:

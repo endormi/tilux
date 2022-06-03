@@ -16,7 +16,7 @@ jobs:
           last_year=$(date --date="1 year ago" +%Y)
           current_year=$(date +%Y)
 
-          find $files -exec sed -i "s/${current_year}/${last_year}/g" {} \;
+          find $files -exec sed -i "s/${last_year}/${current_year}/g" {} \;
 
       - name: Setup Git configuration
         run: |

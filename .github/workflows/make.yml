@@ -13,8 +13,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run make
         run: make
-      - run: sudo apt install clang-format-10
-      - name: Run clang-format check
-        run: make cformat_check
       - name: Clean files
         run: make clean

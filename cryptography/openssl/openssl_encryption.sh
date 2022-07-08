@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [[ "$(which openssl)" == "" ]]; then
+  echo "Installing openssl which is required to run this script."
   sudo apt update
   sudo apt install openssl
   clear

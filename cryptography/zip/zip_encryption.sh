@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [[ "$(which zip)" == "" ]]; then
+  echo "Installing zip which is required to run this script."
   sudo apt update
   sudo apt install zip
   clear

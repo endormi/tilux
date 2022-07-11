@@ -10,5 +10,3 @@
 - xdg-utils
 
 Other packages will be installed when running specific scripts.
-
-Check [TESTED_ON.md](TESTED_ON.md) to see versions.

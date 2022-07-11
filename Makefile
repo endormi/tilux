@@ -6,9 +6,9 @@ SRCS = $(wildcard sys/**/*.c)
 HEADERS = $(wildcard sys/**/*.h) $(wildcard tools/*.h)
 OBJS = $(patsubst %.c,%.o,$(SRCS))
 
-.PHONY: all clean
-
 all: $(OBJS)
+
+.PHONY: all
 
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ $<
@@ -16,5 +16,19 @@ all: $(OBJS)
 clean:
 	rm -rf $(OBJS)
 
+.PHONY: clean
+
 cformat:
 	$(FORMATTER) -i $(SRCS) $(HEADERS)
+
+sphinx:
+	./scripts/build_sphinx
+	./scripts/run_sphinx_locally
+
+.PHONY: sphinx
+
+alias:
+	./scripts/add_alias
+	./scripts/add_alias_venv
+
+.PHONY: alias

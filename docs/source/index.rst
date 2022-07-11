@@ -31,6 +31,7 @@ If you don't want to install the whole tool. You can download specific scripts, 
 
    installation
    commands
+   packages
 
 Indices and tables
 ==================

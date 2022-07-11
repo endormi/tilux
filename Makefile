@@ -6,8 +6,6 @@ SRCS = $(wildcard sys/**/*.c)
 HEADERS = $(wildcard sys/**/*.h) $(wildcard tools/*.h)
 OBJS = $(patsubst %.c,%.o,$(SRCS))
 
-SCRIPTS_LOCATION = ./scripts
-
 all: $(OBJS)
 
 .PHONY: all
@@ -24,7 +22,7 @@ cformat:
 	$(FORMATTER) -i $(SRCS) $(HEADERS)
 
 sphinx:
-	$(SCRIPT_LOCATION)/build_sphinx
-	$(SCRIPT_LOCATION)/run_sphinx_locally
+	./scripts/build_sphinx
+	./scripts/run_sphinx_locally
 
 .PHONY: sphinx

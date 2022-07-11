@@ -26,3 +26,9 @@ sphinx:
 	./scripts/run_sphinx_locally
 
 .PHONY: sphinx
+
+alias:
+	./scripts/add_alias
+	./scripts/add_alias_venv
+
+.PHONY: alias

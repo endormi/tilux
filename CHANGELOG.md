@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.3.0
+- Update project description
+- New contribution guidelines
+- Update copy_content script
+- Add PACKAGES.md file to docs/source
+- Add sphinx and alias target to Makefile (runs scripts from the scripts folder)
+- Use var value for grep check
+- Specify which packages will be installed
+- Add clang-format to pre-commit and remove it from Makefile
+- Remove positional arguments from build
+- Add year workflow to change copyright year
+- Use ruby version 2.6 to fix rubocop-ast error in rubocop workflow
+- Add version update script
+- Add rtd badge
+- Remove docs workflow
+- Add .readthedocs.yaml
+- Add myst-parser to requirements
+
 ## 1.2.1
 - Start refactoring
 - Add xdg-utils to build and package list

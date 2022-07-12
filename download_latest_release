@@ -1,0 +1,5 @@
+#!/bin/bash
+
+latest_version=$(cat .version)
+file_ext="zip"
+wget https://github.com/endormi/tilux/archive/refs/tags/v.$latest_version.$file_ext && unzip v.$latest_version.$file_ext && rm v.$latest_version.$file_ext

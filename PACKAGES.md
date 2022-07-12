@@ -11,4 +11,15 @@
 
 Other packages will be installed when running specific scripts.
 
+## Optional packages include
+
+- jq
+- clang-format-10
+- groff
+- docker & docker-compose
+- venv
+- rubocop
+
+and more
+
 Check [TESTED_ON.md](TESTED_ON.md) to see versions.

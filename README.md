@@ -38,6 +38,20 @@ If you don't want to install the whole tool. You can download specific scripts, 
 git clone https://github.com/endormi/tilux.git
 ```
 
+You can also get the latest release:
+
+> It will install jq, if you don't already have it.
+
+```bash
+wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_latest_release | bash
+```
+
+And then CD into the folder:
+
+```bash
+cd tilux-v.(latest_release)
+```
+
 **Run** `build`:
 
 > Installing with `virtualenv` is highly recommended.

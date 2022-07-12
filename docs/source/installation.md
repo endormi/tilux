@@ -10,6 +10,20 @@ Clone the project:
 git clone https://github.com/endormi/tilux.git
 ```
 
+You can also get the latest release:
+
+> It will install jq, if you don't already have it.
+
+```
+wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_latest_release | bash
+```
+
+And then CD into the folder:
+
+```
+cd tilux-v.(latest_release)
+```
+
 Run `build`:
 
 **NOTE**: Installing with `virtualenv` is recommended.

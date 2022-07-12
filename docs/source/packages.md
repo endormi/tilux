@@ -10,3 +10,14 @@
 - xdg-utils
 
 Other packages will be installed when running specific scripts.
+
+## Optional packages include
+
+- jq
+- clang-format-10
+- groff
+- docker & docker-compose
+- venv
+- rubocop
+
+and more

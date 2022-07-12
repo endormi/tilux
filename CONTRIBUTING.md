@@ -19,7 +19,7 @@ If the script you're adding is under a folder, follow the format in `tools/def.r
 
 Remember to add the new script to [guide](GUIDE.md), [tilux](tilux) [tools/help_print.rb](tools/help_print.rb) (both to the category and help, following the format), [man/tilux.1](man/tilux.1) and [chmodx](chmodx).
 
-> Working on making adding a new command faster and better. [#32](issues/32)
+> Working on making adding a new command faster and better. [#32](https://github.com/endormi/tilux/issues/32)
 
 See [Updating Docs](#updating-docs) to copy `GUIDE.md`.
 

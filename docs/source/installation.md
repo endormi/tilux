@@ -12,6 +12,8 @@ git clone https://github.com/endormi/tilux.git
 
 You can also get the latest release:
 
+> It will install jq, if you don't already have it.
+
 ```
 wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_latest_release | bash
 ```

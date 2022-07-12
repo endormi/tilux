@@ -1,5 +1,12 @@
 #!/bin/bash
 
-latest_version=$(cat .version)
+if [[ "$(which jq)" == "" ]]; then
+  echo "Installing jq which is required to run this script."
+  sudo apt update
+  sudo apt install jq
+  clear
+fi
+
+latest_version=$(curl -sL https://api.github.com/repos/endormi/tilux/releases/latest | jq -r ".tag_name")
 file_ext="zip"
-wget https://github.com/endormi/tilux/archive/refs/tags/v.$latest_version.$file_ext && unzip v.$latest_version.$file_ext && rm v.$latest_version.$file_ext
+wget https://github.com/endormi/tilux/archive/refs/tags/$latest_version.$file_ext && unzip $latest_version.$file_ext && rm $latest_version.$file_ext

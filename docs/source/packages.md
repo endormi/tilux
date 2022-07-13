@@ -17,7 +17,12 @@ Other packages will be installed when running specific scripts.
 - clang-format-10
 - groff
 - docker & docker-compose
-- venv
+- virtualenv
 - rubocop
+- ccrypt
+- openssl
+- zip
+- unzip
+- mesa-utils
 
 and more

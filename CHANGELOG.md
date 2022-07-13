@@ -1,209 +1,344 @@
 # Changelog
 
 ## 1.3.0
-- Update project description
-- New contribution guidelines
-- Update copy_content script
-- Add PACKAGES.md file to docs/source
-- Add sphinx and alias target to Makefile (runs scripts from the scripts folder)
-- Use var value for grep check
-- Specify which packages will be installed
-- Add clang-format to pre-commit and remove it from Makefile
-- Remove positional arguments from build
-- Add year workflow to change copyright year
-- Use ruby version 2.6 to fix rubocop-ast error in rubocop workflow
-- Add version update script
-- Add rtd badge
-- Remove docs workflow
-- Add .readthedocs.yaml
-- Add myst-parser to requirements
+
+- Add:
+  - New contribution guidelines
+  - PACKAGES.md file to docs/source
+  - Sphinx and alias target to Makefile (runs scripts from the scripts folder)
+  - Clang-format to pre-commit
+  - Year workflow to change copyright year
+  - version_update script
+  - RTD badge
+  - .readthedocs.yaml
+  - Myst-parser to requirements
+  - Specify which packages will be installed
+
+- Update:
+  - Project description
+  - copy_content script
+  - Use var value for grep check
+  - Use ruby version 2.6 to fix rubocop-ast error in rubocop workflow
+
+- Remove:
+  - Positional arguments from build
+  - Docs workflow
+  - clang-format from Makefile
 
 ## 1.2.1
-- Start refactoring
-- Add xdg-utils to build and package list
-- Add flake8 and ruby-validate to pre-commit
-- Update rubocop configuration
-- Update chmodx
-- Mention about other packages not included in build
-- Schedule CodeQL to run every night at midnight
-- Remove flake8 workflow and badge
+
+- Add:
+  - xdg-utils to build and package list
+  - Flake8 and ruby-validate to pre-commit
+  - Mention about other packages not included in build
+  - Schedule CodeQL to run every night at midnight
+
+- Update:
+  - Start refactoring
+  - Rubocop configuration
+  - chmodx
+
+- Remove:
+  - Flake8 workflow and badge
 
 ## 1.2.0
-- Add list_of_files script
-- Add formatter flags variable
-- Reconfigure clang-format and reformat files also include header files
-- Remove .editorconfig
-- Update build text
-- Update flake8 exclude items
-- Don't specify bundler version
+
+- Add:
+  - list_of_files script
+  - Formatter flags variable
+
+- Update:
+  - Build text
+  - Flake8 exclude items
+  - Reconfigure clang-format and reformat files also include header files
+  - Don't specify bundler version
+
+- Remove:
+  - .editorconfig
 
 ## 1.1.75
-- Add all_releases and latest_release script
-- Use new theme for docs and update it with a custom.css
-- Add a docs workflow
-- Convert installation documentation to markdown
-- Update status badges
-- Separate compile workflow
+
+- Add:
+  - all_releases and latest_release script
+  - Docs workflow
+
+- Update:
+  - Use new theme for docs and a custom.css
+  - Convert installation documentation to markdown
+  - Status badges
+  - Separate compile workflow
 
 ## 1.1.5
-- Add clang-format check (use clang-format-10) to CI and scripts folder
-- Add sphinx documentation
-- Add copy_content script to copy docs/source/commands.md to GUIDE.md
-- Add build_sphinx and run_sphinx_locally script
-- Add pre-commit workflow
-- Increase stale issue to 45 days
-- Update issue templates to use yml syntax
+
+- Add:
+  - Clang-format check (use clang-format-10) to CI and scripts folder
+  - Sphinx documentation
+  - copy_content script to copy docs/source/commands.md to GUIDE.md
+  - build_sphinx and run_sphinx_locally script
+  - Pre-commit workflow
+
+- Update:
+  - Increase stale issue to 45 days
+  - Issue templates to use yml syntax
 
 ## 1.1.0
-- Add open website and default web browser script
-- Add cryptography/README.md
-- Add single core process time and multi-core process time script
-- Separate run_check script and call all in run_all_checks
-- Fix start_dcompose script
-- Change certain arguments
-- Update Makefile
-- Update workflows
-- Clear terminal after groff installation
-- Disclaimer about GPG
+
+- Add:
+  - open website and default web browser script
+  - cryptography/README.md
+  - Single core process time and multi-core process time script
+  - Disclaimer about GPG
+  - Clear terminal after groff installation
+
+- Update:
+  - Separate run_check script and call all in run_all_checks
+  - Change certain arguments
+  - Makefile
+  - workflows
+
+- Fix:
+  - start_dcompose script
 
 ## 1.0.75
-- Add cmd_search script
-- Add manpage and PACKAGES.md
-- Move docs/README.md to GUIDE.md
-- Move clean script from sys/other to sys/file_folder
-- Update issue templates
-- Update to run GitHub actions on push to master and PR
-- Remove extra space from prompt
+
+- Add:
+  - cmd_search script
+  - Manpage and PACKAGES.md
+
+- Update:
+  - Move docs/README.md to GUIDE.md
+  - Move clean script from sys/other to sys/file_folder
+  - Issue templates
+  - Run GitHub actions on push to master and PR
+
+- Remove:
+  - Extra space from prompt
 
 ## 1.0.5
-- Move system scripts into separate methods and folders
-- Add pre_commit and run_check to scripts folder
-- Add how to run downloaded script
-- Update docs
+
+- Add:
+  - Pre_commit and run_check to scripts folder
+  - How to run downloaded script
+
+- Update:
+  - Move system scripts into separate methods and folders
+  - Docs
 
 ## 1.0.5-br
-- Revert input? method that didn't work
-- Update alias to check for alias [name] instead of just [name]
-- Remove print from python handler
-- Comment out GPG scripts from build
+
+- Update:
+  - Alias to check for alias [name] instead of just [name]
+  - Comment out GPG scripts from build
+
+- Remove:
+  - Revert input? method that didn't work
+  - Print from python handler
 
 ## 1.0.1
-- Export for ruby gems when building
-- Make continue if statement better
-- Update output in a invalid choice
-- Remove unused variable that gives an error
-- Remove unused GPG key from docs
+
+- Add:
+  - Export for ruby gems when building
+
+- Update:
+  - Make continue if statement better
+  - Output in a invalid choice
+
+- Remove:
+  - Unused variable that gives an error
+  - Unused GPG key from docs
 
 ## 1.0.0
-- Fix add alias script
-- Add input? method to reduce repeatability
-- Check for glxinfo
-- Use update for everything instead of upgrade
+
+- Add:
+  - input? method to reduce repeatability
+
+- Update:
+  - Check for glxinfo
+  - Use update for everything instead of upgrade
+
+- Fix:
+  - add_alias script
 
 ## 0.5.0
-- Fix build script to do necessary configs
-- Install graphicsmagick pkg
-- Fix pre-commit check in rubocop
-- Update docs
-- Remove pkg that is included
-- Move and clear pkg installation before logo
+
+- Add:
+  - Install graphicsmagick pkg
+
+- Update:
+  - Move and clear pkg installation before logo
+  - Docs
+
+- Fix:
+  - Build script to do necessary configs
+  - Pre-commit check in rubocop
+
+- Remove:
+  - Pkg that is included
 
 ## 0.4.5
-- Add gnome terminal profile dump and load
-- Add the ability to install python pkgs with virtualenv
-- Fix [-Wimplicit-function-declaration] warning
-- Update flake8 and rubocop
+
+- Add:
+  - Gnome terminal profile dump and load
+  - The ability to install python pkgs with virtualenv
+
+- Update:
+  - Flake8 and rubocop
+
+- Fix:
+  - [-Wimplicit-function-declaration] warning
 
 ## 0.4.1
-- Enable running scripts in any folder
-- Add img (convert_img, img_info, resize_img and rotate_img) and convert doc to pdf scripts
-- Fix running Openssl by using arguments
-- Fix different title when running interactively and using arguments
-- Display system scripts on the same line
-- Add rubocop-code-scan workflow
+
+- Add:
+  - img (convert_img, img_info, resize_img and rotate_img) and convert doc to pdf scripts
+  - rubocop-code-scan workflow
+  - Enable running scripts in any folder
+
+- Update:
+  - Display system scripts on the same line
+
+- Fix:
+  - Running Openssl by using arguments
+  - Different title when running interactively and using arguments
 
 ## 0.4.1-br
-- Fix typos
-- Update Openssl choices
-- Keep consistency with run option choices
+
+- Add:
+  - Keep consistency with run option choices
+
+- Update:
+  - Openssl choices
+
+- Fix:
+  - Typos
 
 ## 0.4.0
-- Bring back Openssl
-- Move info.rb into separate scripts
-- Move helpful scripts inside scripts folder
-- Add run option text directly to tilux
-- Add handler for C files
-- Add pre-commit and CodeQL
-- Remove numbers from system scripts
-- Update rubygems
-- Update contribution guidelines
-- Add README.md for tools and scripts
-- Add badges
+
+- Add:
+  - Run option text directly to tilux
+  - Handler for C files
+  - Pre-commit and CodeQL
+  - README.md for tools and scripts
+  - Badges
+  - Bring back Openssl
+
+- Update:
+  - Move info.rb into separate scripts
+  - Move helpful scripts inside scripts folder
+  - Rubygems
+  - Contribution guidelines
+
+- Remove:
+  - Numbers from system scripts
 
 ## 0.3.5
-- Add empty input catching for python
-- Add empty input catching for shell
-- Fix GPG command error
-- Create new workflow
+
+- Add:
+  - Empty input catching for python
+  - Empty input catching for shell
+  - Create new workflow
+
+- Fix:
+  - GPG command error
 
 ## 0.3.1
-- Add git config and force reboot
-- Add empty input catching to the rest of the inputs
-- Add header file
-- Move all chmods to one specific file
-- Delete CHECKLIST.md
+
+- Add:
+  - Git config and force reboot
+  - Empty input catching to the rest of the inputs
+  - Header file
+
+- Update:
+  - Move all chmods to one specific file
+
+- Remove:
+  - CHECKLIST.md
 
 ## 0.3.0
-- Convert tilux to ruby
-- Add GitHub actions (compile, docker and stale)
-- Add configuration files (Clang format, flake8, rubocop)
-- Rename usage script to build and update the script
-- Update installation and guide
-- Add scripts for running tilux better etc. (add_alias, resize_term)
-- Add more tools (ansi-colors for ruby, error handling and ruby functions)
-- Remove openssl (for now)
-- Add sys/add_alias, sys/resize_terminal and sys/space
-- Convert scripts to ruby
-- Format code
+
+- Add:
+  - GitHub actions (compile, docker and stale)
+  - Configuration files (Clang format, flake8, rubocop)
+  - Scripts for running tilux better etc. (add_alias, resize_term)
+  - More tools (ansi-colors for ruby, error handling and ruby functions)
+  - sys/add_alias, sys/resize_terminal and sys/space
+
+- Update:
+  - Convert tilux to ruby
+  - Rename usage script to build
+  - Build script
+  - Installation and guide
+  - Convert scripts to ruby
+  - Format code
+
+- Remove:
+  - Openssl (for now)
 
 ## 0.2.5
-- Add filesize and spec script
-- Add proc script to check how long a script takes to run
-- Add tools (logos.py etc.)
-- Add prompt
-- Convert more scripts from shell to ruby
-- Fix: Dockerfile and CI
-- Update installation
-- Add badges
-- Add docs
+
+- Add:
+  - Filesize and spec script
+  - Proc script to check how long a script takes to run
+  - Tools (logos.py etc.)
+  - Prompt
+  - Badges
+  - Docs
+
+- Update:
+  - Convert more scripts from shell to ruby
+  - Installation
+
+- Fix:
+  - Dockerfile and CI
 
 ## 0.2.1
-- Add sys/del and sys/fd
-- Add system scripts (bf, clean, last_updated, parse_date and root)
-- Convert sys/exists script to ruby from shell
-- Convert info script to ruby from shells
-- Validate ruby is installed and Gemfile.lock exists
+
+- Add:
+  - sys/del and sys/fd
+  - system scripts (bf, clean, last_updated, parse_date and root)
+  - Validation to check ruby is installed and Gemfile.lock exists
+
+- Update:
+  - Convert sys/exists script to ruby from shell
+  - Convert info script to ruby from shells
 
 ## 0.2.0
-- Fix logos for python scripts
-- Use python3 to explicitly run the script
-- Dockerize the script
-- Add cryptography
-- Add the ability to run the script if given 2 arguments in cryptography
+
+- Add:
+  - Cryptography
+  - The ability to run the script if given 2 arguments in cryptography
+
+- Update:
+  - Use python3 to explicitly run the script
+  - Dockerize the script
+
+- Fix:
+  - Logos for python scripts
 
 ## 0.1.5
-- Add IP pinging, ansi-colors, logos.py & aclrs.py
-- Fix functionality and add the ability to run files using args even if second argument isn't given
+
+- Add:
+  - IP pinging, ansi-colors, logos.py & aclrs.py
+  - The ability to run files using args even if second argument isn't given
+
+- Fix:
+  - Functionality
 
 ## 0.1.1
-- Add help, server pinging and exists
-- Add misc.
-- Add GitHub templates
+
+- Add:
+  - Help, server pinging and exists
+  - Misc.
+  - GitHub templates
 
 ## 0.1.0
-- Add hostname and IP address
-- Add the option to use args
+
+- Add:
+  - Hostname and IP address
+  - The option to use args
 
 ## 0.0.1
 - Initial release
-- Added CPU and memory monitoring
+
+- Add:
+  - CPU and memory monitoring

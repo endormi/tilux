@@ -7,6 +7,13 @@ if [[ "$(which jq)" == "" ]]; then
   clear
 fi
 
+if [[ "$(which unzip)" == "" ]]; then
+  echo "Installing unzip which is required to run this script."
+  sudo apt update
+  sudo apt install unzip
+  clear
+fi
+
 latest_version=$(curl -sL https://api.github.com/repos/endormi/tilux/releases/latest | jq -r ".tag_name")
 file_ext="zip"
 wget https://github.com/endormi/tilux/archive/refs/tags/$latest_version.$file_ext && unzip $latest_version.$file_ext && rm $latest_version.$file_ext

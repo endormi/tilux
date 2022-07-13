@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.3.1
+
+- Add:
+  - download_latest_release script (another option to download this tool)
+  - Sphinx to requirements
+  - Mention some of the optional packages
+
+- Update:
+  - Format CHANGELOG
+
+- Fix:
+  - Link to issue (in contrbution guidelines)
+
 ## 1.3.0
 
 - Add:

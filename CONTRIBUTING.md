@@ -37,6 +37,12 @@ In the case you are updating `docs/source/commands.md`, `docs/source/packages.md
 
 With either `README.md` or `index.rst` the changes must be added manually (both files have the same content).
 
+Make sure the docs run:
+
+```
+make docs
+```
+
 ## Contribution to GitHub steps
 
 - Fork it!

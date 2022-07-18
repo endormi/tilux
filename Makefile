@@ -21,11 +21,11 @@ clean:
 cformat:
 	$(FORMATTER) -i $(SRCS) $(HEADERS)
 
-sphinx:
+docs:
 	./scripts/build_sphinx
 	./scripts/run_sphinx_locally
 
-.PHONY: sphinx
+.PHONY: docs
 
 alias:
 	./scripts/add_alias

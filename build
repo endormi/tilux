@@ -16,10 +16,7 @@ if [[ "$skip_prompt" -eq 0 ]]; then
   read -p "Do you want to continue? (Y/n) " continue
   continue="$(echo ${continue} | tr 'A-Z' 'a-z')"
 
-  if [ "$continue" != "y" ] && [ "$continue" != "yes" ]; then
-    echo "Exiting build.."
-    exit
-  fi
+  [ "$continue" != "y" ] && [ "$continue" != "yes" ] && echo "Exiting build.." && exit
 fi
 
 g="\033[0;32m"
@@ -30,7 +27,7 @@ bash pkgs
 
 # TODO: Run venv after build
 if [[ "$use_venv" -eq 1 ]]; then
-  if [[ "$(which virtualenv)" == "" ]]; then
+  if [[ -z "$(which virtualenv)" ]]; then
     # virtualenv probably tries to install here
     export PATH=$HOME/.local/bin/:$PATH
     pip3 install virtualenv

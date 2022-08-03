@@ -6,10 +6,7 @@ files=".version docs/source/conf.py README.md tilux"
 old_version=$(cat .version)
 
 read -p "New version: " new_version
-if [[ $new_version == "" ]]; then
-  echo "You need to add a new version."
-  exit
-fi
+[ -z $new_version ] && echo "You need to add a new version." && exit
 
 find $files -exec sed -i "s/${old_version}/$new_version/g" {} \;
 sed -i "3i ## $new_version \n" CHANGELOG.md

@@ -1,18 +1,18 @@
 #!/bin/bash
 
 # Python3 is required to run the python scripts
-if [[ "$(which python3)" == "" ]]; then
+if [[ -z "$(which python3)" ]]; then
   sudo apt update
   sudo apt install -y python3
 fi
 
-if [[ "$(which pip3)" == "" ]]; then
+if [[ -z "$(which pip3)" ]]; then
   sudo apt update
   sudo apt install -y python3-pip
 fi
 
 # Ruby is required to run ruby scripts
-if [[ "$(which ruby)" == "" ]]; then
+if [[ -z "$(which ruby)" ]]; then
   sudo apt update
   sudo apt install -y ruby-full
 
@@ -22,24 +22,24 @@ if [[ "$(which ruby)" == "" ]]; then
 fi
 
 # lsb_release is required to run sys/distro.sh script
-if [[ "$(which lsb_release)" == "" ]]; then
+if [[ -z "$(which lsb_release)" ]]; then
   sudo apt update
   sudo apt install -y lsb-core
 fi
 
 # Required for compiling C/C++ files
-if [[ "$(which gcc)" == "" ]]; then
+if [[ -z "$(which gcc)" ]]; then
   sudo apt update
   sudo apt install -y build-essential
 fi
 
-if [[ "$(which gm)" == "" ]]; then
+if [[ -z "$(which gm)" ]]; then
   sudo apt update
   sudo apt install -y graphicsmagick
 fi
 
 # xdg-open is included inside xdg-utils
-if [[ "$(which xdg-open)" == "" ]]; then
+if [[ -z "$(which xdg-open)" ]]; then
   sudo apt update
   sudo apt install -y xdg-utils
 fi

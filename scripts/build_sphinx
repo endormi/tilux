@@ -8,10 +8,7 @@ function cmd_install(){
   args="$1"
   cmd=$(pip3 show $args)
 
-  if [ $? == 1 ]; then
-    pip3 install $args
-    clear
-  fi
+  [ $? == 1 ] && pip3 install $args && clear
 }
 
 cmd_install sphinx

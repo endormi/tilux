@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$(which glxinfo)" == "" ]]; then
+if [[ -z "$(which glxinfo)" ]]; then
   echo "Installing mesa-utils which is required to run this script."
   sudo apt update
   sudo apt install mesa-utils

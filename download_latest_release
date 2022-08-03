@@ -1,13 +1,13 @@
 #!/bin/bash
 
-if [[ "$(which jq)" == "" ]]; then
+if [[ -z "$(which jq)"]]; then
   echo "Installing jq which is required to run this script."
   sudo apt update
   sudo apt install jq
   clear
 fi
 
-if [[ "$(which unzip)" == "" ]]; then
+if [[ -z "$(which unzip)"]]; then
   echo "Installing unzip which is required to run this script."
   sudo apt update
   sudo apt install unzip

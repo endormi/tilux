@@ -2,7 +2,7 @@
 
 [ ! -d scripts ] && cd ..
 
-if [[ "$(which groff)" == "" ]]; then
+if [[ -z "$(which groff)" ]]; then
   echo "Installing groff which is required to run this script."
   sudo apt update
   sudo apt install groff

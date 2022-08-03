@@ -4,7 +4,7 @@
 function catch_empty(){
   args="$1"
 
-  if [[ $args == "" ]]; then
+  if [[ -z $args ]]; then
     echo "Choice can't be empty!"
     exit;
   fi

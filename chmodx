@@ -46,7 +46,6 @@ chmod +x ./scripts/add_alias
 chmod +x ./scripts/add_alias_venv
 chmod +x ./scripts/all_releases
 chmod +x ./scripts/build_sphinx
-chmod +x ./scripts/cformat
 chmod +x ./scripts/copy_content
 chmod +x ./scripts/groff
 chmod +x ./scripts/install_req

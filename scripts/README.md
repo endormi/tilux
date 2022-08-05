@@ -8,7 +8,6 @@ Useful scripts, specifically to be ran for `tilux`.
 - `add_alias_venv` - Adds virtualenv alias (tvenv) to `bash_aliases`
 - `all_releases` - Display all releases
 - `build_sphinx` - Build documentation
-- `cformat` - Formats C code automatically
 - `copy_content` - Copies `GUIDE.md` and `PACKAGES.md` to `docs/source/`.
 - `groff` - Runs the manpage
 - `install_req` - Installs required packages

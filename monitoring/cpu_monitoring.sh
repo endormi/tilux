@@ -6,7 +6,7 @@ secs=3000
 time=10
 cproc=$(( $secs / $time ))
 
-function cpu {
+function cpu(){
   echo -e "\nCPU usage (biggest resource drainers):"
   cat /tmp/cpu_usage.$$ | sort -nrk 2 | head
 
@@ -14,7 +14,8 @@ function cpu {
   exit
 }
 
-if [[ $1 == "tilux" ]]; then python3 -c "from tools.logos import Logo; Logo('CPU monitoring');"; fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('CPU monitoring');"
+
 sleep 1
 
 trap 'cpu' INT

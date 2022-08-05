@@ -1,13 +1,10 @@
 #!/bin/bash
 
-if [[ $1 == "tilux" ]]; then
-  source ./tools/catch
-  python3 -c "from tools.logos import Logo; Logo('Open');"
-fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Open');"
 
 echo "You need to use https:// ..."
 read -p "URL: " url
-if [[ $1 == "tilux" ]]; then catch_empty $url; fi
+[ $1 == "tilux" ] && catch_empty $url
 
 if [[ ! $url =~ "https://" ]]; then
   echo "You need to add https:// to $url"

@@ -4,8 +4,7 @@
 # Still a WIP
 #
 
-source ./tools/catch
-python3 -c "from tools.logos import Logo; Logo('Generate key');"
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Generate key');"
 
 read -p "Your email: " email_address
 catch_empty $email_address

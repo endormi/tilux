@@ -84,7 +84,9 @@ end
 
 def systemp_print
   puts '-cpu: CPU name'
-  puts "-gpu: GPU name\n"
+  puts '-gpu: GPU name'
+  puts '-mc: Multi-core process time'
+  puts "-oc: Single core process time\n"
 end
 
 def systems_print

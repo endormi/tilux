@@ -1,15 +1,12 @@
 #!/bin/bash
 
-if [[ $1 == "tilux" ]]; then
-  source ./tools/catch
-  python3 -c "from tools.logos import Logo; Logo('Remove line');"
-fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Remove line');"
 
 read -p "Remove line (matching the pattern): " pattern
-if [[ $1 == "tilux" ]]; then catch_empty $pattern; fi
+[ $1 == "tilux" ] && catch_empty $pattern
 
 read -p "Filename (to remove the line from): " filename
-if [[ $1 == "tilux" ]]; then catch_empty $filename; fi
+[ $1 == "tilux" ] && catch_empty $filename
 
 [ ! -f $filename ] && echo "$filename doesn't exist." && exit
 

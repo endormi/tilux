@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $1 == "tilux" ]]; then python3 -c "from tools.logos import Logo; Logo('Distro');"; fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Distro');"
 
 sleep .5
 lsb_release -d

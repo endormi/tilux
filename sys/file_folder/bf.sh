@@ -1,14 +1,11 @@
 #!/bin/bash
 
-if [[ $1 == "tilux" ]]; then
-  source ./tools/catch
-  python3 -c "from tools.logos import Logo; Logo('BF');"
-fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('BF');"
 
 bu=`date +%d-%m-%y`
 read -p "Type in the folder you want to backup: " src
-if [[ $1 == "tilux" ]]; then catch_empty $src; fi
+[ $1 == "tilux" ] && catch_empty $src
 read -p "Type in the filename (you want to save it as): " f
-if [[ $1 == "tilux" ]]; then catch_empty $f; fi
+[ $1 == "tilux" ] && catch_empty $f
 
 tar -cpzf $f-$bu.tar.gz $src

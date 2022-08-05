@@ -6,7 +6,7 @@ secs=3000
 time=10
 mproc=$(( $secs / $time ))
 
-function mem {
+function mem(){
   echo -e "\nMemory usage (biggest resource drainers):"
   cat /tmp/memory_usage.$$ | sort -nrk 2 | head
 
@@ -14,7 +14,7 @@ function mem {
   exit
 }
 
-if [[ $1 == "tilux" ]]; then python3 -c "from tools.logos import Logo; Logo('Mem monitoring');"; fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Mem monitoring');"
 sleep 1
 
 trap 'mem' INT

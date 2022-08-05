@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $1 == "tilux" ]]; then python3 -c "from tools.logos import Logo; Logo('Kernel version');"; fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Kernel version');"
 
 sleep .5
 echo "Kernel version: `uname -srm`"

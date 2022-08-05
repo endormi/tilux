@@ -1,11 +1,8 @@
 #!/bin/bash
 
-if [[ $1 == "tilux" ]]; then
-  source ./tools/catch
-  python3 -c "from tools.logos import Logo; Logo('CMD Search');"
-fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('CMD Search');"
 
 read -p "Search: " search
-if [[ $1 == "tilux" ]]; then catch_empty $search; fi
+[ $1 == "tilux" ] && catch_empty $search
 
 compgen -caX "!*$search*"

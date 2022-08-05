@@ -7,17 +7,14 @@ if [[ -z "$(which openssl)" ]]; then
   clear
 fi
 
-if [[ $1 == "tilux" ]]; then
-  source ./tools/catch
-  python3 -c "from tools.logos import Logo; Logo('Openssl Encryption');"
-fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Openssl Encryption');"
+
 sleep 1
 
-
 read -p "What file do you want to encrypt? " f
-if [[ $1 == "tilux" ]]; then catch_empty $f; fi
+[ $1 == "tilux" ] && catch_empty $f
 read -p "What is the file extension you want to use? (e.g. .dat) " fe
-if [[ $1 == "tilux" ]]; then catch_empty $fe; fi
+[ $1 == "tilux" ] && catch_empty $fe
 
 # TODO:
 # Display choices better visually
@@ -40,7 +37,7 @@ Encryption choices:
 "
 
 read -p "What encryption method do you want to use? " enc_method
-if [[ $1 == "tilux" ]]; then catch_empty $enc_method; fi
+[ $1 == "tilux" ] && catch_empty $enc_method
 echo
 
 openssl enc $enc_method -pbkdf2 -in $f -out $f$fe

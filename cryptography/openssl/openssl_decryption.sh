@@ -1,15 +1,13 @@
 #!/bin/bash
 
-if [[ $1 == "tilux" ]]; then
-  source ./tools/catch
-  python3 -c "from tools.logos import Logo; Logo('Openssl Decryption');"
-fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Openssl Decryption');"
+
 sleep 1
 
 read -p "What file do you want to decrypt? " f
-if [[ $1 == "tilux" ]]; then catch_empty $f; fi
+[ $1 == "tilux" ] && catch_empty $f
 read -p "What is the filename you wish to have after decryption? " fl
-if [[ $1 == "tilux" ]]; then catch_empty $fl; fi
+[ $1 == "tilux" ] && catch_empty $fl
 
 # TODO:
 # Display choices better visually
@@ -32,7 +30,7 @@ Decryption choices:
 "
 
 read -p "What did you use for the encryption? " decr_method
-if [[ $1 == "tilux" ]]; then catch_empty $decr_method; fi
+[ $1 == "tilux" ] && catch_empty $decr_method
 echo
 
 openssl enc $decr_method -d -pbkdf2 -in $f -out $fl

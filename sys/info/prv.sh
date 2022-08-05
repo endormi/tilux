@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $1 == "tilux" ]]; then python3 -c "from tools.logos import Logo; Logo('PRV');"; fi
+[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('PRV');"
 
 sleep .5
 echo "Python3 version: `python3 -V`"

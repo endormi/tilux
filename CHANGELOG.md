@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.3.15
+
+- Add:
+  - Print build version with box
+  - Docs command in contribution guidelines
+  - clang-format check in Makefile
+
+- Update:
+  - Optimize bash scripts
+  - sphinx target to docs
+  - use var value for grep check
+
+- Remove:
+  - clang-format script
+
 ## 1.3.1
 
 - Add:
@@ -11,7 +26,7 @@
   - Format CHANGELOG
 
 - Fix:
-  - Link to issue (in contrbution guidelines)
+  - Link to issue (in contribution guidelines)
 
 ## 1.3.0
 

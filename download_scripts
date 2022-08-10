@@ -1,0 +1,21 @@
+#!/bin/bash
+
+[ ! -z "$(which ruby)" ] && echo "NOTE: Some are ruby scripts that require it."
+
+sleep 1
+
+ff="sys/file_folder"
+info="sys/info"
+other="sys/other"
+
+declare -a script=(
+  "$ff/last_updated.sh"
+  "$info/bit.sh"
+  "$info/ip.rb"
+  "$other/add_alias.sh"
+)
+
+for i in "${script[@]}"
+do
+  wget https://raw.githubusercontent.com/endormi/tilux/master/$i
+done

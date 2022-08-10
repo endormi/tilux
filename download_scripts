@@ -1,18 +1,24 @@
 #!/bin/bash
 
-[ ! -z "$(which ruby)" ] && echo "NOTE: Some are ruby scripts that require it."
+[ -z "$(which ruby)" ] && echo "NOTE: Some are ruby scripts that require you to have it."
 
 sleep 1
 
 ff="sys/file_folder"
+img="sys/img"
 info="sys/info"
 other="sys/other"
 
 declare -a script=(
+  "$ff/clean.sh"
+  "$ff/file_updated.rb"
   "$ff/last_updated.sh"
+  "$img/img_info.rb"
   "$info/bit.sh"
   "$info/ip.rb"
+  "$info/root.rb"
   "$other/add_alias.sh"
+  "$other/parse_date.rb"
 )
 
 for i in "${script[@]}"

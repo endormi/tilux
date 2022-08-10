@@ -1,11 +1,11 @@
 #!/bin/bash
 
-[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Git Config');"
+[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Git Config');"
 
 read -p "Name: " name
-[ $1 == "tilux" ] && catch_empty $name
+[ "$1" == "tilux" ] && catch_empty $name
 read -p "Email: " email
-[ $1 == "tilux" ] && catch_empty $email
+[ "$1" == "tilux" ] && catch_empty $email
 read -p "Do you want to set it globally? (Y/n) " c
 c="$(echo ${c} | tr 'A-Z' 'a-z')"
 

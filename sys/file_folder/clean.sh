@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Clean');"
+[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Clean');"
 
 echo "Truncate logs:"
 
@@ -21,7 +21,7 @@ echo "Empty the trash:"
 choices="1 or all"
 echo "choices: $choices (1 means going through files one by one and all means, well you know..) "
 read -p "Type in your choice: " choice
-[ $1 == "tilux" ] && catch_empty $choice
+[ "$1" == "tilux" ] && catch_empty $choice
 choice="$(echo ${choice} | tr 'A-Z' 'a-z')"
 
 case "$choice" in

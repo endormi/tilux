@@ -17,7 +17,7 @@ declare -a languages=(
 
 for i in "${languages[@]}"
 do
-  list_of_files $i
+  list_of_files "$i"
 done
 
 echo "Bash files:"

@@ -7,10 +7,10 @@ if [[ -z "$(which unzip)" ]]; then
   clear
 fi
 
-[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Zip Decryption');"
+[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Zip Decryption');"
 
 sleep 1
 
 read -p "What is the name of the .zip file? " zf
-[ $1 == "tilux" ] && catch_empty $zf
+[ "$1" == "tilux" ] && catch_empty $zf
 unzip $zf

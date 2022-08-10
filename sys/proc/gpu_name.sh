@@ -7,7 +7,7 @@ if [[ -z "$(which glxinfo)" ]]; then
   clear
 fi
 
-[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('GPU name');"
+[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('GPU name');"
 
 sleep .5
 glxinfo | grep 'Device'

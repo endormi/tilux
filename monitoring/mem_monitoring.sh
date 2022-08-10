@@ -14,7 +14,7 @@ function mem(){
   exit
 }
 
-[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Mem monitoring');"
+[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Mem monitoring');"
 sleep 1
 
 trap 'mem' INT

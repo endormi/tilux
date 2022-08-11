@@ -2,7 +2,7 @@
 
 [ -z "$(which ruby)" ] && echo "NOTE: Certain scripts require ruby."
 
-echo "NOTE: You need mini_magick to run img_info.rb!"
+echo "NOTE: You need mini_magick and graphicsmagick to run img_info.rb!"
 
 sleep 1
 

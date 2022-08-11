@@ -1,6 +1,8 @@
 #!/bin/bash
 
-[ -z "$(which ruby)" ] && echo "NOTE: Some are ruby scripts that require you to have it."
+[ -z "$(which ruby)" ] && echo "NOTE: Certain scripts require ruby."
+
+echo "NOTE: You need mini_magick to run img_info.rb!"
 
 sleep 1
 
@@ -9,6 +11,7 @@ img="sys/img"
 info="sys/info"
 other="sys/other"
 
+# Scripts I find to be the most useful
 declare -a script=(
   "$ff/clean.sh"
   "$ff/file_updated.rb"

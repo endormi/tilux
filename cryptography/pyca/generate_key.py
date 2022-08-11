@@ -22,7 +22,6 @@ time.sleep(1)
 def pw():
     # Use a password to create a key
     p = input('What is the password you want to use? ')
-    ce.__input__(p)
     password = p.encode()
     salt = os.urandom(16)
     kdf = PBKDF2HMAC(

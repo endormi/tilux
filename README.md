@@ -28,7 +28,7 @@ If you want to see a certain script added, open up a new [issue](https://github.
 
 **Note**: Only [tested](TESTED_ON.md) on Debian-based distros.
 
-If you don't want to install the whole tool. You can download specific scripts, to know how [click here](GUIDE.md#download-a-specific-script).
+If you don't want to install the whole tool. You can download a script or scripts, to know how [click here](GUIDE.md#download-script-or-scripts).
 
 > Big part of the reason why I created this project is to learn, that's why I have used different programming languages when I could've just used one.
 

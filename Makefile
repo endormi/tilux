@@ -29,6 +29,7 @@ cformat:
 	$(FORMATTER) -i $(SRCS) $(HEADERS)
 
 docs:
+	./scripts/copy_content
 	./scripts/build_sphinx
 	./scripts/run_sphinx_locally
 

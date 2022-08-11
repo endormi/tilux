@@ -1,0 +1,30 @@
+#!/bin/bash
+
+[ -z "$(which ruby)" ] && echo "NOTE: Certain scripts require ruby."
+
+echo "NOTE: You need mini_magick and graphicsmagick to run img_info.rb!"
+
+sleep 1
+
+ff="sys/file_folder"
+img="sys/img"
+info="sys/info"
+other="sys/other"
+
+# Scripts I find to be the most useful
+declare -a script=(
+  "$ff/clean.sh"
+  "$ff/file_updated.rb"
+  "$ff/last_updated.sh"
+  "$img/img_info.rb"
+  "$info/bit.sh"
+  "$info/ip.rb"
+  "$info/root.rb"
+  "$other/add_alias.sh"
+  "$other/parse_date.rb"
+)
+
+for i in "${script[@]}"
+do
+  wget https://raw.githubusercontent.com/endormi/tilux/master/$i
+done

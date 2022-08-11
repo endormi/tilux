@@ -3,7 +3,7 @@
 - [Commands to use](#commands)
 - [Run from any folder](#run-from-any-folder)
 - [Running with Docker](#running-with-docker)
-- [Download a specific script](#download-a-specific-script)
+- [Download script or scripts](#download-script-or-scripts)
 
 ## Commands
 
@@ -131,7 +131,7 @@ docker-compose exec tilux tilux
 docker-compose down
 ```
 
-## Download a specific script
+## Download script or scripts
 
 Instead of having to build everything and install everything, you might want to just install one script (or a few).
 
@@ -162,3 +162,13 @@ Run:
 
 ./bit.sh
 ```
+
+You can also directly download multiple scripts that I find to be the most useful.
+
+> Checks for ruby
+
+```bash
+wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_scripts | bash
+```
+
+You can then add the scripts to your `dotfiles`.

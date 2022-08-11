@@ -7,14 +7,14 @@ if [[ -z "$(which zip)" ]]; then
   clear
 fi
 
-[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Zip Encryption');"
+[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Zip Encryption');"
 
 sleep 1
 
 echo -e "Warning! The standard ZIP encryption is very weak.\n"
 read -p "What file(s) do you want to encrypt? " f
-[ $1 == "tilux" ] && catch_empty $f
+[ "$1" == "tilux" ] && catch_empty $f
 read -p "What is the name for the .zip file? " zf
-[ $1 == "tilux" ] && catch_empty $zf
+[ "$1" == "tilux" ] && catch_empty $zf
 
 zip --encrypt -r $zf $f

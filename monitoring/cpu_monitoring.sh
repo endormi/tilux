@@ -14,7 +14,7 @@ function cpu(){
   exit
 }
 
-[ $1 == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('CPU monitoring');"
+[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('CPU monitoring');"
 
 sleep 1
 

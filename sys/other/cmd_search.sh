@@ -1,6 +1,9 @@
 #!/bin/bash
 
-[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('CMD Search');"
+if [[ "$1" == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('CMD Search');"
+fi
 
 read -p "Search: " search
 [ "$1" == "tilux" ] && catch_empty $search

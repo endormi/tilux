@@ -1,6 +1,9 @@
 #!/bin/bash
 
-[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Clean');"
+if [[ "$1" == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('Clean');"
+fi
 
 echo "Truncate logs:"
 

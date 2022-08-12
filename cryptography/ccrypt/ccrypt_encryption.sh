@@ -7,7 +7,10 @@ if [[ -z "$(which ccrypt)" ]]; then
   clear
 fi
 
-[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('CCRYPT Encryption');"
+if [[ "$1" == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('CCRYPT Encryption');"
+fi
 
 read -p "What file do you want to encrypt? " f
 [ "$1" == "tilux" ] && catch_empty $f

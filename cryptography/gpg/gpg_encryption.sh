@@ -4,7 +4,10 @@
 # Still a WIP code
 #
 
-[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('GPG Encryption');"
+if [[ "$1" == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('GPG Encryption');"
+fi
 
 read -p "What is your name? " your_name
 [ "$1" == "tilux" ] && catch_empty $your_name

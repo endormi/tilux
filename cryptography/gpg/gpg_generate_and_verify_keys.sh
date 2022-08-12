@@ -4,7 +4,10 @@
 # Still a WIP
 #
 
-[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Generate key');"
+if [[ "$1" == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('Generate key');"
+fi
 
 read -p "Your email: " email_address
 catch_empty $email_address

@@ -1,6 +1,9 @@
 #!/bin/bash
 
-[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('BF');"
+if [[ "$1" == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('BF');"
+fi
 
 bu=`date +%d-%m-%y`
 read -p "Type in the folder you want to backup: " src

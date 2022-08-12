@@ -1,6 +1,9 @@
 #!/bin/bash
 
-[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Add alias');"
+if [[ "$1" == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('Add alias');"
+fi
 
 [ ! -f ~/.bash_aliases ] && touch ~/.bash_aliases
 

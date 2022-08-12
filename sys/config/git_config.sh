@@ -1,6 +1,9 @@
 #!/bin/bash
 
-[ "$1" == "tilux" ] && python3 -c "from tools.logos import Logo; Logo('Git Config');"
+if [[ "$1" == "tilux" ]]; then
+  source ./tools/catch
+  python3 -c "from tools.logos import Logo; Logo('Git Config');"
+fi
 
 read -p "Name: " name
 [ "$1" == "tilux" ] && catch_empty $name

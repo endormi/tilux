@@ -32,7 +32,7 @@ If you don't want to install the whole tool. You can download a script or script
 
 > Big part of the reason why I created this project is to learn, that's why I have used different programming languages when I could've just used one.
 
-#### Usage:
+## Usage:
 
 ```bash
 git clone https://github.com/endormi/tilux.git
@@ -126,7 +126,21 @@ tilux
 
 > However `tilux` is not required to run scripts individually. [See here](GUIDE.md#run-from-any-folder).
 
-To see the commands to use, how to run from any folder, how to run using Docker and how to download a specific script, click [here](GUIDE.md).
+To see the commands to use, how to run from any folder, how to run using Docker and how to download a script or scripts, click [here](GUIDE.md).
+
+Run `docs` locally:
+
+> `make docs` builds the `docs` and `run=1` runs `docs` locally.
+
+```bash
+make docs run=1
+```
+
+Run `man pages`:
+
+```bash
+./scripts/groff
+```
 
 To use `Pyca` you need to first generate key:
 

@@ -97,3 +97,19 @@ tilux
 ```
 
 **NOTE**: the command will CD into the `tilux` folder location.
+
+## Running docs
+
+Run `docs` locally:
+
+> `make docs` builds the `docs` and `run=1` runs `docs` locally.
+
+```
+make docs run=1
+```
+
+Run `man pages`:
+
+```
+./scripts/groff
+```

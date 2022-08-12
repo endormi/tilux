@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.3.5
+
+- Add:
+  - download_scripts to download scripts I find to be the most useful
+  - Instruction for downloading multiple scripts
+  - copy_content to docs target
+  - make docs to make workflow
+
+- Update:
+  - Use clang-format instead of clang-format-10
+  - Display choices better visually in openssl scripts
+
+- Fix:
+  - catch_empty command not found
+  - Unary operator expected warning
+  - pyca/generate_key to work without being in tilux
+
+- Remove:
+  - run_sphinx_locally from docs target
+
 ## 1.3.15
 
 - Add:

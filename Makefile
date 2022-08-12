@@ -32,6 +32,13 @@ docs:
 	./scripts/copy_content
 	./scripts/build_sphinx
 
+ifdef run
+	@echo "Running sphinx locally..."
+	./scripts/run_sphinx_locally
+else
+	@echo "To run sphinx locally use run=1 with docs."
+endif
+
 .PHONY: docs
 
 alias:

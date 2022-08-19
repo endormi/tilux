@@ -2,7 +2,7 @@
 
 Useful scripts, specifically to be ran for `tilux`.
 
-## Includes:
+## Includes
 
 - `add_alias` - Adds tilux alias to `bash_aliases`
 - `add_alias_venv` - Adds virtualenv alias (tvenv) to `bash_aliases`
@@ -17,4 +17,5 @@ Useful scripts, specifically to be ran for `tilux`.
 - `resize_term` - Resizes terminal
 - `run_sphinx_locally` - Run sphinx documentation locally
 - `start_dcompose` - Starts docker-compose
-- `version_update` - Updates all files that have the current version and adds a new version heading for `CHANGELOG.md`
+- `version_update` - Updates all files that have the current version
+and adds a new version heading for `CHANGELOG.md`

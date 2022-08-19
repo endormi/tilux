@@ -22,17 +22,22 @@ Tilux is a CLI with a bunch of scripts included that are useful and concise.
 
 This is still very much a work in progress.
 
-If you want to see a certain script added, open up a new [issue](https://github.com/endormi/tilux/issues/new/choose) or make a pull request.
+If you want to see a certain script added, open up a new [issue](https://github.com/endormi/tilux/issues/new/choose)
+or make a pull request.
 
-> Feel free to try on other distros. PR's for supporting different distros are very much appreciated.
+> Feel free to try on other distros.
+PR's for supporting different distros are very much appreciated.
 
 **Note**: Only [tested](TESTED_ON.md) on Debian-based distros.
 
-If you don't want to install the whole tool. You can download a script or scripts, to know how [click here](GUIDE.md#download-script-or-scripts).
+If you don't want to install the whole tool.
+You can download a script or scripts, to know how [click here](GUIDE.md#download-script-or-scripts).
 
-> Big part of the reason why I created this project is to learn, that's why I have used different programming languages when I could've just used one.
+> Big part of the reason why I created this project is to learn,
+that's why I have used different programming languages
+when I could've just used one.
 
-## Usage:
+## Usage
 
 ```bash
 git clone https://github.com/endormi/tilux.git
@@ -112,7 +117,8 @@ deactivate
 ./tilux --help
 ```
 
-If you run the `add_alias` script inside scripts folder, you can run tilux by simply running:
+If you run the `add_alias` script inside scripts folder,
+you can run tilux by simply running:
 
 > Now you can run `tilux` without having to be inside the folder.
 
@@ -124,9 +130,11 @@ tilux
 
 **Note**: `tilux` command will `CD` into the `tilux` folder location.
 
-> However `tilux` is not required to run scripts individually. [See here](GUIDE.md#run-from-any-folder).
+> However `tilux` is not required to run scripts individually.
+[See here](GUIDE.md#run-from-any-folder).
 
-To see the commands to use, how to run from any folder, how to run using Docker and how to download a script or scripts, click [here](GUIDE.md).
+To see the commands to use, how to run from any folder,
+how to run using Docker and how to download a script or scripts, click [here](GUIDE.md).
 
 Run `docs` locally:
 

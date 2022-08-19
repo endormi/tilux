@@ -23,3 +23,10 @@ repos:
     rev: v1.3.5
     hooks:
     -   id: clang-format
+-   repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 3.0.0
+    hooks:
+    -   id: bundler-audit
+    -   id: fasterer
+    -   id: forbid-binary
+    -   id: git-check

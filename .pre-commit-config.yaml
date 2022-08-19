@@ -30,3 +30,4 @@ repos:
     -   id: fasterer
     -   id: forbid-binary
     -   id: git-check
+    -   id: reek

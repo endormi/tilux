@@ -1,0 +1,10 @@
+---
+detectors:
+  TooManyStatements:
+    enabled: true
+    max_statements: 5
+
+exclude_paths:
+  # This is due to help_print having
+  # way too many statements
+  - tools/help_print.rb

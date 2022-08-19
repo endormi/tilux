@@ -17,7 +17,10 @@ If the script you're adding is under a folder, follow the format in `tools/def.r
 
 > If you have a better way to call scripts, feel free to implement it.
 
-Remember to add the new script to [guide](GUIDE.md), [tilux](tilux) [tools/help_print.rb](tools/help_print.rb) (both to the category and help, following the format), [man/tilux.1](man/tilux.1) and [chmodx](chmodx).
+Remember to add the new script to [guide](GUIDE.md),
+[tilux](tilux) [tools/help_print.rb](tools/help_print.rb)
+(both to the category and help, following the format),
+[man/tilux.1](man/tilux.1) and [chmodx](chmodx).
 
 > Working on making adding a new command faster and better. [#32](https://github.com/endormi/tilux/issues/32)
 
@@ -29,13 +32,18 @@ First, open up a new issue to ask if it is a good idea and helpful.
 
 After getting a confirmation either create a `.rst` or `.md` file.
 
-Try to keep the file clear and concise without spelling mistakes and add the file to `docs/source/index.rst` `toctree`.
+Try to keep the file clear and concise without spelling mistakes
+and add the file to `docs/source/index.rst` `toctree`.
 
 ## Updating Docs
 
-In the case you are updating `docs/source/commands.md`, `docs/source/packages.md`, `GUIDE.md` and/or `PACKAGES.md`. Changes must be made in `GUIDE.md` and/or `PACKAGES.md`. Applying the changes also to `docs/source/` using `scripts/copy_content`.
+In the case you are updating `docs/source/commands.md`, `docs/source/packages.md`,
+`GUIDE.md` and/or `PACKAGES.md`.
+Changes must be made in `GUIDE.md` and/or `PACKAGES.md`.
+Applying the changes also to `docs/source/` using `scripts/copy_content`.
 
-With either `README.md` or `index.rst` the changes must be added manually (both files have the same content).
+With either `README.md` or `index.rst` the changes
+must be added manually (both files have the same content).
 
 Make sure the docs run:
 
@@ -53,5 +61,6 @@ make docs
 
 ## Updating your Pull Request
 
-Sometimes, a maintainer of an this list will ask you to edit your Pull Request before it is included.
+Sometimes, a maintainer of an this list
+will ask you to edit your Pull Request before it is included.
 This is normally due to spelling errors or because your PR didn't match the guidelines.

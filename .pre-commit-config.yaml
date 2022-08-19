@@ -30,4 +30,10 @@ repos:
     -   id: fasterer
     -   id: forbid-binary
     -   id: git-check
+    -   id: markdownlint
+        exclude: |
+          (?x)^(
+            CHANGELOG.md|
+            CODE_OF_CONDUCT.md
+          )$
     -   id: reek

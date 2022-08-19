@@ -17,7 +17,8 @@
 
 All of the available commands:
 
-> System and cryptography commands have an extra argument for example `-c` and `-f`. This is to separate scripts into folders.
+> System and cryptography commands have an extra argument for example `-c` and `-f`.
+This is to separate scripts into folders.
 
 ```
 cryptography -c: ccrypt -e (for encryption) or -d (for decryption)
@@ -80,7 +81,8 @@ tilux --help
 
 For example:
 
-In the example below, latest updated file runs from current folder not inside tilux, same for fs.
+In the example below, latest updated file
+runs from current folder not inside tilux, same for fs.
 
 ```
 # Ruby
@@ -98,34 +100,34 @@ In the example below, latest updated file runs from current folder not inside ti
 
 You can add the scripts to your alias if you want by using `sys/other/add_alias`.
 
-## Running with Docker:
+## Running with Docker
 
 > It's still a bit buggy.
 
-You need:
-[Docker](https://docker.com) && [Docker-compose](https://docs.docker.com/compose/)
+You need: [Docker](https://docker.com) && [Docker-compose](https://docs.docker.com/compose/)
 
-> If you have a permission issue when running `docker-compose`, you can use `sudo docker-compose`.
+> If you have a permission issue when running `docker-compose`,
+you can use `sudo docker-compose`.
 
-### Build:
+### Build
 
 ```
 docker-compose build
 ```
 
-### Up:
+### Up
 
 ```
 docker-compose up -d
 ```
 
-### Execute:
+### Execute
 
 ```
 docker-compose exec tilux tilux
 ```
 
-### Down:
+### Down
 
 ```
 docker-compose down
@@ -133,13 +135,15 @@ docker-compose down
 
 ## Download script or scripts
 
-Instead of having to build everything and install everything, you might want to just install one script (or a few).
+Instead of having to build everything and install everything,
+you might want to just install one script (or a few).
 
 All you have to do is:
 
 > In this example I'm downloading the computer bit system script.
 
-**Note**: Certain scripts might not work, because by not running the build, you might not have the required packages installed.
+**Note**: Certain scripts might not work, because by not running the build,
+you might not have the required packages installed.
 
 ```
 # Example

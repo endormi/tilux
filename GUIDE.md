@@ -56,7 +56,6 @@ system -i -s:    display computer space, uptime and number of processes running
 system -o -a:    add alias
 system -o -cdp:  convert doc to pdf
 system -o -def:  default web browser
-system -o -op:   open website
 system -o -p:    parse date
 system -o -rl:   remove line
 system -o -rt:   resize terminal

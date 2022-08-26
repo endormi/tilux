@@ -5,5 +5,5 @@
 - `Image` - Image manipulation and info
 - `Info` - Computer info
 - `Other` - Scripts without a specific folder
-- `Processors` - CPU and GPU processor info
+- `Processors` - CPU info and metrics
 - `Shutdown` - Shutdown system scripts

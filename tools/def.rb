@@ -105,7 +105,6 @@ $info_options.default_proc = ->(_h, k) { raise KeyError, "#{k} Invalid choice!" 
 
 $proc_options = {
   '-cpu' => -> { sys('./sys/proc/cpu_name.sh tilux') },
-  '-gpu' => -> { sys('./sys/proc/gpu_name.sh tilux') },
   '-oc'  => lambda {
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Single core');"`
@@ -133,7 +132,6 @@ $sys_other_options = {
   '-cdp' => -> { sys('./sys/other/convert_doc_to_pdf.rb tilux') },
   '-def' => -> { sys('./sys/other/default_web_browser.sh tilux') },
   '-s'   => -> { sys('./sys/other/cmd_search.sh tilux') },
-  '-op'  => -> { sys('./sys/other/open.sh tilux') },
   '-p'   => -> { sys('./sys/other/parse_date.rb tilux') },
   '-rl'  => -> { sys('./sys/other/remove_line.sh tilux') },
   '-rt'  => -> { sys('./sys/other/resize_terminal.sh tilux') }

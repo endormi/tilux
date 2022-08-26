@@ -23,6 +23,5 @@ Other packages will be installed when running specific scripts.
 - openssl
 - zip
 - unzip
-- mesa-utils
 
 and more

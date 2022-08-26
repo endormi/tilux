@@ -83,7 +83,6 @@ end
 
 def systemp_print
   puts '-cpu: CPU name'
-  puts '-gpu: GPU name'
   puts '-mc: Multi-core process time'
   puts "-oc: Single core process time\n"
 end
@@ -140,7 +139,6 @@ def help_print
   puts 'system -o -rt:   resize terminal'
   puts 'system -o -s:    search specific command'
   puts 'system -p -cpu:  CPU name'
-  puts 'system -p -gpu:  GPU name'
   puts 'system -s -fp:   force poweroff'
   puts 'system -s -fr:   force reboot'
   puts 'Press [ENTER] to continue...'

@@ -62,9 +62,8 @@ end
 
 def systemin_print
   puts '-bit: computer bit system'
-  puts '-di:  check distro'
   puts '-ip:  IP address'
-  puts '-k:   kernel version'
+  puts '-k:   kernel and distro version'
   puts '-os:  check OS'
   puts '-prv: python and ruby version'
   puts '-r:   root (check if you are root or not)'
@@ -124,9 +123,8 @@ def help_print
   puts 'system -img -ri: resize image'
   puts 'system -img -ro: rotate image'
   puts 'system -i -bit:  computer bit system'
-  puts 'system -i -di:   check distro'
   puts 'system -i -ip:   IP address'
-  puts 'system -i -k:    kernel version'
+  puts 'system -i -k:    kernel and distro version'
   puts 'system -i -os:   check OS'
   puts 'system -i -prv:  python and ruby version'
   puts 'system -i -r:    root (check if you are root or not)'

@@ -89,7 +89,6 @@ $image_options.default_proc = ->(_h, k) { raise KeyError, "#{k} Invalid choice!"
 
 $info_options = {
   '-bit' => -> { sys('./sys/info/bit.sh tilux') },
-  '-di'  => -> { sys('./sys/info/distro.sh tilux') },
   '-ip'  => -> { sys('./sys/info/ip.rb tilux') },
   '-k'   => -> { sys('./sys/info/kernel_version.sh tilux') },
   '-os'  => -> { sys('./sys/info/os.rb tilux') },

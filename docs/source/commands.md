@@ -46,9 +46,8 @@ system -img -i:  image info
 system -img -ri: resize image
 system -img -ro: rotate image
 system -i -bit:  computer bit system
-system -i -di:   check distro
 system -i -ip:   IP address
-system -i -k:    kernel version
+system -i -k:    kernel and distro version
 system -i -os:   check OS
 system -i -prv:  python and ruby version
 system -i -r:    root (check if you are root or not)

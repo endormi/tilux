@@ -25,7 +25,6 @@ chmod +x ./sys/file_folder/clean.sh
 chmod +x ./sys/file_folder/last_updated.sh
 
 chmod +x ./sys/info/bit.sh
-chmod +x ./sys/info/distro.sh
 chmod +x ./sys/info/kernel_version.sh
 chmod +x ./sys/info/prv.sh
 

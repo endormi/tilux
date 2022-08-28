@@ -21,7 +21,7 @@ if [[ -z "$(which ruby)" ]]; then
   gem install bundler # -v 2.1.4
 fi
 
-# lsb_release is required to run sys/distro.sh script
+# lsb_release is required to run sys/kernel_version.sh script
 if [[ -z "$(which lsb_release)" ]]; then
   sudo apt update
   sudo apt install -y lsb-core

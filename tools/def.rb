@@ -104,6 +104,7 @@ $info_options.default_proc = ->(_h, k) { raise KeyError, "#{k} Invalid choice!" 
 
 $proc_options = {
   '-cpu' => -> { sys('./sys/proc/cpu_name.sh tilux') },
+  '-ps' => -> { sys('./sys/proc/list_active_ps.sh tilux') },
   '-oc'  => lambda {
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Single core');"`

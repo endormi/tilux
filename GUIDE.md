@@ -60,6 +60,7 @@ system -o -rl:   remove line
 system -o -rt:   resize terminal
 system -o -s:    search specific command
 system -p -cpu:  CPU name
+system -p -ps:   list active processes
 system -p -mc:   multi-core process time
 system -p -oc:   single core process time
 system -s -fp:   force poweroff

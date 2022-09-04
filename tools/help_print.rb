@@ -82,9 +82,9 @@ end
 
 def systemp_print
   puts '-cpu: CPU name'
-  puts '-ps:  List active processes'
-  puts '-mc:  Multi-core process time'
-  puts "-oc:  Single core process time\n"
+  puts '-ps:  list active processes'
+  puts '-mc:  multi-core process time'
+  puts "-oc:  single core process time\n"
 end
 
 def systems_print

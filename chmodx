@@ -35,6 +35,7 @@ chmod +x ./sys/other/remove_line.sh
 chmod +x ./sys/other/resize_terminal.sh
 
 chmod +x ./sys/proc/cpu_name.sh
+chmod +x ./sys/proc/list_active_ps.sh
 
 chmod +x ./sys/shutdown/force_poweroff.sh
 chmod +x ./sys/shutdown/force_reboot.sh

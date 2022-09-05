@@ -82,9 +82,9 @@ end
 
 def systemp_print
   puts '-cpu: CPU name'
-  puts '-ps:  list active processes'
   puts '-mc:  multi-core process time'
-  puts "-oc:  single core process time\n"
+  puts '-oc:  single core process time'
+  puts "-ps:  list active processes\n"
 end
 
 def systems_print
@@ -138,9 +138,9 @@ def help_print
   puts 'system -o -rt:   resize terminal'
   puts 'system -o -s:    search specific command'
   puts 'system -p -cpu:  CPU name'
-  puts 'system -p -ps:   list active processes'
   puts 'system -p -mc:   multi-core process time'
   puts 'system -p -oc:   single core process time'
+  puts 'system -p -ps:   list active processes'
   puts 'system -s -fp:   force poweroff'
   puts 'system -s -fr:   force reboot'
   puts 'Press [ENTER] to continue...'

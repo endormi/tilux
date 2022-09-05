@@ -104,7 +104,6 @@ $info_options.default_proc = ->(_h, k) { raise KeyError, "#{k} Invalid choice!" 
 
 $proc_options = {
   '-cpu' => -> { sys('./sys/proc/cpu_name.sh tilux') },
-  '-ps' => -> { sys('./sys/proc/list_active_ps.sh tilux') },
   '-oc'  => lambda {
     system('clear')
     print `python3 -c "from tools.logos import Logo; Logo('Single core');"`
@@ -116,7 +115,8 @@ $proc_options = {
     print `python3 -c "from tools.logos import Logo; Logo('Multi-core');"`
     sleep(1)
     system('./sys/proc/multi_core.o')
-  }
+  },
+  '-ps' => -> { sys('./sys/proc/list_active_ps.sh tilux') }
 }
 $proc_options.default_proc = ->(_h, k) { raise KeyError, "#{k} Invalid choice!" }
 

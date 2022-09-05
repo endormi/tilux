@@ -1,0 +1,28 @@
+#!/bin/bash
+
+if [[ -z "$(which jq)" ]]; then
+  echo "Installing jq which is required to run this script."
+  sudo apt update
+  sudo apt install jq
+  clear
+fi
+
+if [[ -z "$(which fzf)" ]]; then
+  echo "Installing fzf which is required to run this script."
+  sudo apt update
+  sudo apt install fzf
+  clear
+fi
+
+if [[ -z "$(which unzip)" ]]; then
+  echo "Installing unzip which is required to run this script."
+  sudo apt update
+  sudo apt install unzip
+  clear
+fi
+
+releases=$(curl -sL https://api.github.com/repos/endormi/tilux/releases | jq -r ".[]" | jq -r ".tag_name")
+version=$(echo $releases | tr ' ' '\n' | fzf)
+
+file_ext="zip"
+wget https://github.com/endormi/tilux/archive/refs/tags/$version.$file_ext && unzip $version.$file_ext && rm $version.$file_ext

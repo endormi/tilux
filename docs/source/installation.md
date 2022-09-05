@@ -4,6 +4,8 @@ How to install `tilux`?
 
 Installing `tilux` is very easy.
 
+You have three options to download the project:
+
 Clone the project:
 
 ```
@@ -18,10 +20,24 @@ You can also get the latest release:
 wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_latest_release | bash
 ```
 
-And then CD into the folder:
+If you wish to get a specific release and not the latest:
+
+> It will install jq and fzf, if you don't already have them.
 
 ```
-cd tilux-v.(latest_release)
+wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_specific_release | bash
+```
+
+And then `CD` into the folder:
+
+```
+# Either
+cd tilux
+
+# or
+cd tilux-v.(release)
+
+# Depending on how you downloaded tilux
 ```
 
 Run `build`:

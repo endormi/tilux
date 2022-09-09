@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.3.75
+
+- Add:
+  - List active processes script
+  - Download specific release script
+  - Option to run sphinx locally in target docs and instructions to run docs locally
+  - Updated date and time to last updated file script
+  - New lines to single core and multi-core script
+  - BASH_VERSION to prv script
+  - Bundler-audit, fasterer, forbid-binary, git-check, reek and markdownlint pre-commit hook
+
+- Update:
+  - Move distro commands to kernel_version
+  - Requirements
+
+- Fix:
+  - Download latest script
+  - Requirements
+
+- Remove:
+  - Open website and gpu script
+
 ## 1.3.5
 
 - Add:

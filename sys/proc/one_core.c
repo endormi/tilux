@@ -31,6 +31,7 @@ int main() {
 
   end_time = clock();
   run_time = (end_time - start_time) / (double)CLOCKS_PER_SEC;
-  printf("This machine calculated all prime numbers under %i in %g seconds.\n",
-         MAX_PRIME, run_time);
+  printf(
+      "\nThis machine calculated all prime numbers under %i in %g seconds.\n\n",
+      MAX_PRIME, run_time);
 }

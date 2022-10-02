@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.0
+
+- Add:
+  - Light red color
+
+- Update:
+  - Change colors to match my system
+  - GitHub action to only run if specific paths are modified
+
 ## 1.3.75
 
 - Add:

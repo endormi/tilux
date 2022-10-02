@@ -35,6 +35,10 @@ class String
     color(34)
   end
 
+  def light_blue
+    light_color(34)
+  end
+
   def white
     light_color(37)
   end

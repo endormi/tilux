@@ -16,16 +16,16 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
      888       888   888          888       8     .8PY888.
      888       888   888       o   88.    .8     d8    888b
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
-".green
+".red
 print 'version'.white
-print " #{version}".light_yellow
+print " #{version}".light_blue
 print ' by Endormi '.white
 link = "\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a"
 puts link.white
 
 sleep 1
 
-prompt = 'tilux~#'.green
+prompt = 'tilux~#'.light_yellow
 
 def sys(file)
   system('clear')

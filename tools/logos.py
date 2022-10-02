@@ -5,7 +5,7 @@ from termcolor import cprint
 
 
 font = 'slant'
-c = 'green'
+c = 'red'
 
 
 class Logo:

@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+    paths:
+      - '**.rb'
+      - '**/**.rb'
+      - '**/**/**.rb'
   pull_request:
 
 jobs:

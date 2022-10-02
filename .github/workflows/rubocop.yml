@@ -9,6 +9,10 @@ on:
       - '**/**.rb'
       - '**/**/**.rb'
   pull_request:
+    paths:
+      - '**.rb'
+      - '**/**.rb'
+      - '**/**/**.rb'
 
 jobs:
   rubocop:

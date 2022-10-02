@@ -12,6 +12,13 @@ on:
       - 'sys/**/**.h'
       - 'tools/**.h'
   pull_request:
+    paths:
+      - 'cryptography/pyca/**.py'
+      - 'monitoring/**.py'
+      - 'tools/**.py'
+      - 'sys/**/**.c'
+      - 'sys/**/**.h'
+      - 'tools/**.h'
   schedule:
     - cron: '0 0 * * *'
 

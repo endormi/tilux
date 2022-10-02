@@ -9,6 +9,10 @@ on:
       - 'sys/**/**.c'
       - 'sys/**/**.h'
   pull_request:
+    paths:
+      - 'docs/**'
+      - 'sys/**/**.c'
+      - 'sys/**/**.h'
 
 jobs:
   test:

@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'cryptography/pyca/**.py'
+      - 'monitoring/**.py'
+      - 'tools/**.py'
+      - 'sys/**/**.c'
+      - 'sys/**/**.h'
+      - 'tools/**.h'
   pull_request:
   schedule:
     - cron: '0 0 * * *'

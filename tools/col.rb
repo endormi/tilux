@@ -15,6 +15,10 @@ class String
     color(31)
   end
 
+  def light_red
+    light_color(31)
+  end
+
   def green
     color(32)
   end

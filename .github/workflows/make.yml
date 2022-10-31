@@ -8,11 +8,13 @@ on:
       - 'docs/**'
       - 'sys/**/**.c'
       - 'sys/**/**.h'
+      - 'tools/**.h'
   pull_request:
     paths:
       - 'docs/**'
       - 'sys/**/**.c'
       - 'sys/**/**.h'
+      - 'tools/**.h'
 
 jobs:
   test:

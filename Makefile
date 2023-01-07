@@ -46,3 +46,8 @@ alias:
 	./scripts/add_alias_venv
 
 .PHONY: alias
+
+pre-commit:
+	pre-commit run --all-files
+
+.PHONY: pre-commit

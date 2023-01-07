@@ -47,6 +47,11 @@ alias:
 
 .PHONY: alias
 
+groff:
+	./scripts/groff
+
+.PHONY: groff
+
 pre-commit:
 	pre-commit run --all-files
 

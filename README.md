@@ -126,7 +126,7 @@ deactivate
 **Run** `tilux` using arguments:
 
 ```bash
-./tilux monitoring -c
+./tilux 2 -c
 ```
 
 `--help`:
@@ -165,7 +165,7 @@ make docs run=1
 Run `man pages`:
 
 ```bash
-./scripts/groff
+make groff
 ```
 
 To use `Pyca` you need to first generate key:

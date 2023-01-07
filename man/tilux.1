@@ -6,7 +6,7 @@ tilux
 .B ./tilux
 [-h]
 [--help]
-[1 -c -e]
+[1 -cc -e]
 [2 -c]
 [3 -i]
 [4 -i -o]
@@ -23,157 +23,157 @@ Monitoring consists of CPU, memory and website.
 .PP
 Networking consists of IP and server pinging.
 .PP
-System consists of many system related scripts such as. configurations, system info etc.
+System consists of many system related scripts such as. configurations, system info, etc.
 .PP
-NOTE: In the options example below, I have for example cryptography -c -e. Here is a list of the available options: cryptography (1, cryptography or crypto), monitoring (2 or monitoring), networking (3, networking or net) and system (4, system or sys).
+NOTE: In the options example below, I have for example cryptography -cc -e. Here is a list of the available options: 1 (cryptography), 2 (monitoring), 3 (networking) and 4 (system).
 
 .SH OPTIONS
 .TP
 .BR \-h ", " \-\-help
 display help information.
 .TP
-.BR cryptography " " -c " " -e
+.BR 1 " " -cc " " -e
 ccrypt encryption.
 .TP
-.BR cryptography " " -c " " -d
+.BR 1 " " -cc " " -d
 ccrypt decryption.
 .TP
-.BR cryptography " " -o " " -e
+.BR 1 " " -op " " -e
 Openssl encryption.
 .TP
-.BR cryptography " " -o " " -d
+.BR 1 " " -op " " -d
 Openssl decryption.
 .TP
-.BR cryptography " " -p " " -e
+.BR 1 " " -pc " " -e
 Pyca encryption.
 .TP
-.BR cryptography " " -p " " -d
+.BR 1 " " -pc " " -d
 Pyca decryption.
 .TP
-.BR cryptography " " -z " " -e
+.BR 1 " " -zp " " -e
 Zip encryption.
 .TP
-.BR cryptography " " -z " " -d
+.BR 1 " " -zp " " -d
 Zip decryption.
 .TP
-.BR monitoring " " -c
+.BR 2 " " -c
 monitoring cpu processes.
 .TP
-.BR monitoring " " -m
+.BR 2 " " -m
 monitoring memory consumption.
 .TP
-.BR monitoring " " -w
+.BR 2 " " -w
 monitoring website (if it's up and if not it sends an email).
 .TP
-.BR networking " " -i
+.BR 3 " " -i
 IP pinging.
 .TP
-.BR networking " " -s
+.BR 3 " " -s
 server pinging.
 .TP
-.BR system " " -c " " -gc
+.BR 4 " " -c " " -gc
 configure git.
 .TP
-.BR system " " -c " " -gtd
+.BR 4 " " -c " " -gtd
 gnome terminal profile dump.
 .TP
-.BR system " " -c " " -gtl
+.BR 4 " " -c " " -gtl
 gnome terminal profile load.
 .TP
-.BR system " " -f " " -bf
+.BR 4 " " -f " " -bf
 bf (backup folder).
 .TP
-.BR system " " -f " " -c
+.BR 4 " " -f " " -c
 clean (clean system of logs and trash).
 .TP
-.BR system " " -f " " -del
+.BR 4 " " -f " " -del
 del (delete file or directory).
 .TP
-.BR system " " -f " " -e
+.BR 4 " " -f " " -e
 exists (check if file or dir exists).
 .TP
-.BR system " " -f " " -fd
+.BR 4 " " -f " " -fd
 fd (number of files and folders).
 .TP
-.BR system " " -f " " -fl
+.BR 4 " " -f " " -fl
 file updated.
 .TP
-.BR system " " -f " " -fs
+.BR 4 " " -f " " -fs
 file size.
 .TP
-.BR system " " -f " " -l
+.BR 4 " " -f " " -l
 last updated (file).
 .TP
-.BR system " " -img " " -ci
+.BR 4 " " -img " " -ci
 convert image.
 .TP
-.BR system " " -img " " -i
+.BR 4 " " -img " " -i
 image info.
 .TP
-.BR system " " -img " " -ri
+.BR 4 " " -img " " -ri
 resize image.
 .TP
-.BR system " " -img " " -ro
+.BR 4 " " -img " " -ro
 rotate image.
 .TP
-.BR system " " -i " " -bit
+.BR 4 " " -i " " -bit
 computer bit system.
 .TP
-.BR system " " -i " " -ip
+.BR 4 " " -i " " -ip
 IP address.
 .TP
-.BR system " " -i " " -k
+.BR 4 " " -i " " -k
 kernel and distro version.
 .TP
-.BR system " " -i " " -os
+.BR 4 " " -i " " -os
 check OS.
 .TP
-.BR system " " -i " " -prv
+.BR 4 " " -i " " -prv
 python and ruby version.
 .TP
-.BR system " " -i " " -r
+.BR 4 " " -i " " -r
 root (check if you are root or not).
 .TP
-.BR system " " -i " " -s
+.BR 4 " " -i " " -s
 display computer space, uptime and number of processes running.
 .TP
-.BR system " " -o " " -a
+.BR 4 " " -o " " -a
 add alias.
 .TP
-.BR system " " -o " " -cdp
+.BR 4 " " -o " " -cdp
 convert doc to pdf.
 .TP
-.BR system " " -o " " -def
+.BR 4 " " -o " " -def
 default web browser.
-.TP
-.BR system " " -o " " -p
+.TP4
+.BR 4 " " -o " " -p
 parse date.
 .TP
-.BR system " " -o " " -rl
+.BR 4 " " -o " " -rl
 remove line.
 .TP
-.BR system " " -o " " -rt
+.BR 4 " " -o " " -rt
 resize terminal.
 .TP
-.BR system " " -o " " -s
+.BR 4 " " -o " " -s
 search specific command.
 .TP
-.BR system " " -p " " -cpu
+.BR 4 " " -p " " -cpu
 CPU name.
 .TP
-.BR system " " -p " " -mc
+.BR 4 " " -p " " -mc
 multi-core process time.
 .TP
-.BR system " " -p " " -oc
+.BR 4 " " -p " " -oc
 single core process time.
 .TP
-.BR system " " -p " " -ps
+.BR 4 " " -p " " -ps
 list active processes.
 .TP
-.BR system " " -s " " -fp
+.BR 4 " " -s " " -fp
 force poweroff.
 .TP
-.BR system " " -s " " -fr
+.BR 4 " " -s " " -fr
 force reboot.
 
 .SH AUTHOR

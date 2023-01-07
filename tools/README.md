@@ -14,7 +14,6 @@ empty inputs in different languages (since I've used multiple languages).
 
 `col.rb` ANSI-Colors for Ruby.
 
-`def.rb` that is included inside `tilux` that makes it cleaner code
-by just running for example `monitoring_options(ARGV[1])` to run script.
+`options.rb` to run scripts.
 
 `help_print.rb` displays the help texts.

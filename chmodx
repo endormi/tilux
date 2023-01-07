@@ -91,5 +91,5 @@ chmod +x ./cryptography/pyca/generate_key.py
 # Tools
 chmod +x ./tools/catch_exception.rb
 chmod +x ./tools/col.rb
-chmod +x ./tools/def.rb
+chmod +x ./tools/options.rb
 chmod +x ./tools/help_print.rb

@@ -13,7 +13,7 @@ Please ensure your pull request adheres to the following guidelines:
 
 For adding new scripts keep the code clear and concise.
 
-If the script you're adding is under a folder, follow the format in `tools/def.rb`.
+If the script you're adding is under a folder, follow the format in `tools/options.rb`.
 
 > If you have a better way to call scripts, feel free to implement it.
 

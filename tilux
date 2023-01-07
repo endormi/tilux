@@ -112,7 +112,7 @@ else
   arg1 = ARGV[1].to_s.downcase.strip
   arg2 = ARGV[2].to_s.downcase.strip
 
-  if arg_0 == '--help'
+  if arg0 == '--help'
     sys('clear')
     help_print
     exit

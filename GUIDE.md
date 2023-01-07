@@ -12,7 +12,7 @@
 ```
 # Example
 
-./tilux cryptography -o -e
+./tilux 1 -cc -e
 ```
 
 All of the available commands:
@@ -21,50 +21,50 @@ All of the available commands:
 This is to separate scripts into folders.
 
 ```
-cryptography -c: ccrypt -e (for encryption) or -d (for decryption)
-cryptography -o: Openssl -e (for encryption) or -d (for decryption)
-cryptography -p: Pyca -e (for encryption) or -d (for decryption)
-cryptography -z: Zip -e (for encryption) or -d (for decryption)
-monitoring -c: monitoring cpu processes
-monitoring -m: monitoring memory consumption
-monitoring -w: monitoring website (if it's up and if not it sends an email)
-networking -i: IP pinging
-networking -s: server pinging
-system -c -gc:   configure git
-system -c -gtd:  gnome terminal profile dump
-system -c -gtl:  gnome terminal profile load
-system -f -bf:   bf (backup folder)
-system -f -c:    clean (clean system of logs and trash)
-system -f -del:  del (delete file or directory)
-system -f -e:    exists (check if file or dir exists)
-system -f -fd:   fd (number of files and folders)
-system -f -fl:   file updated
-system -f -fs:   file size
-system -f -l:    last updated (file)
-system -img -ci: convert image
-system -img -i:  image info
-system -img -ri: resize image
-system -img -ro: rotate image
-system -i -bit:  computer bit system
-system -i -ip:   IP address
-system -i -k:    kernel and distro version
-system -i -os:   check OS
-system -i -prv:  python and ruby version
-system -i -r:    root (check if you are root or not)
-system -i -s:    display computer space, uptime and number of processes running
-system -o -a:    add alias
-system -o -cdp:  convert doc to pdf
-system -o -def:  default web browser
-system -o -p:    parse date
-system -o -rl:   remove line
-system -o -rt:   resize terminal
-system -o -s:    search specific command
-system -p -cpu:  CPU name
-system -p -mc:   multi-core process time
-system -p -oc:   single core process time
-system -p -ps:   list active processes
-system -s -fp:   force poweroff
-system -s -fr:   force reboot
+1 -cc: ccrypt -e (for encryption) or -d (for decryption)
+1 -op: Openssl -e (for encryption) or -d (for decryption)
+1 -pc: Pyca -e (for encryption) or -d (for decryption)
+1 -zp: Zip -e (for encryption) or -d (for decryption)
+2 -c: monitoring cpu processes
+2 -m: monitoring memory consumption
+2 -w: monitoring website (if it's up and if not it sends an email)
+3 -i: IP pinging
+3 -s: server pinging
+4 -c -gc:   configure git
+4 -c -gtd:  gnome terminal profile dump
+4 -c -gtl:  gnome terminal profile load
+4 -f -bf:   bf (backup folder)
+4 -f -c:    clean (clean system of logs and trash)
+4 -f -del:  del (delete file or directory)
+4 -f -e:    exists (check if file or dir exists)
+4 -f -fd:   fd (number of files and folders)
+4 -f -fl:   file updated
+4 -f -fs:   file size
+4 -f -l:    last updated (file)
+4 -img -ci: convert image
+4 -img -i:  image info
+4 -img -ri: resize image
+4 -img -ro: rotate image
+4 -i -bit:  computer bit system
+4 -i -ip:   IP address
+4 -i -k:    kernel and distro version
+4 -i -os:   check OS
+4 -i -prv:  python and ruby version
+4 -i -r:    root (check if you are root or not)
+4 -i -s:    display computer space, uptime and number of processes running
+4 -o -a:    add alias
+4 -o -cdp:  convert doc to pdf
+4 -o -def:  default web browser
+4 -o -p:    parse date
+4 -o -rl:   remove line
+4 -o -rt:   resize terminal
+4 -o -s:    search specific command
+4 -p -cpu:  CPU name
+4 -p -mc:   multi-core process time
+4 -p -oc:   single core process time
+4 -p -ps:   list active processes
+4 -s -fp:   force poweroff
+4 -s -fr:   force reboot
 ```
 
 Help command:
@@ -99,8 +99,6 @@ runs from current folder not inside tilux, same for fs.
 You can add the scripts to your alias if you want by using `sys/other/add_alias`.
 
 ## Running with Docker
-
-> It's still a bit buggy.
 
 You need: [Docker](https://docker.com) && [Docker-compose](https://docs.docker.com/compose/)
 

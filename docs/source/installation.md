@@ -91,7 +91,7 @@ Run `tilux`:
 You can also use arguments to run `tilux`:
 
 ```
-./tilux monitoring -c
+./tilux 2 -c
 ```
 
 Run `--help`:
@@ -127,5 +127,5 @@ make docs run=1
 Run `man pages`:
 
 ```
-./scripts/groff
+make groff
 ```

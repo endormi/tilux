@@ -1,5 +1,11 @@
 #!/usr/bin/ruby
 
+### Cryptography options
+def cryptography_print
+  puts '-e: Encrypt'
+  puts "-d: Decrypt\n"
+end
+
 def tilux_print
   puts '  {1} -- 4 choices for encryption and decryption'
   puts '  {2} -- Monitoring different processes'
@@ -9,10 +15,10 @@ def tilux_print
 end
 
 def crypto_print
-  puts 'cryptography -c: CCRYPT'
-  puts 'cryptography -o: Openssl'
-  puts 'cryptography -p: Pyca'
-  puts "cryptography -z: Zip\n"
+  puts '-cc: CCRYPT'
+  puts '-op: Openssl'
+  puts '-pc: Pyca'
+  puts "-zp: Zip\n"
 end
 
 def monitoring_print
@@ -27,22 +33,24 @@ def net_print
 end
 
 def system_print
-  puts 'system -c:   config'
-  puts 'system -f:   files and folders'
-  puts 'system -img: image'
-  puts 'system -i:   info'
-  puts 'system -o:   other'
-  puts 'system -p:   processors'
-  puts "system -s:   shutdown\n"
+  puts '-c:   config'
+  puts '-f:   files and folders'
+  puts '-img: image'
+  puts '-i:   info'
+  puts '-o:   other'
+  puts '-p:   processors'
+  puts "-s:   shutdown\n"
 end
 
 def systemc_print
+  puts '::CONFIG::'
   puts '-gc:  configure git'
   puts '-gtd: gnome terminal profile dump'
   puts "-gtl: gnome terminal profile load\n"
 end
 
 def systemf_print
+  puts '::FF::'
   puts '-bf:  bf (backup folder)'
   puts '-c:   clean (clean system of logs and trash)'
   puts '-del: del (delete file or directory)'
@@ -54,6 +62,7 @@ def systemf_print
 end
 
 def systemi_print
+  puts '::IMG::'
   puts '-ci: convert image'
   puts '-i:  image info'
   puts '-ri: resize image'
@@ -61,6 +70,7 @@ def systemi_print
 end
 
 def systemin_print
+  puts '::INFO::'
   puts '-bit: computer bit system'
   puts '-ip:  IP address'
   puts '-k:   kernel and distro version'
@@ -71,6 +81,7 @@ def systemin_print
 end
 
 def systemo_print
+  puts '::OTHER::'
   puts '-a:   add alias'
   puts '-cdp: convert doc to pdf'
   puts '-def: default web browser'
@@ -96,53 +107,52 @@ def help_print
   puts 'Interactive:'
   puts "Running the files interactively ./tilux and then follow the choices\n"
   puts 'Args:'
-  puts 'Running the files with args ./tilux (and then the argument e.g. cryptography -c -e)'
-  puts "Note: The uppercase doesn't work currently with args.\n\n"
+  puts "Running the files with args ./tilux (and then the argument e.g. 1 -c -e)\n\n"
 
-  puts 'cryptography -c: ccrypt -e (for encryption) or -d (for decryption)'
-  puts 'cryptography -o: Openssl -e (for encryption) or -d (for decryption)'
-  puts 'cryptography -p: Pyca -e (for encryption) or -d (for decryption)'
-  puts 'cryptography -z: Zip -e (for encryption) or -d (for decryption)'
-  puts 'monitoring -c: monitoring cpu processes'
-  puts 'monitoring -m: monitoring memory consumption'
-  puts "monitoring -w: monitoring website (if it's up and if not it sends an email)"
-  puts 'networking -i: IP pinging'
-  puts 'networking -s: server pinging'
-  puts 'system -c -gc:   configure git'
-  puts 'system -c -gtd:  gnome terminal profile dump'
-  puts 'system -c -gtl:  gnome terminal profile load'
-  puts 'system -f -bf:   bf (backup folder)'
-  puts 'system -f -c:    clean (clean system of logs and trash)'
-  puts 'system -f -del:  del (delete file or directory)'
-  puts 'system -f -e:    exists (check if file or dir exists)'
-  puts 'system -f -fd:   fd (number of files and folders)'
-  puts 'system -f -fl:   file updated'
-  puts 'system -f -fs:   file size'
-  puts 'system -f -l:    last updated (file)'
-  puts 'system -img -ci: convert image'
-  puts 'system -img -i:  image info'
-  puts 'system -img -ri: resize image'
-  puts 'system -img -ro: rotate image'
-  puts 'system -i -bit:  computer bit system'
-  puts 'system -i -ip:   IP address'
-  puts 'system -i -k:    kernel and distro version'
-  puts 'system -i -os:   check OS'
-  puts 'system -i -prv:  python and ruby version'
-  puts 'system -i -r:    root (check if you are root or not)'
-  puts 'system -i -s:    display computer space, uptime and number of processes running'
-  puts 'system -o -a:    add alias'
-  puts 'system -o -cdp:  convert doc to pdf'
-  puts 'system -o -def:  default web browser'
-  puts 'system -o -p:    parse date'
-  puts 'system -o -rl:   remove line'
-  puts 'system -o -rt:   resize terminal'
-  puts 'system -o -s:    search specific command'
-  puts 'system -p -cpu:  CPU name'
-  puts 'system -p -mc:   multi-core process time'
-  puts 'system -p -oc:   single core process time'
-  puts 'system -p -ps:   list active processes'
-  puts 'system -s -fp:   force poweroff'
-  puts 'system -s -fr:   force reboot'
+  puts '1 -cc: ccrypt -e (for encryption) or -d (for decryption)'
+  puts '1 -op: Openssl -e (for encryption) or -d (for decryption)'
+  puts '1 -pc: Pyca -e (for encryption) or -d (for decryption)'
+  puts '1 -zp: Zip -e (for encryption) or -d (for decryption)'
+  puts '2 -c: monitoring cpu processes'
+  puts '2 -m: monitoring memory consumption'
+  puts "2 -w: monitoring website (if it's up and if not it sends an email)"
+  puts '3 -i: IP pinging'
+  puts '3 -s: server pinging'
+  puts '4 -c -gc:   configure git'
+  puts '4 -c -gtd:  gnome terminal profile dump'
+  puts '4 -c -gtl:  gnome terminal profile load'
+  puts '4 -f -bf:   bf (backup folder)'
+  puts '4 -f -c:    clean (clean system of logs and trash)'
+  puts '4 -f -del:  del (delete file or directory)'
+  puts '4 -f -e:    exists (check if file or dir exists)'
+  puts '4 -f -fd:   fd (number of files and folders)'
+  puts '4 -f -fl:   file updated'
+  puts '4 -f -fs:   file size'
+  puts '4 -f -l:    last updated (file)'
+  puts '4 -img -ci: convert image'
+  puts '4 -img -i:  image info'
+  puts '4 -img -ri: resize image'
+  puts '4 -img -ro: rotate image'
+  puts '4 -i -bit:  computer bit system'
+  puts '4 -i -ip:   IP address'
+  puts '4 -i -k:    kernel and distro version'
+  puts '4 -i -os:   check OS'
+  puts '4 -i -prv:  python and ruby version'
+  puts '4 -i -r:    root (check if you are root or not)'
+  puts '4 -i -s:    display computer space, uptime and number of processes running'
+  puts '4 -o -a:    add alias'
+  puts '4 -o -cdp:  convert doc to pdf'
+  puts '4 -o -def:  default web browser'
+  puts '4 -o -p:    parse date'
+  puts '4 -o -rl:   remove line'
+  puts '4 -o -rt:   resize terminal'
+  puts '4 -o -s:    search specific command'
+  puts '4 -p -cpu:  CPU name'
+  puts '4 -p -mc:   multi-core process time'
+  puts '4 -p -oc:   single core process time'
+  puts '4 -p -ps:   list active processes'
+  puts '4 -s -fp:   force poweroff'
+  puts '4 -s -fr:   force reboot'
   puts 'Press [ENTER] to continue...'
   $stdin.getch
 end

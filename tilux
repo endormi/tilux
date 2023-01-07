@@ -38,7 +38,7 @@ end
 
 def _print(choice, option)
   c(empty_input?(choice), sys('clear'), option[choice].call)
-  print "#{$prompt}"
+  print $prompt.to_s
 end
 
 def choices(choice)
@@ -50,13 +50,13 @@ def choices(choice)
     '--help' => lambda {
       help_print
       exit
-    },
+    }
   }
 
   begin
     c(_print(choice, print_cmd))
-  rescue
-    abort("Incorrect choice!")
+  rescue StandardError
+    abort('Incorrect choice!')
   end
 end
 
@@ -72,61 +72,62 @@ def nested_choices(nested_choice)
     '-i'   => -> { systemin_print },
     '-o'   => -> { systemo_print },
     '-p'   => -> { systemp_print },
-    '-s'   => -> { systems_print },
+    '-s'   => -> { systems_print }
   }
 
   begin
     c(_print(nested_choice, nested_print_cmd))
-  rescue
-    abort("Incorrect choice!")
+  rescue StandardError
+    abort('Incorrect choice!')
   end
 end
 
 if ARGV.empty?
   puts "\nWhat script do you want to run?\n".white
   tilux_print
-  print "#{$prompt}"
-  input_0 = gets.chomp.to_s.downcase.strip
-  choices(input_0)
+  print $prompt.to_s
+  input0 = gets.chomp.to_s.downcase.strip
+  choices(input0)
 
-  input_1 = gets.chomp.to_s.downcase.strip
-  has_nested_hash = $opts[:"#{input_0}"]&.[](:"#{input_1}")
+  input1 = gets.chomp.to_s.downcase.strip
+  has_nested_hash = $opts[:"#{input0}"]&.[](:"#{input1}")
 
   # Means that it has more nested hashes
   if has_nested_hash.is_a?(Hash)
     nested_choices(input_1)
-    input_2 = gets.chomp.to_s.downcase.strip
-    value = $opts.dig(:"#{input_0}", :"#{input_1}", :"#{input_2}")
+    input2 = gets.chomp.to_s.downcase.strip
+    value = $opts.dig(:"#{input0}", :"#{input1}", :"#{input2}")
   else
-    value = $opts.dig(:"#{input_0}", :"#{input_1}")
+    value = $opts.dig(:"#{input0}", :"#{input1}")
   end
 
   begin
     c(value.call)
-  rescue
-    abort("Incorrect choice!")
+  rescue StandardError
+    abort('Incorrect choice!')
   end
 
 else
-  arg_0 = ARGV[0].to_s.downcase.strip
-  arg_1 = ARGV[1].to_s.downcase.strip
-  arg_2 = ARGV[2].to_s.downcase.strip
+  arg0 = ARGV[0].to_s.downcase.strip
+  arg1 = ARGV[1].to_s.downcase.strip
+  arg2 = ARGV[2].to_s.downcase.strip
 
-  if arg_0 == "--help"
+  if arg_0 == '--help'
     sys('clear')
     help_print
     exit
   end
 
-  if arg_2.empty?
-    value = $opts.dig(:"#{arg_0}", :"#{arg_1}")
-  else
-    value = $opts.dig(:"#{arg_0}", :"#{arg_1}", :"#{arg_2}")
-  end
+  value = if arg2.empty?
+            $opts.dig(:"#{arg0}", :"#{arg1}")
+          else
+            $opts.dig(:"#{arg0}", :"#{arg1}", :"#{arg2}")
+          end
 
   begin
     c(value.call)
-  rescue
-    abort("Incorrect choice!")
+  rescue StandardError
+    abort('Incorrect choice!')
   end
+
 end

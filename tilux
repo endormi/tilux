@@ -43,10 +43,10 @@ end
 
 def choices(choice)
   print_cmd = {
-    '1'      => -> { crypto_print },
-    '2'      => -> { monitoring_print },
-    '3'      => -> { net_print },
-    '4'      => -> { system_print },
+    '1'      =>     -> { crypto_print },
+    '2'      =>     -> { monitoring_print },
+    '3'      =>     -> { net_print },
+    '4'      =>     -> { system_print },
     '--help' => lambda {
       help_print
       exit
@@ -94,7 +94,7 @@ if ARGV.empty?
 
   # Means that it has more nested hashes
   if has_nested_hash.is_a?(Hash)
-    nested_choices(input_1)
+    nested_choices(input1)
     input2 = gets.chomp.to_s.downcase.strip
     value = $opts.dig(:"#{input0}", :"#{input1}", :"#{input2}")
   else

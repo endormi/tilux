@@ -6,6 +6,7 @@
   - Pre-commit Makefile target
   - Groff Makefile target
   - tools/ path to make workflow
+  - Display current version on scripts/version_update
 
 - Update:
   - Refactor tilux and tools/options

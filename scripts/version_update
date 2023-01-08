@@ -5,6 +5,7 @@
 files=".version docs/source/conf.py README.md tilux"
 old_version=$(cat .version)
 
+echo "Current version is: $old_version"
 read -p "New version: " new_version
 [ -z $new_version ] && echo "You need to add a new version." && exit
 

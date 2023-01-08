@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.15
+
+- Add:
+  - Pre-commit Makefile target
+  - Groff Makefile target
+  - tools/ path to make workflow
+
+- Update:
+  - Refactor tilux and tools/options
+  - Command list
+
 ## 1.4.0
 
 - Add:

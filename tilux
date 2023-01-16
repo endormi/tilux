@@ -7,7 +7,11 @@ require_relative 'tools/col'
 require_relative 'tools/help_print'
 require_relative 'tools/options'
 
-version = 'v.1.4.15'
+file = File.open('.version')
+ver = file.read
+version = ver.strip
+file.close
+
 puts "
 ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 8    888    8  888   888          888       8    8888    d8

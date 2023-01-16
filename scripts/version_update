@@ -2,12 +2,12 @@
 
 [ ! -d scripts ] && cd ..
 
-files=".version docs/source/conf.py README.md tilux"
-old_version=$(cat .version)
+files=".version docs/source/conf.py README.md"
+current_version=$(cat .version)
 
-echo "Current version is: $old_version"
+echo "Current version is: $current_version"
 read -p "New version: " new_version
 [ -z $new_version ] && echo "You need to add a new version." && exit
 
-find $files -exec sed -i "s/${old_version}/$new_version/g" {} \;
+find $files -exec sed -i "s/${current_version}/$new_version/g" {} \;
 sed -i "3i ## $new_version \n" CHANGELOG.md

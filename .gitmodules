@@ -1,0 +1,3 @@
+[submodule "bmrk"]
+	path = bmrk
+	url = https://github.com/endormi/bmrk.git

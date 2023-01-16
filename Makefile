@@ -56,3 +56,8 @@ pre-commit:
 	pre-commit run --all-files
 
 .PHONY: pre-commit
+
+benchmark:
+	@cd bmrk && rake
+
+.PHONY: benchmark

@@ -11,8 +11,6 @@ What is Tilux?
 
 Tilux is a CLI with a bunch of scripts included that are useful and concise.
 
-This is still very much a work in progress.
-
 If you want to see a certain script added, open up a new `issue`_ or make a pull request.
 
 .. _issue: https://github.com/endormi/tilux/issues/new/choose

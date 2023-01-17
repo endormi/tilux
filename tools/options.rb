@@ -71,6 +71,7 @@ $opts = {
     },
     '-o': {
       '-a':   -> { sys('./sys/other/add_alias.sh tilux') },
+      '-b':   -> { sys('./sys/bashcii/bashcii') },
       '-cdp': -> { sys('./sys/other/convert_doc_to_pdf.rb tilux') },
       '-def': -> { sys('./sys/other/default_web_browser.sh tilux') },
       '-s':   -> { sys('./sys/other/cmd_search.sh tilux') },

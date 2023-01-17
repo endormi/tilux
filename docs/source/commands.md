@@ -53,6 +53,7 @@ This is to separate scripts into folders.
 4 -i -r:    root (check if you are root or not)
 4 -i -s:    display computer space, uptime and number of processes running
 4 -o -a:    add alias
+4 -o -b:    print text in ASCII art (submodule)
 4 -o -cdp:  convert doc to pdf
 4 -o -def:  default web browser
 4 -o -p:    parse date

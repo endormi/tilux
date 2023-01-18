@@ -70,14 +70,19 @@ $opts = {
       }
     },
     '-o': {
-      '-a':   -> { sys('./sys/other/add_alias.sh tilux') },
-      '-b':   -> { sys('./sys/bashcii/bashcii') },
-      '-cdp': -> { sys('./sys/other/convert_doc_to_pdf.rb tilux') },
-      '-def': -> { sys('./sys/other/default_web_browser.sh tilux') },
-      '-s':   -> { sys('./sys/other/cmd_search.sh tilux') },
-      '-p':   -> { sys('./sys/other/parse_date.rb tilux') },
-      '-rl':  -> { sys('./sys/other/remove_line.sh tilux') },
-      '-rt':  -> { sys('./sys/other/resize_terminal.sh tilux') }
+      '-a':     -> { sys('./sys/other/add_alias.sh tilux') },
+      '-b': lambda {
+        system('clear')
+        print `python3 -c "from tools.logos import Logo; Logo('Bashcii');"`
+        sleep(1)
+        system('./sys/bashcii/bashcii')
+      },
+      '-cdp':   -> { sys('./sys/other/convert_doc_to_pdf.rb tilux') },
+      '-def':   -> { sys('./sys/other/default_web_browser.sh tilux') },
+      '-s':     -> { sys('./sys/other/cmd_search.sh tilux') },
+      '-p':     -> { sys('./sys/other/parse_date.rb tilux') },
+      '-rl':    -> { sys('./sys/other/remove_line.sh tilux') },
+      '-rt':    -> { sys('./sys/other/resize_terminal.sh tilux') }
     },
     '-p': {
       '-cpu':    -> { sys('./sys/proc/cpu_name.sh tilux') },

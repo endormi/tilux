@@ -13,14 +13,15 @@ Please ensure your pull request adheres to the following guidelines:
 
 For adding new scripts keep the code clear and concise.
 
-If the script you're adding is under a folder, follow the format in `tools/options.rb`.
+If the script you're adding is under a folder, follow the format in `tools/options.rb`
+(make the script an executable as well with `chmod +x <file>`).
 
 > If you have a better way to call scripts, feel free to implement it.
 
 Remember to add the new script to [guide](GUIDE.md),
 [tilux](tilux) [tools/help_print.rb](tools/help_print.rb)
-(both to the category and help, following the format),
-[man/tilux.1](man/tilux.1) and [chmodx](chmodx).
+(both to the category and help, following the format) and
+[man/tilux.1](man/tilux.1).
 
 > Working on making adding a new command faster and better. [#32](https://github.com/endormi/tilux/issues/32)
 

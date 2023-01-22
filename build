@@ -33,7 +33,6 @@ if [[ "$skip_prompt" -eq 0 ]]; then
   [ "$continue" != "y" ] && [ "$continue" != "yes" ] && echo "Exiting build..." && exit
 fi
 
-bash chmodx
 bash pkgs
 
 # TODO: Run venv after build

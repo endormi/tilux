@@ -1,5 +1,4 @@
 # GitHub action: Compile will check flake8, rubocop and make
-# More will be added later
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0

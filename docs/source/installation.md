@@ -42,42 +42,44 @@ cd tilux-v.(release)
 
 Run `build`:
 
-**NOTE**: Installing with `virtualenv` is recommended.
+**NOTE**: Installs python packages with `virtualenv` by default.
 
-```
+```bash
 bash build
 ```
 
-## Using virtualenv
+After build:
 
-Run `build`:
-
-```
-bash build venv
-```
-
-After `build`:
-
-```
+```bash
 . ./venv/bin/activate
 ```
 
-Add the `venv` script to alias:
+If you build this way, remember to add the `venv` script to alias.
 
-```
+Run `scripts/add_alias_venv`:
+
+```bash
 ./scripts/add_alias_venv
 ```
 
-Activate `virtualenv`:
+Run `venv`:
 
-```
+```bash
 tvenv
 ```
 
-Deactivate:
+Deactivate `venv`:
 
-```
+```bash
 deactivate
+```
+
+You can also install python packages without `virtualenv`:
+
+**NOTE**: This is not recommended.
+
+```bash
+bash build no_venv
 ```
 
 ## Running tilux

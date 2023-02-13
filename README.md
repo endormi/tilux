@@ -75,16 +75,10 @@ cd tilux-v.(release)
 
 **Run** `build`:
 
-> Installing with `virtualenv` is highly recommended.
+> Installs python packages with `virtualenv` by default.
 
 ```bash
 bash build
-```
-
-You can also install python packages in `virtualenv`:
-
-```bash
-bash build venv
 ```
 
 After build:
@@ -111,6 +105,14 @@ Deactivate `venv`:
 
 ```bash
 deactivate
+```
+
+You can also install python packages without `virtualenv`:
+
+> This is not recommended.
+
+```bash
+bash build no_venv
 ```
 
 > After running `build` for the first time, you can use `tilux` instead of `build`.

@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.4.5
+
+- Add:
+  - Bmrk submodule and target
+  - Bashcii submodule
+
+- Update:
+  - Pull version from .version file
+  - Install with virtual environment by default
+
+- Remove:
+  - WIP message
+  - chmodx and mentions of chmodx
+  - Outdated comment
+
 ## 1.4.15
 
 - Add:

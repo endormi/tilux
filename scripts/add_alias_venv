@@ -9,7 +9,7 @@
 
 alias="tvenv"
 
-if alias "$alias" &>/dev/null; then
+if alias $alias &>/dev/null; then
   echo "Alias $alias already exists!"
   exit
 fi

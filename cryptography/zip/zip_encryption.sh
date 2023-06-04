@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -z "$(which zip)" ]]; then
+if ! command -v zip &>/dev/null; then
   echo "Installing zip which is required to run this script."
   sudo apt update
   sudo apt install zip

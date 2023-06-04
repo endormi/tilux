@@ -6,7 +6,7 @@ w="\033[1;37m"
 v=$(cat .version)
 text="Building Tilux v.$v"
 
-if [[ ! -z "$(which boxes)" ]]; then
+if command -v boxes &>/dev/null; then
   echo "$text" | boxes -d stone -a c -s 32x5
 else
   echo "==============================="
@@ -35,19 +35,20 @@ fi
 
 bash pkgs
 
-# TODO: Run venv after build
 if [[ "$skip_venv_installation" -eq 0 ]]; then
-  if [[ -z "$(which virtualenv)" ]]; then
+  if ! command -v virtualenv &>/dev/null; then
     # virtualenv probably tries to install here
     export PATH=$HOME/.local/bin/:$PATH
     pip3 install virtualenv
   fi
+
   if [[ ! -d "venv" ]]; then
     export PATH=/usr/local/bin/:$PATH
     virtualenv venv
   fi
+
   activate() {
-    . ./venv/bin/activate
+    source ./venv/bin/activate
   }
   activate
 fi

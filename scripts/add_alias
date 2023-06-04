@@ -9,7 +9,10 @@
 
 alias="tilux"
 
-[ `alias | grep "alias $alias" | wc -l` != 0 ] && echo "Alias $alias already exists" && exit
+if alias "$alias" &>/dev/null; then
+  echo "Alias $alias already exists!"
+  exit
+fi
 
 echo "alias $alias='cd $PWD && ./$alias'" >> ~/.bash_aliases
 echo "Added ${alias} to .bash_aliases"

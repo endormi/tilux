@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -z "$(which ccrypt)" ]]; then
+if ! command -v ccrypt &>/dev/null; then
   echo "Installing ccrypt which is required to run this script."
   sudo apt update
   sudo apt install ccrypt

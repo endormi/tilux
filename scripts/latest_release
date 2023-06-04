@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -z "$(which jq)" ]]; then
+if ! command -v jq &>/dev/null; then
   echo "Installing jq which is required to run this script."
   sudo apt update
   sudo apt install jq

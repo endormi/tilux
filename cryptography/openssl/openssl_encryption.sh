@@ -1,18 +1,18 @@
 #!/bin/bash
 
-if [[ -z "$(which openssl)" ]]; then
-  echo "Installing openssl which is required to run this script."
-  sudo apt update
-  sudo apt install openssl
-  clear
-fi
+check_and_install_package() {
+  package=$1
 
-if [[ -z "$(which fzf)" ]]; then
-  echo "Installing fzf which is required to run this script."
-  sudo apt update
-  sudo apt install fzf
-  clear
-fi
+  if ! command -v "$package" &>/dev/null; then
+    echo "Installing $package which is required to run this script."
+    sudo apt update
+    sudo apt install $package
+    clear
+  fi
+}
+
+check_and_install_package openssl
+check_and_install_package fzf
 
 if [[ "$1" == "tilux" ]]; then
   source ./tools/catch

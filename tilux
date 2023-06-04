@@ -57,10 +57,10 @@ def choices(choice)
     '2'      =>     -> { monitoring_print },
     '3'      =>     -> { net_print },
     '4'      =>     -> { system_print },
-    '--help' => lambda {
+    '--help' =>     -> do
       help_print
       exit
-    }
+    end
   }
 
   execute_command(print_option(choice, print_cmd))

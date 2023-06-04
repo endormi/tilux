@@ -43,11 +43,11 @@ $opts = {
       '-e':      -> { sys('./sys/file_folder/exists.rb tilux') },
       '-fd':     -> { sys('./sys/file_folder/fd.rb tilux') },
       '-fl':     -> { sys('./sys/file_folder/file_updated.rb tilux') },
-      '-fs': lambda {
+      '-fs':     -> do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('FS');"`
         system('./sys/file_folder/fs.o')
-      },
+      end,
       '-l':      -> { sys('./sys/file_folder/last_updated.sh tilux') }
     },
     '-img': {
@@ -63,20 +63,20 @@ $opts = {
       '-os':    -> { sys('./sys/info/os.rb tilux') },
       '-prv':   -> { sys('./sys/info/prv.sh tilux') },
       '-r':     -> { sys('./sys/info/root.rb tilux') },
-      '-s': lambda {
+      '-s':     -> do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Space');"`
         system('./sys/info/space.o')
-      }
+      end
     },
     '-o': {
       '-a':     -> { sys('./sys/other/add_alias.sh tilux') },
-      '-b': lambda {
+      '-b':     -> do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Bashcii');"`
         sleep(1)
         system('./sys/bashcii/bashcii')
-      },
+      end,
       '-cdp':   -> { sys('./sys/other/convert_doc_to_pdf.rb tilux') },
       '-def':   -> { sys('./sys/other/default_web_browser.sh tilux') },
       '-s':     -> { sys('./sys/other/cmd_search.sh tilux') },
@@ -86,18 +86,18 @@ $opts = {
     },
     '-p': {
       '-cpu':    -> { sys('./sys/proc/cpu_name.sh tilux') },
-      '-oc': lambda {
+      '-oc':     -> do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Single core');"`
         sleep(1)
         system('./sys/proc/one_core.o')
-      },
-      '-mc': lambda {
+      end,
+      '-mc':     -> do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Multi-core');"`
         sleep(1)
         system('./sys/proc/multi_core.o')
-      },
+      end,
       '-ps':     -> { sys('./sys/proc/list_active_ps.sh tilux') }
     },
     '-s': {

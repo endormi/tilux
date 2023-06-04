@@ -45,6 +45,12 @@ def _print(choice, option)
   print $prompt.to_s
 end
 
+def execute_command(command)
+  command.respond_to?(:call) ? command.call : c(command)
+rescue StandardError
+  abort('Incorrect choice!')
+end
+
 def choices(choice)
   print_cmd = {
     '1'      =>     -> { crypto_print },
@@ -57,11 +63,7 @@ def choices(choice)
     }
   }
 
-  begin
-    c(_print(choice, print_cmd))
-  rescue StandardError
-    abort('Incorrect choice!')
-  end
+  execute_command(_print(choice, print_cmd))
 end
 
 def nested_choices(nested_choice)
@@ -79,11 +81,7 @@ def nested_choices(nested_choice)
     '-s'   => -> { systems_print }
   }
 
-  begin
-    c(_print(nested_choice, nested_print_cmd))
-  rescue StandardError
-    abort('Incorrect choice!')
-  end
+  execute_command(_print(nested_choice, nested_print_cmd))
 end
 
 if ARGV.empty?
@@ -109,11 +107,7 @@ if ARGV.empty?
     value = $opts.dig(input0.to_sym, input1.to_sym)
   end
 
-  begin
-    c(value.call)
-  rescue StandardError
-    abort('Incorrect choice!')
-  end
+  execute_command(value)
 else
   arg0 = ARGV[0].to_s.downcase.strip
   arg1 = ARGV[1].to_s.downcase.strip
@@ -131,9 +125,5 @@ else
             $opts.dig(arg0.to_sym, arg1.to_sym, arg2.to_sym)
           end
 
-  begin
-    c(value.call)
-  rescue StandardError
-    abort('Incorrect choice!')
-  end
+  execute_command(value)
 end

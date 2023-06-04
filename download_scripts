@@ -1,30 +1,26 @@
 #!/bin/bash
 
-[ -z "$(which ruby)" ] && echo "NOTE: Certain scripts require ruby."
+command -v ruby &>/dev/null || echo "NOTE: Certain scripts require ruby."
 
 echo "NOTE: You need mini_magick and graphicsmagick to run img_info.rb!"
 
 sleep 1
 
-ff="sys/file_folder"
-img="sys/img"
-info="sys/info"
-other="sys/other"
-
 # Scripts I find to be the most useful
-declare -a script=(
-  "$ff/clean.sh"
-  "$ff/file_updated.rb"
-  "$ff/last_updated.sh"
-  "$img/img_info.rb"
-  "$info/bit.sh"
-  "$info/ip.rb"
-  "$info/root.rb"
-  "$other/add_alias.sh"
-  "$other/parse_date.rb"
+url="https://raw.githubusercontent.com/endormi/tilux/master"
+scripts=(
+  "sys/file_folder/clean.sh"
+  "sys/file_folder/file_updated.rb"
+  "sys/file_folder/last_updated.sh"
+  "sys/img/img_info.rb"
+  "sys/info/bit.sh"
+  "sys/info/ip.rb"
+  "sys/info/root.rb"
+  "sys/other/add_alias.sh"
+  "sys/other/parse_date.rb"
 )
 
-for i in "${script[@]}"
+for script in "${scripts[@]}"
 do
-  wget https://raw.githubusercontent.com/endormi/tilux/master/$i
+  wget $url/$script
 done

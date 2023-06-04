@@ -90,19 +90,23 @@ if ARGV.empty?
   puts "\nWhat script do you want to run?\n".white
   tilux_print
   print $prompt.to_s
-  input0 = gets.chomp.to_s.downcase.strip
+  input0 = gets.chomp.downcase.strip
   choices(input0)
 
-  input1 = gets.chomp.to_s.downcase.strip
-  has_nested_hash = $opts[:"#{input0}"]&.[](:"#{input1}")
+  input1 = gets.chomp.downcase.strip
+  command_hash = $opts[input0.to_sym]
+  if command_hash.nil?
+    abort('Incorrect choice!')
+  end
 
-  # Means that it has more nested hashes
+  has_nested_hash = command_hash[input1.to_sym]
+
   if has_nested_hash.is_a?(Hash)
     nested_choices(input1)
-    input2 = gets.chomp.to_s.downcase.strip
-    value = $opts.dig(:"#{input0}", :"#{input1}", :"#{input2}")
+    input2 = gets.chomp.downcase.strip
+    value = $opts.dig(input0.to_sym, input1.to_sym, input2.to_sym)
   else
-    value = $opts.dig(:"#{input0}", :"#{input1}")
+    value = $opts.dig(input0.to_sym, input1.to_sym)
   end
 
   begin
@@ -110,7 +114,6 @@ if ARGV.empty?
   rescue StandardError
     abort('Incorrect choice!')
   end
-
 else
   arg0 = ARGV[0].to_s.downcase.strip
   arg1 = ARGV[1].to_s.downcase.strip
@@ -123,9 +126,9 @@ else
   end
 
   value = if arg2.empty?
-            $opts.dig(:"#{arg0}", :"#{arg1}")
+            $opts.dig(arg0.to_sym, arg1.to_sym)
           else
-            $opts.dig(:"#{arg0}", :"#{arg1}", :"#{arg2}")
+            $opts.dig(arg0.to_sym, arg1.to_sym, arg2.to_sym)
           end
 
   begin
@@ -133,5 +136,4 @@ else
   rescue StandardError
     abort('Incorrect choice!')
   end
-
 end

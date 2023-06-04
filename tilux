@@ -36,17 +36,17 @@ def sys(file)
   system(file)
 end
 
-def c(*args)
+def execute_args(*args)
   args
 end
 
-def _print(choice, option)
-  c(empty_input?(choice), sys('clear'), option[choice].call)
+def print_option(choice, option)
+  execute_args(empty_input?(choice), sys('clear'), option[choice].call)
   print $prompt.to_s
 end
 
 def execute_command(command)
-  command.respond_to?(:call) ? command.call : c(command)
+  command.respond_to?(:call) ? command.call : execute_args(command)
 rescue StandardError
   abort('Incorrect choice!')
 end
@@ -63,7 +63,7 @@ def choices(choice)
     }
   }
 
-  execute_command(_print(choice, print_cmd))
+  execute_command(print_option(choice, print_cmd))
 end
 
 def nested_choices(nested_choice)
@@ -81,7 +81,7 @@ def nested_choices(nested_choice)
     '-s'   => -> { systems_print }
   }
 
-  execute_command(_print(nested_choice, nested_print_cmd))
+  execute_command(print_option(nested_choice, nested_print_cmd))
 end
 
 if ARGV.empty?

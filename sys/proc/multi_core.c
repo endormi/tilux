@@ -1,5 +1,5 @@
 #include "multi_core.h"
-#include "../../tools/handler.h"
+#include "../../tools/exit_handler.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/wait.h>

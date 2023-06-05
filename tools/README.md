@@ -8,7 +8,7 @@ empty inputs in different languages (since I've used multiple languages).
 - catch
 - catch_exception.py
 - catch_exception.rb
-- handler.h
+- exit_handler.h
 
 `logos.py` file that powers the logo for all scripts.
 

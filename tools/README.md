@@ -12,8 +12,8 @@ empty inputs in different languages (since I've used multiple languages).
 
 `logos.py` file that powers the logo for all scripts.
 
-`col.rb` ANSI-Colors for Ruby.
+`tilux_color_names.rb` ANSI-Colors specifically for Tilux.
 
-`options.rb` to run scripts.
+`tilux_command_options.rb` to run scripts specifically for Tilux.
 
-`help_print.rb` displays the help texts.
+`tilux_print_options.rb` displays the help texts specifically for Tilux.

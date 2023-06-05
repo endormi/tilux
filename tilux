@@ -3,9 +3,9 @@
 require 'io/console'
 
 require_relative 'tools/catch_exception'
-require_relative 'tools/col'
-require_relative 'tools/help_print'
-require_relative 'tools/options'
+require_relative 'tools/tilux_color_names'
+require_relative 'tools/tilux_command_options'
+require_relative 'tools/tilux_print_options'
 
 file = File.open('.version')
 ver = file.read
@@ -21,11 +21,8 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
      888       888   888       o   88.    .8     d8    888b
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 ".red
-print 'version'.white
-print " #{version}".light_blue
-print ' by Endormi '.white
-link = "\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a"
-puts link.white
+print 'version'.white, " #{version}".light_blue, ' by Endormi '.white
+print "\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a".white, "\n"
 
 sleep 1
 

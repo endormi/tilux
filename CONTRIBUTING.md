@@ -19,7 +19,7 @@ If the script you're adding is under a folder, follow the format in `tools/optio
 > If you have a better way to call scripts, feel free to implement it.
 
 Remember to add the new script to [guide](GUIDE.md),
-[tilux](tilux) [tools/help_print.rb](tools/help_print.rb)
+[tilux](tilux) [tools/tilux_print_options.rb](tools/tilux_print_options.rb)
 (both to the category and help, following the format) and
 [man/tilux.1](man/tilux.1).
 

@@ -5,6 +5,6 @@ detectors:
     max_statements: 5
 
 exclude_paths:
-  # This is due to help_print having
+  # This is due to tilux_print_options having
   # way too many statements
-  - tools/help_print.rb
+  - tools/tilux_print_options.rb

@@ -13,11 +13,9 @@ resize_terminal() {
   exit
 }
 
-if [[ $(cat /etc/alternatives/x-terminal-emulator | grep exec | grep gnome) ]]; then
+if cat /etc/alternatives/x-terminal-emulator | grep exec | grep -q gnome; then
   resize_terminal gnome-terminal --geometry
-fi
-
-if [[ $(cat /etc/alternatives/x-terminal-emulator | grep exec | grep xterm) ]]; then
+elif cat /etc/alternatives/x-terminal-emulator | grep exec | grep -q xterm; then
   resize_terminal xterm -geometry
 fi
 

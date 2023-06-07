@@ -5,11 +5,15 @@ if [[ "$1" == "tilux" ]]; then
   python3 -c "from tools.logos import Logo; Logo('Remove line');"
 fi
 
-read -p "Remove line (matching the pattern): " pattern
-[ "$1" == "tilux" ] && catch_empty $pattern
+get_user_input() {
+  local input_text=$1
+  local input_variable=$2
+  read -p "$input_text" $input_variable
+  [ "$1" == "tilux" ] && catch_empty $input_variable
+}
 
-read -p "Filename (to remove the line from): " filename
-[ "$1" == "tilux" ] && catch_empty $filename
+get_user_input "Remove line (matching the pattern): " pattern
+get_user_input "Filename (to remove the line from): " filename
 
 [ ! -f $filename ] && echo "$filename doesn't exist." && exit
 

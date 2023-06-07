@@ -2,32 +2,51 @@
 
 require 'io/console'
 
+# FileExistenceChecker is responsible for checking the existence of files and directories.
+class FileExistenceChecker
+  # Checks if the specified file exists.
+  #
+  # @param path [String] The path to the file.
+  def self.check_file_exists(path)
+    exists = File.file?(path)
+    result = exists ? "#{path} exists." : "#{path} doesn't exist."
+    puts result
+  end
+
+  # Checks if the specified directory exists.
+  #
+  # @param path [String] The path to the directory.
+  def self.check_directory_exists(path)
+    exists = File.directory?(path)
+    result = exists ? "#{path} exists." : "#{path} doesn't exist."
+    puts result
+  end
+end
+
 if ARGV[0] == 'tilux'
   require_relative '../../tools/catch_exception'
   print `python3 -c "from tools.logos import Logo; Logo('Exists');"`
 end
 
-choice = 'file or directory'
-puts "Choices: #{choice}"
+choices = 'file or directory'
+puts "Choices: #{choices}"
 print 'Choice: '
-fd = $stdin.gets.chomp.to_s.downcase
+choice_input = $stdin.gets.chomp.to_s.downcase
+empty_input?(choice_input) if ARGV[0] == 'tilux'
 
-empty_input?(fd) if ARGV[0] == 'tilux'
-
-if %w[file f].include?(fd)
+if %w[file f].include?(choice_input)
   print 'Path to file: '
-  f = $stdin.gets.chomp.to_s.strip
-  empty_input?(f) if ARGV[0] == 'tilux'
-  res = File.file?(f) == true ? "#{f} exists" : "#{f} doesn't exist"
-  puts "\n#{res}"
+  file_path = $stdin.gets.chomp.to_s.strip
+  empty_input?(file_path) if ARGV[0] == 'tilux'
 
-elsif %w[dir directory d].include?(fd)
+  FileExistenceChecker.check_file_exists(file_path)
+elsif %w[dir directory d].include?(choice_input)
   print 'Path to directory: '
-  d = $stdin.gets.chomp.to_s.strip
-  empty_input?(d) if ARGV[0] == 'tilux'
-  res = File.directory?(d) == true ? "#{d} exists" : "#{d} doesn't exist"
-  puts "\n#{res}"
+  dir_path = $stdin.gets.chomp.to_s.strip
+  empty_input?(dir_path) if ARGV[0] == 'tilux'
+
+  FileExistenceChecker.check_directory_exists(dir_path)
 else
-  puts "\nWrong choice!"
-  puts "Use #{choice}"
+  puts 'Invalid choice!'
+  puts "Use #{choices}"
 end

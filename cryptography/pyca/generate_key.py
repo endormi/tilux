@@ -49,7 +49,7 @@ def main():
     elif choose_cmd == "no_pw":
         generate_key_without_password()
     else:
-        print("\nNot a valid command!")
+        print("Invalid choice!")
         print("Use: " + choice)
 
 

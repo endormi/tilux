@@ -1,45 +1,59 @@
 #!/usr/bin/ruby
 
 require 'mini_magick'
-require 'io/console'
+
+# ImageFormatHandler is a utility class that provides methods for handling image formats.
+class ImageFormatHandler
+  # Get the image format from user input.
+  #
+  # @return [String] The image format provided by the user.
+  def self.get_image_format
+    puts 'Format: i.e. JPG, PNG, etc.'
+    ImageValidator.get_user_input('What format for the image (do not add .)? ')
+  end
+
+  # Validate the image format.
+  #
+  # @param format [String] The image format to validate.
+  def self.validate_format(format)
+    if format.include?('.')
+      puts 'Do not add .'
+      exit
+    end
+  end
+end
+
+def get_new_image_name
+  puts "\nUse the same file extension as in the format."
+  puts "Using a different file extension as format works, but it will most likely cause issues.\n\n"
+  print 'Save image as: '
+  ImageValidator.get_user_input('Save image as: ')
+end
+
+def validate_new_image_name(name)
+  unless name.include?('.')
+    puts 'You need to add the file extension.'
+    exit
+  end
+  if File.file?(name)
+    puts 'File already exists.'
+    exit
+  end
+end
 
 if ARGV[0] == 'tilux'
+  require_relative 'image_validator'
   require_relative '../../tools/catch_exception'
   print `python3 -c "from tools.logos import Logo; Logo('Convert img');"`
 end
 
-puts "Note: This makes a copy of the original image.\nIt doesn't overwrite.\n\n"
+image_path = ImageValidator.get_user_input('What is the image you want to convert? ')
+ImageValidator.check_image_existence(image_path)
+image = MiniMagick::Image.open(image_path)
 
-print 'What is the image you want to convert? '
-img = $stdin.gets.chomp.to_s
-empty_input?(img) if ARGV[0] == 'tilux'
-unless File.file?(img)
-  puts "File doesn't exist."
-  exit
-end
-# TODO: Error message if not image
-image = MiniMagick::Image.open(img)
-puts 'Format: i.e. JPG, PNG etc.'
-print 'What format for the image (do not add .)? '
-format = $stdin.gets.chomp.to_s
-empty_input?(format) if ARGV[0] == 'tilux'
-if format.include? '.'
-  puts 'Do not add .'
-  exit
-end
-image.format format
-puts "\nUse the same file extension as in format."
-puts "Using a different file extension as format works, but it will most likely cause issues.\n\n"
-print 'Save image as: '
-name = $stdin.gets.chomp.to_s
-empty_input?(name) if ARGV[0] == 'tilux'
-unless name.include? '.'
-  puts 'You need to add the file extension.'
-  exit
-end
-if File.file?(name)
-  puts 'File already exists.'
-  exit
-end
-image.write name
+image_format = ImageFormatHandler.get_image_format
+ImageFormatHandler.validate_format(image_format)
+new_image_name = get_new_image_name
+validate_new_image_name(new_image_name)
+image.write(new_image_name)
 puts 'Done!'

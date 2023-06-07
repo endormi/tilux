@@ -8,10 +8,10 @@ fi
 resize_terminal() {
   terminal_cmd=$1
   geometry=$2
-  echo -e "\nResizing terminal.. (this will open a new terminal)"
+  echo -e "Resizing terminal.. (this will open a new terminal)"
   sleep 0.5
   $terminal_cmd $geometry $size
-  echo -e "Done!\n"
+  echo -e "Done!"
   exit
 }
 

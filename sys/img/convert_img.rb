@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 require 'mini_magick'
+require_relative 'image_validator'
 
 # ImageFormatHandler is a utility class that provides methods for handling image formats.
 class ImageFormatHandler
@@ -42,7 +43,6 @@ def validate_new_image_name(name)
 end
 
 if ARGV[0] == 'tilux'
-  require_relative 'image_validator'
   require_relative '../../tools/catch_exception'
   print `python3 -c "from tools.logos import Logo; Logo('Convert img');"`
 end

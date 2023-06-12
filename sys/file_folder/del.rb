@@ -54,7 +54,6 @@ def remove_file(path)
   end
 end
 
-
 def remove_directory(path)
   if File.directory?(path)
     if FileRemover.confirm_removal('folder')

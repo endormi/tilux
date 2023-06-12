@@ -1,9 +1,9 @@
 #!/usr/bin/ruby
 
 require 'mini_magick'
+require_relative 'image_validator'
 
 if ARGV[0] == 'tilux'
-  require_relative 'image_validator'
   require_relative '../../tools/catch_exception'
   print `python3 -c "from tools.logos import Logo; Logo('Img info');"`
 end

@@ -2,8 +2,6 @@
 
 command -v ruby &>/dev/null || echo "NOTE: Certain scripts require ruby."
 
-echo "NOTE: You need mini_magick and graphicsmagick to run img_info.rb!"
-
 sleep 1
 
 # Scripts I find to be the most useful
@@ -12,7 +10,6 @@ scripts=(
   "sys/file_folder/clean.sh"
   "sys/file_folder/file_updated.rb"
   "sys/file_folder/last_updated.sh"
-  "sys/img/img_info.rb"
   "sys/info/bit.sh"
   "sys/info/ip.rb"
   "sys/info/root.rb"

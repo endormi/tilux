@@ -139,8 +139,11 @@ All you have to do is:
 
 > In this example I'm downloading the computer bit system script.
 
-**Note**: Certain scripts might not work, because by not running the build,
-you might not have the required packages installed.
+**Note**: Without running the build, there is a possibility that the required packages,
+classes, and modules have not been installed or loaded.
+To ensure the smooth operation of the scripts,
+it is recommended to run the build and ensure all dependencies are properly set up.
+If you're downloading image scripts you need to also download `image_validator.rb`.
 
 ```
 # Example

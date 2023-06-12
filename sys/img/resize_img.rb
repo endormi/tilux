@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 require 'mini_magick'
-require 'io/console'
+require_relative 'image_validator'
 
 # ImageResizer is responsible for resizing images and validating the size format.
 class ImageResizer
@@ -35,7 +35,6 @@ def get_resize_dimensions
 end
 
 if ARGV[0] == 'tilux'
-  require_relative 'image_validator'
   require_relative '../../tools/catch_exception'
   print `python3 -c "from tools.logos import Logo; Logo('Resize img');"`
 end

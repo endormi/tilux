@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 require 'mini_magick'
+require_relative 'image_validator'
 
 # RotateImage is a utility class that provides a method for rotating an image.
 class RotateImage
@@ -20,7 +21,6 @@ def get_rotation_angle
 end
 
 if ARGV[0] == 'tilux'
-  require_relative 'image_validator'
   require_relative '../../tools/catch_exception'
   print `python3 -c "from tools.logos import Logo; Logo('Rotate img');"`
 end

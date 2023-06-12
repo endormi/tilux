@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+require_relative 'helpers'
+
 # I'm using the same options, when running interactively and by using arguments
 
 $opts = {

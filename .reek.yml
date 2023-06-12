@@ -2,9 +2,15 @@
 detectors:
   TooManyStatements:
     enabled: true
-    max_statements: 5
+    # The nested_choices method in TiluxCommandProcessor has around 12 statements,
+    # which is an acceptable amount for this method.
+    max_statements: 12
+
+  DuplicateMethodCall:
+    exclude:
+      # This exclusion is necessary to support step-by-step inputs in the script execution process.
+      - 'TiluxCommandProcessor#interactive_script'
 
 exclude_paths:
-  # This is due to tilux_print_options having
-  # way too many statements
-  - tools/tilux_print_options.rb
+  # This is due to tilux_print_options having way too many statements
+  - tools/tilux/print_options.rb

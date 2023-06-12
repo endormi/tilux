@@ -12,10 +12,16 @@ empty inputs in different languages (since I've used multiple languages).
 
 `logos.py` file that powers the logo for all scripts.
 
-`tilux_color_names.rb` ANSI-Colors for Tilux.
+Inside the folder Tilux:
 
-`tilux_command_options.rb` to run files for Tilux.
+- `color_names.rb` ANSI-Colors.
 
-`tilux_helpers.rb` collection of helper methods for Tilux.
+- `command_options.rb` to run files.
 
-`tilux_print_options.rb` to print options for Tilux.
+- `command_processor.rb` class encapsulates the functionality related to
+processing commands in Tilux. The helper methods are instance methods of the class,
+allowing better organization and encapsulation.
+
+- `helpers.rb` collection of helper methods.
+
+- `print_options.rb` to print options.

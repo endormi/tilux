@@ -28,4 +28,4 @@ for((i=0; i<$cproc; i++)); do
     ps -eocomm,pcpu | egrep -v '(0.0)|(%CPU)' >> /tmp/cpu_usage.$$
     sleep $time
 done
-cpu()
+cpu

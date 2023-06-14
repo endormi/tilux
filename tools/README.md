@@ -8,12 +8,20 @@ empty inputs in different languages (since I've used multiple languages).
 - catch
 - catch_exception.py
 - catch_exception.rb
-- handler.h
+- exit_handler.h
 
 `logos.py` file that powers the logo for all scripts.
 
-`col.rb` ANSI-Colors for Ruby.
+Inside the folder Tilux:
 
-`options.rb` to run scripts.
+- `color_names.rb` ANSI-Colors.
 
-`help_print.rb` displays the help texts.
+- `command_options.rb` to run files.
+
+- `command_processor.rb` class encapsulates the functionality related to
+processing commands in Tilux. The helper methods are instance methods of the class,
+allowing better organization and encapsulation.
+
+- `helpers.rb` collection of helper methods.
+
+- `print_options.rb` to print options.

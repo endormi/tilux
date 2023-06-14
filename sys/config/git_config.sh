@@ -5,10 +5,15 @@ if [[ "$1" == "tilux" ]]; then
   python3 -c "from tools.logos import Logo; Logo('Git Config');"
 fi
 
-read -p "Name: " name
-[ "$1" == "tilux" ] && catch_empty $name
-read -p "Email: " email
-[ "$1" == "tilux" ] && catch_empty $email
+get_user_input() {
+  local input_text=$1
+  local input_variable=$2
+  read -p "$input_text" $input_variable
+  [ "$1" == "tilux" ] && catch_empty $input_variable
+}
+
+get_user_input "Name: " name
+get_user_input "Email: " email
 read -p "Do you want to set it globally? (Y/n) " c
 c="$(echo ${c} | tr 'A-Z' 'a-z')"
 

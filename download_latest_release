@@ -1,18 +1,18 @@
 #!/bin/bash
 
-if [[ -z "$(which jq)" ]]; then
-  echo "Installing jq which is required to run this script."
-  sudo apt update
-  sudo apt install jq
-  clear
-fi
+check_and_install_package() {
+  package=$1
 
-if [[ -z "$(which unzip)" ]]; then
-  echo "Installing unzip which is required to run this script."
-  sudo apt update
-  sudo apt install unzip
-  clear
-fi
+  if ! command -v "$package" &>/dev/null; then
+    echo "Installing $package which is required to run this script."
+    sudo apt update
+    sudo apt install $package
+    clear
+  fi
+}
+
+check_and_install_package jq
+check_and_install_package unzip
 
 latest_version=$(curl -sL https://api.github.com/repos/endormi/tilux/releases/latest | jq -r ".tag_name")
 file_ext="zip"

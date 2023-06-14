@@ -7,6 +7,7 @@ GEM
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
     deep_merge (1.2.1)
+    diff-lcs (1.5.0)
     dry-configurable (0.12.1)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.5, >= 0.5.0)
@@ -49,6 +50,19 @@ GEM
     rainbow (3.0.0)
     regexp_parser (2.0.3)
     rexml (3.2.5)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.5)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.0)
     rubocop (1.9.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
@@ -70,6 +84,7 @@ DEPENDENCIES
   config
   libreconv
   mini_magick
+  rspec
   rubocop
 
 BUNDLED WITH

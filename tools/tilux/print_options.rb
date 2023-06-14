@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+require 'io/console'
+
 ### Cryptography options
 def cryptography_print
   puts '-e: Encrypt'

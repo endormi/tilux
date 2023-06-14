@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -z "$(which unzip)" ]]; then
+if ! command -v unzip &>/dev/null; then
   echo "Installing unzip which is required to run this script."
   sudo apt update
   sudo apt install unzip

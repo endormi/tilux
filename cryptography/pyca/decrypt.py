@@ -1,36 +1,40 @@
 #!/usr/bin/env python3
 
-from cryptography.fernet import Fernet
-import time
 import sys
+import time
+from cryptography.fernet import Fernet
 
-if len(sys.argv) == 2:
-    sys.path.append("./tools")
-    from logos import Logo
-    import catch_exception as ce
 
-    Logo('Pyca decryption')
+def get_input(prompt):
+    if len(sys.argv) == 2:
+        import catch_exception as ce
+        ce.__input__(prompt)
+    return input(prompt)
 
-time.sleep(1)
 
-file = input('What is the key? ')
-if len(sys.argv) == 2: ce.__input__(file)
+def main():
+    file = get_input('What is the key? ')
+    with open(file, 'rb') as f:
+        key = f.read()
 
-f = open(file, 'rb')
-key = f.read()
-f.close()
+    fl = get_input('What is the encrypted filename? ')
+    with open(fl, 'rb') as r:
+        msg = r.read()
 
-fl = input('What is the encrypted filename? ')
-if len(sys.argv) == 2: ce.__input__(fl)
+    fernet = Fernet(key)
+    enc = fernet.decrypt(msg)
 
-with open(fl, 'rb') as r:
-    msg = r.read()
+    fll = get_input('What is the filename you want to save it as? ')
+    with open(fll, 'wb') as i:
+        i.write(enc)
 
-fernet = Fernet(key)
-enc = fernet.decrypt(msg)
 
-fll = input('What is the filename you want to save it as? ')
-if len(sys.argv) == 2: ce.__input__(fll)
+if __name__ == '__main__':
+    if len(sys.argv) == 2:
+        sys.path.append("./tools")
+        from logos import Logo
 
-with open(fll, 'wb') as i:
-    i.write(enc)
+        Logo('Pyca decryption')
+
+    time.sleep(1)
+    main()

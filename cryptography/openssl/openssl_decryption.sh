@@ -5,12 +5,17 @@ if [[ "$1" == "tilux" ]]; then
   python3 -c "from tools.logos import Logo; Logo('Openssl Decryption');"
 fi
 
+get_user_input() {
+  local input_text=$1
+  local input_variable=$2
+  read -p "$input_text" $input_variable
+  [ "$1" == "tilux" ] && catch_empty $input_variable
+}
+
 sleep 1
 
-read -p "What file do you want to decrypt? " f
-[ "$1" == "tilux" ] && catch_empty $f
-read -p "What is the filename you wish to have after decryption? " fl
-[ "$1" == "tilux" ] && catch_empty $fl
+get_user_input "What file do you want to decrypt? " f
+get_user_input "What is the filename you wish to have after decryption? " fl
 
 # Choices pulled from openssl enc
 choices="

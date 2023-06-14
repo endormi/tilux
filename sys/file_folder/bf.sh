@@ -5,10 +5,15 @@ if [[ "$1" == "tilux" ]]; then
   python3 -c "from tools.logos import Logo; Logo('BF');"
 fi
 
+get_user_input() {
+  local input_text=$1
+  local input_variable=$2
+  read -p "$input_text" $input_variable
+  [ "$1" == "tilux" ] && catch_empty $input_variable
+}
+
 bu=`date +%d-%m-%y`
-read -p "Type in the folder you want to backup: " src
-[ "$1" == "tilux" ] && catch_empty $src
-read -p "Type in the filename (you want to save it as): " f
-[ "$1" == "tilux" ] && catch_empty $f
+get_user_input "Type in the folder you want to backup: " src
+get_user_input "Type in the filename (you want to save it as): " f
 
 tar -cpzf $f-$bu.tar.gz $src

@@ -27,4 +27,4 @@ for((i=0; i<$mproc; i++)); do
     ps -eocomm,pmem | egrep -v '(0.0)|(%MEM)' >> /tmp/memory_usage.$$
     sleep $time
 done
-mem()
+mem

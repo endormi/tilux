@@ -1,30 +1,35 @@
 #!/bin/bash
 
-if [[ -z "$(which openssl)" ]]; then
-  echo "Installing openssl which is required to run this script."
-  sudo apt update
-  sudo apt install openssl
-  clear
-fi
+check_and_install_package() {
+  package=$1
 
-if [[ -z "$(which fzf)" ]]; then
-  echo "Installing fzf which is required to run this script."
-  sudo apt update
-  sudo apt install fzf
-  clear
-fi
+  if ! command -v "$package" &>/dev/null; then
+    echo "Installing $package which is required to run this script."
+    sudo apt update
+    sudo apt install $package
+    clear
+  fi
+}
+
+check_and_install_package openssl
+check_and_install_package fzf
 
 if [[ "$1" == "tilux" ]]; then
   source ./tools/catch
   python3 -c "from tools.logos import Logo; Logo('Openssl Encryption');"
 fi
 
+get_user_input() {
+  local input_text=$1
+  local input_variable=$2
+  read -p "$input_text" $input_variable
+  [ "$1" == "tilux" ] && catch_empty $input_variable
+}
+
 sleep 1
 
-read -p "What file do you want to encrypt? " f
-[ "$1" == "tilux" ] && catch_empty $f
-read -p "What is the file extension you want to use? (e.g. .dat) " fe
-[ "$1" == "tilux" ] && catch_empty $fe
+get_user_input "What file do you want to encrypt? " f
+get_user_input "What is the file extension you want to use? (e.g. .dat) " fe
 
 # Choices pulled from openssl enc
 choices="
@@ -43,6 +48,6 @@ choices="
 echo "Encryption choices:"
 sleep 1
 enc_method=$(echo $choices | tr ' ' '\n' | fzf)
-echo
+echo -e "NOTE: Remember your choice! \n"
 
 openssl enc $enc_method -pbkdf2 -in $f -out $f$fe

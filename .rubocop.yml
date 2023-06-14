@@ -4,10 +4,19 @@ Style/FrozenStringLiteralComment:
 Style/GlobalVars:
   Enabled: false
 
+# For Specs
+Metrics/BlockLength:
+  Enabled: false
+
 Metrics/MethodLength:
   Enabled: false
 
 Metrics/AbcSize:
+  Enabled: false
+
+# This is unnecessary.
+# get_ prefix is fine.
+Naming/AccessorMethodName:
   Enabled: false
 
 Layout/HashAlignment:

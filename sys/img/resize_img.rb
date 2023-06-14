@@ -19,10 +19,10 @@ class ImageResizer
   # @param size [String] The size string to be validated.
   # @raise [SystemExit] If the size string doesn't follow the format WIDTHxHEIGHT.
   def self.validate_size_format(size)
-    unless size.include? 'x'
-      puts 'You need to follow the format WIDTHxHEIGHT.'
-      exit
-    end
+    return if size.include?('x')
+
+    puts 'You need to follow the format WIDTHxHEIGHT.'
+    exit
   end
 end
 

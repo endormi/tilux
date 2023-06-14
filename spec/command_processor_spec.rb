@@ -13,7 +13,9 @@ RSpec.describe TiluxCommandProcessor do
 
   describe '#print_header' do
     it 'prints the header' do
-      expect { command_processor.print_header }.to output(/.*ooooooooooooo.*ooooo.*ooooo.*ooooo.*ooooo.*ooooo.*/m).to_stdout
+      expect do
+        command_processor.print_header
+      end.to output(/.*ooooooooooooo.*ooooo.*ooooo.*ooooo.*ooooo.*ooooo.*/m).to_stdout
     end
   end
 

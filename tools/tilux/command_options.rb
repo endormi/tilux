@@ -45,7 +45,7 @@ $opts = {
       '-e':      -> { TiluxHelpers.sys('./sys/file_folder/exists.rb tilux') },
       '-fd':     -> { TiluxHelpers.sys('./sys/file_folder/fd.rb tilux') },
       '-fl':     -> { TiluxHelpers.sys('./sys/file_folder/file_updated.rb tilux') },
-      '-fs':     -> do
+      '-fs':     lambda do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('FS');"`
         system('./sys/file_folder/fs.o')
@@ -65,7 +65,7 @@ $opts = {
       '-os':    -> { TiluxHelpers.sys('./sys/info/os.rb tilux') },
       '-prv':   -> { TiluxHelpers.sys('./sys/info/prv.sh tilux') },
       '-r':     -> { TiluxHelpers.sys('./sys/info/root.rb tilux') },
-      '-s':     -> do
+      '-s':     lambda do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Space');"`
         system('./sys/info/space.o')
@@ -73,7 +73,7 @@ $opts = {
     },
     '-o': {
       '-a':     -> { TiluxHelpers.sys('./sys/other/add_alias.sh tilux') },
-      '-b':     -> do
+      '-b':     lambda do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Bashcii');"`
         sleep(1)
@@ -88,13 +88,13 @@ $opts = {
     },
     '-p': {
       '-cpu':    -> { TiluxHelpers.sys('./sys/proc/cpu_name.sh tilux') },
-      '-oc':     -> do
+      '-oc':     lambda do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Single core');"`
         sleep(1)
         system('./sys/proc/one_core.o')
       end,
-      '-mc':     -> do
+      '-mc':     lambda do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Multi-core');"`
         sleep(1)

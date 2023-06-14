@@ -27,7 +27,7 @@ RSpec.describe TiluxHelpers do
   describe '.execute_args' do
     it 'returns the command arguments' do
       args = described_class.execute_args('arg1', 'arg2', 'arg3')
-      expect(args).to eq(['arg1', 'arg2', 'arg3'])
+      expect(args).to eq(%w[arg1 arg2 arg3])
     end
   end
 
@@ -66,7 +66,7 @@ RSpec.describe TiluxHelpers do
     it 'does not modify the ARGV array if the argument is not nil' do
       ARGV[1] = 'argument'
       described_class.get_argument(1)
-      expect(ARGV).to eq(['argument', 'argument'])
+      expect(ARGV).to eq(%w[argument argument])
     end
 
     it 'returns nil if the argument is nil' do
@@ -83,7 +83,7 @@ RSpec.describe TiluxHelpers do
       allow(described_class).to receive(:get_argument).with(2).and_return('arg3')
 
       arguments = described_class.extract_arguments
-      expect(arguments).to eq(['arg1', 'arg2', 'arg3'])
+      expect(arguments).to eq(%w[arg1 arg2 arg3])
     end
   end
 

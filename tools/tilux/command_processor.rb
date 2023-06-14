@@ -121,9 +121,7 @@ class TiluxCommandProcessor
 
   def execute_from_arguments
     arg_number, arg_option, arg_script = TiluxHelpers.extract_arguments
-    if arg_number == '--help'
-      TiluxHelpers.print_help
-    end
+    TiluxHelpers.print_help if arg_number == '--help'
 
     value = TiluxHelpers.determine_value(arg_number, arg_option, arg_script)
     call_value(value)

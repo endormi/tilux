@@ -17,29 +17,22 @@ class ImageFormatHandler
   #
   # @param format [String] The image format to validate.
   def self.validate_format(format)
-    if format.include?('.')
-      puts 'Do not add .'
-      exit
-    end
+    return unless format.include?('.')
+
+    puts 'Do not add .'
+    exit
   end
 end
 
 def get_new_image_name
   puts "\nUse the same file extension as in the format."
   puts "Using a different file extension as format works, but it will most likely cause issues.\n\n"
-  print 'Save image as: '
   ImageValidator.get_user_input('Save image as: ')
 end
 
 def validate_new_image_name(name)
-  unless name.include?('.')
-    puts 'You need to add the file extension.'
-    exit
-  end
-  if File.file?(name)
-    puts 'File already exists.'
-    exit
-  end
+  return puts('You need to add the file extension.'), exit unless name.include?('.')
+  return puts('File already exists.'), exit if File.file?(name)
 end
 
 if ARGV[0] == 'tilux'

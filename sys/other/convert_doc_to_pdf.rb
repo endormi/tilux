@@ -6,15 +6,15 @@ require 'io/console'
 # Class responsible for converting documents to PDF.
 class DocumentConverter
   def self.validate_pdf_extension(pdf)
-    unless pdf.end_with?('.pdf')
-      puts 'Remember to add .pdf.'
-      exit
-    end
+    return if pdf.end_with?('.pdf')
+
+    puts 'Remember to add .pdf.'
+    exit
   end
 
   def self.convert_to_pdf(doc, pdf)
-      Libreconv.convert(doc, pdf)
-    end
+    Libreconv.convert(doc, pdf)
+  end
 end
 
 def get_file_path(message)
@@ -25,17 +25,17 @@ def get_file_path(message)
 end
 
 def check_doc_existence(doc)
-  unless File.file?(doc)
-    puts "File doesn't exist."
-    exit
-  end
+  return if File.file?(doc)
+
+  puts "File doesn't exist."
+  exit
 end
 
 def file_exists?(path)
-  if File.file?(path)
-    puts 'File already exists.'
-    exit
-  end
+  return unless File.file?(path)
+
+  puts 'File already exists.'
+  exit
 end
 
 if ARGV[0] == 'tilux'

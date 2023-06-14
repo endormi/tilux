@@ -1,4 +1,4 @@
-name: rubocop
+name: ruby
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
       - '**/**/**.rb'
 
 jobs:
-  rubocop:
+  ruby:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -29,6 +29,10 @@ jobs:
       with:
         ruby-version: 2.6
 
+    - name: Install rspec
+      run: gem install rspec -v 3.12.0
+    - name: Run rspec tests
+      run: rake
     - name: Install rubocop
       run: gem install rubocop -v '~> 1.9.1'
     - name: Check Rubocop

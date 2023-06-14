@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 require_relative 'color_names'
+require_relative 'print_options'
 
 # Helper module for Tilux-related methods
 module TiluxHelpers

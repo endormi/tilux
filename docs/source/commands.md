@@ -172,7 +172,7 @@ You can also directly download multiple scripts that I find to be the most usefu
 > Checks for ruby
 
 ```bash
-wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_scripts | bash
+wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download/download_scripts | bash
 ```
 
 You can then add the scripts to your `dotfiles`.

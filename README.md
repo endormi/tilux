@@ -10,7 +10,7 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 
 ![v](https://img.shields.io/badge/tilux-v.1.4.5-blue)
 ![docker-compose-action-CI](https://github.com/endormi/tilux/workflows/docker-compose-action-CI/badge.svg?branch=master)
-![rubocop](https://github.com/endormi/tilux/actions/workflows/rubocop.yml/badge.svg)
+![ruby](https://github.com/endormi/tilux/actions/workflows/ruby.yml/badge.svg)
 ![make](https://github.com/endormi/tilux/actions/workflows/make.yml/badge.svg)
 ![docs](https://readthedocs.org/projects/tilux/badge/?version=latest)
 ![CodeQL](https://github.com/endormi/tilux/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)
@@ -50,7 +50,7 @@ You can also get the latest release:
 > It will install jq, if you don't already have it.
 
 ```bash
-wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_latest_release | bash
+wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download/download_latest_release | bash
 ```
 
 If you wish to get a specific release and not the latest:
@@ -58,7 +58,7 @@ If you wish to get a specific release and not the latest:
 > It will install jq and fzf, if you don't already have them.
 
 ```bash
-wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_specific_release | bash
+wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download/download_specific_release | bash
 ```
 
 And then `CD` into the folder:

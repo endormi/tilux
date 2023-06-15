@@ -17,7 +17,7 @@ You can also get the latest release:
 > It will install jq, if you don't already have it.
 
 ```
-wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_latest_release | bash
+wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download/download_latest_release | bash
 ```
 
 If you wish to get a specific release and not the latest:
@@ -25,7 +25,7 @@ If you wish to get a specific release and not the latest:
 > It will install jq and fzf, if you don't already have them.
 
 ```
-wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download_specific_release | bash
+wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download/download_specific_release | bash
 ```
 
 And then `CD` into the folder:

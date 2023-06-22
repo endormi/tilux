@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$1" == "tilux" ]]; then
-  source ./tools/catch
+  source $CATCH_SCRIPT_PATH
   python3 -c "from tools.logos import Logo; Logo('Add alias');"
 fi
 

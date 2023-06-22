@@ -3,13 +3,15 @@
 require_relative 'color_names'
 require_relative 'print_options'
 
+VERSION_FILE_PATH = File.expand_path('../../.version', File.dirname(__FILE__))
+
 # Helper module for Tilux-related methods
 module TiluxHelpers
   # Load the version from a file
   #
   # @return [String] The version string read from the file.
   def self.load_version
-    File.open('.version') { |file| file.read.strip }
+    File.open(VERSION_FILE_PATH) { |file| file.read.strip }
   end
 
   # Generate the prompt for Tilux

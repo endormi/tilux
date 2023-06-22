@@ -1,0 +1,21 @@
+#!/bin/bash
+
+bash_aliases_file=~/.bash_aliases
+
+[ ! -f $bash_aliases_file ] && touch $bash_aliases_file
+
+. $bash_aliases_file
+
+prompt_for_new_shell_session() {
+  echo -e "\nChanges have been made to ${bash_aliases_file}."
+  echo -e "It's recommended to start a new shell session to get the changes immediately.\n"
+  read -p "Do you want to start a new shell session? (y/N) " response
+
+  response="$(echo "$response" | tr 'A-Z' 'a-z')"
+
+  if [[ "$response" == "y" || "$response" == "yes" ]]; then
+    exec $BASH
+  else
+    exit
+  fi
+}

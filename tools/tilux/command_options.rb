@@ -52,7 +52,7 @@ $opts = {
       '-fs':     lambda do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('FS');"`
-        system("./#{PATH}/sys/file_folder/fs.o")
+        system("#{PATH}/sys/file_folder/fs.o")
       end,
       '-l':      -> { TiluxHelpers.sys("bash #{PATH}/sys/file_folder/last_updated.sh tilux") }
     },
@@ -72,7 +72,7 @@ $opts = {
       '-s':     lambda do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Space');"`
-        system("./#{PATH}/sys/info/space.o")
+        system("#{PATH}/sys/info/space.o")
       end
     },
     '-o': {
@@ -81,7 +81,7 @@ $opts = {
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Bashcii');"`
         sleep(1)
-        system("./#{PATH}/sys/bashcii/bashcii")
+        system("#{PATH}/sys/bashcii/bashcii")
       end,
       '-cdp':   -> { TiluxHelpers.sys("ruby #{PATH}/sys/other/convert_doc_to_pdf.rb tilux") },
       '-def':   -> { TiluxHelpers.sys("bash #{PATH}/sys/other/default_web_browser.sh tilux") },
@@ -96,13 +96,13 @@ $opts = {
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Single core');"`
         sleep(1)
-        system("./#{PATH}/sys/proc/one_core.o")
+        system("#{PATH}/sys/proc/one_core.o")
       end,
       '-mc':     lambda do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Multi-core');"`
         sleep(1)
-        system("./#{PATH}/sys/proc/multi_core.o")
+        system("#{PATH}/sys/proc/multi_core.o")
       end,
       '-ps':     -> { TiluxHelpers.sys("bash #{PATH}/sys/proc/list_active_ps.sh tilux") }
     },

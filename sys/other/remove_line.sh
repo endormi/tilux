@@ -6,12 +6,15 @@ if [[ "$1" == "tilux" ]]; then
 fi
 
 get_user_input() {
-  local input_text=$1
-  local input_variable=$2
-  read -p "$input_text" $input_variable
-  [ "$1" == "tilux" ] && catch_empty $input_variable
+  local input_text="$1"
+  local input_variable="$2"
+  read -p "$input_text" "$input_variable"
+  if [[ "$script_argument" == "tilux" ]]; then
+    catch_empty "${!input_variable}"
+  fi
 }
 
+script_argument=$1
 get_user_input "Remove line (matching the pattern): " pattern
 get_user_input "Filename (to remove the line from): " filename
 

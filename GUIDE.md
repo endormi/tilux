@@ -41,9 +41,11 @@ for example, `-c` and `-f`, to separate scripts into folders.
 4 -f -c:    clean (clean system of logs and trash)
 4 -f -del:  del (delete file or directory)
 4 -f -e:    exists (check if file or dir exists)
+4 -f -ext:  check file extensions inside a folder
 4 -f -fd:   fd (number of files and folders)
 4 -f -fl:   file updated
 4 -f -fs:   file size
+4 -f -k:    search files by keyword
 4 -f -l:    last updated (file)
 4 -img -ci: convert image
 4 -img -i:  image info

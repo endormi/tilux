@@ -8,7 +8,7 @@ resize_terminal() {
   geometry=$2
   echo "Resizing terminal.. (this will open a new terminal)"
   sleep 0.5
-  $terminal_cmd $geometry 85x25
+  $terminal_cmd $geometry 80x24
   echo "Done!"
   exit
 }

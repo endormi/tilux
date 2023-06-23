@@ -1,5 +1,45 @@
 # Changelog
 
+## 1.5.0
+
+- Add:
+  - Support for absolute PATH
+
+  - New scripts:
+
+    - Add project to PATH (located in the scripts folder)
+    - Keyword search
+    - File extension filtering
+    - Directory size
+    - Duplicate file
+    - File permission check
+
+  - Image validator class for image scripts
+  - Scripts/utils folder for enhancing code reusability
+  - get_user_input method for user inputs
+  - resize_terminal method to reduce repetition
+  - check_and_install_package method
+  - execute_command method for executing commands
+  - Tests
+  - RSpec to GitHub Workflow
+
+- Update:
+  - Restructured codebase using modules and classes
+  - Enhance code portability and reliability with silent I/O redirection
+  - Organize download scripts by moving them to a dedicated folder
+  - Color methods from String class into a Color module
+  - Method names for better clarity and readability
+  - Move tools scripts dedicated to tilux into a folder called tilux
+  - Utility names for improved clarity and structure
+  - Header utility name for improved clarity
+  - Variable names for better readability
+  - Pull the latest changes from submodule
+  - Documentation
+  - Use v2 for upload-sarif codeql action
+
+- Remove:
+  - Quotes from bash variables since it's not necessary and keeps consistency
+
 ## 1.4.5
 
 - Add:

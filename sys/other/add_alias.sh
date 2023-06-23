@@ -16,9 +16,11 @@ get_user_input() {
 
 script_argument=$1
 
-[ ! -f ~/.bash_aliases ] && touch ~/.bash_aliases
+bash_aliases_file=~/.bash_aliases
 
-. ~/.bash_aliases
+[ ! -f $bash_aliases_file ] && touch $bash_aliases_file
+
+. $bash_aliases_file
 
 get_user_input "Alias: " alias
 
@@ -29,6 +31,17 @@ fi
 
 get_user_input "Command: " cmd
 
-echo -e "alias $alias='$cmd'" >> ~/.bash_aliases
+echo -e "alias $alias='$cmd'" >> $bash_aliases_file
 echo "Added ${alias} to .bash_aliases"
-exec "$BASH"
+
+echo -e "\nChanges have been made to ${bash_aliases_file}."
+echo -e "It's recommended to start a new shell session to get the changes immediately.\n"
+read -p "Do you want to start a new shell session? (y/N) " response
+
+response="$(echo "$response" | tr 'A-Z' 'a-z')"
+
+if [[ "$response" == "y" || "$response" == "yes" ]]; then
+  exec $BASH
+else
+  exit
+fi

@@ -45,9 +45,12 @@ $opts = {
     '-f': {
       '-bf':     -> { TiluxHelpers.sys("bash #{PATH}/sys/file_folder/bf.sh tilux") },
       '-c':      -> { TiluxHelpers.sys("bash #{PATH}/sys/file_folder/clean.sh tilux") },
+      '-d':      -> { TiluxHelpers.sys("python3 #{PATH}/sys/file_folder/duplicate_file.py tilux") },
       '-del':    -> { TiluxHelpers.sys("ruby #{PATH}/sys/file_folder/del.rb tilux") },
+      '-dir':    -> { TiluxHelpers.sys("python3 #{PATH}/sys/file_folder/dir_size_calculator.py tilux") },
       '-e':      -> { TiluxHelpers.sys("ruby #{PATH}/sys/file_folder/exists.rb tilux") },
       '-ext':    -> { TiluxHelpers.sys("python3 #{PATH}/sys/file_folder/extension_f.py tilux") },
+      '-f':      -> { TiluxHelpers.sys("python3 #{PATH}/sys/file_folder/file_permissions.py tilux") },
       '-fd':     -> { TiluxHelpers.sys("ruby #{PATH}/sys/file_folder/fd.rb tilux") },
       '-fl':     -> { TiluxHelpers.sys("ruby #{PATH}/sys/file_folder/file_updated.rb tilux") },
       '-fs':     lambda do

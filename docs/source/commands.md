@@ -16,7 +16,7 @@ Here is an example command:
 ```
 
 > **NOTE**: If you have executed the `scripts/add_project_to_path` or
-`scripts/add_alias script`, you can use the `tilux` command
+`scripts/add_alias` script, you can use the `tilux` command
 without the ./ prefix when running commands.
 
 All of the available commands:

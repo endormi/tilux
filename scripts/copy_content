@@ -4,12 +4,7 @@
 [ ! -d scripts ] && cd ..
 [ ! -d docs ] && cd ..
 
-if ! command -v sed &>/dev/null; then
-  echo "Installing sed which is required to run this script."
-  sudo apt update
-  sudo apt install sed
-  clear
-fi
+./scripts/utils/check_and_install_package sed
 
 docs_dir="docs/source"
 copy_guide="GUIDE.md"

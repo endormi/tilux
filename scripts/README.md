@@ -6,14 +6,16 @@ Useful scripts, specifically to be ran for `tilux`.
 
 ### Folder:
 
-**NOTE**: This utility is designed for the `Tilux` project and assumes that you are
-running the script from the `Tilux` folder using the `bash scripts/...` command.
-It is specifically created for the `add_alias`, `add_alias_venv`,
-and `add_project_to_path` scripts. Additionally, it includes a check that automatically
-navigates out of the scripts folder if executed from the folder.
+**NOTE**: These utility scripts are designed for the Tilux project and assume that
+you are running them from the Tilux folder using the `bash scripts/...` command.
+The idea behind these scripts is to reduce repeatability. They contain shared code
+that is used across multiple scripts.
 
-- `utils/bash_aliases` - script shares common
-Bash `alias` and `PATH` settings
+- `utils`:
+  - `bash_aliases` - script shares common
+  Bash `alias` and `PATH` settings
+  - `check_and_install_package` - utility script for checking the availability of
+  a package and installing it if necessary
 
 ### Scripts:
 

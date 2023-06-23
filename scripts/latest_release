@@ -1,11 +1,8 @@
 #!/bin/bash
 
-if ! command -v jq &>/dev/null; then
-  echo "Installing jq which is required to run this script."
-  sudo apt update
-  sudo apt install jq
-  clear
-fi
+[ ! -d scripts ] && cd ..
+
+./scripts/utils/check_and_install_package jq
 
 # jq is in the official Debian and Ubuntu repositories since 16,04
 # If you have an earlier version, follow this link

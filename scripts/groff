@@ -2,11 +2,6 @@
 
 [ ! -d scripts ] && cd ..
 
-if ! command -v groff &>/dev/null; then
-  echo "Installing groff which is required to run this script."
-  sudo apt update
-  sudo apt install groff
-  clear
-fi
+./scripts/utils/check_and_install_package groff
 
 groff -man -Tascii ./man/tilux.1 | less

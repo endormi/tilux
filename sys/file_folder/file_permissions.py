@@ -5,7 +5,7 @@ import sys
 import time
 
 
-def check_files_with_extension(directory, extension=''):
+def check_file_permissions(directory):
     exclude_dirs = [
         '.bundle', '.cache', '.config', '.eggs', '.env', '.git', '.github', '.idea', '.mypy_cache', '.tox', '.venv',
         '$RECYCLE.BIN', '__pycache__', '_Build', '_Pvt_Extensions', '_UpgradeReport_Files', 'AppData',
@@ -16,22 +16,15 @@ def check_files_with_extension(directory, extension=''):
         'venv.bak'
     ]
 
-    found_extension = False
-
     for root, dirs, files in os.walk(directory):
         for exclude_dir in exclude_dirs:
             if exclude_dir in dirs:
                 dirs.remove(exclude_dir)
         for file in files:
-            if file.endswith(extension):
-                file_path = os.path.join(root, file)
-                with open(file_path, 'r'):
-                    found_extension = True
-                    print(f"Found file: {file_path}")
-                    time.sleep(.2)
-
-    if not found_extension:
-        print(f"Extension '{extension}' files not found.")
+            file_path = os.path.join(root, file)
+            permissions = oct(os.stat(file_path).st_mode & 0o777)
+            time.sleep(.2)
+            print(f"File: {file_path}, Permissions: {permissions}")
 
 
 def main():
@@ -41,19 +34,16 @@ def main():
         print(f"{directory} doesn't exist.")
         return
 
-    extension = input("Enter the file extension to check: ")
-    if len(sys.argv) == 2: ce.__input__(extension)
     print()
-
-    check_files_with_extension(directory, extension)
+    check_file_permissions(directory)
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
-        import tools.catch_exception as ce
+        import tools.catch_exception
         from tools.logos import Logo
 
-        Logo('File extension')
+        Logo('File permissions')
 
     time.sleep(1)
     main()

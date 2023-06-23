@@ -3,9 +3,13 @@
 import os
 import sys
 import time
+import hashlib
 
 
-def check_files_with_extension(directory, extension=''):
+def find_duplicate_files(directory):
+    file_hashes = {}
+    duplicates = []
+
     exclude_dirs = [
         '.bundle', '.cache', '.config', '.eggs', '.env', '.git', '.github', '.idea', '.mypy_cache', '.tox', '.venv',
         '$RECYCLE.BIN', '__pycache__', '_Build', '_Pvt_Extensions', '_UpgradeReport_Files', 'AppData',
@@ -16,22 +20,20 @@ def check_files_with_extension(directory, extension=''):
         'venv.bak'
     ]
 
-    found_extension = False
-
     for root, dirs, files in os.walk(directory):
         for exclude_dir in exclude_dirs:
             if exclude_dir in dirs:
                 dirs.remove(exclude_dir)
         for file in files:
-            if file.endswith(extension):
-                file_path = os.path.join(root, file)
-                with open(file_path, 'r'):
-                    found_extension = True
-                    print(f"Found file: {file_path}")
-                    time.sleep(.2)
+            file_path = os.path.join(root, file)
+            with open(file_path, 'rb') as f:
+                file_hash = hashlib.md5(f.read()).hexdigest()
+                if file_hash in file_hashes:
+                    duplicates.append((file_path, file_hashes[file_hash]))
+                else:
+                    file_hashes[file_hash] = file_path
 
-    if not found_extension:
-        print(f"Extension '{extension}' files not found.")
+    return duplicates
 
 
 def main():
@@ -41,19 +43,22 @@ def main():
         print(f"{directory} doesn't exist.")
         return
 
-    extension = input("Enter the file extension to check: ")
-    if len(sys.argv) == 2: ce.__input__(extension)
-    print()
-
-    check_files_with_extension(directory, extension)
+    duplicate_files = find_duplicate_files(directory)
+    if duplicate_files:
+        print("\nDuplicate files found:")
+        for file1, file2 in duplicate_files:
+            time.sleep(.2)
+            print(f"{file1} - {file2}")
+    else:
+        print("No duplicate files found.")
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
-        import tools.catch_exception as ce
+        import tools.catch_exception
         from tools.logos import Logo
 
-        Logo('File extension')
+        Logo('Duplicate files')
 
     time.sleep(1)
     main()

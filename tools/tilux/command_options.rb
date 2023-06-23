@@ -47,6 +47,7 @@ $opts = {
       '-c':      -> { TiluxHelpers.sys("bash #{PATH}/sys/file_folder/clean.sh tilux") },
       '-del':    -> { TiluxHelpers.sys("ruby #{PATH}/sys/file_folder/del.rb tilux") },
       '-e':      -> { TiluxHelpers.sys("ruby #{PATH}/sys/file_folder/exists.rb tilux") },
+      '-ext':    -> { TiluxHelpers.sys("python3 #{PATH}/sys/file_folder/extension_f.py tilux") },
       '-fd':     -> { TiluxHelpers.sys("ruby #{PATH}/sys/file_folder/fd.rb tilux") },
       '-fl':     -> { TiluxHelpers.sys("ruby #{PATH}/sys/file_folder/file_updated.rb tilux") },
       '-fs':     lambda do
@@ -54,6 +55,7 @@ $opts = {
         print `python3 -c "from tools.logos import Logo; Logo('FS');"`
         system("#{PATH}/sys/file_folder/fs.o")
       end,
+      '-k':      -> { TiluxHelpers.sys("python3 #{PATH}/sys/file_folder/keyword.py tilux") },
       '-l':      -> { TiluxHelpers.sys("bash #{PATH}/sys/file_folder/last_updated.sh tilux") }
     },
     '-img': {

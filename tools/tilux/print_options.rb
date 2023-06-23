@@ -57,9 +57,11 @@ def systemf_print
   puts '-c:   clean (clean system of logs and trash)'
   puts '-del: del (delete file or directory)'
   puts '-e:   exists (file or directory)'
+  puts '-ext: check file extensions inside a folder'
   puts '-fd:  fd (number of files and folders)'
   puts '-fl:  file updated'
   puts '-fs:  file size'
+  puts '-k:   search files by keyword'
   puts "-l:   last updated (file)\n"
 end
 
@@ -128,9 +130,11 @@ def help_print
   puts '4 -f -c:    clean (clean system of logs and trash)'
   puts '4 -f -del:  del (delete file or directory)'
   puts '4 -f -e:    exists (check if file or dir exists)'
+  puts '4 -f -ext:  check file extensions inside a folder'
   puts '4 -f -fd:   fd (number of files and folders)'
   puts '4 -f -fl:   file updated'
   puts '4 -f -fs:   file size'
+  puts '4 -f -k:    search files by keyword'
   puts '4 -f -l:    last updated (file)'
   puts '4 -img -ci: convert image'
   puts '4 -img -i:  image info'

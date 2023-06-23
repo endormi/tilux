@@ -1,9 +1,11 @@
 require_relative '../tools/tilux/helpers'
 
+VERSION_FILE_PATH_SPEC = File.expand_path('../.version', File.dirname(__FILE__))
+
 RSpec.describe TiluxHelpers do
   describe '.load_version' do
     it 'reads the version string from the file' do
-      allow(File).to receive(:open).with('.version').and_return('1.0')
+      allow(File).to receive(:open).with(VERSION_FILE_PATH_SPEC).and_return('1.0')
       version = described_class.load_version
       expect(version).to eq('1.0')
     end

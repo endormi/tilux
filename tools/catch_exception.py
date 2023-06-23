@@ -6,9 +6,10 @@ from sys import exit
 
 # Checks if input is empty
 def __input__(choice):
-    if not choice:
+    if not choice or choice == '':
         print("Choice can't be empty!")
         exit()
+    return choice
 
 
 # Exception for python files

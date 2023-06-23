@@ -7,18 +7,22 @@
 
 ## Commands
 
-> Every command can be run interactively or by using arguments
+> Every command can be run interactively or by using arguments.
+
+Here is an example command:
 
 ```
-# Example
-
 ./tilux 1 -cc -e
 ```
 
+> **NOTE**: If you have executed the `scripts/add_project_to_path` or
+`scripts/add_alias script`, you can use the `tilux` command
+without the ./ prefix when running commands.
+
 All of the available commands:
 
-> System and cryptography commands have an extra argument for example `-c` and `-f`.
-This is to separate scripts into folders.
+> System and cryptography commands have an extra argument,
+for example, `-c` and `-f`, to separate scripts into folders.
 
 ```
 1 -cc: ccrypt -e (for encryption) or -d (for decryption)
@@ -71,39 +75,41 @@ This is to separate scripts into folders.
 Help command:
 
 ```
-tilux --help
+./tilux --help
 ```
 
-## Run from any folder
+## Running Individual Scripts
 
-**Note**: You can't run tilux from any folder, but you can run included scripts individually.
+**NOTE**: While you can run Tilux from any folder, you also have the option to
+run included scripts individually.
 
-For example:
+For example, you can directly execute the following scripts
+from the current folder (not inside Tilux):
 
-In the example below, latest updated file
-runs from current folder not inside tilux, same for fs.
+> You can also execute individual scripts directly by using the . (dot) notation.
 
 ```
-# Ruby
-./tilux/sys/info/os.rb
+ruby tilux/sys/info/os.rb
 
-# Bash
-./tilux/sys/file_folder/last_updated.sh
+bash tilux/sys/file_folder/last_updated.sh
 
-# Python
-./tilux/monitoring/website_monitoring.py
+python3 tilux/monitoring/website_monitoring.py
 
 # C
-./tilux/sys/file_folder/fs.o
+tilux/sys/file_folder/fs.o
 ```
 
-You can add the scripts to your alias if you want by using `sys/other/add_alias`.
+If you prefer running specific scripts without launching Tilux itself,
+you can execute them individually as shown above. Additionally, if you frequently
+use certain scripts, you can add them to your alias for easier access.
+To do this, you can use the `sys/other/add_alias` script.
 
 ## Running with Docker
 
-You need: [Docker](https://docker.com) && [Docker-compose](https://docs.docker.com/compose/)
+To run Tilux with Docker, make sure you have: [Docker](https://docker.com) and
+[Docker-compose](https://docs.docker.com/compose/) installed.
 
-> If you have a permission issue when running `docker-compose`,
+> If you encounter permission issues when running `docker-compose`,
 you can use `sudo docker-compose`.
 
 ### Build
@@ -130,20 +136,19 @@ docker-compose exec tilux tilux
 docker-compose down
 ```
 
-## Download script or scripts
+## Download Script or Scripts
 
-Instead of having to build everything and install everything,
-you might want to just install one script (or a few).
+Instead of building and installing everything,
+you can choose to download and install individual scripts.
 
-All you have to do is:
+To download a specific script (e.g., the computer bit system script),
+use the following command:
 
-> In this example I'm downloading the computer bit system script.
-
-**Note**: Without running the build, there is a possibility that the required packages,
-classes, and modules have not been installed or loaded.
-To ensure the smooth operation of the scripts,
-it is recommended to run the build and ensure all dependencies are properly set up.
-If you're downloading image scripts you need to also download `image_validator.rb`.
+> **NOTE**: Without running the `build`, there is a possibility that the
+required packages, classes, and modules have not been installed or loaded.
+To ensure the smooth operation of the scripts, it is recommended to run the
+`build` and ensure all dependencies are properly set up. If you're downloading image
+scripts, you also need to download `image_validator.rb`.
 
 ```
 # Example
@@ -151,7 +156,7 @@ If you're downloading image scripts you need to also download `image_validator.r
 wget https://raw.githubusercontent.com/endormi/tilux/master/sys/info/bit.sh
 ```
 
-Make the script an executable:
+Make the script executable:
 
 ```
 # Example
@@ -159,7 +164,7 @@ Make the script an executable:
 chmod +x bit.sh
 ```
 
-Run:
+Run the script:
 
 ```
 # Example
@@ -167,12 +172,14 @@ Run:
 ./bit.sh
 ```
 
-You can also directly download multiple scripts that I find to be the most useful.
+You can also directly download multiple scripts that are
+considered to be the most useful:
 
-> Checks for ruby
+> Checks for ruby.
 
-```bash
+```
 wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download/download_scripts | bash
 ```
 
-You can then add the scripts to your `dotfiles`.
+After downloading the scripts, you can add them to your `dotfiles` or
+any other desired location.

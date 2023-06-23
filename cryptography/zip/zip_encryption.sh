@@ -8,18 +8,22 @@ if ! command -v zip &>/dev/null; then
 fi
 
 if [[ "$1" == "tilux" ]]; then
-  source ./tools/catch
+  source $CATCH_SCRIPT_PATH
   python3 -c "from tools.logos import Logo; Logo('Zip Encryption');"
 fi
 
 sleep 1
 
 get_user_input() {
-  local input_text=$1
-  local input_variable=$2
-  read -p "$input_text" $input_variable
-  [ "$1" == "tilux" ] && catch_empty $input_variable
+  local input_text="$1"
+  local input_variable="$2"
+  read -p "$input_text" "$input_variable"
+  if [[ "$script_argument" == "tilux" ]]; then
+    catch_empty "${!input_variable}"
+  fi
 }
+
+script_argument=$1
 
 echo -e "Warning! The standard ZIP encryption is very weak.\n"
 get_user_input "What file(s) do you want to encrypt? " f

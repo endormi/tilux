@@ -2,18 +2,12 @@
 
 [ ! -d scripts ] && cd ..
 
-# Creates a new file
-[ ! -f ~/.bash_aliases ] && touch ~/.bash_aliases
+source scripts/utils/bash_aliases
 
-. ~/.bash_aliases
+alias_name="tilux"
+check_alias_exists $alias_name
 
-alias="tilux"
+echo "alias $alias_name='cd $PWD && ./$alias_name'" >> $bash_aliases_file
+echo -e "Added ${alias_name} to ${bash_aliases_file}"
 
-if alias $alias &>/dev/null; then
-  echo "Alias $alias already exists!"
-  exit
-fi
-
-echo "alias $alias='cd $PWD && ./$alias'" >> ~/.bash_aliases
-echo "Added ${alias} to .bash_aliases"
-exec "$BASH"
+prompt_for_new_shell_session

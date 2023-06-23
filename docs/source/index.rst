@@ -9,25 +9,28 @@ Welcome to Tilux' documentation!
 What is Tilux?
 --------------
 
-Tilux is a CLI with a bunch of scripts included that are useful and concise.
+Tilux is a command-line interface (CLI) tool that provides a collection of useful and concise scripts.
 
 If you want to see a certain script added, open up a new `issue`_ or make a pull request.
 
 .. _issue: https://github.com/endormi/tilux/issues/new/choose
 
-*Feel free to try on other distros. PR's for supporting different distros are very much appreciated.*
+The project has been manually tested and verified only on Debian-based distributions.
 
-**Note**: Only tested on Debian-based distros.
+*Feel free to try Tilux on other Linux distributions.
+Pull requests for adding support for different distros are highly appreciated.*
 
-If you don't want to install the whole tool. You can download specific scripts, to know how check the contents underneath.
+If you prefer not to install the entire tool, you can download individual scripts.
+For instructions on how to do this, please refer to the contents underneath.
 
-*Big part of the reason why I created this project is to learn, that's why I have used different programming languages when I could've just used one.*
+*I created this project with the intention of learning, which is why
+I have utilized multiple programming languages instead of just one.*
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   installation
+   usage
    commands
    packages
 

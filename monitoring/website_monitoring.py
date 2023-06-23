@@ -8,9 +8,9 @@ import time
 
 def get_input(prompt):
     if len(sys.argv) == 2:
-        import catch_exception as ce
-        ce.__input__(prompt)
-    return input(prompt)
+        return ce.__input__(input(prompt))
+    else:
+        return input(prompt)
 
 
 def main():
@@ -50,8 +50,8 @@ def main():
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
-        sys.path.append("./tools")
-        from logos import Logo
+        import tools.catch_exception as ce
+        from tools.logos import Logo
 
         Logo('Website Monitoring')
 

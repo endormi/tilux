@@ -1,3 +1,5 @@
+# Introduction
+
 ```python
 ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 8    888    8  888   888          888       8    8888    d8
@@ -18,50 +20,52 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
 
 ## What is Tilux?
 
-Tilux is a CLI with a bunch of scripts included that are useful and concise.
+Tilux is a command-line interface (CLI) tool that provides a
+collection of useful and concise scripts.
 
 If you want to see a certain script added, open up a new [issue](https://github.com/endormi/tilux/issues/new/choose)
 or make a pull request.
 
-> Feel free to try on other distros.
-PR's for supporting different distros are very much appreciated.
+If you prefer not to install the entire tool, you can download individual scripts.
+For instructions on how to do this, please refer to the [guide](GUIDE.md#download-script-or-scripts).
 
-**Note**: Only [tested](TESTED_ON.md) on Debian-based distros.
-
-If you don't want to install the whole tool.
-You can download a script or scripts, to know how [click here](GUIDE.md#download-script-or-scripts).
-
-> Big part of the reason why I created this project is to learn,
-that's why I have used different programming languages
-when I could've just used one.
+> I created this project with the intention of learning, which is why
+I have utilized multiple programming languages instead of just one.
 
 ## Usage
 
-You have three options to download the project:
+### Downloading the Project
 
-Clone the project:
+There are three options available for downloading the project:
+
+> These options allow you to obtain the Tilux project based on your preferred method.
+
+Clone the project using `Git`:
 
 ```bash
 git clone https://github.com/endormi/tilux.git
 ```
 
-You can also get the latest release:
+Download the latest release:
 
-> It will install jq, if you don't already have it.
+> This option will also install the `jq` package if it is not already installed.
 
 ```bash
 wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download/download_latest_release | bash
 ```
 
-If you wish to get a specific release and not the latest:
+Download a specific release:
 
-> It will install jq and fzf, if you don't already have them.
+> This option will install both the `jq` and `fzf`
+packages if they are not already installed.
 
 ```bash
 wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download/download_specific_release | bash
 ```
 
-And then `CD` into the folder:
+### Changing to the Project Directory
+
+After downloading the project, `CD` to the corresponding folder:
 
 ```
 # Either
@@ -73,112 +77,144 @@ cd tilux-v.(release)
 # Depending on how you downloaded tilux
 ```
 
-**Run** `build`:
+### Installing Dependencies
 
-> Installs python packages with `virtualenv` by default.
+To install the required dependencies, including Python packages using `virtualenv`
+enabled by default) and other necessary dependencies, use the following command:
 
 ```bash
 bash build
 ```
 
-After build:
-
-```bash
-. ./venv/bin/activate
-```
-
-If you build this way, remember to add the `venv` script to alias.
-
-Run `scripts/add_alias_venv`:
-
-```bash
-./scripts/add_alias_venv
-```
-
-Run `venv`:
-
-```bash
-tvenv
-```
-
-Deactivate `venv`:
-
-```bash
-deactivate
-```
-
-You can also install python packages without `virtualenv`:
-
-> This is not recommended.
+If you prefer not to use `virtualenv` and install Python packages globally,
+you can run the `build` script without the virtual environment (not recommended):
 
 ```bash
 bash build no_venv
 ```
 
-> After running `build` for the first time, you can use `tilux` instead of `build`.
+Please note that these following steps are specific to setting up the
+virtual environment and aliases for the Tilux project.
 
-**Run** `tilux`:
+After the build process, activate the virtual environment:
+
+```bash
+source ./venv/bin/activate
+```
+
+It is recommended to add the `venv` script to your aliases for easier access.
+
+Run the `add_alias_venv`  script located in the scripts folder:
+
+```bash
+bash scripts/add_alias_venv
+```
+
+You can now use the `tvenv` command to activate the virtual environment:
+
+```bash
+tvenv
+```
+
+To deactivate the virtual environment, use the following command:
+
+```bash
+deactivate
+```
+
+> The virtual environment setup ends with the `deactivate` command.
+
+### Running Tilux
+
+You can now use the `tilux` command:
 
 ```bash
 ./tilux
 ```
 
-**Run** `tilux` using arguments:
+You can also pass arguments to the `tilux` command. For example:
 
 ```bash
 ./tilux 2 -c
 ```
 
-`--help`:
+To view the available command-line options and help information for `tilux`,
+use the `--help` flag:
 
 ```bash
 ./tilux --help
 ```
 
-If you run the `add_alias` script inside scripts folder,
-you can run tilux by simply running:
+### Using `tilux` without Specifying the Full Path
 
-> Now you can run `tilux` without having to be inside the folder.
+If you only want to use the `tilux` command without specifying the full path,
+you have two options.
+
+To run `tilux` and its scripts using the more convenient method,
+you can use the following command:
+
+```bash
+bash scripts/add_project_to_path
+```
+
+Using `add_project_to_path` does not change the current directory,
+allowing you to run `tilux` from any location without
+needing to change directories.
+
+Alternatively, you can use the following command:
+
+```bash
+bash scripts/add_alias
+```
+
+When running this way, the `tilux` command will change the
+current directory to the `tilux` folder.
+
+Then, simply run:
 
 ```bash
 tilux
 ```
 
-> Arguments work the same.
+> **NOTE**: `tilux` is not required to run scripts individually.
+For more information, refer to [this section](GUIDE.md#run-from-any-folder)
+in the guide.
 
-**Note**: `tilux` command will `CD` into the `tilux` folder location.
+### Platform Compatibility
 
-> However `tilux` is not required to run scripts individually.
-[See here](GUIDE.md#run-from-any-folder).
+The project has been manually [tested](TESTED_ON.md) and verified only on
+Debian-based distributions.
 
-To see the commands to use, how to run from any folder,
-how to run using Docker and how to download a script or scripts, click [here](GUIDE.md).
+Feel free to try Tilux on other Linux distributions.
+Pull requests for adding support for different distros are highly appreciated.
 
-Run `docs` locally:
+### Additional Information
 
-> `make docs` builds the `docs` and `run=1` runs `docs` locally.
+To explore additional commands, learn how to run scripts from any folder, use Docker,
+or download scripts, please refer to the [guide](GUIDE.md).
+
+For running the documentation locally, use the following command:
 
 ```bash
 make docs run=1
 ```
 
-Run `man pages`:
+The `make docs` command builds the documentation, and `run=1` runs it locally.
+
+To generate `man` pages, run:
 
 ```bash
 make groff
 ```
 
-To use `Pyca` you need to first generate key:
-
-`Pyca`:
+To use `Pyca`, you need to generate a key first:
 
 ```bash
-./cryptography/pyca/generate_key.py
+python3 cryptography/pyca/generate_key.py
 ```
 
-Check useful scripts [here](scripts).
-
-[Tested](TESTED_ON.md) on (these are manually tested).
+You can find other useful scripts [here](scripts) that are meant
+specifically for Tilux.
 
 ## License
 

@@ -1,6 +1,6 @@
 # Packages
 
-## Required for the tool
+## Required for the Tool
 
 - Python3 and Pip3
 - Ruby-full
@@ -11,7 +11,7 @@
 
 Other packages will be installed when running specific scripts.
 
-## Optional packages include
+## Optional Packages Include
 
 - jq
 - clang-format

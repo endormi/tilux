@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.1
+
+- Add:
+  - Gem rake
+
+- Update:
+  - Packages list
+
 ## 1.5.0
 
 - Add:

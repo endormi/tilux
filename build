@@ -1,8 +1,5 @@
 #!/bin/bash
 
-green="\033[0;32m"
-white="\033[1;37m"
-
 version=$(cat .version)
 text="Building Tilux v.$version"
 
@@ -64,4 +61,4 @@ pip3 install -r requirements.txt && bundle install
 clear
 
 echo "Note: Certain scripts might require you to install a package. It's included in the script."
-echo -e "${green}Thanks for using Tilux!${white}\n"
+echo -e "Thanks for using Tilux!\n"

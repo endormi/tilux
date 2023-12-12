@@ -16,12 +16,13 @@ Inside the folder Tilux:
 
 - `ansi_colors.rb` ANSI-Colors.
 
-- `command_options.rb` to run files.
+- `color_settings.rb` manages color customization settings.
 
-- `command_processor.rb` class encapsulates the functionality related to
-processing commands in Tilux. The helper methods are instance methods of the class,
-allowing better organization and encapsulation.
+- `command_options.rb` to run all of the scripts Tilux provides.
+
+- `command_processor.rb` Manages command processing in Tilux with encapsulated
+helper methods for improved organization and encapsulation.
 
 - `helpers.rb` collection of helper methods.
 
-- `print_options.rb` to print options.
+- `print_options.rb` offers interactive and command-line options.

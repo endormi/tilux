@@ -14,13 +14,6 @@ module TiluxHelpers
     File.open(VERSION_FILE_PATH) { |file| file.read.strip }
   end
 
-  # Generate the prompt for Tilux
-  #
-  # @return [String] The prompt string.
-  def self.prompt
-    "\ntilux~# ".light_yellow
-  end
-
   # Clear the screen and execute a system command
   #
   # @param file [String] The system command to execute.

@@ -11,13 +11,6 @@ RSpec.describe TiluxHelpers do
     end
   end
 
-  describe '.prompt' do
-    it 'returns the Tilux prompt string' do
-      prompt = described_class.prompt
-      expect(prompt).to eq("\ntilux~# ".light_yellow)
-    end
-  end
-
   describe '.sys' do
     it 'clears the screen and executes the given system command' do
       expect(described_class).to receive(:system).with('clear')

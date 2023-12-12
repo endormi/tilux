@@ -1,4 +1,4 @@
-require_relative '../tools/tilux/color_names'
+require_relative '../tools/tilux/ansi_colors'
 
 RSpec.describe ANSIColors do
   let(:string) { 'Test String' }
@@ -76,7 +76,7 @@ RSpec.describe ANSIColors do
   describe '#white' do
     it 'returns the string wrapped with the white color code' do
       colored_string = string.white
-      expect(colored_string).to eq("\e[1;37mTest String\e[0m")
+      expect(colored_string).to eq("\e[37mTest String\e[0m")
     end
   end
 end

@@ -14,7 +14,7 @@ empty inputs in different languages (since I've used multiple languages).
 
 Inside the folder Tilux:
 
-- `color_names.rb` ANSI-Colors.
+- `ansi_colors.rb` ANSI-Colors.
 
 - `command_options.rb` to run files.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-require_relative 'color_names'
+require_relative 'ansi_colors'
 require_relative 'print_options'
 
 VERSION_FILE_PATH = File.expand_path('../../.version', File.dirname(__FILE__))

@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 require_relative '../catch_exception'
-require_relative 'color_names'
+require_relative 'ansi_colors'
 require_relative 'command_options'
 require_relative 'helpers'
 require_relative 'print_options'

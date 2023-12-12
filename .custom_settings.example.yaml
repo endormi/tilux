@@ -1,0 +1,13 @@
+# Default values
+custom:
+  header_color: red
+  version_text_color: light_white
+  version_number_color: light_blue
+  author_color: light_white
+  link_color: light_white
+  prompt_text_color: light_white
+  prompt_color: light_yellow
+
+  # For Python logo tool
+  logo_color: red
+  logo_font: slant

@@ -37,7 +37,7 @@ and add the file to `docs/source/index.rst` `toctree`.
 
 ## Updating Docs
 
-In the case you are updating `docs/source/commands.md`, `docs/source/packages.md`,
+In the case you are updating `docs/source/guide.md`, `docs/source/packages.md`,
 `GUIDE.md` and/or `PACKAGES.md`.
 Changes must be made in `GUIDE.md` and/or `PACKAGES.md`.
 Applying the changes also to `docs/source/` using `scripts/copy_content`.

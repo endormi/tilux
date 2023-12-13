@@ -31,7 +31,7 @@ I have utilized multiple programming languages instead of just one.*
    :caption: Contents:
 
    usage
-   commands
+   guide
    packages
 
 Indices and tables

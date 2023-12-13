@@ -7,15 +7,19 @@
 ./scripts/utils/check_and_install_package sed
 
 docs_dir="docs/source"
-copy_guide="GUIDE.md"
-write_to_commands="$docs_dir/commands.md"
-new_heading="# Commands"
 
-cp $copy_guide $write_to_commands
-sed -i "1 s/.*/$new_heading/" $write_to_commands
+copy_pairs() {
+  cp "$1" "$docs_dir/$2"
+}
 
-copy_packages="packages.md"
-uppercase_packages="$(tr '[:lower:]' '[:upper:]' <<< ${copy_packages:0:8})${copy_packages:8}"
+file_pairs=(
+  "GUIDE.md guide.md"
+  "PACKAGES.md packages.md"
+)
 
-cp $uppercase_packages $docs_dir/$copy_packages
-sed -i "$ d" $docs_dir/$copy_packages
+for pair in "${file_pairs[@]}"; do
+  copy_pairs $pair
+done
+
+sed -i '2,7d' "$docs_dir/guide.md"
+sed -i '30,31d' "$docs_dir/packages.md"

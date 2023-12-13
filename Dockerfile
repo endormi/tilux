@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 MAINTAINER Endormi
 
-WORKDIR /usr/src/app/tilux
+WORKDIR /usr/src/app
 
 RUN apt update \
     && apt install -y python3 \
@@ -16,10 +16,7 @@ RUN apt update \
     clang-format \
     && apt clean
 
-RUN git clone https://github.com/endormi/tilux.git \
-    && cd tilux
-
-COPY . .
+RUN git clone https://github.com/endormi/tilux.git .
 
 ENV BUNDLER_VERSION=2.1.4
 

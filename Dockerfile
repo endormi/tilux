@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 MAINTAINER Endormi
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/tilux
 
 RUN apt update \
     && apt install -y python3 \
@@ -19,7 +19,7 @@ RUN apt update \
 RUN git clone https://github.com/endormi/tilux.git \
     && cd tilux
 
-COPY . ./
+COPY . .
 
 ENV BUNDLER_VERSION=2.1.4
 
@@ -33,7 +33,7 @@ ENV BUNDLE_SILENCE_ROOT_WARNING=1 \
   BUNDLE_APP_CONFIG="$GEM_HOME"
 
 # Will install required packages and give permission for scripts
-# When installing Python packages, it will give an warning:
+# When installing Python packages, it will give a warning:
 # Running pip as root will break packages and permissions.
 # Since we're using a container, we don't need to worry about this.
 RUN bash build y

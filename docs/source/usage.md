@@ -96,6 +96,8 @@ deactivate
 
 You can now use the `tilux` command:
 
+> **NOTE:** Remember to `chmod +x tilux` before.
+
 ```
 ./tilux
 ```
@@ -145,8 +147,8 @@ tilux
 ```
 
 **NOTE**: `tilux` is not required to run scripts individually.
-For more information, refer to #run-from-any-folder from
-the commands section.
+For more information, refer to #running-individual-scripts from
+the guide section.
 
 ## Additional Information
 

@@ -15,7 +15,7 @@ HEADER = "
          888       888   888          888       8     .8PY888.
          888       888   888       o   88.    .8     d8    888b
         o888o     o888o o888ooooood8     YbodP     o888o  o88888o
-"
+".freeze
 
 # TiluxCommandProcessor is responsible for processing user commands and executing corresponding actions.
 class TiluxCommandProcessor

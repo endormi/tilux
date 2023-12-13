@@ -16,6 +16,7 @@ RUN apt update \
     clang-format \
     && apt clean
 
+# Streamline cloning
 RUN git clone https://github.com/endormi/tilux.git .
 
 ENV BUNDLER_VERSION=2.1.4

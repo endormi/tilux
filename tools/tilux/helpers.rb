@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-require_relative 'color_names'
+require_relative 'ansi_colors'
 require_relative 'print_options'
 
 VERSION_FILE_PATH = File.expand_path('../../.version', File.dirname(__FILE__))
@@ -12,13 +12,6 @@ module TiluxHelpers
   # @return [String] The version string read from the file.
   def self.load_version
     File.open(VERSION_FILE_PATH) { |file| file.read.strip }
-  end
-
-  # Generate the prompt for Tilux
-  #
-  # @return [String] The prompt string.
-  def self.prompt
-    "\ntilux~# ".light_yellow
   end
 
   # Clear the screen and execute a system command

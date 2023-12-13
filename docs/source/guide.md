@@ -1,9 +1,4 @@
-# Commands
-
-- [Commands to use](#commands)
-- [Run from any folder](#run-from-any-folder)
-- [Running with Docker](#running-with-docker)
-- [Download script or scripts](#download-script-or-scripts)
+# Guide
 
 ## Commands
 
@@ -188,3 +183,80 @@ wget -O - https://raw.githubusercontent.com/endormi/tilux/master/download/downlo
 
 After downloading the scripts, you can add them to your `dotfiles` or
 any other desired location.
+
+## Customize Colors and Font
+
+You can now personalize the appearance with custom colors and font settings.
+To get started, create a new file named `.custom_settings.yaml`.
+
+Here's an example of the file contents, derived from the
+`.custom_settings.example.yaml` file, which provides default values:
+
+```
+# Default values
+custom:
+  header_color: red
+  version_text_color: light_white
+  version_number_color: light_blue
+  author_color: light_white
+  link_color: light_white
+  prompt_text_color: light_white
+  prompt_color: light_yellow
+
+  # For Python logo tool
+  logo_color: red
+  logo_font: slant
+```
+
+You can customize your preferences by modifying the file `.custom_settings.yaml`
+as shown below:
+
+> **NOTE:** The provided example below has just a subset of the available
+customization options. Feel free to explore and modify other values in the
+`.custom_settings.yaml` file according to your preferences.
+Refer to the default values for the full list of customization options.
+
+```
+custom:
+  header_color: blue
+  prompt_text_color: red
+  prompt_color: blue
+
+  logo_color: blue
+  logo_font: block
+```
+
+When creating the `.custom_settings.yaml` file,  ensure it is not empty
+to avoid errors. You can choose to customize specific values,
+such as `header_color`, while leaving others to retain their
+default color and font values.
+
+### Supported Customizations
+
+For the colors, `ANSI` foreground colors are supported. Utilize the following values:
+
+> **NOTE:** To use light colors, simply prepend `light_`
+to the color name, such as `light_red`.
+
+```
+black
+red
+green
+yellow
+blue
+purple
+cyan
+white
+```
+
+For `logo_color` and `logo_font`, the options are drawn from `termcolor` and `FIGlet`.
+Explore the available options for `logo_color` in the `termcolor`
+[README.md](https://github.com/termcolor/termcolor#text-properties). The color options
+provided here align with the earlier set values, with the only distinction being
+the use of purple instead of magenta and some light colors.
+
+For font options, refer to this [example site](http://www.figlet.org/examples.html)
+showcasing various fonts.
+
+Customize different configurations to find the perfect customization
+that suits your preferences.

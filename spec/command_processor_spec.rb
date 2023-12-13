@@ -66,6 +66,15 @@ RSpec.describe TiluxCommandProcessor do
     end
   end
 
+  describe '#prompt' do
+    it 'returns a formatted prompt with the correct color' do
+      # Stub or set up any necessary methods or properties, including load_colors
+      allow(command_processor).to receive(:load_colors).and_return({ 'prompt_color' => 'light_yellow' })
+      expected_prompt = "\ntilux~# ".send(command_processor.instance_variable_get(:@all_colors)['prompt_color'])
+      expect(command_processor.prompt).to eq(expected_prompt)
+    end
+  end
+
   describe '#print_script_prompt' do
     it 'prints the script prompt' do
       expect { command_processor.print_script_prompt }.to output(/.*What script do you want to run?.*/).to_stdout

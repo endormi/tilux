@@ -128,6 +128,8 @@ deactivate
 
 You can now use the `tilux` command:
 
+> **NOTE:** Remember to `chmod +x tilux` before.
+
 ```bash
 ./tilux
 ```
@@ -177,7 +179,7 @@ tilux
 ```
 
 > **NOTE**: `tilux` is not required to run scripts individually.
-For more information, refer to [this section](GUIDE.md#run-from-any-folder)
+For more information, refer to [this section](GUIDE.md#running-individual-scripts)
 in the guide.
 
 ### Platform Compatibility
@@ -191,7 +193,7 @@ Pull requests for adding support for different distros are highly appreciated.
 ### Additional Information
 
 To explore additional commands, learn how to run scripts from any folder, use Docker,
-or download scripts, please refer to the [guide](GUIDE.md).
+download scripts, or customize colors and font, please refer to the [guide](GUIDE.md).
 
 For running the documentation locally, use the following command:
 

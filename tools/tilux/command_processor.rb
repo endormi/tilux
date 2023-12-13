@@ -1,19 +1,13 @@
 #!/usr/bin/ruby
 
 require_relative '../catch_exception'
-require_relative 'color_names'
+require_relative 'ansi_colors'
+require_relative 'color_settings'
 require_relative 'command_options'
 require_relative 'helpers'
 require_relative 'print_options'
 
-# TiluxCommandProcessor is responsible for processing user commands and executing corresponding actions.
-class TiluxCommandProcessor
-  def initialize(version)
-    @version = version
-  end
-
-  def print_header
-    puts "
+HEADER = "
     ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
     8    888    8  888   888          888       8    8888    d8
          888       888   888          888       8     Y888..8P
@@ -21,9 +15,21 @@ class TiluxCommandProcessor
          888       888   888          888       8     .8PY888.
          888       888   888       o   88.    .8     d8    888b
         o888o     o888o o888ooooood8     YbodP     o888o  o88888o
-    ".red
-    print 'version'.white, " #{@version}".light_blue, ' by Endormi '.white
-    print "\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a".white, "\n"
+".freeze
+
+# TiluxCommandProcessor is responsible for processing user commands and executing corresponding actions.
+class TiluxCommandProcessor
+  def initialize(version)
+    @all_colors = ColorSettings.load_colors
+    @version = version
+  end
+
+  def print_header
+    puts HEADER.send(@all_colors['header_color'])
+    print 'version'.send(@all_colors['version_text_color']), " #{@version}".send(@all_colors['version_number_color'])
+    print ' by Endormi '.send(@all_colors['author_color'])
+    print "\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a".send(@all_colors['link_color'])
+    print "\n"
   end
 
   # Prints the option choices and executes the selected choice.
@@ -41,7 +47,7 @@ class TiluxCommandProcessor
     else
       abort 'Invalid choice!'
     end
-    print TiluxHelpers.prompt
+    print prompt
   end
 
   # Handles the main choices and executes the corresponding action.
@@ -86,11 +92,18 @@ class TiluxCommandProcessor
     )
   end
 
+  # Generate the prompt for Tilux
+  #
+  # @return [String] The prompt string.
+  def prompt
+    "\ntilux~# ".send(@all_colors['prompt_color'])
+  end
+
   # Prints the prompt for script selection.
   def print_script_prompt
-    puts "\nWhat script do you want to run?\n".white
+    puts "\nWhat script do you want to run?\n".send(@all_colors['prompt_text_color'])
     tilux_print
-    print TiluxHelpers.prompt
+    print prompt
   end
 
   # Executes the specified value as a command.

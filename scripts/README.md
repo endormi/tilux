@@ -29,7 +29,6 @@ adding it to the system's `PATH`
 - `groff` - Runs the manpage
 - `install_req` - Installs required packages
 - `latest_release` - Display latest release
-- `list_of_files` - Display list of files in each language, because there are many
 - `open_repo` - Opens tilux repository
 - `resize_term` - Resizes terminal
 - `run_sphinx_locally` - Run sphinx documentation locally

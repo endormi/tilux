@@ -10,7 +10,7 @@ module ANSIColors
     'blue' => 34,
     'purple' => 35,
     'cyan' => 36,
-    'white' => 37,
+    'white' => 37
   }.freeze
 
   def color(color_code)

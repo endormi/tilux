@@ -19,7 +19,8 @@ class ColorSettings
 
     if File.exist?(custom_settings_file)
       config = YAML.load_file(custom_settings_file)['custom'] || {}
-      colors = ['header_color', 'version_text_color', 'version_number_color', 'author_color', 'link_color', 'prompt_text_color', 'prompt_color']
+      colors = %w[header_color version_text_color version_number_color author_color link_color
+                  prompt_text_color prompt_color]
       result_colors = {}
 
       colors.each do |color|

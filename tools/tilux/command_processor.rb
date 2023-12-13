@@ -7,6 +7,16 @@ require_relative 'command_options'
 require_relative 'helpers'
 require_relative 'print_options'
 
+HEADER = "
+    ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
+    8    888    8  888   888          888       8    8888    d8
+         888       888   888          888       8     Y888..8P
+         888       888   888          888       8       8888
+         888       888   888          888       8     .8PY888.
+         888       888   888       o   88.    .8     d8    888b
+        o888o     o888o o888ooooood8     YbodP     o888o  o88888o
+"
+
 # TiluxCommandProcessor is responsible for processing user commands and executing corresponding actions.
 class TiluxCommandProcessor
   def initialize(version)
@@ -15,17 +25,11 @@ class TiluxCommandProcessor
   end
 
   def print_header
-    puts "
-    ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
-    8    888    8  888   888          888       8    8888    d8
-         888       888   888          888       8     Y888..8P
-         888       888   888          888       8       8888
-         888       888   888          888       8     .8PY888.
-         888       888   888       o   88.    .8     d8    888b
-        o888o     o888o o888ooooood8     YbodP     o888o  o88888o
-    ".send(@all_colors['header_color'])
-    print 'version'.send(@all_colors['version_text_color']), " #{@version}".send(@all_colors['version_number_color']), ' by Endormi '.send(@all_colors['author_color'])
-    print "\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a".send(@all_colors['link_color']), "\n"
+    puts HEADER.send(@all_colors['header_color'])
+    print 'version'.send(@all_colors['version_text_color']), " #{@version}".send(@all_colors['version_number_color'])
+    print ' by Endormi '.send(@all_colors['author_color'])
+    print "\e]8;;https://github.com/endormi/tilux\a(github.com/endormi/tilux)\e]8;;\a".send(@all_colors['link_color'])
+    print "\n"
   end
 
   # Prints the option choices and executes the selected choice.

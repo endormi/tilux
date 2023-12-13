@@ -1,9 +1,9 @@
 require 'yaml'
 require_relative '../tools/tilux/color_settings'
 
-RSpec.describe ColorSettings do
-  PATH = '/mock/path'
+PATH = '/mock/path'.freeze
 
+RSpec.describe ColorSettings do
   describe '.load_colors' do
     context 'when custom settings file exists' do
       before do
@@ -11,7 +11,9 @@ RSpec.describe ColorSettings do
       end
 
       it 'loads custom colors from the file' do
-        allow(YAML).to receive(:load_file).with("#{PATH}/.custom_settings.yaml").and_return('custom' => { 'header_color' => 'blue' })
+        allow(YAML).to receive(:load_file)
+          .with("#{PATH}/.custom_settings.yaml")
+          .and_return('custom' => { 'header_color' => 'blue' })
         expect(ColorSettings.load_colors).to include('header_color' => 'blue')
       end
 

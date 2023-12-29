@@ -15,11 +15,29 @@ def calculate_directory_size(directory):
     return total_size
 
 
+def convert(total_size, unit='bytes'):
+    unit_conversion = {'bytes': 1, 'kilobytes': 1024, 'megabytes': 1024 ** 2, 'gigabytes': 1024 ** 3}
+    return total_size / unit_conversion[unit]
+
+
+def format_size(size, unit):
+    return "{:.2f} {}".format(convert(size, unit), unit)
+
+
+def print_result(total_size):
+    print("\nTotal directory size:")
+    print("- Bytes: {} bytes".format(total_size))
+    print("- Kilobytes: {}".format(format_size(total_size, 'kilobytes')))
+    print("- Megabytes: {}".format(format_size(total_size, 'megabytes')))
+    print("- Gigabytes: {}".format(format_size(total_size, 'gigabytes')))
+
+
 def main():
-    directory = input("Enter the directory to calculate its size (default is current directory): ") or '.'
+    directory = input("Enter the directory to calculate its size (default is the current directory): ") or '.'
 
     if os.path.exists(directory):
-        print(f"Total directory size: {calculate_directory_size(directory)} bytes")
+        total_size = calculate_directory_size(directory)
+        print_result(total_size)
     else:
         print(f"{directory} doesn't exist.")
 

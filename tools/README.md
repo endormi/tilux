@@ -20,7 +20,7 @@ Inside the folder Tilux:
 
 - `command_options.rb` to run all of the scripts Tilux provides.
 
-- `command_processor.rb` Manages command processing in Tilux with encapsulated
+- `command_processor.rb` manages command processing in Tilux with encapsulated
 helper methods for improved organization and encapsulation.
 
 - `helpers.rb` collection of helper methods.

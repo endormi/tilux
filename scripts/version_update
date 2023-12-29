@@ -9,5 +9,15 @@ echo "Current version is: $current_version"
 read -p "New version: " new_version
 [ -z $new_version ] && echo "You need to add a new version." && exit
 
+current_branch=$(git branch --show-current)
+if [[ "$current_branch" == "master" ]]; then
+    branch_name="$new_version"
+    git checkout -b "$branch_name"
+else
+  echo "Skipping branch creation for $new_version."
+  echo "Remember to create a branch called '$new_version'."
+  echo "You are in branch '$current_branch'."
+fi
+
 find $files -exec sed -i "s/${current_version}/$new_version/g" {} \;
 sed -i "3i ## $new_version \n" CHANGELOG.md

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.15
+
+- Add:
+  - The ability to personalize the appearance with custom colors and font settings with documentation
+  - Branch creation in version_update script with documentation
+  - Better output for directory size calculator
+
+- Update:
+  - Repo cloning in Dockerfile
+
 ## 1.5.1
 
 - Add:

@@ -33,5 +33,6 @@ adding it to the system's `PATH`
 - `resize_term` - Resizes terminal
 - `run_sphinx_locally` - Run sphinx documentation locally
 - `start_dcompose` - Starts docker-compose
-- `version_update` - Updates all files that have the current version
-and adds a new version heading for `CHANGELOG.md`
+- `version_update` - Updates files with the current version,
+adds a new version heading to `CHANGELOG.md`, and creates a new
+branch if on the master branch.

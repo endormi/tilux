@@ -13,7 +13,6 @@ scripts=(
   "sys/info/bit.sh"
   "sys/info/ip.rb"
   "sys/info/root.rb"
-  "sys/other/add_alias.sh"
   "sys/other/parse_date.rb"
 )
 

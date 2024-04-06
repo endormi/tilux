@@ -2,16 +2,15 @@
 
 [ ! -d scripts ] && cd ..
 
-source scripts/utils/bash_aliases
+source scripts/utils/bashpal_suggestion
 
 directory=$PWD
 
-if grep -Fxq "export PATH=\$PATH:$directory" $bash_aliases_file || alias $directory &>/dev/null; then
-  echo "Directory or alias already exists in PATH!"
-  exit
+if ! command -v bashpal &>/dev/null; then
+  bashpal_suggestion
+  bash_aliases_file=~/.bash_aliases
+  echo "export PATH=\$PATH:$directory" >> $bash_aliases_file
+  echo "Added ${directory} PATH to ${bash_aliases_file}"
+else
+  bashpal -p $directory
 fi
-
-echo "export PATH=\$PATH:$directory" >> $bash_aliases_file
-echo "Added ${directory} PATH to ${bash_aliases_file}"
-
-prompt_for_new_shell_session

@@ -89,7 +89,6 @@ end
 
 def systemo_print
   puts '::OTHER::'
-  puts '-a:   add alias'
   puts '-b:   print text in ASCII art (submodule)'
   puts '-cdp: convert doc to pdf'
   puts '-def: default web browser'
@@ -153,7 +152,6 @@ def help_print
   puts '4 -i -prv:  python and ruby version'
   puts '4 -i -r:    root (check if you are root or not)'
   puts '4 -i -s:    display computer space, uptime and number of processes running'
-  puts '4 -o -a:    add alias'
   puts '4 -o -b:    print text in ASCII art (submodule)'
   puts '4 -o -cdp:  convert doc to pdf'
   puts '4 -o -def:  default web browser'

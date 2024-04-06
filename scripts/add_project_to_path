@@ -2,10 +2,15 @@
 
 [ ! -d scripts ] && cd ..
 
-if ! command -v bashpal &>/dev/null; then
-  echo "You need bashpal!"
-  exit
-fi
+source scripts/utils/bashpal_suggestion
 
 directory=$PWD
-bashpal -p $directory
+
+if ! command -v bashpal &>/dev/null; then
+  bashpal_suggestion
+  bash_aliases_file=~/.bash_aliases
+  echo "export PATH=\$PATH:$directory" >> $bash_aliases_file
+  echo "Added ${directory} PATH to ${bash_aliases_file}"
+else
+  bashpal -p $directory
+fi

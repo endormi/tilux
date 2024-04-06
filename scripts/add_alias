@@ -2,12 +2,10 @@
 
 [ ! -d scripts ] && cd ..
 
-source scripts/utils/bash_aliases
+if ! command -v bashpal &>/dev/null; then
+  echo "You need bashpal!"
+  exit
+fi
 
 alias_name="tilux"
-check_alias_exists $alias_name
-
-echo "alias $alias_name='cd $PWD && ./$alias_name'" >> $bash_aliases_file
-echo -e "Added ${alias_name} to ${bash_aliases_file}"
-
-prompt_for_new_shell_session
+bashpal -a $alias_name -c "cd $PWD && ./$alias_name"

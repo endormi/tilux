@@ -56,7 +56,6 @@ for example, `-c` and `-f`, to separate scripts into folders.
 4 -i -prv:  python and ruby version
 4 -i -r:    root (check if you are root or not)
 4 -i -s:    display computer space, uptime and number of processes running
-4 -o -a:    add alias
 4 -o -b:    print text in ASCII art (submodule)
 4 -o -cdp:  convert doc to pdf
 4 -o -def:  default web browser
@@ -100,9 +99,7 @@ tilux/sys/file_folder/fs.o
 ```
 
 If you prefer running specific scripts without launching Tilux itself,
-you can execute them individually as shown above. Additionally, if you frequently
-use certain scripts, you can add them to your alias for easier access.
-To do this, you can use the `sys/other/add_alias` script.
+you can execute them individually as shown above.
 
 ## Running with Docker
 

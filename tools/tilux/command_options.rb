@@ -81,7 +81,6 @@ $opts = {
       end
     },
     '-o': {
-      '-a':     -> { TiluxHelpers.sys("bash #{PATH}/sys/other/add_alias.sh tilux") },
       '-b':     lambda do
         system('clear')
         print `python3 -c "from tools.logos import Logo; Logo('Bashcii');"`

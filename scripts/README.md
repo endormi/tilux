@@ -13,7 +13,9 @@ that is used across multiple scripts.
 
 - `utils`:
   - `bash_aliases` - script shares common
-  Bash `alias` and `PATH` settings
+  Bash `alias` and `PATH` settings, also suggests installing
+  `bashpal` package if it's not already installed
+
   - `check_and_install_package` - utility script for checking the availability of
   a package and installing it if necessary
 

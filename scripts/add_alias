@@ -2,16 +2,9 @@
 
 [ ! -d scripts ] && cd ..
 
-source scripts/utils/bashpal_suggestion
+source scripts/utils/bash_aliases
 
 alias_name="tilux"
 cmd="cd $PWD && ./$alias_name"
 
-if ! command -v bashpal &>/dev/null; then
-  bashpal_suggestion
-  bash_aliases_file=~/.bash_aliases
-  echo "alias $alias_name='$cmd'" >> $bash_aliases_file
-  echo -e "Added ${alias_name} to ${bash_aliases_file}"
-else
-  bashpal -a $alias_name -c "$cmd"
-fi
+handle_alias $alias_name "$cmd"

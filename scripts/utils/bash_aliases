@@ -1,0 +1,68 @@
+#!/bin/bash
+
+suggest_bashpal_installation() {
+  echo "Doesn't check for duplicates nor creates the file ~/.bash_aliases."
+  echo "I suggest installing bashpal."
+  echo -e "\nsudo add-apt-repository ppa:endormi/ppapp && sudo apt update && sudo apt install bashpal\n"
+
+  read -p "Do you want to continue? (Y/n) " continue
+  continue="$(echo ${continue} | tr 'A-Z' 'a-z')"
+
+  [ "$continue" != "y" ] && [ "$continue" != "yes" ] && echo "Exiting..." && exit
+}
+
+set_bash_aliases_file() {
+  bash_aliases_file=~/.bash_aliases
+}
+
+set_alias_variables() {
+  local alias_name="$1"
+  local cmd="$2"
+}
+
+set_directory_variable() {
+  local directory="$1"
+}
+
+add_bash_alias_with_bashpal() {
+  set_alias_variables $1 $2
+  bashpal -a $alias_name -c "$cmd"
+}
+
+add_bash_alias() {
+  set_alias_variables $1 $2
+  set_bash_aliases_file
+
+  echo "alias $alias_name='$cmd'" >> "$bash_aliases_file"
+  echo "Added ${alias_name} to ${bash_aliases_file}"
+}
+
+handle_alias() {
+  set_alias_variables $1 $2
+
+  if command -v bashpal &>/dev/null; then
+    add_bash_alias_with_bashpal $alias_name "$cmd"
+  else
+    suggest_bashpal_installation
+    add_bash_alias $alias_name "$cmd"
+  fi
+}
+
+add_to_path_with_bashpal() {
+  set_directory_variable $1
+  bashpal -p "$directory"
+}
+
+handle_path() {
+  set_directory_variable $1
+
+  if command -v bashpal &>/dev/null; then
+    add_to_path_with_bashpal "$directory"
+  else
+    suggest_bashpal_installation
+    set_bash_aliases_file
+
+    echo "export PATH=\$PATH:$directory" >> "$bash_aliases_file"
+    echo "Added ${directory} PATH to ${bash_aliases_file}"
+  fi
+}

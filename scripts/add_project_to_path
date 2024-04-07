@@ -2,15 +2,7 @@
 
 [ ! -d scripts ] && cd ..
 
-source scripts/utils/bashpal_suggestion
+source scripts/utils/bash_aliases
 
 directory=$PWD
-
-if ! command -v bashpal &>/dev/null; then
-  bashpal_suggestion
-  bash_aliases_file=~/.bash_aliases
-  echo "export PATH=\$PATH:$directory" >> $bash_aliases_file
-  echo "Added ${directory} PATH to ${bash_aliases_file}"
-else
-  bashpal -p $directory
-fi
+handle_path "$directory"

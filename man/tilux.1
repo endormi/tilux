@@ -1,195 +1,208 @@
-.TH Tilux 1 GNU
-.SH NAME
-tilux
+.Dd April 9, 2024
+.Dt Tilux 1
+.Os
+.Sh NAME
+.Nm tilux
+.Nd Command-line interface tool for Linux
+.Sh SYNOPSIS
+.Bl -tag -width Ds
+.It Xo
+.Nm
+.Op Fl h | \-\-help
+.Xc
+.El
+.Sh DESCRIPTION
+.Nm
+is a command-line interface (CLI) tool that provides a collection of useful and concise scripts categorized into four folders:
+.br
+Cryptography, Monitoring, Networking, and System.
 
-.SH SYNOPSIS
-.B ./tilux
-[-h]
-[--help]
-[1 -cc -e]
-[2 -c]
-[3 -i]
-[4 -i -o]
+.Pp
+The available folders and their contents are as follows:
 
-.SH DESCRIPTTION
-.B tilux
-is a command-line interface (CLI) tool that provides a collection of useful and concise scripts. The scripts are located in cryptography, monitoring, networking and system folder and you then specify which script you want to run.
-.PP
-Shortly about the folders:
-.PP
-Cryptography consists of ccrypt, openssl, pyca and zip and all have an encryption and decryption option.
-.PP
-Monitoring consists of CPU, memory and website.
-.PP
-Networking consists of IP and server pinging.
-.PP
-System consists of many system related scripts such as. configurations, system info, etc.
-.PP
-NOTE: In the options example below, I have for example cryptography -cc -e. Here is a list of the available options: 1 (cryptography), 2 (monitoring), 3 (networking) and 4 (system).
+.Bl -bullet
+.It
+Cryptography: ccrypt, openssl, pyca, and zip with encryption and
+.br
+decryption options.
+.It
+Monitoring: CPU processes, memory consumption, and website
+.br
+availability.
+.It
+Networking: IP and server pinging.
+.It
+System: Various system-related scripts including configurations and system information.
+.El
 
-.SH OPTIONS
-.TP
-.BR \-h ", " \-\-help
-display help information.
-.TP
-.BR 1 " " -cc " " -e
+.Pp
+Note: The options correspond to the folders as follows: 1 (Cryptography), 2 (Monitoring), 3 (Networking), and 4 (System).
+
+.Sh OPTIONS
+.Bl -tag -width "-c | -mc"
+.It Fl h | \-\-help
+Display help information.
+
+.It 1 \-cc \-e
 ccrypt encryption.
-.TP
-.BR 1 " " -cc " " -d
-ccrypt decryption.
-.TP
-.BR 1 " " -op " " -e
-Openssl encryption.
-.TP
-.BR 1 " " -op " " -d
-Openssl decryption.
-.TP
-.BR 1 " " -pc " " -e
-Pyca encryption.
-.TP
-.BR 1 " " -pc " " -d
-Pyca decryption.
-.TP
-.BR 1 " " -zp " " -e
-Zip encryption.
-.TP
-.BR 1 " " -zp " " -d
-Zip decryption.
-.TP
-.BR 2 " " -c
-monitoring cpu processes.
-.TP
-.BR 2 " " -m
-monitoring memory consumption.
-.TP
-.BR 2 " " -w
-monitoring website (if it's up and if not it sends an email).
-.TP
-.BR 3 " " -i
-IP pinging.
-.TP
-.BR 3 " " -s
-server pinging.
-.TP
-.BR 4 " " -c " " -gc
-configure git.
-.TP
-.BR 4 " " -c " " -gtd
-gnome terminal profile dump.
-.TP
-.BR 4 " " -c " " -gtl
-gnome terminal profile load.
-.TP
-.BR 4 " " -f " " -bf
-bf (backup folder).
-.TP
-.BR 4 " " -f " " -c
-clean (clean system of logs and trash).
-.TP
-.BR 4 " " -f " " -d
-check for duplicate files.
-.TP
-.BR 4 " " -f " " -del
-del (delete file or directory).
-.TP
-.BR 4 " " -f " " -dir
-directory size calculator.
-.TP
-.BR 4 " " -f " " -e
-exists (check if file or dir exists).
-.TP
-.BR 4 " " -f " " -ext
-check file extensions inside a folder.
-.TP
-.BR 4 " " -f " " -f
-check file permissions.
-.TP
-.BR 4 " " -f " " -fd
-fd (number of files and folders).
-.TP
-.BR 4 " " -f " " -fl
-file updated.
-.TP
-.BR 4 " " -f " " -fs
-file size.
-.TP
-.BR 4 " " -f " " -k
-search files by keyword.
-.TP
-.BR 4 " " -f " " -l
-last updated (file).
-.TP
-.BR 4 " " -img " " -ci
-convert image.
-.TP
-.BR 4 " " -img " " -i
-image info.
-.TP
-.BR 4 " " -img " " -ri
-resize image.
-.TP
-.BR 4 " " -img " " -ro
-rotate image.
-.TP
-.BR 4 " " -i " " -bit
-computer bit system.
-.TP
-.BR 4 " " -i " " -ip
-IP address.
-.TP
-.BR 4 " " -i " " -k
-kernel and distro version.
-.TP
-.BR 4 " " -i " " -os
-check OS.
-.TP
-.BR 4 " " -i " " -prv
-python and ruby version.
-.TP
-.BR 4 " " -i " " -r
-root (check if you are root or not).
-.TP
-.BR 4 " " -i " " -s
-display computer space, uptime and number of processes running.
-.TP
-.BR 4 " " -o " " -b
-print text in ASCII art (submodule).
-.TP
-.BR 4 " " -o " " -cdp
-convert doc to pdf.
-.TP
-.BR 4 " " -o " " -def
-default web browser.
-.TP4
-.BR 4 " " -o " " -p
-parse date.
-.TP
-.BR 4 " " -o " " -rl
-remove line.
-.TP
-.BR 4 " " -o " " -rt
-resize terminal.
-.TP
-.BR 4 " " -o " " -s
-search specific command.
-.TP
-.BR 4 " " -p " " -cpu
-CPU name.
-.TP
-.BR 4 " " -p " " -mc
-multi-core process time.
-.TP
-.BR 4 " " -p " " -oc
-single core process time.
-.TP
-.BR 4 " " -p " " -ps
-list active processes.
-.TP
-.BR 4 " " -s " " -fp
-force poweroff.
-.TP
-.BR 4 " " -s " " -fr
-force reboot.
 
-.SH AUTHOR
-Endormi
+.It 1 \-cc \-d
+ccrypt decryption.
+
+.It 1 \-op \-e
+Openssl encryption.
+
+.It 1 \-op \-d
+Openssl decryption.
+
+.It 1 \-pc \-e
+Pyca encryption.
+
+.It 1 \-pc \-d
+Pyca decryption.
+
+.It 1 \-zp \-e
+Zip encryption.
+
+.It 1 \-zp \-d
+Zip decryption.
+
+.It 2 \-c
+Monitoring CPU processes.
+
+.It 2 \-m
+Monitoring memory consumption.
+
+.It 2 \-w
+Monitoring website (if it's up and if not it sends an email).
+
+.It 3 \-i
+IP pinging.
+
+.It 3 \-s
+Server pinging.
+
+.It 4 \-c \-gc
+Configure git.
+
+.It 4 \-c \-gtd
+Gnome terminal profile dump.
+
+.It 4 \-c \-gtl
+Gnome terminal profile load.
+
+.It 4 \-f \-bf
+Backup folder.
+
+.It 4 \-f \-c
+Clean system of logs and trash.
+
+.It 4 \-f \-d
+Check for duplicate files.
+
+.It 4 \-f \-del
+Delete file or directory.
+
+.It 4 \-f \-dir
+Directory size calculator.
+
+.It 4 \-f \-e
+Exists (check if file or dir exists).
+
+.It 4 \-f \-ext
+Check file extensions inside a folder.
+
+.It 4 \-f \-f
+Check file permissions.
+
+.It 4 \-f \-fd
+FD (number of files and folders).
+
+.It 4 \-f \-fl
+File updated.
+
+.It 4 \-f \-fs
+File size.
+
+.It 4 \-f \-k
+Search files by keyword.
+
+.It 4 \-f \-l
+Last updated (file).
+
+.It 4 \-img \-ci
+Convert image.
+
+.It 4 \-img \-i
+Image info.
+
+.It 4 \-img \-ri
+Resize image.
+
+.It 4 \-img \-ro
+Rotate image.
+
+.It 4 \-i \-bit
+Computer bit system.
+
+.It 4 \-i \-ip
+IP address.
+
+.It 4 \-i \-k
+Kernel and distro version.
+
+.It 4 \-i \-os
+Check OS.
+
+.It 4 \-i \-prv
+Python and Ruby version.
+
+.It 4 \-i \-r
+Root (check if you are root or not).
+
+.It 4 \-i \-s
+Display computer space, uptime and number of processes running.
+
+.It 4 \-o \-b
+Print text in ASCII art (submodule).
+
+.It 4 \-o \-cdp
+Convert doc to pdf.
+
+.It 4 \-o \-def
+Default web browser.
+
+.It 4 \-o \-p
+Parse date.
+
+.It 4 \-o \-rl
+Remove line.
+
+.It 4 \-o \-rt
+Resize terminal.
+
+.It 4 \-o \-s
+Search specific command.
+
+.It 4 \-p \-cpu
+CPU name.
+
+.It 4 \-p \-mc
+Multi-core process time.
+
+.It 4 \-p \-oc
+Single-core process time.
+
+.It 4 \-p \-ps
+List active processes.
+
+.It 4 \-s \-fp
+Force poweroff.
+
+.It 4 \-s \-fr
+Force reboot.
+.El
+
+.Sh AUTHOR
+.Nm
+was written by Endormi.

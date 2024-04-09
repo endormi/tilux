@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.25
+
+- Update:
+  - Use bashpal for aliases and PATHs and if it's not installed, keep minimal support
+  - Rewrite Manpage
+  - Pull latest changes from bmrk submodule
+
 ## 1.5.15
 
 - Add:

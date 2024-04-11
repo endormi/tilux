@@ -1,8 +1,7 @@
 #!/usr/bin/ruby
 
+require 'csm'
 require_relative '../catch_exception'
-require_relative 'ansi_colors'
-require_relative 'color_settings'
 require_relative 'command_options'
 require_relative 'helpers'
 require_relative 'print_options'
@@ -17,10 +16,22 @@ HEADER = "
         o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 ".freeze
 
+DEFAULT_COLORS = {
+  'header_color' => 'red',
+  'version_text_color' => 'light_white',
+  'version_number_color' => 'light_blue',
+  'author_color' => 'light_white',
+  'link_color' => 'light_white',
+  'prompt_text_color' => 'light_white',
+  'prompt_color' => 'light_yellow'
+}.freeze
+
 # TiluxCommandProcessor is responsible for processing user commands and executing corresponding actions.
 class TiluxCommandProcessor
   def initialize(version)
-    @all_colors = ColorSettings.load_colors
+    custom_settings_file = File.join(PATH, '.custom_settings.yaml')
+    custom_colors = ColorSchemeManager::load_custom_yaml_file(custom_settings_file)
+    @all_colors = ColorSchemeManager::load_colors(DEFAULT_COLORS, custom_colors)
     @version = version
   end
 

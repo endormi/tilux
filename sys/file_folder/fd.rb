@@ -37,7 +37,7 @@ def get_directory_path
 end
 
 def check_directory_existence(dir)
-  return puts("#{dir} doesn't exist."), exit unless File.directory?(dir)
+  [puts("#{dir} doesn't exist."), exit] unless File.directory?(dir)
 end
 
 def retrieve_user_input

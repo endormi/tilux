@@ -30,3 +30,7 @@ Gemspec/RequiredRubyVersion:
 Style/IdenticalConditionalBranches:
   # I will look into this later
   Enabled: false
+
+Style/ColonMethodCall:
+  # ColorSchemeManager::load_colors looks better in my opinion
+  Enabled: false

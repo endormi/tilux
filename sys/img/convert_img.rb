@@ -32,7 +32,8 @@ end
 
 def validate_new_image_name(name)
   return puts('You need to add the file extension.'), exit unless name.include?('.')
-  return puts('File already exists.'), exit if File.file?(name)
+
+  [puts('File already exists.'), exit] if File.file?(name)
 end
 
 if ARGV[0] == 'tilux'

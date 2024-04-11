@@ -18,6 +18,6 @@ class ImageValidator
   #
   # @param img [String] The path to the image file.
   def self.check_image_existence(img)
-    return puts("File doesn't exist."), exit unless File.file?(img)
+    [puts("File doesn't exist."), exit] unless File.file?(img)
   end
 end

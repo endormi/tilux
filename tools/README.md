@@ -14,10 +14,6 @@ empty inputs in different languages (since I've used multiple languages).
 
 Inside the folder Tilux:
 
-- `ansi_colors.rb` ANSI-Colors.
-
-- `color_settings.rb` manages color customization settings.
-
 - `command_options.rb` to run all of the scripts Tilux provides.
 
 - `command_processor.rb` manages command processing in Tilux with encapsulated

@@ -1,24 +1,30 @@
 #!/usr/bin/env python3
 
 import os
-import yaml
-from pyfiglet import figlet_format
-from termcolor import cprint
+import pyfiglet
+from csmpy import ColorSchemeManager
 
 
 class Logo:
     def __init__(self, name):
-        try:
-            logos_tool_path = os.path.dirname(os.path.abspath(__file__))
-            custom_settings_file_path = os.path.join(logos_tool_path, os.pardir, '.custom_settings.yaml')
+        default_values = {
+            'logo_color': 'red',
+            'logo_font': 'slant',
+            'text': 'white',
+        }
 
-            with open(custom_settings_file_path, 'r') as custom_settings_file:
-                config = yaml.safe_load(custom_settings_file).get('custom', {})
-                logo_color = config.get('logo_color', 'red')
-                logo_font = config.get('logo_font', 'slant')
+        # Get path to the custom settings YAML file
+        logos_tool_path = os.path.dirname(os.path.abspath(__file__))
+        custom_settings_file_path = os.path.join(logos_tool_path, os.pardir, '.custom_settings.yaml')
 
-        except (FileNotFoundError, yaml.YAMLError):
-            logo_color = 'red'
-            logo_font = 'slant'
+        # Load custom colors from the YAML file
+        custom_colors = ColorSchemeManager.load_custom_yaml_file(custom_settings_file_path)
+        all_colors = ColorSchemeManager.load_colors(default_values, custom_colors)
 
-        self.name = cprint(figlet_format(name, font=logo_font), logo_color)
+        # Get colors for logo_color, logo_font, and text
+        logo_color = all_colors['logo_color']
+        logo_font = all_colors['logo_font']
+        text_color = all_colors['text']
+
+        styled_text = pyfiglet.figlet_format(name, font=logo_font)
+        print(f"{logo_color} {styled_text} {text_color}")

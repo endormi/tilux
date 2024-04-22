@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.5.5
+
+- Add:
+  - Char counter code
+
+- Update:
+  - Use the csm packages (csm gem and csmpy) for handling customization
+  - Use yearplusplus action
+
+- Fix:
+  - Style/RedundantReturn warning
+
 ## 1.5.25
 
 - Update:

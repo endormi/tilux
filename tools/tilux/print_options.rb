@@ -53,19 +53,20 @@ end
 
 def systemf_print
   puts '::FF::'
-  puts '-bf:  bf (backup folder)'
-  puts '-c:   clean (clean system of logs and trash)'
-  puts '-d:   check for duplicate files'
-  puts '-del: del (delete file or directory)'
-  puts '-dir: directory size calculator'
-  puts '-e:   exists (file or directory)'
-  puts '-ext: check file extensions inside a folder'
-  puts '-f:   check file permissions'
-  puts '-fd:  fd (number of files and folders)'
-  puts '-fl:  file updated'
-  puts '-fs:  file size'
-  puts '-k:   search files by keyword'
-  puts "-l:   last updated (file)\n"
+  puts '-bf:   bf (backup folder)'
+  puts '-c:    clean (clean system of logs and trash)'
+  puts '-char: amount of chars in a file'
+  puts '-d:    check for duplicate files'
+  puts '-del:  del (delete file or directory)'
+  puts '-dir:  directory size calculator'
+  puts '-e:    exists (file or directory)'
+  puts '-ext:  check file extensions inside a folder'
+  puts '-f:    check file permissions'
+  puts '-fd:   fd (number of files and folders)'
+  puts '-fl:   file updated'
+  puts '-fs:   file size'
+  puts '-k:    search files by keyword'
+  puts "-l:    last updated (file)\n"
 end
 
 def systemi_print
@@ -130,6 +131,7 @@ def help_print
   puts '4 -c -gtl:  gnome terminal profile load'
   puts '4 -f -bf:   bf (backup folder)'
   puts '4 -f -c:    clean (clean system of logs and trash)'
+  puts '4 -f -char: amount of chars in a file'
   puts '4 -f -d:    check for duplicate files'
   puts '4 -f -del:  del (delete file or directory)'
   puts '4 -f -dir:  directory size calculator'

@@ -45,6 +45,7 @@ $opts = {
     '-f': {
       '-bf':     -> { TiluxHelpers.sys("bash #{PATH}/sys/file_folder/bf.sh tilux") },
       '-c':      -> { TiluxHelpers.sys("bash #{PATH}/sys/file_folder/clean.sh tilux") },
+      '-char':   -> { TiluxHelpers.sys("ruby #{PATH}/sys/file_folder/char_count.rb tilux") },
       '-d':      -> { TiluxHelpers.sys("python3 #{PATH}/sys/file_folder/duplicate_file.py tilux") },
       '-del':    -> { TiluxHelpers.sys("ruby #{PATH}/sys/file_folder/del.rb tilux") },
       '-dir':    -> { TiluxHelpers.sys("python3 #{PATH}/sys/file_folder/dir_size_calculator.py tilux") },

@@ -40,6 +40,7 @@ for example, `-c` and `-f`, to separate scripts into folders.
 4 -c -gtl:  gnome terminal profile load
 4 -f -bf:   bf (backup folder)
 4 -f -c:    clean (clean system of logs and trash)
+4 -f -char: amount of chars in a file
 4 -f -d:    check for duplicate files
 4 -f -del:  del (delete file or directory)
 4 -f -dir:  directory size calculator

@@ -10,7 +10,7 @@ ooooooooooooo ooooo ooooo        ooooo     ooo ooooooo  ooooo
     o888o     o888o o888ooooood8     YbodP     o888o  o88888o
 ```
 
-![v](https://img.shields.io/badge/tilux-v.1.5.25-blue)
+![v](https://img.shields.io/badge/tilux-v.1.5.5-blue)
 ![docker-compose-action-CI](https://github.com/endormi/tilux/workflows/docker-compose-action-CI/badge.svg?branch=master)
 ![ruby](https://github.com/endormi/tilux/actions/workflows/ruby.yml/badge.svg)
 ![make](https://github.com/endormi/tilux/actions/workflows/make.yml/badge.svg)

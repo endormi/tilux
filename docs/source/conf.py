@@ -22,7 +22,7 @@ copyright = '2024, Endormi'
 author = 'Endormi'
 
 # The full version, including alpha/beta/rc tags
-release = '1.5.25'
+release = '1.5.5'
 
 
 # -- General configuration ---------------------------------------------------
